@@ -170,9 +170,9 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1560px;
             margin: 0 auto;
-            padding: 24px 24px;
+            padding: 20px 24px;
         }
 
         /* Banner Executivo */
@@ -180,22 +180,23 @@
             background: #ffffff;
             border: 1px solid var(--border-color);
             border-left: 4px solid #0f172a;
-            border-radius: 8px;
-            padding: 18px 22px;
+            border-radius: 10px;
+            padding: 16px 22px;
             margin-bottom: 20px;
             box-shadow: var(--card-shadow);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            gap: 24px;
         }
 
         .banner-text {
             flex: 1;
+            min-width: 0;
         }
 
         .banner-title {
-            font-size: 14.5px;
+            font-size: 14px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -207,16 +208,17 @@
         }
 
         .banner-desc {
-            font-size: 13px;
+            font-size: 12.5px;
             color: #334155;
-            line-height: 1.55;
+            line-height: 1.5;
         }
 
         .banner-stats {
             display: flex;
-            gap: 16px;
+            gap: 20px;
             border-left: 1px solid var(--border-color);
-            padding-left: 20px;
+            padding-left: 22px;
+            flex-shrink: 0;
         }
 
         .banner-stat-item {
@@ -231,19 +233,20 @@
         }
 
         .banner-stat-lbl {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
             margin-top: 2px;
+            letter-spacing: 0.3px;
         }
 
         /* Filter Toolbar */
         .filter-bar {
             background: #ffffff;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 14px 18px;
+            border-radius: 10px;
+            padding: 12px 18px;
             margin-bottom: 20px;
             box-shadow: var(--card-shadow);
             display: flex;
@@ -259,7 +262,7 @@
         }
 
         .filter-label {
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             color: #475569;
             text-transform: uppercase;
@@ -270,7 +273,7 @@
             padding: 6px 10px;
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 600;
             color: #0f172a;
             background-color: #f8fafc;
@@ -292,7 +295,7 @@
 
         .btn-filter-reset {
             padding: 6px 12px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 600;
             border: 1px solid #cbd5e1;
             background: #f8fafc;
@@ -307,23 +310,45 @@
             color: #0f172a;
         }
 
-        /* KPI Cards Grid */
+        /* KPI Cards Grid (7 columns clean grid) */
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 12px;
             margin-bottom: 24px;
+        }
+
+        @media (max-width: 1380px) {
+            .kpi-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .kpi-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 16px 18px;
+            border-radius: 10px;
+            padding: 14px 14px;
             box-shadow: var(--card-shadow);
             transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 105px;
         }
 
         .kpi-card:hover {
@@ -340,25 +365,36 @@
         }
 
         .kpi-label {
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             margin-bottom: 4px;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .kpi-value {
-            font-size: 26px;
+            font-size: 23px;
             font-weight: 800;
             color: var(--text-main);
             line-height: 1.1;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .kpi-sub {
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 600;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Tabs Header */
@@ -815,7 +851,9 @@
                 </div>
                 <div class="banner-desc">
                     Acompanhamento contínuo do quadro de vagas, vivências práticas e contratações. Base conectada em tempo real com a planilha <a href="https://docs.google.com/spreadsheets/d/1_ZG94aNv1v4-fmewiCwwQl9dpeaYf-znFGsneqpHFx4/edit?gid=0#gid=0" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: none;">BI_PORTAL_VIEW (Google Sheets)</a>. Gráficos dinâmicos multi-ano imunes a viradas de exercício.
-                    <div class="banner-stats">
+                </div>
+            </div>
+            <div class="banner-stats">
                 <div class="banner-stat-item">
                     <div class="banner-stat-val" id="banner-total-vagas">21</div>
                     <div class="banner-stat-lbl">Vagas Totais</div>
