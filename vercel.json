@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "portal-view",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/a4", "destination": "/painel_imprimir_a4.html" },
+    { "source": "/imprimir", "destination": "/painel_imprimir_a4.html" }
+  ]
+}

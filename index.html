@@ -1,0 +1,2541 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI RH & Recrutamento — Unidade Portal do Morumbi | Rede Fadelito</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary: #0f172a;
+            --primary-accent: #2563eb;
+            --success: #16a34a;
+            --success-bg: #f0fdf4;
+            --warning: #ca8a04;
+            --warning-bg: #fefce8;
+            --danger: #dc2626;
+            --danger-bg: #fef2f2;
+            --purple: #7c3aed;
+            --purple-bg: #f5f3ff;
+            --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+            --card-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 60px;
+        }
+
+        /* Top Navbar */
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background-color: #0f172a;
+            color: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+            box-shadow: 0 2px 4px rgba(15, 23, 42, 0.2);
+        }
+
+        .brand-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .brand-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sync-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+            background-color: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .sync-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #16a34a;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-nav {
+            padding: 8px 14px;
+            font-size: 12.5px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            background: #ffffff;
+            color: #0f172a;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-nav:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .btn-primary {
+            background-color: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e293b;
+        }
+
+        .btn-success {
+            background-color: #16a34a;
+            color: #ffffff;
+            border-color: #16a34a;
+        }
+
+        .btn-success:hover {
+            background-color: #15803d;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 24px;
+        }
+
+        /* Banner Executivo */
+        .banner {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid #0f172a;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .banner-text {
+            flex: 1;
+        }
+
+        .banner-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .banner-desc {
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.55;
+        }
+
+        .banner-stats {
+            display: flex;
+            gap: 16px;
+            border-left: 1px solid var(--border-color);
+            padding-left: 20px;
+        }
+
+        .banner-stat-item {
+            text-align: right;
+        }
+
+        .banner-stat-val {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1;
+        }
+
+        .banner-stat-lbl {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* Filter Toolbar */
+        .filter-bar {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .filter-select {
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #0f172a;
+            background-color: #f8fafc;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-select:hover, .filter-select:focus {
+            border-color: #0f172a;
+            background-color: #ffffff;
+        }
+
+        .filter-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-filter-reset {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            color: #475569;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-filter-reset:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        /* KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 18px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-1px);
+        }
+
+        .kpi-card-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .kpi-label {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .kpi-value {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 3px;
+        }
+
+        .kpi-sub {
+            font-size: 11.5px;
+            font-weight: 600;
+        }
+
+        /* Tabs Header */
+        .tabs-header {
+            display: flex;
+            gap: 6px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 2px;
+        }
+
+        .tab-btn {
+            padding: 10px 18px;
+            font-size: 13.5px;
+            font-weight: 600;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover { color: var(--text-main); }
+        .tab-btn.active {
+            color: #0f172a;
+            border-bottom-color: #0f172a;
+            font-weight: 700;
+        }
+
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; }
+
+        /* Charts Grid */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .chart-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .chart-grid, .chart-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .chart-title {
+            font-size: 13.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+        }
+
+        .chart-subtitle {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+        }
+
+        .shift-assertiveness-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .shift-badge-item {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .shift-badge-rate {
+            font-weight: 800;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Funnel Layout */
+        .funnel-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 800px) {
+            .funnel-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .funnel-step {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            text-align: center;
+        }
+
+        .funnel-step::after {
+            content: '➔';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-weight: 800;
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        .funnel-step:last-child::after {
+            display: none;
+        }
+
+        .funnel-step-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .funnel-step-val {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .funnel-step-rate {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Tables and General Components */
+        .custom-table-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+        }
+
+        .table-toolbar {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            background: #ffffff;
+        }
+
+        .table-search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 6px 12px;
+            width: 300px;
+        }
+
+        .table-search-input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 12.5px;
+            width: 100%;
+            color: #0f172a;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .custom-table th, .custom-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .custom-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        .custom-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-approved { background-color: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+        .badge-vivencia { background-color: #eff6ff; color: #1e40af; border: 1px solid #93c5fd; }
+        .badge-warning { background-color: #fefce8; color: #854d0e; border: 1px solid #fde047; }
+        .badge-rejected { background-color: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+        .badge-neutral { background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+        .badge-open { background-color: #faf5ff; color: #6b21a8; border: 1px solid #d8b4fe; }
+
+        /* WhatsApp Textarea */
+        .whatsapp-container {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .whatsapp-box {
+            width: 100%;
+            height: 380px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 12.5px;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background-color: #f8fafc;
+            color: #0f172a;
+            margin-bottom: 14px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+
+        /* Modal */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(15, 23, 42, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+        }
+
+        .modal-backdrop.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 520px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            animation: modalPop 0.2s ease-out;
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .modal-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+        }
+
+        .form-input, .form-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 13px;
+            color: #0f172a;
+            background: #ffffff;
+            outline: none;
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: #0f172a;
+        }
+
+        .modal-footer {
+            padding: 14px 20px;
+            background-color: #f8fafc;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            display: none;
+            align-items: center;
+            gap: 8px;
+            z-index: 200;
+        }
+
+        .toast.show {
+            display: flex;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="brand-logo">F</div>
+            <div>
+                <div class="brand-title">Rede Fadelito — BI RH & Recrutamento</div>
+                <div class="brand-subtitle">
+                    Unidade Portal do Morumbi • Conexão em Tempo Real com Planilha
+                    <span class="sync-badge" id="sync-status-badge">
+                        <span class="sync-dot"></span>
+                        <span id="sync-status-text">Conectado ao Google Sheets</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <button class="btn-nav btn-success" onclick="openAddModal()">
+                ➕ Novo Registro
+            </button>
+            <button class="btn-nav" id="btn-sync-live" onclick="fetchLiveGoogleSheet()">
+                🔄 Sincronizar Agora
+            </button>
+            <a href="painel_imprimir_a4.html" class="btn-nav" target="_blank">
+                🖨️ Painel A4 (PDF)
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- BANNER DE SÍNTESE E DIAGNÓSTICO -->
+        <div class="banner">
+            <div class="banner-text">
+                <div class="banner-title">
+                    <span>📊 Diagnóstico Executivo de Recrutamento & Seleção (Portal do Morumbi)</span>
+                </div>
+                <div class="banner-desc">
+                    Acompanhamento contínuo do quadro de vagas, vivências práticas e contratações. Base conectada em tempo real com a planilha <a href="https://docs.google.com/spreadsheets/d/1_ZG94aNv1v4-fmewiCwwQl9dpeaYf-znFGsneqpHFx4/edit?gid=0#gid=0" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: none;">BI_PORTAL_VIEW (Google Sheets)</a>. Gráficos dinâmicos multi-ano imunes a viradas de exercício.
+                    <div class="banner-stats">
+                <div class="banner-stat-item">
+                    <div class="banner-stat-val" id="banner-total-vagas">21</div>
+                    <div class="banner-stat-lbl">Vagas Totais</div>
+                </div>
+                <div class="banner-stat-item">
+                    <div class="banner-stat-val" style="color: #16a34a;" id="banner-aprovados">19</div>
+                    <div class="banner-stat-lbl">Aprovados</div>
+                </div>
+                <div class="banner-stat-item">
+                    <div class="banner-stat-val" style="color: #7c3aed;" id="banner-vagas-abertas">1</div>
+                    <div class="banner-stat-lbl">Em Aberto</div>
+                </div>
+                <div class="banner-stat-item">
+                    <div class="banner-stat-val" style="color: #2563eb;" id="banner-taxa-preenchimento">90.5%</div>
+                    <div class="banner-stat-lbl">Preenchimento</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILTROS GLOBAIS DINÂMICOS -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <span class="filter-label">Ano:</span>
+                <select class="filter-select" id="filter-year" onchange="applyFilters()">
+                    <option value="ALL">Todos os Anos</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Mês:</span>
+                <select class="filter-select" id="filter-month" onchange="applyFilters()">
+                    <option value="ALL">Todos os Meses</option>
+                    <option value="1">01 - Janeiro</option>
+                    <option value="2">02 - Fevereiro</option>
+                    <option value="3">03 - Março</option>
+                    <option value="4">04 - Abril</option>
+                    <option value="5">05 - Maio</option>
+                    <option value="6">06 - Junho</option>
+                    <option value="7">07 - Julho</option>
+                    <option value="8">08 - Agosto</option>
+                    <option value="9">09 - Setembro</option>
+                    <option value="10">10 - Outubro</option>
+                    <option value="11">11 - Novembro</option>
+                    <option value="12">12 - Dezembro</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Cargo / Função:</span>
+                <select class="filter-select" id="filter-role" onchange="applyFilters()">
+                    <option value="ALL">Todos os Cargos</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Status:</span>
+                <select class="filter-select" id="filter-status" onchange="applyFilters()">
+                    <option value="ALL">Todos os Status</option>
+                    <option value="Aprovado">Aprovado</option>
+                    <option value="Vivência">Vivência</option>
+                    <option value="Em Aberto">Em Aberto</option>
+                    <option value="Reprovado">Reprovado</option>
+                    <option value="Desistente">Desistente</option>
+                    <option value="Não Compareceu">Não Compareceu</option>
+                    <option value="Desistiu Integração">Desistiu Integração</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Turno / Horário:</span>
+                <select class="filter-select" id="filter-shift" onchange="applyFilters()">
+                    <option value="ALL">Todos os Turnos</option>
+                    <option value="MANHA">Manhã (ex: 7:00 às 13:00)</option>
+                    <option value="TARDE">Tarde (ex: 13:00 às 19:00)</option>
+                    <option value="INTERMEDIARIO">Intermediário (ex: 10:30/12:00)</option>
+                    <option value="INTEGRAL">Integral / 12h (ex: 9:30 às 19:30)</option>
+                </select>
+            </div>
+            <div class="filter-actions">
+                <button class="btn-filter-reset" onclick="resetFilters()">🔄 Limpar Filtros</button>
+            </div>
+        </div>
+
+        <!-- KPI CARDS GRID -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-card-bar" style="background-color: #0f172a;"></div>
+                <div class="kpi-label">Quadro de Vagas</div>
+                <div class="kpi-value" id="kpi-total-vagas">21</div>
+                <div class="kpi-sub" style="color: #0f172a;" id="kpi-total-vagas-sub">Meta Total da Unidade</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-card-bar" style="background-color: #16a34a;"></div>
+                <div class="kpi-label">Contratações / Aprovados</div>
+                <div class="kpi-value" style="color: #16a34a;" id="kpi-aprovados">19</div>
+                <div class="kpi-sub" style="color: #166534;" id="kpi-aprovados-sub">90.5% das vagas preenchidas</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-card-bar" style="background-color: #7c3aed;"></div>
+                <div class="kpi-label">Vagas em Aberto / Captação</div>
+                <div class="kpi-value" style="color: #7c3aed;" id="kpi-vagas-abertas">1</div>
+                <div class="kpi-sub" style="color: #6d28d9;" id="kpi-vagas-abertas-sub">1 vaga em captação ativa</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-card-bar" style="background-color: #2563eb;"></div>
+                <div class="kpi-label">Vivências em Andamento</div>
+                <div class="kpi-value" style="color: #2563eb;" id="kpi-vivencias">1</div>
+                <div class="kpi-sub" style="color: #1e40af;" id="kpi-vivencias-sub">Fase final de avaliação</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-card-bar" style="background-color: #059669;"></div>
+                <div class="kpi-label">Taxa Média de Conversão</div>
+                <div class="kpi-value" style="color: #059669;" id="kpi-conversao">61.3%</div>
+                <div class="kpi-sub" style="color: #047857;">Aprovados / Vivências</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-card-bar" style="background-color: #d97706;"></div>
+                <div class="kpi-label">Esforço Médio por Vaga</div>
+                <div class="kpi-value" style="color: #d97706;" id="kpi-ratio">1.48</div>
+                <div class="kpi-sub" style="color: #b45309;">Vivências p/ 1 contratação</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-card-bar" style="background-color: #0284c7;"></div>
+                <div class="kpi-label">Maior Demanda da Unidade</div>
+                <div class="kpi-value" style="font-size: 18px; line-height: 1.3;" id="kpi-maior-demanda">Inspetor de Alunos</div>
+                <div class="kpi-sub" style="color: #0369a1;" id="kpi-maior-demanda-sub">5 Vagas (24% do total)</div>
+            </div>
+        </div>
+
+        <!-- TABS HEADER -->
+        <div class="tabs-header">
+            <button class="tab-btn active" onclick="switchTab('tab-dashboard', this)">📊 Dashboard Executivo & KPIs</button>
+            <button class="tab-btn" onclick="switchTab('tab-multiano', this)">📈 Análise Multi-Ano & Tendências</button>
+            <button class="tab-btn" onclick="switchTab('tab-registros', this)">📋 Gestor de Registros & Vagas (<span id="tab-count-registros">21</span>)</button>
+            <button class="tab-btn" onclick="switchTab('tab-vivencias', this)">🔄 Conversão de Vivências & Cargos</button>
+            <button class="tab-btn" onclick="switchTab('tab-whatsapp', this)">💬 WhatsApp da Diretoria</button>
+            <button class="tab-btn" onclick="switchTab('tab-config', this)">⚙️ Conexão Google Sheets & Apps Script</button>
+        </div>
+
+        <!-- ==================== TAB 1: DASHBOARD EXECUTIVO ==================== -->
+        <div id="tab-dashboard" class="tab-pane active">
+
+            <!-- FUNIL DE SELEÇÃO GERAL -->
+            <div class="funnel-container">
+                <div class="funnel-step">
+                    <div class="funnel-step-label">1. Inscritos / Triados</div>
+                    <div class="funnel-step-val" id="funnel-inscritos">31</div>
+                    <div class="funnel-step-rate" id="funnel-rate-inscritos" style="background: #f1f5f9; color: #475569;">100% da Base</div>
+                </div>
+                <div class="funnel-step">
+                    <div class="funnel-step-label">2. Vivências em Escola</div>
+                    <div class="funnel-step-val" id="funnel-vivencias">30</div>
+                    <div class="funnel-step-rate" id="funnel-rate-vivencias" style="background: #eff6ff; color: #1e40af;">96.8% Triagem</div>
+                </div>
+                <div class="funnel-step">
+                    <div class="funnel-step-label">3. Aprovados / Admitidos</div>
+                    <div class="funnel-step-val" id="funnel-aprovados" style="color: #16a34a;">19</div>
+                    <div class="funnel-step-rate" id="funnel-rate-aprovados" style="background: #f0fdf4; color: #166534;">63.3% Conversão</div>
+                </div>
+                <div class="funnel-step">
+                    <div class="funnel-step-label">4. Vagas Preenchidas</div>
+                    <div class="funnel-step-val" id="funnel-vagas" style="color: #0f172a;">19 / 21</div>
+                    <div class="funnel-step-rate" id="funnel-rate-vagas" style="background: #f0fdf4; color: #166534;">90.5% Meta</div>
+                </div>
+            </div>
+
+            <!-- GRÁFICOS PRINCIPAIS -->
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Evolução Temporal das Contratações</div>
+                            <div class="chart-subtitle">Volume de admissões, vivências e novas vagas mês a mês</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chartEvolucaoMensal"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Distribuição de Vagas por Cargo</div>
+                            <div class="chart-subtitle">Vagas totais vs. Vagas já preenchidas por função</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chartVagasPorCargo"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-grid-3">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Assertividade & Turnos</div>
+                            <div class="chart-subtitle">Vagas e taxa de preenchimento por horário</div>
+                        </div>
+                    </div>
+                    <div class="chart-container" style="height: 180px;">
+                        <canvas id="chartHorarios"></canvas>
+                    </div>
+                    <div class="shift-assertiveness-grid" id="shift-assertiveness-grid">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Taxa de Conversão por Cargo</div>
+                            <div class="chart-subtitle">% de vivências que viraram contratação</div>
+                        </div>
+                    </div>
+                    <div class="chart-container" style="height: 240px;">
+                        <canvas id="chartConversaoCargos"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Motivos de Perdas / Descarte</div>
+                            <div class="chart-subtitle">Onde o funil perdeu candidatos</div>
+                        </div>
+                    </div>
+                    <div class="chart-container" style="height: 240px;">
+                        <canvas id="chartPerdasFunil"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==================== TAB 2: ANÁLISE MULTI-ANO & TENDÊNCIAS ==================== -->
+        <div id="tab-multiano" class="tab-pane">
+            <div class="banner" style="border-left-color: #2563eb; margin-bottom: 20px;">
+                <div class="banner-text">
+                    <div class="banner-title" style="color: #2563eb;">
+                        <span>🛡️ Proteção de Virada de Exercício & Análise Comparativa Anual</span>
+                    </div>
+                    <div class="banner-desc">
+                        Este módulo agrupa automaticamente qualquer data inserida na planilha ou no site. Ao virar o ano (ex: 2026 ➔ 2027), novas datas são identificadas em tempo real sem necessidade de reconfigurar fórmulas, gráficos ou tabelas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Volume de Contratações por Ano</div>
+                            <div class="chart-subtitle">Comparativo anual consolidado</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chartComparativoAnual"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Sazonalidade & Pico de Contratações</div>
+                            <div class="chart-subtitle">Distribuição histórica por mês do ano</div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chartSazonalidade"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABELA DE RESUMO ANUAL -->
+            <div class="custom-table-card">
+                <div class="table-toolbar">
+                    <div style="font-size: 13.5px; font-weight: 800; text-transform: uppercase; color: #0f172a;">
+                        📅 Histórico Consolidado por Exercício Anual
+                    </div>
+                </div>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Exercício (Ano)</th>
+                            <th>Total de Registros</th>
+                            <th>Aprovados</th>
+                            <th>Vivências</th>
+                            <th>Perdas / Reprovados</th>
+                            <th>Taxa de Eficiência</th>
+                            <th>Mês de Maior Volume</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-exercicios-body">
+                        <!-- Preenchido via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 3: GESTOR DE REGISTROS & VAGAS ==================== -->
+        <div id="tab-registros" class="tab-pane">
+            <div class="custom-table-card">
+                <div class="table-toolbar">
+                    <div class="table-search-box">
+                        <span>🔍</span>
+                        <input type="text" class="table-search-input" id="search-table-input" placeholder="Buscar por cargo, horário, status, data..." oninput="renderTableRecords()">
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn-nav btn-success" onclick="openAddModal()">➕ Novo Registro</button>
+                        <button class="btn-nav" onclick="exportTableToCSV()">📥 Baixar CSV</button>
+                        <button class="btn-nav" onclick="resetToInitialData()">🔄 Restaurar Base Original</button>
+                    </div>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;">#</th>
+                                <th>Data</th>
+                                <th>Cargo / Função</th>
+                                <th>Horário da Vaga</th>
+                                <th>Mês / Lote</th>
+                                <th>Status Atual</th>
+                                <th style="text-align: right;">Ações Rápidas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-registros-body">
+                            <!-- Preenchido dinamicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 4: MATRIZ DE VIVÊNCIAS & CONVERSÃO ==================== -->
+        <div id="tab-vivencias" class="tab-pane">
+            <div class="banner" style="border-left-color: #7c3aed; margin-bottom: 20px;">
+                <div class="banner-text">
+                    <div class="banner-title" style="color: #7c3aed;">
+                        <span>🔄 Análise de Esforço de R&S e Vivências em Chão de Escola</span>
+                    </div>
+                    <div class="banner-desc">
+                        Relação entre a quantidade de vivências práticas realizadas pelos candidatos na Unidade Portal do Morumbi e as aprovações efetivas. Permite identificar quais cargos demandam maior esforço de atração e seleção.
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-table-card">
+                <div class="table-toolbar">
+                    <div style="font-size: 13.5px; font-weight: 800; text-transform: uppercase; color: #0f172a;">
+                        📊 Eficiência de Conversão por Cargo (Aba VIVÊNCIAS)
+                    </div>
+                    <button class="btn-nav" onclick="exportVivenciasCSV()">📥 Exportar Métricas</button>
+                </div>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Cargo / Função</th>
+                            <th style="text-align: center;">Vagas</th>
+                            <th style="text-align: center;">Vivências Realizadas</th>
+                            <th style="text-align: center;">Aprovados</th>
+                            <th style="text-align: center;">Taxa de Conversão</th>
+                            <th style="text-align: center;">Vivências / Vaga (Esforço)</th>
+                            <th>Diagnóstico de Recrutamento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-vivencias-body">
+                        <!-- Preenchido dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chart-card" style="margin-top: 20px;">
+                <div class="chart-header">
+                    <div>
+                        <div class="chart-title">Esforço de R&S: Vivências Necessárias por Vaga Fechada</div>
+                        <div class="chart-subtitle">Quanto menor o índice, mais eficiente é a assertividade da triagem</div>
+                    </div>
+                </div>
+                <div class="chart-container" style="height: 280px;">
+                    <canvas id="chartRatioEsforco"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 5: WHATSAPP DA DIRETORIA ==================== -->
+        <div id="tab-whatsapp" class="tab-pane">
+            <div class="whatsapp-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                    <div>
+                        <div style="font-size: 16px; font-weight: 800; color: #0f172a;">💬 Relatório Executivo Semanal / Mensal para WhatsApp</div>
+                        <div style="font-size: 12.5px; color: var(--text-muted);">Texto formatado com emojis e métricas atualizadas para envio direto à liderança e diretoria da Rede Fadelito.</div>
+                    </div>
+                    <button class="btn-nav btn-primary" onclick="copyWhatsAppReport()">
+                        📋 Copiar Mensagem
+                    </button>
+                </div>
+                <textarea id="whatsapp-text" class="whatsapp-box" readonly></textarea>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 6: CONFIGURAÇÕES & GOOGLE APPS SCRIPT ==================== -->
+        <div id="tab-config" class="tab-pane">
+            <div class="chart-card" style="margin-bottom: 20px;">
+                <div class="chart-title" style="margin-bottom: 8px;">🔗 Conexão Ativa com a Planilha Google Sheets</div>
+                <div style="font-size: 13px; color: #334155; margin-bottom: 14px;">
+                    O sistema está atualmente conectado e sincronizando em tempo real com a planilha <strong>BI_RH_PORTAL_VIEW</strong>:
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                    <input type="text" id="input-sheet-url" class="form-input" style="flex: 1; font-family: monospace; font-size: 12px;" value="https://docs.google.com/spreadsheets/d/1_ZG94aNv1v4-fmewiCwwQl9dpeaYf-znFGsneqpHFx4/gviz/tq?tqx=out:csv&gid=0">
+                    <button class="btn-nav btn-primary" onclick="updateSheetUrl()">💾 Conectar Planilha</button>
+                    <button class="btn-nav" onclick="fetchLiveGoogleSheet()">🔄 Testar Leitura</button>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px; font-family: monospace; font-size: 12px;">
+                    <div style="padding: 8px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+                        <strong>Planilha de Edição (BI_RH_PORTAL_VIEW):</strong> <a href="https://docs.google.com/spreadsheets/d/1_ZG94aNv1v4-fmewiCwwQl9dpeaYf-znFGsneqpHFx4/edit?gid=0#gid=0" target="_blank" style="color: #2563eb;">https://docs.google.com/spreadsheets/d/1_ZG94aNv1v4-fmewiCwwQl9dpeaYf-znFGsneqpHFx4/edit?gid=0#gid=0</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-title" style="margin-bottom: 8px;">⚡ Sincronização Bidirecional Direta (Google Apps Script)</div>
+                <div style="font-size: 13px; color: #334155; margin-bottom: 12px; line-height: 1.5;">
+                    Para permitir que novos registros adicionados pelo botão <strong>"+ Novo Registro"</strong> sejam gravados automaticamente na sua planilha Google Sheets sem intervenção manual, basta adicionar este script na planilha:
+                </div>
+                <ol style="font-size: 12.5px; color: #334155; margin-left: 20px; margin-bottom: 14px; line-height: 1.6;">
+                    <li>Abra a planilha no Google Sheets;</li>
+                    <li>Clique no menu <strong>Extensões ➔ Apps Script</strong>;</li>
+                    <li>Cole o código abaixo e clique em <strong>Implantar ➔ Nova implantação ➔ Tipo: App da Web</strong> (Acesso: Qualquer pessoa);</li>
+                    <li>Copie a URL gerada e cole no campo de Webhook abaixo!</li>
+                </ol>
+                <div style="display: flex; gap: 10px; margin-bottom: 14px;">
+                    <input type="text" id="input-webhook-url" class="form-input" style="flex: 1;" placeholder="Cole a URL do seu App da Web do Google Apps Script (opcional)..." onchange="saveWebhookUrl()">
+                    <button class="btn-nav btn-primary" onclick="saveWebhookUrl()">Salvar Webhook</button>
+                </div>
+                <textarea class="whatsapp-box" style="height: 180px;" readonly>function doPost(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("Dashboard") || ss.getSheetByName("GRAFICOS") || ss.getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  // Adiciona nova linha no final da aba ativa
+  sheet.appendRow([data.data, data.cargo, data.horario, data.mes, data.status]);
+  return ContentService.createTextOutput(JSON.stringify({status: "success", result: "ok"})).setMimeType(ContentService.MimeType.JSON);
+}</textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL: NOVO REGISTRO -->
+    <div class="modal-backdrop" id="modal-add-record">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">➕ Adicionar Novo Registro de Vaga / Candidata</div>
+                <button style="border: none; background: transparent; font-size: 18px; cursor: pointer;" onclick="closeAddModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Data da Vaga / Vivência:</label>
+                    <input type="date" id="new-data" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Cargo / Função:</label>
+                    <select id="new-cargo" class="form-select">
+                        <option value="INSPETOR DE ALUNOS">INSPETOR DE ALUNOS</option>
+                        <option value="ESTAGIÁRIA MAT I">ESTAGIÁRIA MAT I</option>
+                        <option value="ESTAGIÁRIA MATII">ESTAGIÁRIA MATII</option>
+                        <option value="ESTAGIÁRIA JARD">ESTAGIÁRIA JARD</option>
+                        <option value="ESTAGIÁRIA BERÇ">ESTAGIÁRIA BERÇ</option>
+                        <option value="ESTAGIÁRIA MINI">ESTAGIÁRIA MINI</option>
+                        <option value="ESTAGIÁRIA PRÉ">ESTAGIÁRIA PRÉ</option>
+                        <option value="PROFESSORA">PROFESSORA</option>
+                        <option value="AUXILIAR DE LIMPEZA">AUXILIAR DE LIMPEZA</option>
+                        <option value="COORDENADORA">COORDENADORA</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Horário de Trabalho:</label>
+                    <input type="text" id="new-horario" class="form-input" placeholder="ex: 13:00 ÀS 19:00 ou 7:00 ÀS 13:00" value="13:00 ÀS 19:00">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Status da Vaga / Candidata:</label>
+                    <select id="new-status" class="form-select">
+                        <option value="Aprovado">Aprovado</option>
+                        <option value="Vivência">Vivência (Em Andamento)</option>
+                        <option value="Reprovado">Reprovado</option>
+                        <option value="Desistente">Desistente</option>
+                        <option value="Não Compareceu">Não Compareceu</option>
+                        <option value="Desistiu Integração">Desistiu Integração</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-nav" onclick="closeAddModal()">Cancelar</button>
+                <button class="btn-nav btn-success" onclick="saveNewRecord()">💾 Salvar e Atualizar Gráficos</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast-notification">
+        <span id="toast-message">Mensagem</span>
+    </div>
+
+    <!-- JAVASCRIPT ENGINE -->
+    <script>
+        // ==================== INITIAL DATA SNAPSHOT ====================
+        const INITIAL_RECORDS = [
+            { id: 1, data: "14/01/2026", cargo: "ESTAGIÁRIA MAT I", horario: "13:00 ÀS 19:00", mes: 1, status: "Aprovado" },
+            { id: 2, data: "16/01/2026", cargo: "ESTAGIÁRIA JARD", horario: "12:00 ÀS 18:00", mes: 1, status: "Aprovado" },
+            { id: 3, data: "16/01/2026", cargo: "ESTAGIÁRIA BERÇ", horario: "10:30 ÀS 17:30", mes: 1, status: "Aprovado" },
+            { id: 4, data: "22/01/2026", cargo: "INSPETOR DE ALUNOS", horario: "9:30 ÀS 19:30", mes: 1, status: "Aprovado" },
+            { id: 5, data: "29/01/2026", cargo: "ESTAGIÁRIA MATII", horario: "13:00 ÀS 19:00", mes: 1, status: "Aprovado" },
+            { id: 6, data: "05/02/2026", cargo: "ESTAGIÁRIA MATII", horario: "7:00 ÀS 13:00", mes: 2, status: "Aprovado" },
+            { id: 7, data: "09/02/2026", cargo: "ESTAGIÁRIA PRÉ", horario: "12:00 ÀS 18:00", mes: 2, status: "Aprovado" },
+            { id: 8, data: "27/02/2026", cargo: "ESTAGIÁRIA MINI", horario: "10:30 ÀS 17:30", mes: 2, status: "Aprovado" },
+            { id: 9, data: "05/03/2026", cargo: "ESTAGIÁRIA JARD", horario: "12:00 ÀS 18:00", mes: 3, status: "Aprovado" },
+            { id: 10, data: "20/03/2026", cargo: "ESTAGIÁRIA MATII", horario: "7:00 ÀS 13:00", mes: 3, status: "Aprovado" },
+            { id: 11, data: "07/04/2026", cargo: "INSPETOR DE ALUNOS", horario: "9:30 ÀS 19:30", mes: 4, status: "Aprovado" },
+            { id: 12, data: "27/04/2026", cargo: "INSPETOR DE ALUNOS", horario: "9:00 ÀS 19:00", mes: 4, status: "Aprovado" },
+            { id: 13, data: "27/04/2026", cargo: "ESTAGIÁRIA JARD", horario: "11:00 ÀS 18:00", mes: 4, status: "Aprovado" },
+            { id: 14, data: "11/05/2026", cargo: "ESTAGIÁRIA MATII", horario: "7:00 ÀS 13:00", mes: 5, status: "Aprovado" },
+            { id: 15, data: "08/06/2026", cargo: "ESTAGIÁRIA BERÇ", horario: "13:00 ÀS 19:00", mes: 6, status: "Aprovado" },
+            { id: 16, data: "08/06/2026", cargo: "ESTAGIÁRIA MAT I", horario: "13:00 ÀS 19:00", mes: 6, status: "Aprovado" },
+            { id: 17, data: "28/07/2026", cargo: "ESTAGIÁRIA MAT I", horario: "7:00 ÀS 13:00", mes: 7, status: "Aprovado" },
+            { id: 18, data: "28/07/2026", cargo: "ESTAGIÁRIA MINI", horario: "10:30 ÀS 17:30", mes: 7, status: "Aprovado" },
+            { id: 19, data: "17/08/2026", cargo: "INSPETOR DE ALUNOS", horario: "9:30 ÀS 19:30", mes: 8, status: "Aprovado" },
+            { id: 20, data: "24/08/2026", cargo: "INSPETOR DE ALUNOS", horario: "9:30 ÀS 19:30", mes: 8, status: "Vivência" },
+            { id: 21, data: "28/08/2026", cargo: "OUTROS", horario: "6:45 ÀS 16:45", mes: 8, status: "Em Aberto" }
+        ];
+
+        const INITIAL_VIVENCIAS_STATS = [
+            { cargo: "INSPETOR DE ALUNOS", vagas: 5, vivencias: 6, aprovados: 4, conversao: 67, ratio: 1.2 },
+            { cargo: "ESTAGIÁRIA MATII", vagas: 4, vivencias: 5, aprovados: 4, conversao: 80, ratio: 1.25 },
+            { cargo: "ESTAGIÁRIA MAT I", vagas: 3, vivencias: 5, aprovados: 3, conversao: 60, ratio: 1.67 },
+            { cargo: "ESTAGIÁRIA JARD", vagas: 3, vivencias: 5, aprovados: 3, conversao: 60, ratio: 1.67 },
+            { cargo: "ESTAGIÁRIA BERÇ", vagas: 2, vivencias: 3, aprovados: 2, conversao: 67, ratio: 1.5 },
+            { cargo: "ESTAGIÁRIA MINI", vagas: 2, vivencias: 4, aprovados: 2, conversao: 50, ratio: 2.0 },
+            { cargo: "ESTAGIÁRIA PRÉ", vagas: 1, vivencias: 2, aprovados: 1, conversao: 50, ratio: 2.0 },
+            { cargo: "OUTROS", vagas: 1, vivencias: 1, aprovados: 0, conversao: 0, ratio: 1.0 }
+        ];
+
+        const INITIAL_FUNNEL = {
+            inscritos: 31,
+            vivencias: 30,
+            aprovados: 19,
+            reprovados: 6,
+            desistentes: 1,
+            naoCompareceu: 4,
+            desistiuIntegracao: 1,
+            reprovadoIntegracao: 0,
+            totalVagas: 21
+        };
+
+        // Application State
+        let records = JSON.parse(localStorage.getItem('fadelito_bi_records')) || [...INITIAL_RECORDS];
+        let vivenciasStats = [...INITIAL_VIVENCIAS_STATS];
+        let funnelData = { ...INITIAL_FUNNEL };
+        let webhookUrl = localStorage.getItem('fadelito_webhook_url') || '';
+
+        // Chart Instances
+        let chartEvolucaoMensalInstance = null;
+        let chartVagasPorCargoInstance = null;
+        let chartHorariosInstance = null;
+        let chartConversaoCargosInstance = null;
+        let chartPerdasFunilInstance = null;
+        let chartComparativoAnualInstance = null;
+        let chartSazonalidadeInstance = null;
+        let chartRatioEsforcoInstance = null;
+
+        // Month Names
+        const MONTH_NAMES = [
+            "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", 
+            "Jul", "Ago", "Set", "Out", "Nov", "Dez"
+        ];
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set today date as default in modal
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('new-data').value = today;
+
+            if (webhookUrl) {
+                document.getElementById('input-webhook-url').value = webhookUrl;
+            }
+
+            recalculateVivenciasStats();
+            populateFilterSelectors();
+            updateAllViews();
+
+            // Try live fetch in background
+            fetchLiveGoogleSheet(true);
+        });
+
+        // ==================== RECALCULATE VIVENCIAS STATS ====================
+        function recalculateVivenciasStats() {
+            const cargoMap = {};
+            records.forEach(r => {
+                const c = (r.cargo || 'OUTROS').trim().toUpperCase();
+                if (!cargoMap[c]) {
+                    cargoMap[c] = { cargo: c, vagas: 0, aprovados: 0, vivencias: 0 };
+                }
+                cargoMap[c].vagas++;
+                if (r.status === 'Aprovado') {
+                    cargoMap[c].aprovados++;
+                    cargoMap[c].vivencias++;
+                } else if (r.status === 'Vivência') {
+                    cargoMap[c].vivencias++;
+                }
+            });
+
+            // Known baseline vivencias history adjustments
+            const baseMap = {
+                "INSPETOR DE ALUNOS": { vivenciasExtra: 1 },
+                "ESTAGIÁRIA MATII": { vivenciasExtra: 1 },
+                "ESTAGIÁRIA MAT I": { vivenciasExtra: 2 },
+                "ESTAGIÁRIA JARD": { vivenciasExtra: 2 },
+                "ESTAGIÁRIA BERÇ": { vivenciasExtra: 1 },
+                "ESTAGIÁRIA MINI": { vivenciasExtra: 2 },
+                "ESTAGIÁRIA PRÉ": { vivenciasExtra: 1 }
+            };
+
+            const result = [];
+            for (const [cargo, data] of Object.entries(cargoMap)) {
+                const extra = (baseMap[cargo] && baseMap[cargo].vivenciasExtra) ? baseMap[cargo].vivenciasExtra : 0;
+                const totalViv = Math.max(data.vagas, data.vivencias + extra);
+                const conv = Math.round((data.aprovados / Math.max(1, totalViv)) * 100);
+                const ratio = parseFloat((totalViv / Math.max(1, data.vagas)).toFixed(2));
+                result.push({
+                    cargo: cargo,
+                    vagas: data.vagas,
+                    vivencias: totalViv,
+                    aprovados: data.aprovados,
+                    conversao: conv,
+                    ratio: ratio
+                });
+            }
+
+            result.sort((a, b) => b.vagas - a.vagas);
+            if (result.length > 0) {
+                vivenciasStats = result;
+            }
+        }
+
+        // ==================== TAB SWITCHING ====================
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            
+            btn.classList.add('active');
+            const targetPane = document.getElementById(tabId);
+            if (targetPane) {
+                targetPane.classList.add('active');
+            }
+
+            // Trigger chart resize
+            window.dispatchEvent(new Event('resize'));
+        }
+
+        // ==================== PARSE DATE HELPER ====================
+        function parseDateString(str) {
+            if (!str) return { day: 1, month: 1, year: 2026, dateObj: new Date(2026, 0, 1) };
+            const clean = str.trim();
+            const parts = clean.split('/');
+            if (parts.length === 3) {
+                const day = parseInt(parts[0], 10) || 1;
+                const month = parseInt(parts[1], 10) || 1;
+                const year = parseInt(parts[2], 10) || 2026;
+                return { day, month, year, dateObj: new Date(year, month - 1, day) };
+            }
+            return { day: 1, month: 1, year: 2026, dateObj: new Date(2026, 0, 1) };
+        }
+
+        // ==================== POPULATE SELECTORS ====================
+        function populateFilterSelectors() {
+            // Extract distinct years and roles
+            const years = new Set();
+            const roles = new Set();
+
+            records.forEach(r => {
+                const parsed = parseDateString(r.data);
+                years.add(parsed.year);
+                if (r.cargo) roles.add(r.cargo.trim());
+            });
+
+            const yearSelect = document.getElementById('filter-year');
+            const currentYearVal = yearSelect.value;
+            yearSelect.innerHTML = '<option value="ALL">Todos os Anos</option>';
+            Array.from(years).sort().forEach(y => {
+                const opt = document.createElement('option');
+                opt.value = y;
+                opt.textContent = `Ano ${y}`;
+                yearSelect.appendChild(opt);
+            });
+            if (years.has(parseInt(currentYearVal, 10))) yearSelect.value = currentYearVal;
+
+            const roleSelect = document.getElementById('filter-role');
+            const currentRoleVal = roleSelect.value;
+            roleSelect.innerHTML = '<option value="ALL">Todos os Cargos</option>';
+            Array.from(roles).sort().forEach(role => {
+                const opt = document.createElement('option');
+                opt.value = role;
+                opt.textContent = role;
+                roleSelect.appendChild(opt);
+            });
+            if (roles.has(currentRoleVal)) roleSelect.value = currentRoleVal;
+        }
+
+        // ==================== FILTERS LOGIC ====================
+        function getFilteredRecords() {
+            const yearFilter = document.getElementById('filter-year').value;
+            const monthFilter = document.getElementById('filter-month').value;
+            const roleFilter = document.getElementById('filter-role').value;
+            const statusFilter = document.getElementById('filter-status').value;
+            const shiftFilter = document.getElementById('filter-shift').value;
+
+            return records.filter(r => {
+                const parsed = parseDateString(r.data);
+                if (yearFilter !== 'ALL' && parsed.year !== parseInt(yearFilter, 10)) return false;
+                if (monthFilter !== 'ALL' && parsed.month !== parseInt(monthFilter, 10)) return false;
+                if (roleFilter !== 'ALL' && r.cargo.trim() !== roleFilter) return false;
+                if (statusFilter !== 'ALL' && r.status !== statusFilter) return false;
+
+                if (shiftFilter !== 'ALL') {
+                    const h = (r.horario || '').toUpperCase();
+                    if (shiftFilter === 'MANHA' && !h.includes('7:00')) return false;
+                    if (shiftFilter === 'TARDE' && !h.includes('13:00')) return false;
+                    if (shiftFilter === 'INTERMEDIARIO' && !(h.includes('10:30') || h.includes('11:00') || h.includes('12:00'))) return false;
+                    if (shiftFilter === 'INTEGRAL' && !(h.includes('9:30') || h.includes('9:00') || h.includes('19:30'))) return false;
+                }
+
+                return true;
+            });
+        }
+
+        function applyFilters() {
+            updateAllViews();
+        }
+
+        function resetFilters() {
+            document.getElementById('filter-year').value = 'ALL';
+            document.getElementById('filter-month').value = 'ALL';
+            document.getElementById('filter-role').value = 'ALL';
+            document.getElementById('filter-status').value = 'ALL';
+            document.getElementById('filter-shift').value = 'ALL';
+            updateAllViews();
+            showToast('Filtros restaurados!');
+        }
+
+        // ==================== UPDATE ALL VIEWS ====================
+        function updateAllViews() {
+            const filtered = getFilteredRecords();
+            recalculateVivenciasStats();
+            updateKPIs(filtered);
+            renderCharts(filtered);
+            renderTableRecords();
+            renderVivenciasTable();
+            renderExerciciosTable();
+            generateWhatsAppReport(filtered);
+        }
+
+        // ==================== UPDATE KPIS ====================
+        function updateKPIs(filtered) {
+            const totalRecords = filtered.length;
+            const aprovados = filtered.filter(r => r.status === 'Aprovado').length;
+            const vivenciasAndamento = filtered.filter(r => r.status === 'Vivência').length;
+            const vagasAbertas = filtered.filter(r => r.status === 'Em Aberto' || (r.status !== 'Aprovado' && r.status !== 'Vivência')).length;
+            const totalVagas = Math.max(funnelData.totalVagas || 0, records.length);
+
+            document.getElementById('tab-count-registros').textContent = totalRecords;
+            document.getElementById('banner-total-vagas').textContent = totalVagas;
+            document.getElementById('banner-aprovados').textContent = aprovados;
+            
+            const bannerAbertas = document.getElementById('banner-vagas-abertas');
+            if (bannerAbertas) bannerAbertas.textContent = vagasAbertas;
+
+            const pct = Math.round((aprovados / Math.max(1, totalVagas)) * 100);
+            document.getElementById('banner-taxa-preenchimento').textContent = `${pct}%`;
+
+            document.getElementById('kpi-total-vagas').textContent = totalVagas;
+            document.getElementById('kpi-aprovados').textContent = aprovados;
+            document.getElementById('kpi-aprovados-sub').textContent = `${pct}% das vagas preenchidas`;
+            
+            const kpiAbertas = document.getElementById('kpi-vagas-abertas');
+            if (kpiAbertas) kpiAbertas.textContent = vagasAbertas;
+            const kpiAbertasSub = document.getElementById('kpi-vagas-abertas-sub');
+            if (kpiAbertasSub) kpiAbertasSub.textContent = vagasAbertas > 0 ? `${vagasAbertas} vaga(s) em captação ativa` : 'Quadro 100% preenchido';
+
+            document.getElementById('kpi-vivencias').textContent = vivenciasAndamento;
+
+            // Global conversion & ratio metrics
+            const totalVivencias = funnelData.vivencias || 30;
+            const globalConv = ((aprovados / Math.max(1, totalVivencias)) * 100).toFixed(1);
+            const globalRatio = (totalVivencias / Math.max(1, totalVagas)).toFixed(2);
+
+            const kpiConv = document.getElementById('kpi-conversao');
+            if (kpiConv) kpiConv.textContent = `${globalConv}%`;
+
+            const kpiRat = document.getElementById('kpi-ratio');
+            if (kpiRat) kpiRat.textContent = globalRatio;
+
+            // Compute top demand role
+            const roleCount = {};
+            filtered.forEach(r => {
+                const c = (r.cargo || 'OUTROS').trim().toUpperCase();
+                roleCount[c] = (roleCount[c] || 0) + 1;
+            });
+            let topRole = "INSPETOR DE ALUNOS";
+            let topCount = 0;
+            for (const [role, count] of Object.entries(roleCount)) {
+                if (count > topCount) {
+                    topCount = count;
+                    topRole = role;
+                }
+            }
+            document.getElementById('kpi-maior-demanda').textContent = topRole;
+            document.getElementById('kpi-maior-demanda-sub').textContent = `${topCount} Vagas (${Math.round((topCount/Math.max(1, totalRecords))*100)}% do filtro)`;
+
+            // Funnel Dynamic Update
+            const fInscritos = funnelData.inscritos || 31;
+            const fVivencias = funnelData.vivencias || 30;
+            document.getElementById('funnel-inscritos').textContent = fInscritos;
+            document.getElementById('funnel-vivencias').textContent = fVivencias;
+            document.getElementById('funnel-aprovados').textContent = aprovados;
+            document.getElementById('funnel-vagas').textContent = `${aprovados} / ${totalVagas}`;
+
+            const rateInsc = document.getElementById('funnel-rate-inscritos');
+            if (rateInsc) rateInsc.textContent = `100% da Base (${fInscritos})`;
+
+            const rateViv = document.getElementById('funnel-rate-vivencias');
+            if (rateViv) rateViv.textContent = `${((fVivencias / Math.max(1, fInscritos)) * 100).toFixed(1)}% Triagem`;
+
+            const rateApr = document.getElementById('funnel-rate-aprovados');
+            if (rateApr) rateApr.textContent = `${((aprovados / Math.max(1, fVivencias)) * 100).toFixed(1)}% Conversão`;
+
+            const rateVag = document.getElementById('funnel-rate-vagas');
+            if (rateVag) rateVag.textContent = `${pct}% Meta`;
+        }
+
+        // ==================== RENDER CHARTS ====================
+        function renderCharts(filtered) {
+            // Palette
+            const primaryColor = '#0f172a';
+            const accentBlue = '#2563eb';
+            const successGreen = '#16a34a';
+            const warningAmber = '#d97706';
+            const purpleColor = '#7c3aed';
+            const dangerRed = '#dc2626';
+
+            // 1. Chart Evolução Temporal (Agrupamento Dinâmico por Mês/Ano)
+            const monthlyData = {};
+            filtered.forEach(r => {
+                const parsed = parseDateString(r.data);
+                const key = `${MONTH_NAMES[parsed.month - 1]}/${parsed.year}`;
+                if (!monthlyData[key]) {
+                    monthlyData[key] = { aprovados: 0, vivencias: 0, abertas: 0, order: parsed.year * 100 + parsed.month };
+                }
+                if (r.status === 'Aprovado') monthlyData[key].aprovados++;
+                else if (r.status === 'Vivência') monthlyData[key].vivencias++;
+                else monthlyData[key].abertas++;
+            });
+
+            const sortedMonthKeys = Object.keys(monthlyData).sort((a, b) => monthlyData[a].order - monthlyData[b].order);
+            const evolucaoLabels = sortedMonthKeys.length ? sortedMonthKeys : ["Jan/2026", "Fev/2026", "Mar/2026", "Abr/2026", "Mai/2026", "Jun/2026", "Jul/2026", "Ago/2026"];
+            const evolucaoAprovados = evolucaoLabels.map(k => monthlyData[k] ? monthlyData[k].aprovados : 0);
+            const evolucaoVivencias = evolucaoLabels.map(k => monthlyData[k] ? monthlyData[k].vivencias : 0);
+            const evolucaoAbertas = evolucaoLabels.map(k => monthlyData[k] ? monthlyData[k].abertas : 0);
+
+            if (chartEvolucaoMensalInstance) chartEvolucaoMensalInstance.destroy();
+            const ctxEvolucao = document.getElementById('chartEvolucaoMensal').getContext('2d');
+            chartEvolucaoMensalInstance = new Chart(ctxEvolucao, {
+                type: 'line',
+                data: {
+                    labels: evolucaoLabels,
+                    datasets: [
+                        {
+                            label: 'Contratações Efetivadas',
+                            data: evolucaoAprovados,
+                            borderColor: successGreen,
+                            backgroundColor: 'rgba(22, 163, 74, 0.12)',
+                            fill: true,
+                            tension: 0.35,
+                            borderWidth: 2.5,
+                            pointBackgroundColor: successGreen,
+                            pointRadius: 5
+                        },
+                        {
+                            label: 'Vivências em Andamento',
+                            data: evolucaoVivencias,
+                            borderColor: accentBlue,
+                            backgroundColor: 'rgba(37, 99, 235, 0.08)',
+                            borderDash: [5, 5],
+                            tension: 0.35,
+                            borderWidth: 2,
+                            pointBackgroundColor: accentBlue,
+                            pointRadius: 4
+                        },
+                        {
+                            label: 'Vagas em Aberto / Novas Demandas',
+                            data: evolucaoAbertas,
+                            borderColor: purpleColor,
+                            backgroundColor: 'rgba(124, 58, 237, 0.08)',
+                            borderDash: [2, 2],
+                            tension: 0.35,
+                            borderWidth: 2,
+                            pointBackgroundColor: purpleColor,
+                            pointRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { font: { size: 11, weight: '700' } } } },
+                    scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+                }
+            });
+
+            // 2. Chart Vagas vs Preenchidas por Cargo
+            const roleCountMap = {};
+            records.forEach(rec => {
+                const c = (rec.cargo || 'OUTROS').trim().toUpperCase();
+                roleCountMap[c] = (roleCountMap[c] || 0) + 1;
+            });
+            const roleLabels = Object.keys(roleCountMap);
+            const roleTotalVagas = roleLabels.map(r => roleCountMap[r]);
+            const rolePreenchidas = roleLabels.map(r => filtered.filter(rec => (rec.cargo || '').trim().toUpperCase() === r && rec.status === 'Aprovado').length);
+
+            if (chartVagasPorCargoInstance) chartVagasPorCargoInstance.destroy();
+            const ctxVagas = document.getElementById('chartVagasPorCargo').getContext('2d');
+            chartVagasPorCargoInstance = new Chart(ctxVagas, {
+                type: 'bar',
+                data: {
+                    labels: roleLabels,
+                    datasets: [
+                        {
+                            label: 'Vagas Totais da Unidade',
+                            data: roleTotalVagas,
+                            backgroundColor: '#cbd5e1',
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Vagas Já Preenchidas',
+                            data: rolePreenchidas,
+                            backgroundColor: primaryColor,
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { position: 'top', labels: { font: { size: 11, weight: '700' } } } },
+                    scales: { x: { beginAtZero: true, ticks: { stepSize: 1 } } }
+                }
+            });
+
+            // 3. Chart Horários / Turnos & Taxa de Assertividade
+            const shiftData = {
+                manha: { name: 'Manhã (7h-13h)', total: 0, aprovados: 0 },
+                tarde: { name: 'Tarde (13h-19h)', total: 0, aprovados: 0 },
+                inter: { name: 'Interm. (10h30/12h)', total: 0, aprovados: 0 },
+                integral: { name: 'Integral / 12h', total: 0, aprovados: 0 }
+            };
+
+            filtered.forEach(r => {
+                const h = (r.horario || '').toUpperCase();
+                let key = 'tarde';
+                if (h.includes('7:00') || h.includes('7H')) key = 'manha';
+                else if (h.includes('13:00') || h.includes('13H')) key = 'tarde';
+                else if (h.includes('10:30') || h.includes('11:00') || h.includes('12:00')) key = 'inter';
+                else if (h.includes('9:30') || h.includes('9:00') || h.includes('6:45') || h.includes('16:45') || h.includes('19:30')) key = 'integral';
+                
+                shiftData[key].total++;
+                if (r.status === 'Aprovado') shiftData[key].aprovados++;
+            });
+
+            const countManha = shiftData.manha.total;
+            const countTarde = shiftData.tarde.total;
+            const countInter = shiftData.inter.total;
+            const countIntegral = shiftData.integral.total;
+
+            if (chartHorariosInstance) chartHorariosInstance.destroy();
+            const ctxHorarios = document.getElementById('chartHorarios').getContext('2d');
+            chartHorariosInstance = new Chart(ctxHorarios, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Manhã (7h-13h)', 'Tarde (13h-19h)', 'Interm. (10h30/12h)', 'Integral / 12h'],
+                    datasets: [{
+                        data: [countManha, countTarde, countInter, countIntegral],
+                        backgroundColor: [accentBlue, successGreen, warningAmber, primaryColor]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10, weight: '600' } } } }
+                }
+            });
+
+            // Render Assertividade por Turno Mini-Cards
+            const gridEl = document.getElementById('shift-assertiveness-grid');
+            if (gridEl) {
+                let html = '';
+                for (const [k, d] of Object.entries(shiftData)) {
+                    const rate = d.total > 0 ? Math.round((d.aprovados / d.total) * 100) : 100;
+                    const badgeBg = rate >= 80 ? '#f0fdf4' : (rate >= 50 ? '#fefce8' : '#fef2f2');
+                    const badgeColor = rate >= 80 ? '#166534' : (rate >= 50 ? '#854d0e' : '#991b1b');
+                    html += `
+                        <div class="shift-badge-item">
+                            <span style="font-weight: 600; color: #334155;">${d.name}</span>
+                            <span class="shift-badge-rate" style="background: ${badgeBg}; color: ${badgeColor};" title="${d.aprovados} de ${d.total} vagas preenchidas">${rate}%</span>
+                        </div>
+                    `;
+                }
+                gridEl.innerHTML = html;
+            }
+
+            // 4. Chart Conversão por Cargo
+            const convLabels = vivenciasStats.map(s => s.cargo);
+            const convRates = vivenciasStats.map(s => s.conversao);
+
+            if (chartConversaoCargosInstance) chartConversaoCargosInstance.destroy();
+            const ctxConv = document.getElementById('chartConversaoCargos').getContext('2d');
+            chartConversaoCargosInstance = new Chart(ctxConv, {
+                type: 'bar',
+                data: {
+                    labels: convLabels,
+                    datasets: [{
+                        label: 'Taxa de Conversão (%)',
+                        data: convRates,
+                        backgroundColor: purpleColor,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }
+                }
+            });
+
+            // 5. Chart Perdas Funil (Dinâmico a partir da Planilha)
+            const rep = funnelData.reprovados || 6;
+            const naoComp = funnelData.naoCompareceu || 4;
+            const des = funnelData.desistentes || 1;
+            const desInt = funnelData.desistiuIntegracao || 1;
+            const repInt = funnelData.reprovadoIntegracao || 0;
+
+            const lossLabels = [
+                `Reprovados (${rep})`,
+                `Não Compareceu (${naoComp})`,
+                `Desistentes (${des})`,
+                `Desistiu Integração (${desInt})`
+            ];
+            const lossData = [rep, naoComp, des, desInt];
+            const lossColors = [dangerRed, warningAmber, '#94a3b8', '#64748b'];
+
+            if (repInt > 0) {
+                lossLabels.push(`Reprovado Integração (${repInt})`);
+                lossData.push(repInt);
+                lossColors.push('#b91c1c');
+            }
+
+            if (chartPerdasFunilInstance) chartPerdasFunilInstance.destroy();
+            const ctxPerdas = document.getElementById('chartPerdasFunil').getContext('2d');
+            chartPerdasFunilInstance = new Chart(ctxPerdas, {
+                type: 'polarArea',
+                data: {
+                    labels: lossLabels,
+                    datasets: [{
+                        data: lossData,
+                        backgroundColor: lossColors
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10, weight: '600' } } } }
+                }
+            });
+
+            // 6. Chart Comparativo Anual
+            const yearCounts = {};
+            records.forEach(r => {
+                const parsed = parseDateString(r.data);
+                yearCounts[parsed.year] = (yearCounts[parsed.year] || 0) + 1;
+            });
+            const compYears = Object.keys(yearCounts).sort();
+
+            if (chartComparativoAnualInstance) chartComparativoAnualInstance.destroy();
+            const ctxComp = document.getElementById('chartComparativoAnual').getContext('2d');
+            chartComparativoAnualInstance = new Chart(ctxComp, {
+                type: 'bar',
+                data: {
+                    labels: compYears.map(y => `Ano ${y}`),
+                    datasets: [{
+                        label: 'Total de Vagas / Contratações',
+                        data: compYears.map(y => yearCounts[y]),
+                        backgroundColor: accentBlue,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+
+            // 7. Chart Sazonalidade
+            const monthHist = new Array(12).fill(0);
+            records.forEach(r => {
+                const parsed = parseDateString(r.data);
+                monthHist[parsed.month - 1]++;
+            });
+
+            if (chartSazonalidadeInstance) chartSazonalidadeInstance.destroy();
+            const ctxSaz = document.getElementById('chartSazonalidade').getContext('2d');
+            chartSazonalidadeInstance = new Chart(ctxSaz, {
+                type: 'bar',
+                data: {
+                    labels: MONTH_NAMES,
+                    datasets: [{
+                        label: 'Volume de Movimentações por Mês',
+                        data: monthHist,
+                        backgroundColor: primaryColor,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+
+            // 8. Chart Ratio Esforço
+            const ratioLabels = vivenciasStats.map(s => s.cargo);
+            const ratioValues = vivenciasStats.map(s => s.ratio);
+
+            if (chartRatioEsforcoInstance) chartRatioEsforcoInstance.destroy();
+            const ctxRatio = document.getElementById('chartRatioEsforco').getContext('2d');
+            chartRatioEsforcoInstance = new Chart(ctxRatio, {
+                type: 'bar',
+                data: {
+                    labels: ratioLabels,
+                    datasets: [{
+                        label: 'Vivências Necessárias por Vaga (Ratio)',
+                        data: ratioValues,
+                        backgroundColor: warningAmber,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, max: 3 } }
+                }
+            });
+        }
+
+        // ==================== RENDER TABLE RECORDS ====================
+        function renderTableRecords() {
+            const filtered = getFilteredRecords();
+            const searchVal = document.getElementById('search-table-input').value.toLowerCase();
+            const tbody = document.getElementById('table-registros-body');
+            tbody.innerHTML = '';
+
+            const searched = filtered.filter(r => {
+                if (!searchVal) return true;
+                return (
+                    (r.data && r.data.toLowerCase().includes(searchVal)) ||
+                    (r.cargo && r.cargo.toLowerCase().includes(searchVal)) ||
+                    (r.horario && r.horario.toLowerCase().includes(searchVal)) ||
+                    (r.status && r.status.toLowerCase().includes(searchVal))
+                );
+            });
+
+            if (searched.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #64748b; padding: 24px;">Nenhum registro encontrado com os filtros atuais.</td></tr>`;
+                return;
+            }
+
+            searched.forEach((r, idx) => {
+                const tr = document.createElement('tr');
+                let badgeClass = 'badge-neutral';
+                if (r.status === 'Aprovado') badgeClass = 'badge-approved';
+                else if (r.status === 'Vivência') badgeClass = 'badge-vivencia';
+                else if (r.status === 'Reprovado') badgeClass = 'badge-rejected';
+                else if (r.status === 'Desistente' || r.status === 'Não Compareceu' || r.status === 'Desistiu Integração') badgeClass = 'badge-warning';
+                else if (r.status === 'Em Aberto') badgeClass = 'badge-open';
+
+                tr.innerHTML = `
+                    <td style="font-weight: 700; color: #64748b;">${idx + 1}</td>
+                    <td style="font-weight: 700;">${r.data}</td>
+                    <td style="font-weight: 700; color: #0f172a;">${r.cargo}</td>
+                    <td><span style="font-family: monospace; font-size: 11.5px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">${r.horario}</span></td>
+                    <td style="color: #64748b;">Lote ${r.mes}</td>
+                    <td><span class="badge ${badgeClass}">${r.status}</span></td>
+                    <td style="text-align: right;">
+                        <select onchange="changeRecordStatus(${r.id}, this.value)" style="padding: 3px 6px; font-size: 11.5px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff;">
+                            <option value="Aprovado" ${r.status === 'Aprovado' ? 'selected' : ''}>Aprovado</option>
+                            <option value="Vivência" ${r.status === 'Vivência' ? 'selected' : ''}>Vivência</option>
+                            <option value="Em Aberto" ${r.status === 'Em Aberto' ? 'selected' : ''}>Em Aberto</option>
+                            <option value="Reprovado" ${r.status === 'Reprovado' ? 'selected' : ''}>Reprovado</option>
+                            <option value="Desistente" ${r.status === 'Desistente' ? 'selected' : ''}>Desistente</option>
+                            <option value="Não Compareceu" ${r.status === 'Não Compareceu' ? 'selected' : ''}>Não Compareceu</option>
+                            <option value="Desistiu Integração" ${r.status === 'Desistiu Integração' ? 'selected' : ''}>Desistiu Integração</option>
+                        </select>
+                        <button onclick="deleteRecord(${r.id})" style="border: none; background: transparent; color: #dc2626; cursor: pointer; margin-left: 6px; font-weight: 700;" title="Excluir">✕</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ==================== RENDER VIVENCIAS TABLE ====================
+        function renderVivenciasTable() {
+            const tbody = document.getElementById('table-vivencias-body');
+            tbody.innerHTML = '';
+
+            vivenciasStats.forEach(s => {
+                const tr = document.createElement('tr');
+                let diag = '<span style="color: #16a34a; font-weight: 700;">Alta Assertividade</span>';
+                if (s.conversao < 60) diag = '<span style="color: #ca8a04; font-weight: 700;">Atenção (Esforço 2x)</span>';
+
+                tr.innerHTML = `
+                    <td style="font-weight: 800; color: #0f172a;">${s.cargo}</td>
+                    <td style="text-align: center; font-weight: 700;">${s.vagas}</td>
+                    <td style="text-align: center; font-weight: 700; color: #2563eb;">${s.vivencias}</td>
+                    <td style="text-align: center; font-weight: 800; color: #16a34a;">${s.aprovados}</td>
+                    <td style="text-align: center;"><span class="badge ${s.conversao >= 65 ? 'badge-approved' : 'badge-warning'}">${s.conversao}%</span></td>
+                    <td style="text-align: center; font-weight: 800;">${s.ratio.toFixed(2)}</td>
+                    <td>${diag}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ==================== RENDER EXERCICIOS TABLE ====================
+        function renderExerciciosTable() {
+            const tbody = document.getElementById('table-exercicios-body');
+            tbody.innerHTML = '';
+
+            const yearMap = {};
+            records.forEach(r => {
+                const parsed = parseDateString(r.data);
+                if (!yearMap[parsed.year]) {
+                    yearMap[parsed.year] = { total: 0, aprovados: 0, vivencias: 0, perdas: 0, months: {} };
+                }
+                yearMap[parsed.year].total++;
+                if (r.status === 'Aprovado') yearMap[parsed.year].aprovados++;
+                else if (r.status === 'Vivência') yearMap[parsed.year].vivencias++;
+                else yearMap[parsed.year].perdas++;
+
+                yearMap[parsed.year].months[parsed.month] = (yearMap[parsed.year].months[parsed.month] || 0) + 1;
+            });
+
+            Object.keys(yearMap).sort().forEach(year => {
+                const item = yearMap[year];
+                let topM = 1, topC = 0;
+                for (const [m, c] of Object.entries(item.months)) {
+                    if (c > topC) { topC = c; topM = parseInt(m, 10); }
+                }
+
+                const eff = Math.round((item.aprovados / Math.max(1, item.total)) * 100);
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight: 800; color: #0f172a;">Exercício ${year}</td>
+                    <td style="font-weight: 700;">${item.total} vagas lançadas</td>
+                    <td style="font-weight: 800; color: #16a34a;">${item.aprovados} contratados</td>
+                    <td style="font-weight: 700; color: #2563eb;">${item.vivencias} vivências</td>
+                    <td style="color: #dc2626;">${item.perdas} descartes</td>
+                    <td><span class="badge ${eff >= 70 ? 'badge-approved' : 'badge-warning'}">${eff}% Eficiência</span></td>
+                    <td style="font-weight: 600;">${MONTH_NAMES[topM - 1]} (${topC} movimentações)</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ==================== WHATSAPP REPORT GENERATOR (DINÂMICO) ====================
+        function generateWhatsAppReport(filtered) {
+            const aprovados = filtered.filter(r => r.status === 'Aprovado').length;
+            const vivencias = filtered.filter(r => r.status === 'Vivência').length;
+            const vagasAbertas = filtered.filter(r => r.status === 'Em Aberto' || (r.status !== 'Aprovado' && r.status !== 'Vivência')).length;
+            const totalVagas = Math.max(funnelData.totalVagas || 0, records.length);
+            const dataHoje = new Date().toLocaleDateString('pt-BR');
+
+            const totalVivencias = funnelData.vivencias || 30;
+            const convPct = ((aprovados / Math.max(1, totalVivencias)) * 100).toFixed(1);
+            const effortRatio = (totalVivencias / Math.max(1, totalVagas)).toFixed(2);
+            const metaPct = Math.round((aprovados / Math.max(1, totalVagas)) * 100);
+
+            // Group by cargo
+            const cargoStats = {};
+            records.forEach(r => {
+                const c = (r.cargo || 'OUTROS').trim().toUpperCase();
+                if (!cargoStats[c]) {
+                    cargoStats[c] = { total: 0, aprovados: 0, vivencias: 0, emAberto: 0 };
+                }
+                cargoStats[c].total++;
+                if (r.status === 'Aprovado') cargoStats[c].aprovados++;
+                else if (r.status === 'Vivência') cargoStats[c].vivencias++;
+                else cargoStats[c].emAberto++;
+            });
+
+            const sortedCargos = Object.entries(cargoStats).sort((a, b) => b[1].total - a[1].total);
+            let cargoLines = '';
+            sortedCargos.forEach(([cargo, stats], index) => {
+                let statusDetail = '';
+                if (stats.aprovados === stats.total) {
+                    statusDetail = '100% preenchido';
+                } else {
+                    const parts = [];
+                    if (stats.aprovados > 0) parts.push(`${stats.aprovados} aprovado(s)`);
+                    if (stats.vivencias > 0) parts.push(`${stats.vivencias} em vivência`);
+                    if (stats.emAberto > 0) parts.push(`${stats.emAberto} em aberto`);
+                    statusDetail = parts.join(', ') || 'em andamento';
+                }
+                cargoLines += `${index + 1}. *${cargo}:* ${stats.total} vaga(s) (${statusDetail})\n`;
+            });
+
+            const text = `*📊 RELATÓRIO EXECUTIVO DE RECRUTAMENTO & SELEÇÃO — REDE FADELITO*
+*Unidade:* Portal do Morumbi
+*Data de Emissão:* ${dataHoje}
+*Status de Sincronização:* 🟢 Planilha Conectada em Tempo Real
+
+*🎯 RESUMO CONSOLIDADO:*
+• *Quadro de Vagas:* ${totalVagas} Vagas Totais
+• *Contratações Concluídas:* ${aprovados} aprovados (${metaPct}% da meta)
+• *Vivências em Andamento:* ${vivencias} candidata(s)
+• *Vagas em Aberto:* ${vagasAbertas} vaga(s) em captação
+• *Taxa de Conversão Global:* ${convPct}% (Aprovados / Vivências)
+• *Esforço Médio:* ${effortRatio} vivências realizadas por contratação
+
+*🏆 DEMANDAS & STATUS POR CARGO:*
+${cargoLines}
+*📌 PARECER OPERACIONAL:*
+Unidade Portal do Morumbi opera com ${metaPct}% do quadro contratado${vivencias > 0 ? ` e ${vivencias} vaga(s) em validação prática de vivência` : ''}${vagasAbertas > 0 ? `, restando ${vagasAbertas} vaga(s) em aberto para fechamento` : ''}. Processo ágil e em consonância com as diretrizes da Diretoria de Operações.
+
+_Painel BI RH & Recrutamento — Rede Fadelito_`;
+
+            document.getElementById('whatsapp-text').value = text;
+        }
+
+        function copyWhatsAppReport() {
+            const textarea = document.getElementById('whatsapp-text');
+            textarea.select();
+            navigator.clipboard.writeText(textarea.value);
+            showToast('✅ Relatório copiado para a área de transferência!');
+        }
+
+        // ==================== LIVE GOOGLE SHEETS SYNC ====================
+        let currentSheetUrl = localStorage.getItem('fadelito_sheet_url') || 'https://docs.google.com/spreadsheets/d/1_ZG94aNv1v4-fmewiCwwQl9dpeaYf-znFGsneqpHFx4/export?format=csv&gid=0';
+        let lastSyncHash = '';
+
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current.trim());
+            return result.map(c => c.replace(/^"|"$/g, '').trim());
+        }
+
+        async function fetchLiveGoogleSheet(silent = false) {
+            const btn = document.getElementById('btn-sync-live');
+            const badge = document.getElementById('sync-status-badge');
+            const statusText = document.getElementById('sync-status-text');
+
+            if (!silent && btn) {
+                btn.textContent = '⏳ Sincronizando...';
+                btn.disabled = true;
+            }
+
+            if (statusText && badge) {
+                statusText.textContent = 'Sincronizando com Google Sheets...';
+                badge.style.backgroundColor = '#fefce8';
+                badge.style.color = '#854d0e';
+            }
+
+            try {
+                let targetUrl = currentSheetUrl;
+                if (targetUrl.includes('/edit')) {
+                    const match = targetUrl.match(/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+                    const gidMatch = targetUrl.match(/gid=([0-9]+)/);
+                    if (match) {
+                        const docId = match[1];
+                        const gid = gidMatch ? gidMatch[1] : '0';
+                        targetUrl = `https://docs.google.com/spreadsheets/d/${docId}/export?format=csv&gid=${gid}`;
+                    }
+                }
+
+                const fetchUrl = targetUrl + (targetUrl.includes('?') ? '&' : '?') + '_t=' + Date.now();
+                
+                let response = await fetch(fetchUrl);
+                if (!response.ok && targetUrl.includes('/export?format=csv')) {
+                    const fallbackGviz = targetUrl.replace('/export?format=csv', '/gviz/tq?tqx=out:csv');
+                    response = await fetch(fallbackGviz + '&_t=' + Date.now());
+                } else if (!response.ok && targetUrl.includes('/gviz/tq')) {
+                    const fallbackExport = targetUrl.replace('/gviz/tq?tqx=out:csv', '/export?format=csv');
+                    response = await fetch(fallbackExport + '&_t=' + Date.now());
+                }
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const csvText = await response.text();
+                
+                const lines = csvText.split('\n');
+                const parsedRecords = [];
+                let rowId = 1;
+
+                // 1. Scan for Top Funnel KPIs (Rows 1-10)
+                for (let i = 0; i < Math.min(10, lines.length); i++) {
+                    const rawLine = lines[i].trim();
+                    if (!rawLine) continue;
+                    const cols = parseCSVLine(rawLine);
+                    
+                    if (cols.length >= 8 && (!isNaN(parseInt(cols[1], 10)) || !isNaN(parseInt(cols[7], 10)))) {
+                        if (cols[0] && !isNaN(parseInt(cols[0], 10))) funnelData.inscritos = parseInt(cols[0], 10);
+                        if (cols[1] && !isNaN(parseInt(cols[1], 10))) funnelData.aprovados = parseInt(cols[1], 10);
+                        if (cols[2] && !isNaN(parseInt(cols[2], 10))) funnelData.reprovados = parseInt(cols[2], 10);
+                        if (cols[3] && !isNaN(parseInt(cols[3], 10))) funnelData.desistentes = parseInt(cols[3], 10);
+                        if (cols[4] && !isNaN(parseInt(cols[4], 10))) funnelData.naoCompareceu = parseInt(cols[4], 10);
+                        if (cols[5] && !isNaN(parseInt(cols[5], 10))) funnelData.desistiuIntegracao = parseInt(cols[5], 10);
+                        if (cols[6] && !isNaN(parseInt(cols[6], 10))) funnelData.reprovadoIntegracao = parseInt(cols[6], 10);
+                        if (cols[7] && !isNaN(parseInt(cols[7], 10))) funnelData.totalVagas = parseInt(cols[7], 10);
+                    }
+                }
+
+                // 2. Scan for Individual Hiring Records
+                for (let i = 0; i < lines.length; i++) {
+                    const rawLine = lines[i].trim();
+                    if (!rawLine) continue;
+                    
+                    const cols = parseCSVLine(rawLine);
+                    const joinedLine = cols.join(' ').toUpperCase();
+
+                    // Skip headers
+                    if (joinedLine.includes('DATA DE ABERTURA') || joinedLine.includes('FUNÇÃO / CARGO') || joinedLine.includes('ENVIADOS') || joinedLine.includes('MAIOR DEMANDA')) {
+                        continue;
+                    }
+
+                    // Look for date pattern in any column
+                    const dateMatch = cols.find(c => /^\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}$/.test(c.trim()));
+
+                    // Detect data row if date is found OR if role column has content
+                    if (dateMatch || (cols[1] && cols[1].length > 2 && !cols[1].toUpperCase().includes('STATUS'))) {
+                        let dateVal = dateMatch || '';
+                        let dateIdx = dateMatch ? cols.indexOf(dateMatch) : 0;
+                        
+                        // Default date if empty
+                        if (!dateVal) {
+                            const now = new Date();
+                            dateVal = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+                        } else {
+                            dateVal = dateVal.replace(/[\-\.]/g, '/');
+                            const parts = dateVal.split('/');
+                            if (parts[2] && parts[2].length === 2) parts[2] = '20' + parts[2];
+                            dateVal = `${parts[0].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[2]}`;
+                        }
+
+                        // Role / Cargo
+                        let cargoVal = (cols[dateIdx + 1] && cols[dateIdx + 1].trim()) ? cols[dateIdx + 1].trim().toUpperCase() : 'OUTROS';
+                        if (cargoVal.includes('FUNÇÃO') || cargoVal.includes('CARGO')) continue;
+
+                        // Shift / Horário
+                        let horarioVal = cols.find(c => c !== dateVal && c !== cargoVal && (c.includes(':') || c.toUpperCase().includes('ÀS') || c.toUpperCase().includes('AS'))) || (cols[dateIdx + 2] ? cols[dateIdx + 2].trim() : 'Horário a Definir');
+                        if (!horarioVal || horarioVal === '') horarioVal = 'Horário a Definir';
+
+                        // Status
+                        let statusVal = cols.find(c => /Aprovad|Vivênc|Reprovad|Desistent|Não Compareceu|Desistiu|Aberto|Pendente|Processo/i.test(c)) || (cols[dateIdx + 4] && cols[dateIdx + 4].trim() ? cols[dateIdx + 4].trim() : '');
+                        if (!statusVal || statusVal === '') {
+                            statusVal = 'Em Aberto';
+                        } else {
+                            if (/Aprovad/i.test(statusVal)) statusVal = 'Aprovado';
+                            else if (/Vivênc/i.test(statusVal)) statusVal = 'Vivência';
+                            else if (/Reprovad/i.test(statusVal)) statusVal = 'Reprovado';
+                            else if (/Desistent/i.test(statusVal)) statusVal = 'Desistente';
+                            else if (/Não Compareceu/i.test(statusVal)) statusVal = 'Não Compareceu';
+                            else if (/Desistiu/i.test(statusVal)) statusVal = 'Desistiu Integração';
+                            else statusVal = 'Em Aberto';
+                        }
+
+                        // Month
+                        let monthVal = 1;
+                        if (cols[dateIdx + 3] && !isNaN(parseInt(cols[dateIdx + 3], 10)) && parseInt(cols[dateIdx + 3], 10) >= 1 && parseInt(cols[dateIdx + 3], 10) <= 12) {
+                            monthVal = parseInt(cols[dateIdx + 3], 10);
+                        } else {
+                            const parts = dateVal.split('/');
+                            monthVal = parseInt(parts[1], 10) || 1;
+                        }
+
+                        parsedRecords.push({
+                            id: rowId++,
+                            data: dateVal,
+                            cargo: cargoVal,
+                            horario: horarioVal,
+                            mes: monthVal,
+                            status: statusVal
+                        });
+                    }
+                }
+
+                // Dynamic Total Vagas
+                funnelData.totalVagas = Math.max(funnelData.totalVagas || 0, parsedRecords.length);
+
+                const newHash = JSON.stringify({ parsedRecords, funnelData });
+                const hasChanged = lastSyncHash && lastSyncHash !== newHash;
+                lastSyncHash = newHash;
+
+                if (parsedRecords.length > 0) {
+                    records = parsedRecords;
+                    localStorage.setItem('fadelito_bi_records', JSON.stringify(records));
+                }
+
+                if (badge && statusText) {
+                    badge.style.backgroundColor = '#f0fdf4';
+                    badge.style.color = '#166534';
+                    statusText.textContent = `🟢 Conectado ao Google Sheets (Tempo Real • ${records.length} vagas)`;
+                }
+                
+                recalculateVivenciasStats();
+                populateFilterSelectors();
+                updateAllViews();
+
+                if (!silent) {
+                    showToast(`✅ ${records.length} vagas e métricas sincronizadas da planilha!`);
+                } else if (hasChanged) {
+                    showToast(`🔄 Planilha atualizada! Gráficos recalculados (${records.length} vagas).`);
+                }
+            } catch (err) {
+                console.warn('Google Sheets live fetch error / fallback to cache:', err);
+                if (badge && statusText) {
+                    badge.style.backgroundColor = '#f8fafc';
+                    badge.style.color = '#475569';
+                    statusText.textContent = 'Modo Local / Cache Ativo';
+                }
+                if (!silent) showToast('Usando base local cacheada.');
+            } finally {
+                if (!silent && btn) {
+                    btn.textContent = '🔄 Sincronizar Agora';
+                    btn.disabled = false;
+                }
+            }
+        }
+
+        // Real-time background sync polling every 8 seconds
+        setInterval(() => {
+            fetchLiveGoogleSheet(true);
+        }, 8000);
+
+        // ==================== MODAL & RECORD ACTIONS ====================
+        function openAddModal() {
+            document.getElementById('modal-add-record').classList.add('active');
+        }
+
+        function closeAddModal() {
+            document.getElementById('modal-add-record').classList.remove('active');
+        }
+
+        async function saveNewRecord() {
+            const rawDate = document.getElementById('new-data').value;
+            const cargo = document.getElementById('new-cargo').value;
+            const horario = document.getElementById('new-horario').value;
+            const status = document.getElementById('new-status').value;
+
+            if (!rawDate) {
+                alert('Por favor, selecione uma data.');
+                return;
+            }
+
+            const parts = rawDate.split('-');
+            const formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
+            const monthNum = parseInt(parts[1], 10);
+
+            const newRec = {
+                id: Date.now(),
+                data: formattedDate,
+                cargo: cargo,
+                horario: horario,
+                mes: monthNum,
+                status: status
+            };
+
+            records.push(newRec);
+            localStorage.setItem('fadelito_bi_records', JSON.stringify(records));
+
+            // Optional Webhook sync
+            if (webhookUrl) {
+                try {
+                    await fetch(webhookUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(newRec)
+                    });
+                } catch (e) {
+                    console.warn('Webhook sync failed:', e);
+                }
+            }
+
+            closeAddModal();
+            recalculateVivenciasStats();
+            populateFilterSelectors();
+            updateAllViews();
+            showToast('✅ Novo registro adicionado com sucesso!');
+        }
+
+        function changeRecordStatus(id, newStatus) {
+            const rec = records.find(r => r.id === id);
+            if (rec) {
+                rec.status = newStatus;
+                localStorage.setItem('fadelito_bi_records', JSON.stringify(records));
+                updateAllViews();
+                showToast(`Status atualizado para "${newStatus}"!`);
+            }
+        }
+
+        function deleteRecord(id) {
+            if (confirm('Deseja realmente remover este registro?')) {
+                records = records.filter(r => r.id !== id);
+                localStorage.setItem('fadelito_bi_records', JSON.stringify(records));
+                recalculateVivenciasStats();
+                populateFilterSelectors();
+                updateAllViews();
+                showToast('Registro removido.');
+            }
+        }
+
+        function resetToInitialData() {
+            if (confirm('Deseja restaurar a base original da planilha?')) {
+                records = [...INITIAL_RECORDS];
+                localStorage.setItem('fadelito_bi_records', JSON.stringify(records));
+                recalculateVivenciasStats();
+                populateFilterSelectors();
+                updateAllViews();
+                showToast('Base original restaurada.');
+            }
+        }
+
+        function updateSheetUrl() {
+            let inputUrl = document.getElementById('input-sheet-url').value.trim();
+            if (!inputUrl) return;
+
+            // Normalize google sheets edit url to gviz csv url if needed
+            if (inputUrl.includes('/edit')) {
+                const match = inputUrl.match(/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+                const gidMatch = inputUrl.match(/gid=([0-9]+)/);
+                if (match) {
+                    const docId = match[1];
+                    const gid = gidMatch ? gidMatch[1] : '0';
+                    inputUrl = `https://docs.google.com/spreadsheets/d/${docId}/gviz/tq?tqx=out:csv&gid=${gid}`;
+                }
+            }
+
+            currentSheetUrl = inputUrl;
+            localStorage.setItem('fadelito_sheet_url', inputUrl);
+            showToast('Conexão configurada! Testando leitura...');
+            fetchLiveGoogleSheet();
+        }
+
+        function saveWebhookUrl() {
+            const url = document.getElementById('input-webhook-url').value.trim();
+            webhookUrl = url;
+            localStorage.setItem('fadelito_webhook_url', url);
+            showToast('Webhook salvo com sucesso!');
+        }
+
+        // ==================== CSV EXPORT ====================
+        function exportTableToCSV() {
+            const filtered = getFilteredRecords();
+            let csv = "ID,Data,Cargo,Horario,Mes,Status\n";
+            filtered.forEach(r => {
+                csv += `"${r.id}","${r.data}","${r.cargo}","${r.horario}","${r.mes}","${r.status}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.setAttribute("download", `Fadelito_BI_RH_Registros_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function exportVivenciasCSV() {
+            let csv = "Cargo,Vagas,Vivencias,Aprovados,Conversao,Ratio\n";
+            vivenciasStats.forEach(s => {
+                csv += `"${s.cargo}","${s.vagas}","${s.vivencias}","${s.aprovados}","${s.conversao}%","${s.ratio}"\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.setAttribute("download", `Fadelito_Vivencias_Metricas_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // ==================== TOAST HELPER ====================
+        function showToast(msg) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
