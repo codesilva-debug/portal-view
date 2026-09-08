@@ -52,12 +52,19 @@
         .col-left { display: table-cell; width: 50%; vertical-align: top; padding-right: 5px; }
         .col-right { display: table-cell; width: 50%; vertical-align: top; padding-left: 5px; }
     </style>
+    <!-- Base Multi-Unidades Oficial -->
+    <script src="data_unidades.js"></script>
+    <!-- Módulo de Autenticação e Permissões (RBAC) -->
+    <script src="auth_service.js"></script>
 </head>
 <body>
-    <div class="doc-header">
-        <div class="header-left">
-            <div class="institution-title">Rede Fadelito de Educação Infantil</div>
-            <div class="doc-subtitle">Painel Executivo de BI RH & Recrutamento • Unidade Portal do Morumbi (Conexão Google Sheets)</div>
+    <div class="doc-header" style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="Fadelito.png" alt="Rede Fadelito" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #2563eb; flex-shrink: 0;">
+            <div class="header-left">
+                <div class="institution-title">Rede Fadelito de Educação Infantil</div>
+                <div class="doc-subtitle" id="a4-subtitle">Painel Executivo de BI RH & Recrutamento • Unidade Portal do Morumbi (Conexão Google Sheets)</div>
+            </div>
         </div>
         <div class="header-right"><div class="status-box">Base Atualizada 2026</div></div>
     </div>
@@ -66,39 +73,39 @@
     <div class="kpi-row">
         <div class="kpi-col">
             <div class="kpi-title">Quadro de Vagas</div>
-            <div class="kpi-value">21</div>
-            <div class="kpi-sub">Meta da Unidade</div>
+            <div class="kpi-value" id="a4-kpi-vagas">21</div>
+            <div class="kpi-sub">Quadro da Unidade</div>
         </div>
         <div class="kpi-col">
             <div class="kpi-title">Aprovados / Contratados</div>
-            <div class="kpi-value" style="color: #16a34a;">19</div>
-            <div class="kpi-sub">90.5% Preenchido</div>
+            <div class="kpi-value" id="a4-kpi-aprovados" style="color: #16a34a;">19</div>
+            <div class="kpi-sub" id="a4-kpi-aprovados-sub">90.5% Preenchido</div>
         </div>
         <div class="kpi-col">
             <div class="kpi-title">Vivências em Andamento</div>
-            <div class="kpi-value" style="color: #2563eb;">1</div>
+            <div class="kpi-value" id="a4-kpi-vivencias" style="color: #2563eb;">1</div>
             <div class="kpi-sub">Fase de Validação</div>
         </div>
         <div class="kpi-col">
             <div class="kpi-title">Taxa Média de Conversão</div>
-            <div class="kpi-value" style="color: #7c3aed;">61.3%</div>
+            <div class="kpi-value" id="a4-kpi-conversao" style="color: #7c3aed;">61.3%</div>
             <div class="kpi-sub">Aprovados / Vivências</div>
         </div>
         <div class="kpi-col">
             <div class="kpi-title">Esforço por Vaga</div>
-            <div class="kpi-value" style="color: #d97706;">1.48</div>
+            <div class="kpi-value" id="a4-kpi-esforco" style="color: #d97706;">1.48</div>
             <div class="kpi-sub">Vivências / 1 Vaga</div>
         </div>
         <div class="kpi-col">
             <div class="kpi-title">Maior Demanda</div>
-            <div class="kpi-value" style="font-size: 8.5pt;">Inspetor</div>
-            <div class="kpi-sub">5 Vagas (24%)</div>
+            <div class="kpi-value" id="a4-kpi-demanda" style="font-size: 8.5pt;">Inspetor</div>
+            <div class="kpi-sub" id="a4-kpi-demanda-sub">5 Vagas (24%)</div>
         </div>
     </div>
 
-    <div class="executive-box">
+    <div class="executive-box" id="a4-diagnostico">
         <strong>DIAGNÓSTICO EXECUTIVO DE RECRUTAMENTO & SELEÇÃO (DIRETORIA DE OPERAÇÕES):</strong><br>
-        O processo seletivo da <strong>Unidade Portal do Morumbi</strong> apresenta excelente assertividade operacional, com <strong>19 das 21 vagas (90.5%)</strong> devidamente preenchidas, <strong>1 vivência em andamento</strong> para Inspetor de Alunos e <strong>1 vaga em aberto</strong>. A taxa de conversão média de <strong>61.3%</strong> e o índice de <strong>1.48 vivências por vaga</strong> demonstram alinhamento com os padrões de excelência pedagógica e operacional da Rede Fadelito.
+        <span id="a4-diag-content">O processo seletivo da <strong>Unidade Portal do Morumbi</strong> apresenta excelente assertividade operacional, com <strong>19 das 21 vagas (90.5%)</strong> devidamente preenchidas, <strong>1 vivência em andamento</strong> para Inspetor de Alunos e <strong>1 vaga em aberto</strong>. A taxa de conversão média de <strong>61.3%</strong> e o índice de <strong>1.48 vivências por vaga</strong> demonstram alinhamento com os padrões de excelência pedagógica e operacional da Rede Fadelito.</span>
     </div>
 
     <div class="two-cols">
@@ -116,7 +123,7 @@
                         <th class="text-center">Esforço (Ratio)</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="a4-matriz-tbody">
                     <tr>
                         <td class="font-bold">INSPETOR DE ALUNOS</td>
                         <td class="text-center">5</td>
@@ -192,7 +199,7 @@
                 </tbody>
             </table>
 
-            <div class="section-title" style="margin-top: 4px;">2. Funil de Seleção & Perdas (Portal do Morumbi)</div>
+            <div class="section-title" id="a4-funil-title" style="margin-top: 4px;">2. Funil de Seleção & Perdas (Portal do Morumbi)</div>
             <table>
                 <tr>
                     <th>Inscritos / Triados</th>
@@ -201,6 +208,7 @@
                     <th>Reprovados</th>
                     <th>Desistentes / Faltas</th>
                 </tr>
+                <tbody id="a4-funil-tbody">
                 <tr>
                     <td class="text-center font-bold">31</td>
                     <td class="text-center font-bold">30 (96.8%)</td>
@@ -208,6 +216,7 @@
                     <td class="text-center font-bold" style="color: #991b1b;">6 (19.4%)</td>
                     <td class="text-center font-bold" style="color: #854d0e;">6 (19.4%)</td>
                 </tr>
+    </tbody>
             </table>
         </div>
 
@@ -225,7 +234,7 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="a4-cronograma-tbody">
                     <tr><td>1</td><td>14/01/2026</td><td>ESTAGIÁRIA MAT I</td><td>13:00 ÀS 19:00</td><td>L1</td><td><span class="tag tag-high">Aprovado</span></td></tr>
                     <tr><td>2</td><td>16/01/2026</td><td>ESTAGIÁRIA JARD</td><td>12:00 ÀS 18:00</td><td>L1</td><td><span class="tag tag-high">Aprovado</span></td></tr>
                     <tr><td>3</td><td>16/01/2026</td><td>ESTAGIÁRIA BERÇ</td><td>10:30 ÀS 17:30</td><td>L1</td><td><span class="tag tag-high">Aprovado</span></td></tr>
@@ -251,5 +260,206 @@
             </table>
         </div>
     </div>
+
+    <!-- SCRIPT DINÂMICO MULTI-UNIDADES A4 COM CONTROLE DE ACESSO (RBAC) -->
+    <script>
+    (function() {
+        // 1. Guard de Autenticação Obrigatória
+        if (window.AuthService && !window.AuthService.hasActiveSession()) {
+            window.location.href = 'index.html';
+            return;
+        }
+
+        if (!window.ALL_UNITS_DATA) return;
+        const params = new URLSearchParams(window.location.search);
+        let requestedUnit = params.get('unidade') || localStorage.getItem('fadelito_active_unit') || 'Portal do Morumbi';
+
+        // 2. Guard de Permissão por Unidade (RBAC)
+        if (window.AuthService && window.AuthService.isUnit()) {
+            const allowed = window.AuthService.getAllowedUnit();
+            if (allowed && requestedUnit.toLowerCase() !== allowed.toLowerCase()) {
+                console.warn(`[RBAC A4 Guard] Tentativa de emissão de relatório para "${requestedUnit}" bloqueada. Forçando unidade autorizada: "${allowed}".`);
+                requestedUnit = allowed;
+            }
+        }
+
+        // Normalização de busca
+        const funnels = window.ALL_UNITS_DATA.unitFunnels || {};
+        const recordsMap = window.ALL_UNITS_DATA.unitRecords || {};
+        const availableUnits = Object.keys(recordsMap);
+
+        let activeUnit = availableUnits.find(u => u.toLowerCase() === requestedUnit.toLowerCase()) || requestedUnit;
+        if (!recordsMap[activeUnit] && !funnels[activeUnit] && activeUnit !== 'all') {
+            activeUnit = 'Portal do Morumbi';
+        }
+
+        let unitRecords = [];
+        let unitFunnel = null;
+
+        if (activeUnit === 'all') {
+            document.title = "Painel Executivo de BI RH — Toda a Rede (34 Unidades)";
+            document.getElementById('a4-subtitle').textContent = "Painel Executivo de BI RH & Recrutamento • Rede Consolidada (34 Unidades)";
+            document.getElementById('a4-funil-title').textContent = "2. Funil de Seleção & Perdas (Consolidado Toda a Rede)";
+            
+            // Agregação de todos os registros
+            Object.values(recordsMap).forEach(arr => unitRecords.push(...arr));
+            let env = 0, viv = 0, apr = 0, rep = 0, des = 0, fal = 0, vag = 0;
+            Object.values(funnels).forEach(f => {
+                const fEnv = f.enviados || 0;
+                const fNao = f.naoCompareceu || 0;
+                const fApr = f.aprovados || 0;
+                env += fEnv;
+                viv += Math.max(fApr, fEnv - fNao);
+                apr += fApr;
+                rep += (f.reprovados || 0);
+                des += (f.desistentes || 0);
+                fal += fNao;
+                vag += (f.totalVagas || 0);
+            });
+            unitFunnel = { totalVagas: vag, enviados: env, vivencias: viv, aprovados: apr, reprovados: rep, desistentes: des, faltas: fal };
+        } else {
+            document.title = "Painel Executivo de BI RH — Unidade " + activeUnit;
+            document.getElementById('a4-subtitle').textContent = "Painel Executivo de BI RH & Recrutamento • Unidade " + activeUnit + " (Conexão Google Sheets)";
+            document.getElementById('a4-funil-title').textContent = "2. Funil de Seleção & Perdas (" + activeUnit + ")";
+            unitRecords = recordsMap[activeUnit] || [];
+            const f = funnels[activeUnit] || {};
+            const fEnv = f.enviados || unitRecords.length;
+            const fNao = f.naoCompareceu || 0;
+            const fApr = f.aprovados || unitRecords.filter(r => r.status === 'Aprovado').length;
+            unitFunnel = {
+                totalVagas: Math.max(fApr, unitRecords.length),
+                enviados: fEnv,
+                vivencias: Math.max(fApr, fEnv - fNao),
+                aprovados: fApr,
+                reprovados: f.reprovados || 0,
+                desistentes: f.desistentes || 0,
+                faltas: fNao
+            };
+        }
+
+        const totalVagas = Math.max(unitFunnel.totalVagas || 0, unitRecords.length);
+        const aprovados = unitRecords.filter(r => r.status === 'Aprovado').length || unitFunnel.aprovados || 0;
+        const vivencias = unitRecords.filter(r => r.status === 'Vivência').length;
+        const emAberto = Math.max(0, totalVagas - aprovados - vivencias);
+        const totalVivencias = unitFunnel.vivencias || Math.max(aprovados + vivencias, 1);
+        const convPct = ((aprovados / Math.max(1, totalVivencias)) * 100).toFixed(1);
+        const effortRatio = (totalVivencias / Math.max(1, totalVagas)).toFixed(2);
+        const metaPct = totalVagas > 0 ? ((aprovados / totalVagas) * 100).toFixed(1) : 0;
+
+        // Atualizar KPIs
+        document.getElementById('a4-kpi-vagas').textContent = totalVagas;
+        document.getElementById('a4-kpi-aprovados').textContent = aprovados;
+        document.getElementById('a4-kpi-aprovados-sub').textContent = metaPct + "% Preenchido";
+        document.getElementById('a4-kpi-vivencias').textContent = vivencias;
+        document.getElementById('a4-kpi-conversao').textContent = convPct + "%";
+        document.getElementById('a4-kpi-esforco').textContent = effortRatio;
+
+        // Calcular Cargos
+        const cargoMap = {};
+        unitRecords.forEach(r => {
+            const c = (r.cargo || 'OUTROS').trim().toUpperCase();
+            if (!cargoMap[c]) cargoMap[c] = { vagas: 0, vivencias: 0, aprovados: 0 };
+            cargoMap[c].vagas++;
+            if (r.vivencias && !isNaN(parseInt(r.vivencias))) cargoMap[c].vivencias += parseInt(r.vivencias);
+            else cargoMap[c].vivencias += 1;
+            if (r.status === 'Aprovado') cargoMap[c].aprovados++;
+        });
+
+        const sortedCargos = Object.entries(cargoMap).sort((a, b) => b[1].vagas - a[1].vagas);
+        if (sortedCargos.length > 0) {
+            const topCargo = sortedCargos[0];
+            const pct = Math.round((topCargo[1].vagas / Math.max(1, totalVagas)) * 100);
+            let shortCargo = topCargo[0].replace('ESTAGIÁRIA ', 'Estag. ').replace('INSPETOR DE ALUNOS', 'Inspetor');
+            if (shortCargo.length > 14) shortCargo = shortCargo.slice(0, 14) + '...';
+            document.getElementById('a4-kpi-demanda').textContent = shortCargo;
+            document.getElementById('a4-kpi-demanda-sub').textContent = topCargo[1].vagas + " Vagas (" + pct + "%)";
+        }
+
+        // Diagnóstico Executivo
+        const unitNameLabel = activeUnit === 'all' ? 'Rede Integrada (34 Unidades)' : 'Unidade ' + activeUnit;
+        document.getElementById('a4-diag-content').innerHTML = 
+            'O processo seletivo da <strong>' + unitNameLabel + '</strong> apresenta alinhamento operacional com o planejamento do ano letivo de 2026, contabilizando <strong>' + 
+            aprovados + ' das ' + totalVagas + ' vagas (' + metaPct + '%)</strong> devidamente preenchidas, <strong>' + 
+            vivencias + ' vivência(s) em andamento</strong> e <strong>' + emAberto + ' vaga(s) em aberto</strong>. ' +
+            'A taxa de conversão média situa-se em <strong>' + convPct + '%</strong> com índice de <strong>' + effortRatio + ' vivências por vaga</strong>, ' +
+            'assegurando a seleção criteriosa no padrão da Rede Fadelito.';
+
+        // Reconstruir Matriz de Eficiência por Cargo
+        const matrizTbody = document.getElementById('a4-matriz-tbody');
+        if (matrizTbody && sortedCargos.length > 0) {
+            let mHtml = '';
+            let tVagas = 0, tViv = 0, tApr = 0;
+            sortedCargos.forEach(([cargo, st]) => {
+                tVagas += st.vagas;
+                tViv += st.vivencias;
+                tApr += st.aprovados;
+                const conv = st.vivencias > 0 ? Math.round((st.aprovados / st.vivencias) * 100) : 0;
+                const tagCls = conv >= 60 ? 'tag-high' : (conv >= 40 ? 'tag-med' : 'tag-low');
+                const ratio = st.vagas > 0 ? (st.vivencias / st.vagas).toFixed(2) : '1.00';
+                mHtml += '<tr>' +
+                    '<td class="font-bold">' + cargo + '</td>' +
+                    '<td class="text-center">' + st.vagas + '</td>' +
+                    '<td class="text-center">' + st.vivencias + '</td>' +
+                    '<td class="text-center font-bold">' + st.aprovados + '</td>' +
+                    '<td class="text-center"><span class="tag ' + tagCls + '">' + conv + '%</span></td>' +
+                    '<td class="text-center">' + ratio + '</td>' +
+                '</tr>';
+            });
+            const totConv = tViv > 0 ? ((tApr / tViv) * 100).toFixed(1) : '0.0';
+            const totRatio = tVagas > 0 ? (tViv / tVagas).toFixed(2) : '1.00';
+            mHtml += '<tr style="background-color: #f1f5f9;">' +
+                '<td class="font-bold">TOTALIZADOR CONSOLIDADO</td>' +
+                '<td class="text-center font-bold">' + tVagas + '</td>' +
+                '<td class="text-center font-bold">' + tViv + '</td>' +
+                '<td class="text-center font-bold" style="color: #166534;">' + tApr + '</td>' +
+                '<td class="text-center font-bold"><span class="tag tag-high">' + totConv + '%</span></td>' +
+                '<td class="text-center font-bold">' + totRatio + '</td>' +
+            '</tr>';
+            matrizTbody.innerHTML = mHtml;
+        }
+
+        // Reconstruir Funil
+        const funilTbody = document.getElementById('a4-funil-tbody');
+        if (funilTbody) {
+            const insc = unitFunnel.enviados || totalVivencias;
+            const vivTot = unitFunnel.vivencias || totalVivencias;
+            const aprTot = unitFunnel.aprovados || aprovados;
+            const repTot = unitFunnel.reprovados || 0;
+            const desTot = (unitFunnel.desistentes || 0) + (unitFunnel.faltas || 0);
+
+            const pctViv = insc > 0 ? ((vivTot / insc) * 100).toFixed(1) : '100.0';
+            const pctApr = vivTot > 0 ? ((aprTot / vivTot) * 100).toFixed(1) : '0.0';
+            const pctRep = insc > 0 ? ((repTot / insc) * 100).toFixed(1) : '0.0';
+            const pctDes = insc > 0 ? ((desTot / insc) * 100).toFixed(1) : '0.0';
+
+            funilTbody.innerHTML = '<tr>' +
+                '<td class="text-center font-bold">' + insc + '</td>' +
+                '<td class="text-center font-bold">' + vivTot + ' (' + pctViv + '%)</td>' +
+                '<td class="text-center font-bold" style="color: #166534;">' + aprTot + ' (' + pctApr + '%)</td>' +
+                '<td class="text-center font-bold" style="color: #991b1b;">' + repTot + ' (' + pctRep + '%)</td>' +
+                '<td class="text-center font-bold" style="color: #854d0e;">' + desTot + ' (' + pctDes + '%)</td>' +
+            '</tr>';
+        }
+
+        // Reconstruir Cronograma
+        const cronogramaTbody = document.getElementById('a4-cronograma-tbody');
+        if (cronogramaTbody && unitRecords.length > 0) {
+            let cHtml = '';
+            unitRecords.slice(0, 24).forEach((r, idx) => {
+                const tagCls = r.status === 'Aprovado' ? 'tag-high' : (r.status === 'Vivência' ? 'tag-med' : 'tag-low');
+                cHtml += '<tr>' +
+                    '<td>' + (idx + 1) + '</td>' +
+                    '<td>' + (r.data || '-') + '</td>' +
+                    '<td>' + (r.cargo || '-') + '</td>' +
+                    '<td>' + (r.horario || 'Conforme Escala') + '</td>' +
+                    '<td>' + (r.lote || 'L1') + '</td>' +
+                    '<td><span class="tag ' + tagCls + '">' + (r.status || 'Em Aberto') + '</span></td>' +
+                '</tr>';
+            });
+            cronogramaTbody.innerHTML = cHtml;
+        }
+    })();
+    </script>
 </body>
+
 </html>

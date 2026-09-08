@@ -1,0 +1,74 @@
+================================================================================
+          REDE FADELITO DE EDUCAÇÃO INFANTIL — PORTAL BI RH & RECRUTAMENTO
+                      TABELA OFICIAL DE CREDENCIAIS DE ACESSO
+================================================================================
+
+Este arquivo contém todos os acessos oficiais configurados para testes imediatos
+e homologação interna da Diretoria e Unidades Escolares.
+
+--------------------------------------------------------------------------------
+1. ACESSO DIRETORIA GERAL (PERFIL MASTER - VISÃO TOTAL DA REDE)
+--------------------------------------------------------------------------------
+* Perfil: DIRETORIA GERAL (MASTER)
+* Permissões:
+  - Acesso irrestrito a todas as 34 unidades escolares.
+  - Visão consolidada de toda a rede ("Toda a Rede").
+  - Seletor de unidades ativo no topo para auditar qualquer unidade individualmente.
+  - Emissão de relatórios A4 / PDF consolidados ou por escola.
+* E-mail / Usuário: diretoria@fadelito.com.br  (ou apenas "diretoria")
+* Senha Padrão:    Diretoria@2026
+
+--------------------------------------------------------------------------------
+2. ACESSOS POR UNIDADE ESCOLAR (PERFIL UNIT - ACESSO ISOLADO)
+--------------------------------------------------------------------------------
+* Perfil: UNIDADE ESCOLAR (UNIT)
+* Permissões:
+  - Visualização EXCLUSIVA dos dados da própria escola.
+  - Seletor de unidade travado e com selo de proteção da escola.
+  - Blindagem de memória: dados de outras unidades são expurgados contra inspeção (F12).
+  - Emissão de relatório A4 / PDF restrito à respectiva unidade.
+* Senha Padrão de Todas as Unidades: Fadelito@2026
+
+TABELA COMPLETA DAS UNIDADES:
+--------------------------------------------------------------------------------
+#   | Unidade Escolar        | Usuário / E-mail de Login      | Senha Padrão
+----+------------------------+--------------------------------+-----------------
+01  | Aclimação              | aclimacao@fadelito.com.br      | Fadelito@2026
+02  | Alto da Boa Vista      | altodaboavista@fadelito.com.br | Fadelito@2026
+03  | Analia Franco          | analiafranco@fadelito.com.br   | Fadelito@2026
+04  | Bonfiglioli            | bonfiglioli@fadelito.com.br    | Fadelito@2026
+05  | Brooklin               | brooklin@fadelito.com.br       | Fadelito@2026
+06  | Campinas               | campinas@fadelito.com.br       | Fadelito@2026
+07  | Campo Belo             | campobelo@fadelito.com.br      | Fadelito@2026
+08  | Chacara Klabin         | chacaraklabin@fadelito.com.br  | Fadelito@2026
+09  | Granja Viana           | granjaviana@fadelito.com.br    | Fadelito@2026
+10  | Guarulhos              | guarulhos@fadelito.com.br      | Fadelito@2026
+11  | Higienópolis           | higienopolis@fadelito.com.br   | Fadelito@2026
+12  | Indianópolis           | indianopolis@fadelito.com.br   | Fadelito@2026
+13  | Ipiranga               | ipiranga@fadelito.com.br       | Fadelito@2026
+14  | Jardins                | jardins@fadelito.com.br        | Fadelito@2026
+15  | Lapa                   | lapa@fadelito.com.br           | Fadelito@2026
+16  | Marajoara              | marajoara@fadelito.com.br      | Fadelito@2026
+17  | Moema                  | moema@fadelito.com.br          | Fadelito@2026
+18  | Mooca                  | mooca@fadelito.com.br          | Fadelito@2026
+19  | Osasco                 | osasco@fadelito.com.br         | Fadelito@2026
+20  | Panamby                | panamby@fadelito.com.br        | Fadelito@2026
+21  | Paraiso                | paraiso@fadelito.com.br        | Fadelito@2026
+22  | Perdizes               | perdizes@fadelito.com.br       | Fadelito@2026
+23  | Pinheiros              | pinheiros@fadelito.com.br      | Fadelito@2026
+24  | Piracicaba             | piracicaba@fadelito.com.br     | Fadelito@2026
+25  | Portal do Morumbi      | morumbi@fadelito.com.br        | Fadelito@2026
+26  | Real Parque            | realparque@fadelito.com.br     | Fadelito@2026
+27  | Santo Andre            | santoandre@fadelito.com.br     | Fadelito@2026
+28  | Saúde                  | saude@fadelito.com.br          | Fadelito@2026
+29  | São Caetano            | saocaetano@fadelito.com.br     | Fadelito@2026
+30  | Tatuapé                | tatuape@fadelito.com.br        | Fadelito@2026
+31  | Vila Gumercindo        | vilagumercindo@fadelito.com.br | Fadelito@2026
+32  | Vila Leopoldina        | vilaleopoldina@fadelito.com.br | Fadelito@2026
+33  | Vila Madalena          | vilamadalena@fadelito.com.br   | Fadelito@2026
+34  | Vila Mariana           | vilamariana@fadelito.com.br    | Fadelito@2026
+35  | Vila Sônia             | vilasonia@fadelito.com.br      | Fadelito@2026
+
+* Dica: No campo "Usuário ou E-mail", é possível digitar apenas o nome da unidade 
+  (ex: "morumbi", "moema", "campinas") ou o e-mail completo ("morumbi@fadelito.com.br").
+================================================================================

@@ -2,11 +2,11 @@
  * GOOGLE APPS SCRIPT — SINCRONIZADOR BI RH REDE FADELITO
  * 
  * Instruções de Instalação:
- * 1. Abra a sua planilha Google Sheets: https://docs.google.com/spreadsheets/d/1_ZG94aNv1v4-fmewiCwwQl9dpeaYf-znFGsneqpHFx4/edit?gid=0#gid=0
+ * 1. Abra a sua planilha Google Sheets: https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/edit?gid=1399861337#gid=1399861337
  * 2. No menu superior, clique em "Extensões" > "Apps Script".
  * 3. Apague qualquer código existente no editor e cole este script na íntegra.
  * 4. Clique no botão azul "Implantar" (canto superior direito) > "Nova implantação".
- * 5. Clique na engrenagem ⚙️ ao lado de "Selecionar tipo" e escolha "App da Web".
+ * 5. Clique na engrenagem  ao lado de "Selecionar tipo" e escolha "App da Web".
  * 6. Configure:
  *    - Descrição: "API BI RH Fadelito"
  *    - Executar como: "Eu (seu email)"
