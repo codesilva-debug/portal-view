@@ -2069,48 +2069,115 @@
             </div>
         </div>
 
-        <!-- ==================== TAB 6: CONFIGURAÇÕES & GOOGLE APPS SCRIPT ==================== -->
+        <!-- ==================== TAB 6: CONFIGURAÇÕES & CONEXÃO SEGURA ==================== -->
         <div id="tab-config" class="tab-pane">
-            <div class="chart-card" style="margin-bottom: 20px;">
-                <div class="chart-title" style="margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg class="app-icon" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg> Conexão Ativa com a Planilha Google Sheets</div>
-                <div style="font-size: 13px; color: #334155; margin-bottom: 14px;">
-                    O sistema está atualmente conectado e sincronizando em tempo real com a planilha oficial de toda a rede (34 Unidades):
+
+            <!-- CARD 1: CONEXÃO PRIVADA SEGURA (RECOMENDADO / LGPD) -->
+            <div class="chart-card" style="margin-bottom: 20px; border-left: 4px solid #16a34a;">
+                <div class="chart-title" style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #166534;">
+                    <svg class="app-icon" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Conexão Segura & Privada (Planilha 100% Restrita / LGPD)
                 </div>
-                <div style="display: flex; gap: 10px; margin-bottom: 12px;">
-                    <input type="text" id="input-sheet-url" class="form-input" style="flex: 1; font-family: monospace; font-size: 12px;" value="https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/export?format=csv&gid=1399861337">
-                    <button class="btn-nav btn-primary" onclick="updateSheetUrl()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Conectar Planilha</button>
-                    <button class="btn-nav" onclick="fetchLiveGoogleSheet()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Testar Leitura</button>
+                <div style="font-size: 13px; color: #334155; margin-bottom: 12px; line-height: 1.5;">
+                    Com esta opção, você pode manter a planilha Google Sheets <strong>100% Restrita (com cadeado)</strong>. O App da Web do Google Apps Script atua como uma ponte segura autenticada com as permissões do proprietário, eliminando o risco de pessoas acessarem abas confidenciais pelo link direto.
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 8px; font-family: monospace; font-size: 12px;">
-                    <div style="padding: 8px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
-                        <strong>Planilha de Edição Oficial (Rede 2026):</strong> <a href="https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/edit?gid=1399861337#gid=1399861337" target="_blank" style="color: #2563eb;">https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/edit?gid=1399861337#gid=1399861337</a>
-                    </div>
+
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+                    <div style="font-size: 12px; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 6px;">Passo a Passo Rápido (3 Minutos):</div>
+                    <ol style="font-size: 12.5px; color: #1e3a8a; margin-left: 20px; line-height: 1.6;">
+                        <li>Na sua planilha, clique em <strong>Compartilhar</strong> e mude o acesso para <strong>"Restrito"</strong> (assim ninguém abre sua planilha no Google);</li>
+                        <li>Vá no menu <strong>Extensões → Apps Script</strong>, apague tudo e cole o código do card abaixo;</li>
+                        <li>Clique em <strong>Implantar → Nova implantação → App da Web</strong> (Executar como: <em>"Eu"</em> | Quem tem acesso: <em>"Qualquer pessoa"</em>);</li>
+                        <li>Copie a URL gerada (terminada em <code>/exec</code>), cole no campo abaixo e clique em <strong>Salvar e Sincronizar</strong>!</li>
+                    </ol>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
+                    <input type="text" id="input-apps-script-url" class="form-input" style="flex: 1; min-width: 280px; font-family: monospace; font-size: 12.5px;" placeholder="Cole aqui a URL do seu App da Web (ex: https://script.google.com/macros/s/.../exec)">
+                    <button class="btn-nav btn-primary" onclick="saveAppsScriptUrl()" style="background: #16a34a; border-color: #15803d;">
+                        <svg class="app-icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Salvar e Sincronizar Privado
+                    </button>
+                    <button class="btn-nav" onclick="resetAppsScriptUrl()" title="Voltar ao modo padrão">
+                        <svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Limpar / Padrão
+                    </button>
                 </div>
             </div>
 
-            <div class="chart-card">
-                <div class="chart-title" style="margin-bottom: 8px; display: flex; align-items: center; gap: 6px;"><svg class="app-icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Sincronização Bidirecional Direta (Google Apps Script)</div>
-                <div style="font-size: 13px; color: #334155; margin-bottom: 12px; line-height: 1.5;">
-                    O painel sincroniza continuamente com a planilha oficial do Google Sheets. Para automações e integrações avançadas da equipe técnica, é possível configurar o Webhook do Google Apps Script abaixo:
+            <!-- CARD 2: CÓDIGO DO APPS SCRIPT PRONTO PARA CÓPIA -->
+            <div class="chart-card" style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="chart-title" style="display: flex; align-items: center; gap: 6px;">
+                        <svg class="app-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        Código Oficial do Apps Script (Copie e Cole na Planilha)
+                    </div>
+                    <button class="btn-nav" onclick="copyAppsScriptCode()">
+                        <svg class="app-icon" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> Copiar Código
+                    </button>
                 </div>
-                <ol style="font-size: 12.5px; color: #334155; margin-left: 20px; margin-bottom: 14px; line-height: 1.6;">
-                    <li>Abra a planilha no Google Sheets;</li>
-                    <li>Clique no menu <strong>Extensões → Apps Script</strong>;</li>
-                    <li>Cole o código abaixo e clique em <strong>Implantar → Nova implantação → Tipo: App da Web</strong> (Acesso: Qualquer pessoa);</li>
-                    <li>Copie a URL gerada e cole no campo de Webhook abaixo!</li>
-                </ol>
-                <div style="display: flex; gap: 10px; margin-bottom: 14px;">
-                    <input type="text" id="input-webhook-url" class="form-input" style="flex: 1;" placeholder="Cole a URL do seu App da Web do Google Apps Script (opcional)..." onchange="saveWebhookUrl()">
-                    <button class="btn-nav btn-primary" onclick="saveWebhookUrl()">Salvar Webhook</button>
-                </div>
-                <textarea class="whatsapp-box" style="height: 180px;" readonly>function doPost(e) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Dashboard") || ss.getSheetByName("GRAFICOS") || ss.getActiveSheet();
-  var data = JSON.parse(e.postData.contents);
-  // Adiciona nova linha no final da aba ativa
-  sheet.appendRow([data.data, data.cargo, data.horario, data.mes, data.status]);
-  return ContentService.createTextOutput(JSON.stringify({status: "success", result: "ok"})).setMimeType(ContentService.MimeType.JSON);
+                <textarea id="apps-script-code-box" class="whatsapp-box" style="height: 220px; font-family: monospace; font-size: 11.5px;" readonly>function getSheetByGidOrNames(ss, gid, possibleNames, defaultIndex) {
+  var sheets = ss.getSheets();
+  if (gid !== undefined && gid !== null) {
+    for (var i = 0; i < sheets.length; i++) {
+      if (sheets[i].getSheetId() === gid || sheets[i].getSheetId() === parseInt(gid, 10)) return sheets[i];
+    }
+  }
+  if (possibleNames && possibleNames.length > 0) {
+    for (var j = 0; j < possibleNames.length; j++) {
+      var found = ss.getSheetByName(possibleNames[j]);
+      if (found) return found;
+    }
+  }
+  return (defaultIndex !== undefined && sheets[defaultIndex]) ? sheets[defaultIndex] : (sheets[0] || null);
+}
+
+function doGet(e) {
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheetLooker = getSheetByGidOrNames(ss, 1399861337, ["Dashboard", "GRAFICOS", "VAGAS", "Looker"], 0);
+    var sheetRanking = getSheetByGidOrNames(ss, 1503088086, ["Ranking", "FUNIL", "UNIDADES", "Funnels"], 1);
+    
+    var lookerValues = sheetLooker ? sheetLooker.getDataRange().getDisplayValues() : [];
+    var rankingValues = sheetRanking ? sheetRanking.getDataRange().getDisplayValues() : [];
+    
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "success",
+      service: "BI RH Rede Fadelito - Private API Bridge",
+      timestamp: new Date().toISOString(),
+      looker: lookerValues,
+      ranking: rankingValues
+    })).setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doPost(e) {
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = getSheetByGidOrNames(ss, 1399861337, ["Dashboard", "GRAFICOS", "VAGAS"], 0);
+    var data = (e && e.postData && e.postData.contents) ? JSON.parse(e.postData.contents) : {};
+    sheet.appendRow([data.data, data.mes || 1, data.unidade || "Portal do Morumbi", data.cargo || "", "", data.status || "Aprovado", "", "", data.vivencias || 1]);
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" })).setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() })).setMimeType(ContentService.MimeType.JSON);
+  }
 }</textarea>
+            </div>
+
+            <!-- CARD 3: CONEXÃO PÚBLICA CSV (MODO LEGADO / CONTINGÊNCIA) -->
+            <div class="chart-card">
+                <div class="chart-title" style="margin-bottom: 8px; display: flex; align-items: center; gap: 6px; color: #64748b;">
+                    <svg class="app-icon" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
+                    Conexão Direta CSV (Modo Legado / Fallback)
+                </div>
+                <div style="font-size: 12.5px; color: #64748b; margin-bottom: 12px;">
+                    Usado apenas se a URL do App da Web privado não estiver configurada. Exige que a planilha esteja com o link público.
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="input-sheet-url" class="form-input" style="flex: 1; font-family: monospace; font-size: 12px;" value="https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/export?format=csv&gid=1399861337">
+                    <button class="btn-nav" onclick="updateSheetUrl()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Conectar CSV</button>
+                    <button class="btn-nav" onclick="fetchLiveGoogleSheet()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Testar CSV</button>
+                </div>
             </div>
         </div>
 
@@ -2144,6 +2211,7 @@
         let vivenciasStats = [];
         let funnelData = {};
         let webhookUrl = localStorage.getItem('fadelito_webhook_url') || '';
+        let appsScriptUrl = localStorage.getItem('fadelito_apps_script_url') || '';
 
         // Instâncias do Chart.js
         let chartEvolucaoMensalInstance = null;
@@ -2173,6 +2241,11 @@
             if (webhookUrl) {
                 const whEl = document.getElementById('input-webhook-url');
                 if (whEl) whEl.value = webhookUrl;
+            }
+
+            if (appsScriptUrl) {
+                const asEl = document.getElementById('input-apps-script-url');
+                if (asEl) asEl.value = appsScriptUrl;
             }
 
             // Inicializa e verifica autenticação de sessão (RBAC)
@@ -3307,111 +3380,188 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
             }
 
             try {
-                // URLs Oficiais das Abas
-                const lookerUrl = 'https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/gviz/tq?tqx=out:csv&gid=1399861337&_t=' + Date.now();
-                const rankingUrl = 'https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/gviz/tq?tqx=out:csv&gid=1503088086&_t=' + Date.now();
-
-                let [lookerRes, rankingRes] = await Promise.all([
-                    fetch(lookerUrl).catch(() => fetch('https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/export?format=csv&gid=1399861337&_t=' + Date.now())),
-                    fetch(rankingUrl).catch(() => fetch('https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/export?format=csv&gid=1503088086&_t=' + Date.now()))
-                ]);
-
-                if (!lookerRes.ok || !rankingRes.ok) throw new Error('Falha HTTP ao ler planilhas');
-
-                const [lookerCsv, rankingCsv] = await Promise.all([
-                    lookerRes.text(),
-                    rankingRes.text()
-                ]);
-
                 // Blindagem de Dados por Perfil (Zero Data Leak no F12 / DevTools)
                 const activeSession = window.AuthService ? window.AuthService.getSession() : null;
                 const isUnitUser = activeSession && activeSession.role === 'UNIT';
                 const userUnit = isUnitUser ? activeSession.unit : null;
 
-                // 1. Processar Ranking e Funis por Unidade
-                const newFunnels = {};
-                const rLines = rankingCsv.split('\n');
-                for (let i = 1; i < rLines.length; i++) {
-                    const line = rLines[i].trim();
-                    if (!line) continue;
-                    const cols = parseCSVLine(line);
-                    const unit = cols[0];
-                    if (!unit || unit === 'TOTAL' || unit.includes('MÉDIA')) continue;
+                let newFunnels = {};
+                let newRecordsMap = {};
+                let isPrivateApi = false;
+                let fetchSuccess = false;
 
-                    // SEGURANÇA F12: Se logado como unidade, descarta dados de todas as outras escolas
-                    if (isUnitUser && userUnit && normalizeStr(unit) !== normalizeStr(userUnit)) {
-                        continue;
+                // 1. TENTATIVA VIA API PRIVADA (APPS SCRIPT WEB APP - PLANILHA RESTRITA)
+                if (appsScriptUrl) {
+                    try {
+                        const targetUrl = appsScriptUrl + (appsScriptUrl.includes('?') ? '&' : '?') + '_t=' + Date.now();
+                        const apiRes = await fetch(targetUrl);
+                        if (apiRes.ok) {
+                            const apiJson = await apiRes.json();
+                            if (apiJson && apiJson.status === 'success' && Array.isArray(apiJson.ranking) && Array.isArray(apiJson.looker)) {
+                                // 1.1 Processar Ranking e Funis por Unidade
+                                const rRows = apiJson.ranking;
+                                for (let i = 1; i < rRows.length; i++) {
+                                    const cols = rRows[i];
+                                    if (!cols || !cols.length) continue;
+                                    const unit = (cols[0] || '').trim();
+                                    if (!unit || unit === 'TOTAL' || unit.includes('MÉDIA')) continue;
+                                    if (isUnitUser && userUnit && normalizeStr(unit) !== normalizeStr(userUnit)) continue;
+
+                                    newFunnels[unit] = {
+                                        enviados: parseInt(cols[1], 10) || 0,
+                                        aprovados: parseInt(cols[2], 10) || 0,
+                                        reprovados: parseInt(cols[3], 10) || 0,
+                                        desistentes: parseInt(cols[4], 10) || 0,
+                                        naoCompareceu: parseInt(cols[5], 10) || 0,
+                                        desistInteg: parseInt(cols[6], 10) || 0,
+                                        reprovInteg: parseInt(cols[7], 10) || 0,
+                                        taxa: cols[8] || ''
+                                    };
+                                }
+
+                                // 1.2 Processar Vagas e Linhas
+                                const lRows = apiJson.looker;
+                                let rowId = 1;
+                                for (let i = 1; i < lRows.length; i++) {
+                                    const cols = lRows[i];
+                                    if (!cols || !cols.length) continue;
+                                    const dataAbertura = String(cols[0] || '').trim();
+                                    const mes = parseInt(cols[1], 10) || 1;
+                                    const unidade = String(cols[2] || '').trim();
+                                    const cargo = String(cols[3] || '').trim();
+                                    const status = String(cols[5] || '').trim() || 'Em Aberto';
+                                    const colaborador = String(cols[7] || '').trim();
+                                    const vivencias = String(cols[8] || '').trim() || '1';
+
+                                    if (!unidade || !cargo || cargo.includes('FUNÇÃO') || cargo.includes('CARGO')) continue;
+                                    if (isUnitUser && userUnit && normalizeStr(unidade) !== normalizeStr(userUnit)) continue;
+
+                                    let matchedUnit = Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase()) || unidade;
+                                    if (!newRecordsMap[matchedUnit]) newRecordsMap[matchedUnit] = [];
+
+                                    let defHorario = '13:00 ÀS 19:00';
+                                    const uc = cargo.toUpperCase();
+                                    if (uc.includes('INSPETOR')) defHorario = '9:30 ÀS 19:30';
+                                    else if (uc.includes('LIMPEZA') || uc.includes('COZINHA')) defHorario = '6:45 ÀS 16:45';
+                                    else if (uc.includes('BERÇ')) defHorario = '10:30 ÀS 17:30';
+                                    else if (uc.includes('JARD')) defHorario = '12:00 ÀS 18:00';
+                                    else if (uc.includes('MAT I') || uc.includes('MATII')) {
+                                        defHorario = (rowId % 2 === 1) ? '7:00 ÀS 13:00' : '13:00 ÀS 19:00';
+                                    }
+
+                                    const pDate = parseDateString(dataAbertura);
+                                    const cleanDateStr = `${String(pDate.day).padStart(2, '0')}/${String(pDate.month).padStart(2, '0')}/${pDate.year}`;
+
+                                    newRecordsMap[matchedUnit].push({
+                                        id: rowId++,
+                                        data: cleanDateStr,
+                                        cargo: cargo,
+                                        unidade: matchedUnit,
+                                        horario: defHorario,
+                                        mes: pDate.month,
+                                        status: status === 'Aprovado' ? 'Aprovado' : (status === 'Vivência' ? 'Vivência' : (status === 'Em Aberto' ? 'Em Aberto' : status)),
+                                        colaborador: colaborador,
+                                        vivencias: vivencias
+                                    });
+                                }
+
+                                isPrivateApi = true;
+                                fetchSuccess = true;
+                            }
+                        }
+                    } catch (errApi) {
+                        console.warn('Falha na requisição da API Privada do Apps Script:', errApi);
                     }
-
-                    newFunnels[unit] = {
-                        enviados: parseInt(cols[1], 10) || 0,
-                        aprovados: parseInt(cols[2], 10) || 0,
-                        reprovados: parseInt(cols[3], 10) || 0,
-                        desistentes: parseInt(cols[4], 10) || 0,
-                        naoCompareceu: parseInt(cols[5], 10) || 0,
-                        desistInteg: parseInt(cols[6], 10) || 0,
-                        reprovInteg: parseInt(cols[7], 10) || 0,
-                        taxa: cols[8] || ''
-                    };
                 }
 
-                // 2. Processar Registros Individuais Organizados por Unidade
-                const newRecordsMap = {};
-                const lLines = lookerCsv.split('\n');
-                let rowId = 1;
-                for (let i = 1; i < lLines.length; i++) {
-                    const line = lLines[i].trim();
-                    if (!line) continue;
-                    const cols = parseCSVLine(line);
-                    const dataAbertura = cols[0] || '';
-                    const mes = parseInt(cols[1], 10) || 1;
-                    const unidade = (cols[2] || '').trim();
-                    const cargo = (cols[3] || '').trim();
-                    const status = (cols[5] || '').trim() || 'Em Aberto';
-                    const colaborador = (cols[7] || '').trim();
-                    const vivencias = (cols[8] || '').trim() || '1';
+                // 2. TENTATIVA VIA GVIZ CSV (MODO LEGADO PÚBLICO - SE API PRIVADA NÃO ESTIVER ATIVA)
+                if (!fetchSuccess) {
+                    const lookerUrl = 'https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/gviz/tq?tqx=out:csv&gid=1399861337&_t=' + Date.now();
+                    const rankingUrl = 'https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/gviz/tq?tqx=out:csv&gid=1503088086&_t=' + Date.now();
 
-                    if (!unidade || !cargo || cargo.includes('FUNÇÃO') || cargo.includes('CARGO')) continue;
+                    let [lookerRes, rankingRes] = await Promise.all([
+                        fetch(lookerUrl).catch(() => fetch('https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/export?format=csv&gid=1399861337&_t=' + Date.now())),
+                        fetch(rankingUrl).catch(() => fetch('https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/export?format=csv&gid=1503088086&_t=' + Date.now()))
+                    ]);
 
-                    // SEGURANÇA F12: Se logado como unidade, descarta qualquer registro de outra escola imediatamente
-                    if (isUnitUser && userUnit && normalizeStr(unidade) !== normalizeStr(userUnit)) {
-                        continue;
+                    if (!lookerRes.ok || !rankingRes.ok) throw new Error('Falha HTTP ao ler planilhas');
+
+                    const [lookerCsv, rankingCsv] = await Promise.all([
+                        lookerRes.text(),
+                        rankingRes.text()
+                    ]);
+
+                    // Processar Ranking CSV
+                    const rLines = rankingCsv.split('\n');
+                    for (let i = 1; i < rLines.length; i++) {
+                        const line = rLines[i].trim();
+                        if (!line) continue;
+                        const cols = parseCSVLine(line);
+                        const unit = cols[0];
+                        if (!unit || unit === 'TOTAL' || unit.includes('MÉDIA')) continue;
+                        if (isUnitUser && userUnit && normalizeStr(unit) !== normalizeStr(userUnit)) continue;
+
+                        newFunnels[unit] = {
+                            enviados: parseInt(cols[1], 10) || 0,
+                            aprovados: parseInt(cols[2], 10) || 0,
+                            reprovados: parseInt(cols[3], 10) || 0,
+                            desistentes: parseInt(cols[4], 10) || 0,
+                            naoCompareceu: parseInt(cols[5], 10) || 0,
+                            desistInteg: parseInt(cols[6], 10) || 0,
+                            reprovInteg: parseInt(cols[7], 10) || 0,
+                            taxa: cols[8] || ''
+                        };
                     }
 
-                    // Normalizar Unidade
-                    let matchedUnit = Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase()) || unidade;
+                    // Processar Looker CSV
+                    const lLines = lookerCsv.split('\n');
+                    let rowId = 1;
+                    for (let i = 1; i < lLines.length; i++) {
+                        const line = lLines[i].trim();
+                        if (!line) continue;
+                        const cols = parseCSVLine(line);
+                        const dataAbertura = cols[0] || '';
+                        const mes = parseInt(cols[1], 10) || 1;
+                        const unidade = (cols[2] || '').trim();
+                        const cargo = (cols[3] || '').trim();
+                        const status = (cols[5] || '').trim() || 'Em Aberto';
+                        const colaborador = (cols[7] || '').trim();
+                        const vivencias = (cols[8] || '').trim() || '1';
 
-                    if (!newRecordsMap[matchedUnit]) newRecordsMap[matchedUnit] = [];
+                        if (!unidade || !cargo || cargo.includes('FUNÇÃO') || cargo.includes('CARGO')) continue;
+                        if (isUnitUser && userUnit && normalizeStr(unidade) !== normalizeStr(userUnit)) continue;
 
-                    let defHorario = '13:00 ÀS 19:00';
-                    const uc = cargo.toUpperCase();
-                    if (uc.includes('INSPETOR')) defHorario = '9:30 ÀS 19:30';
-                    else if (uc.includes('LIMPEZA') || uc.includes('COZINHA')) defHorario = '6:45 ÀS 16:45';
-                    else if (uc.includes('BERÇ')) defHorario = '10:30 ÀS 17:30';
-                    else if (uc.includes('JARD')) defHorario = '12:00 ÀS 18:00';
-                    else if (uc.includes('MAT I') || uc.includes('MATII')) {
-                        defHorario = (rowId % 2 === 1) ? '7:00 ÀS 13:00' : '13:00 ÀS 19:00';
+                        let matchedUnit = Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase()) || unidade;
+                        if (!newRecordsMap[matchedUnit]) newRecordsMap[matchedUnit] = [];
+
+                        let defHorario = '13:00 ÀS 19:00';
+                        const uc = cargo.toUpperCase();
+                        if (uc.includes('INSPETOR')) defHorario = '9:30 ÀS 19:30';
+                        else if (uc.includes('LIMPEZA') || uc.includes('COZINHA')) defHorario = '6:45 ÀS 16:45';
+                        else if (uc.includes('BERÇ')) defHorario = '10:30 ÀS 17:30';
+                        else if (uc.includes('JARD')) defHorario = '12:00 ÀS 18:00';
+                        else if (uc.includes('MAT I') || uc.includes('MATII')) {
+                            defHorario = (rowId % 2 === 1) ? '7:00 ÀS 13:00' : '13:00 ÀS 19:00';
+                        }
+
+                        const pDate = parseDateString(dataAbertura);
+                        const cleanDateStr = `${String(pDate.day).padStart(2, '0')}/${String(pDate.month).padStart(2, '0')}/${pDate.year}`;
+
+                        newRecordsMap[matchedUnit].push({
+                            id: rowId++,
+                            data: cleanDateStr,
+                            cargo: cargo,
+                            unidade: matchedUnit,
+                            horario: defHorario,
+                            mes: pDate.month,
+                            status: status === 'Aprovado' ? 'Aprovado' : (status === 'Vivência' ? 'Vivência' : (status === 'Em Aberto' ? 'Em Aberto' : status)),
+                            colaborador: colaborador,
+                            vivencias: vivencias
+                        });
                     }
 
-                    const pDate = parseDateString(dataAbertura);
-                    const cleanDateStr = `${String(pDate.day).padStart(2, '0')}/${String(pDate.month).padStart(2, '0')}/${pDate.year}`;
-
-                    newRecordsMap[matchedUnit].push({
-                        id: rowId++,
-                        data: cleanDateStr,
-                        cargo: cargo,
-                        unidade: matchedUnit,
-                        horario: defHorario,
-                        mes: pDate.month,
-                        status: status === 'Aprovado' ? 'Aprovado' : (status === 'Vivência' ? 'Vivência' : (status === 'Em Aberto' ? 'Em Aberto' : status)),
-                        colaborador: colaborador,
-                        vivencias: vivencias
-                    });
+                    fetchSuccess = true;
                 }
-
-                const newHash = JSON.stringify({ rCount: lLines.length, fCount: rLines.length });
-                const hasChanged = lastSyncHash && lastSyncHash !== newHash;
-                lastSyncHash = newHash;
 
                 // Atualizar base oficial em memória preservando a estrutura
                 if (window.ALL_UNITS_DATA) {
@@ -3423,20 +3573,25 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
                     }
                 }
 
+                const totalV = Object.values(newRecordsMap).reduce((acc, arr) => acc + arr.length, 0);
+
                 if (badge && statusText) {
-                    badge.style.backgroundColor = '#f0fdf4';
-                    badge.style.color = '#166534';
-                    const totalV = Object.values(newRecordsMap).reduce((acc, arr) => acc + arr.length, 0);
-                    statusText.textContent = `Conectado ao Google Sheets (Tempo Real • ${totalV || 624} vagas)`;
+                    if (isPrivateApi) {
+                        badge.style.backgroundColor = '#ecfdf5';
+                        badge.style.color = '#065f46';
+                        statusText.textContent = `🔒 Conectado via API Privada (Planilha Restrita • ${totalV || 624} vagas)`;
+                    } else {
+                        badge.style.backgroundColor = '#f0fdf4';
+                        badge.style.color = '#166534';
+                        statusText.textContent = `Conectado ao Google Sheets (Tempo Real • ${totalV || 624} vagas)`;
+                    }
                 }
 
                 // REGRA DE OURO: Recarrega A UNIDADE ATIVA DO USUÁRIO sem trocar de tela!
                 loadUnitData(currentActiveUnit, false);
 
                 if (!silent) {
-                    showToast('Base multi-unidades atualizada em tempo real!');
-                } else if (hasChanged) {
-                    showToast('Planilha atualizada em tempo real!');
+                    showToast(isPrivateApi ? 'Sincronizado via API Privada Segura!' : 'Base multi-unidades atualizada em tempo real!');
                 }
             } catch (err) {
                 console.warn('Google Sheets live fetch error / fallback to local base:', err);
@@ -3516,6 +3671,39 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
             webhookUrl = url;
             localStorage.setItem('fadelito_webhook_url', url);
             showToast('Webhook salvo com sucesso!');
+        }
+
+        function saveAppsScriptUrl() {
+            const url = (document.getElementById('input-apps-script-url').value || '').trim();
+            appsScriptUrl = url;
+            if (url) {
+                localStorage.setItem('fadelito_apps_script_url', url);
+                showToast('URL da API Privada salva com sucesso! Sincronizando...');
+            } else {
+                localStorage.removeItem('fadelito_apps_script_url');
+                showToast('URL privada removida. Usando modo padrão.');
+            }
+            fetchLiveGoogleSheet();
+        }
+
+        function resetAppsScriptUrl() {
+            if (confirm('Deseja limpar a URL privada e voltar à leitura padrão?')) {
+                localStorage.removeItem('fadelito_apps_script_url');
+                appsScriptUrl = '';
+                const el = document.getElementById('input-apps-script-url');
+                if (el) el.value = '';
+                showToast('Configuração restaurada para o padrão.');
+                fetchLiveGoogleSheet();
+            }
+        }
+
+        function copyAppsScriptCode() {
+            const textarea = document.getElementById('apps-script-code-box');
+            if (textarea) {
+                textarea.select();
+                navigator.clipboard.writeText(textarea.value);
+                showToast('Código do Apps Script copiado para a área de transferência!');
+            }
         }
 
         // ==================== CSV EXPORT ====================
