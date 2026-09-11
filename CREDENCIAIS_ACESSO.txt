@@ -14,7 +14,6 @@ e homologação interna da Diretoria e Unidades Escolares.
   - Acesso irrestrito a todas as 34 unidades escolares.
   - Visão consolidada de toda a rede ("Toda a Rede").
   - Seletor de unidades ativo no topo para auditar qualquer unidade individualmente.
-  - Emissão de relatórios A4 / PDF consolidados ou por escola.
 * E-mail / Usuário: diretoria@fadelito.com.br  (ou apenas "diretoria")
 * Senha Padrão:    Diretoria@2026
 
@@ -26,7 +25,6 @@ e homologação interna da Diretoria e Unidades Escolares.
   - Visualização EXCLUSIVA dos dados da própria escola.
   - Seletor de unidade travado e com selo de proteção da escola.
   - Blindagem de memória: dados de outras unidades são expurgados contra inspeção (F12).
-  - Emissão de relatório A4 / PDF restrito à respectiva unidade.
 * Senha Padrão de Todas as Unidades: Fadelito@2026
 
 TABELA COMPLETA DAS UNIDADES:
@@ -71,4 +69,31 @@ TABELA COMPLETA DAS UNIDADES:
 
 * Dica: No campo "Usuário ou E-mail", é possível digitar apenas o nome da unidade 
   (ex: "morumbi", "moema", "campinas") ou o e-mail completo ("morumbi@fadelito.com.br").
+
+--------------------------------------------------------------------------------
+3. ACESSOS DE SUPERVISÃO E GESTÃO REGIONAL (PERFIL SUPERVISOR)
+--------------------------------------------------------------------------------
+* Perfil: SUPERVISÃO (SUPERVISOR)
+* Permissões:
+  - Visualização EXCLUSIVA das unidades sob sua supervisão.
+  - Seletor inteligente: visão "Consolidado Supervisão" + opção individual de suas unidades.
+  - Blindagem total de dados contra inspeção (F12) para unidades alheias.
+
+TABELA OFICIAL DOS 10 GESTORES / SUPERVISORES:
+--------------------------------------------------------------------------------
+#   | Gestor(a)         | Usuário / Login | Senha           | Unidades Supervisionadas
+----+-------------------+-----------------+-----------------+------------------------------------------
+01  | Luana Silveira    | luana           | 5luanalpm       | Lapa, Panamby, Moema (3)
+02  | Pamela Duarte     | pamela          | 2026pamfadelitos| Vila Gumercindo (1)
+03  | Aurélio Zanin     | aurelio         | sulaurelio2026  | São Caetano, Santo André, Ipiranga, Jardins, Saúde (5)
+04  | Camila Brandão    | camila          | intercamila#26  | Campinas, Piracicaba (2)
+05  | Rodrigo Mendes    | rodrigo         | 7rodrigogob     | Granja Viana, Osasco, Bonfiglioli (3)
+06  | Juliana Prado     | juliana         | 2026julizl#amtg | Analia Franco, Mooca, Tatuapé, Guarulhos (4)
+07  | Fernando Costa    | fernando        | sulfernando*bcam| Alto da Boa Vista, Brooklin, Campo Belo, Marajoara (4)
+08  | Beatriz Nogueira  | beatriz         | 8biafadelito#hppm| Higienópolis, Perdizes, Pinheiros, Vila Madalena (4)
+09  | Marcelo Albuq.    | marcelo         | morumbimarcelo26| Portal do Morumbi, Real Parque, Vila Leopoldina, Vila Sônia (4)
+10  | Tatiane Ramos     | tatiane         | tatiane2026#ackiv| Aclimação, Chacara Klabin, Indianópolis, Paraiso, Vila Mariana (5)
+
+* Nota: Também é possível fazer login digitando o e-mail institucional do gestor 
+  (ex: "luana@fadelito.com.br", "pamela@fadelito.com.br", "aurelio@fadelito.com.br").
 ================================================================================

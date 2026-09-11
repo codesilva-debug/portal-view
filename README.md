@@ -11,7 +11,6 @@ O sistema conta com tela de bloqueio executiva (*Login Gatekeeper*), autenticaç
 1. **Diretoria Geral (`MASTER`)**:
    - **Login:** `diretoria@fadelito.com.br` | **Senha:** `Diretoria@2026`
    - **Visão:** Consolidado de Toda a Rede (34 Unidades) com seletor ativo no topo para auditar qualquer unidade escolar individualmente.
-   - **Relatórios:** Emissão de relatórios A4 / PDF consolidados ou por escola.
 2. **Unidades Escolares (`UNIT`)**:
    - **Login:** E-mail ou slug da escola (ex: `morumbi@fadelito.com.br`, `moema@fadelito.com.br`) | **Senha:** `Fadelito@2026`
    - **Visão:** Restrita **exclusivamente** à própria unidade escolar. Seletor de unidades travado e com selo da respectiva escola.
@@ -42,7 +41,6 @@ O projeto foi arquitetado para rodar nativamente com performance máxima e latê
 
 ```
 ├── index.html                   # Dashboard Executivo Principal (Login Gatekeeper + Chart.js)
-├── painel_imprimir_a4.html      # Relatório Diagramado A4 / PDF (com guardião de sessão)
 ├── auth_service.js              # Módulo de Autenticação, RBAC e integração serverless
 ├── data_unidades.js             # Base histórica segura com DataManager encapsulado
 ├── CREDENCIAIS_ACESSO.txt       # Tabela oficial de acessos (Diretoria e 34 Unidades)
@@ -72,4 +70,3 @@ O projeto foi arquitetado para rodar nativamente com performance máxima e latê
   - Funil de Seleção e Motivos de Perdas / Descarte
 - **Entregáveis de Alta Produtividade:**
   - Gerador de Relatório Executivo para WhatsApp
-  - Painel de Impressão Formal A4 / PDF diagramado

@@ -6654,6 +6654,22 @@
             if (session.role === 'MASTER') {
                 return _PRIVATE_RAW_DATA;
             }
+            if (session.role === 'SUPERVISOR' && Array.isArray(session.units)) {
+                const recs = {};
+                const funs = {};
+                session.units.forEach(u => {
+                    if (_PRIVATE_RAW_DATA.unitRecords && _PRIVATE_RAW_DATA.unitRecords[u]) {
+                        recs[u] = _PRIVATE_RAW_DATA.unitRecords[u].map(item => Object.assign({}, item));
+                    }
+                    if (_PRIVATE_RAW_DATA.unitFunnels && _PRIVATE_RAW_DATA.unitFunnels[u]) {
+                        funs[u] = Object.assign({}, _PRIVATE_RAW_DATA.unitFunnels[u]);
+                    }
+                });
+                return {
+                    unitRecords: recs,
+                    unitFunnels: funs
+                };
+            }
             if (session.role === 'UNIT' && session.unit) {
                 const u = session.unit;
                 return {
@@ -6687,6 +6703,15 @@
                 if (session && session.role === 'MASTER') {
                     _PRIVATE_RAW_DATA.unitRecords = newVal.unitRecords;
                     _PRIVATE_RAW_DATA.unitFunnels = newVal.unitFunnels;
+                } else if (session && session.role === 'SUPERVISOR' && Array.isArray(session.units)) {
+                    session.units.forEach(u => {
+                        if (newVal.unitRecords && newVal.unitRecords[u]) {
+                            _PRIVATE_RAW_DATA.unitRecords[u] = newVal.unitRecords[u];
+                        }
+                        if (newVal.unitFunnels && newVal.unitFunnels[u]) {
+                            _PRIVATE_RAW_DATA.unitFunnels[u] = newVal.unitFunnels[u];
+                        }
+                    });
                 } else if (session && session.role === 'UNIT' && session.unit) {
                     const u = session.unit;
                     if (newVal.unitRecords[u]) {

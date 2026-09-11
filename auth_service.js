@@ -30,6 +30,100 @@
 
     const SESSION_STORAGE_KEY = 'fadelito_auth_session';
 
+    // Lista oficial dos 10 Gestores / Supervisores com unidades atribuídas
+    const SUPERVISORS = [
+        {
+            id: 'luana',
+            name: 'Luana Silveira',
+            username: 'luana',
+            email: 'luana@fadelito.com.br',
+            password: '5luanalpm',
+            mnemonic: 'Prefixo 5 + luana + lpm (Lapa, Panamby, Moema)',
+            units: ["Lapa", "Panamby", "Moema"]
+        },
+        {
+            id: 'pamela',
+            name: 'Pamela Duarte',
+            username: 'pamela',
+            email: 'pamela@fadelito.com.br',
+            password: '2026pamfadelitos',
+            mnemonic: 'Ano 2026 + pam + fadelitos (Vila Gumercindo)',
+            units: ["Vila Gumercindo"]
+        },
+        {
+            id: 'aurelio',
+            name: 'Aurélio Zanin',
+            username: 'aurelio',
+            email: 'aurelio@fadelito.com.br',
+            password: 'sulaurelio2026',
+            mnemonic: 'sul + aurelio + 2026 (São Caetano, Santo André, Ipiranga, Jardins, Saúde)',
+            units: ["São Caetano", "Santo Andre", "Ipiranga", "Jardins", "Saúde"]
+        },
+        {
+            id: 'camila',
+            name: 'Camila Brandão',
+            username: 'camila',
+            email: 'camila@fadelito.com.br',
+            password: 'intercamila#26',
+            mnemonic: 'inter (Interior) + camila + #26 (Campinas, Piracicaba)',
+            units: ["Campinas", "Piracicaba"]
+        },
+        {
+            id: 'rodrigo',
+            name: 'Rodrigo Mendes',
+            username: 'rodrigo',
+            email: 'rodrigo@fadelito.com.br',
+            password: '7rodrigogob',
+            mnemonic: '7 + rodrigo + gob (Granja Viana, Osasco, Bonfiglioli)',
+            units: ["Granja Viana", "Osasco", "Bonfiglioli"]
+        },
+        {
+            id: 'juliana',
+            name: 'Juliana Prado',
+            username: 'juliana',
+            email: 'juliana@fadelito.com.br',
+            password: '2026julizl#amtg',
+            mnemonic: '2026 + juli + zl (Zona Leste) + amtg (Analia, Mooca, Tatuapé, Guarulhos)',
+            units: ["Analia Franco", "Mooca", "Tatuapé", "Guarulhos"]
+        },
+        {
+            id: 'fernando',
+            name: 'Fernando Costa',
+            username: 'fernando',
+            email: 'fernando@fadelito.com.br',
+            password: 'sulfernando*bcam',
+            mnemonic: 'sul + fernando + * + bcam (Brooklin, Campo Belo, Alto da Boa Vista, Marajoara)',
+            units: ["Alto da Boa Vista", "Brooklin", "Campo Belo", "Marajoara"]
+        },
+        {
+            id: 'beatriz',
+            name: 'Beatriz Nogueira',
+            username: 'beatriz',
+            email: 'beatriz@fadelito.com.br',
+            password: '8biafadelito#hppm',
+            mnemonic: '8 + bia + fadelito + # + hppm (Higienópolis, Perdizes, Pinheiros, Vila Madalena)',
+            units: ["Higienópolis", "Perdizes", "Pinheiros", "Vila Madalena"]
+        },
+        {
+            id: 'marcelo',
+            name: 'Marcelo Albuquerque',
+            username: 'marcelo',
+            email: 'marcelo@fadelito.com.br',
+            password: 'morumbimarcelo26',
+            mnemonic: 'morumbi + marcelo + 26 (Morumbi, Real Parque, Leopoldina, Sônia)',
+            units: ["Portal do Morumbi", "Real Parque", "Vila Leopoldina", "Vila Sônia"]
+        },
+        {
+            id: 'tatiane',
+            name: 'Tatiane Ramos',
+            username: 'tatiane',
+            email: 'tatiane@fadelito.com.br',
+            password: 'tatiane2026#ackiv',
+            mnemonic: 'tatiane + 2026 + # + ackiv (Aclimação, Chacara Klabin, Indianópolis, Paraíso, Vila Mariana)',
+            units: ["Aclimação", "Chacara Klabin", "Indianópolis", "Paraiso", "Vila Mariana"]
+        }
+    ];
+
     // Credenciais de contingência local protegidas em closure privada (usadas apenas se a API serverless estiver offline)
     const _PRIVATE_FALLBACK_HASHES = {
         masterUsers: ['diretoria', 'admin', 'master'],
@@ -39,6 +133,20 @@
 
     const AuthService = {
         UNITS: CANONICAL_UNITS,
+        SUPERVISORS: SUPERVISORS,
+
+        /**
+         * Localiza uma supervisão válida a partir do texto informado (e-mail, nome ou slug)
+         */
+        findSupervisor(input) {
+            if (!input) return null;
+            const clean = normalizeStr(input.replace(/@fadelito\.com\.br$/i, ''));
+            return SUPERVISORS.find(s => {
+                const sUser = normalizeStr(s.username);
+                const sName = normalizeStr(s.name);
+                return sUser === clean || sName === clean || clean.includes(sUser);
+            }) || null;
+        },
 
         /**
          * Localiza uma unidade válida a partir do texto informado (e-mail, nome ou slug)
@@ -127,13 +235,15 @@
 
             // 2. Validação Interna de Contingência (Resiliente e Instantânea)
             const cleanId = normalizeStr(rawId.replace(/@fadelito\.com\.br$/i, ''));
+            
+            // 2.1 Diretoria Geral (Master)
             const isMaster = _PRIVATE_FALLBACK_HASHES.masterUsers.includes(cleanId);
-
             if (isMaster) {
                 if (pass === _PRIVATE_FALLBACK_HASHES.masterPass || pass.toLowerCase() === _PRIVATE_FALLBACK_HASHES.masterPass.toLowerCase()) {
                     const session = {
                         role: 'MASTER',
                         name: 'Diretoria Geral',
+                        username: 'diretoria',
                         email: 'diretoria@fadelito.com.br',
                         unit: 'ALL',
                         loginAt: new Date().toISOString(),
@@ -147,12 +257,36 @@
                 }
             }
 
+            // 2.2 Supervisão / Gestores Fictícios (10 Supervisores)
+            const matchedSupervisor = this.findSupervisor(rawId);
+            if (matchedSupervisor) {
+                if (pass === matchedSupervisor.password) {
+                    const session = {
+                        role: 'SUPERVISOR',
+                        name: matchedSupervisor.name,
+                        username: matchedSupervisor.username,
+                        email: matchedSupervisor.email,
+                        units: matchedSupervisor.units.slice(),
+                        unit: (matchedSupervisor.units.length > 1) ? 'SUPERVISOR_ALL' : matchedSupervisor.units[0],
+                        loginAt: new Date().toISOString(),
+                        token: 'sup_local_' + Date.now(),
+                        remember: remember
+                    };
+                    this.setSession(session, remember);
+                    return { success: true, session };
+                } else {
+                    return { success: false, error: `Senha incorreta para a Supervisão (${matchedSupervisor.name}).` };
+                }
+            }
+
+            // 2.3 Unidade Escolar Individual
             const matchedUnit = this.findUnit(rawId);
             if (matchedUnit) {
                 if (pass === _PRIVATE_FALLBACK_HASHES.unitPass || pass.toLowerCase() === _PRIVATE_FALLBACK_HASHES.unitPass.toLowerCase()) {
                     const session = {
                         role: 'UNIT',
                         name: `Unidade ${matchedUnit}`,
+                        username: normalizeStr(matchedUnit),
                         email: rawId.includes('@') ? rawId : `${normalizeStr(matchedUnit)}@fadelito.com.br`,
                         unit: matchedUnit,
                         loginAt: new Date().toISOString(),
@@ -168,7 +302,7 @@
 
             return { 
                 success: false, 
-                error: 'Usuário ou unidade não encontrada. Digite o nome da sua escola ou diretoria@fadelito.com.br.' 
+                error: 'Usuário não encontrado. Digite seu usuário de supervisão, nome da unidade ou diretoria@fadelito.com.br.' 
             };
         },
 
@@ -210,9 +344,23 @@
             return session && session.role === 'MASTER';
         },
 
+        isSupervisor() {
+            const session = this.getSession();
+            return session && session.role === 'SUPERVISOR';
+        },
+
         isUnit() {
             const session = this.getSession();
             return session && session.role === 'UNIT';
+        },
+
+        getAllowedUnits() {
+            const session = this.getSession();
+            if (!session) return [];
+            if (session.role === 'MASTER') return CANONICAL_UNITS.slice();
+            if (session.role === 'SUPERVISOR') return (session.units || []).slice();
+            if (session.role === 'UNIT' && session.unit) return [session.unit];
+            return [];
         },
 
         getAllowedUnit() {
@@ -221,6 +369,9 @@
             if (session.role === 'MASTER') {
                 return localStorage.getItem('fadelito_active_unit') || 'ALL';
             }
+            if (session.role === 'SUPERVISOR') {
+                return localStorage.getItem('fadelito_active_unit') || (session.units && session.units.length > 1 ? 'SUPERVISOR_ALL' : (session.units ? session.units[0] : null));
+            }
             return session.unit;
         },
 
@@ -228,6 +379,10 @@
             const session = this.getSession();
             if (!session) return false;
             if (session.role === 'MASTER') return true;
+            if (session.role === 'SUPERVISOR') {
+                if (unitName === 'SUPERVISOR_ALL') return true;
+                return Array.isArray(session.units) && session.units.includes(unitName);
+            }
             return session.unit === unitName;
         },
 

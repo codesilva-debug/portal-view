@@ -10,7 +10,6 @@ O projeto é estruturado para funcionar de forma nativa e de altíssima performa
 
 ```
 ├── index.html                   # Dashboard Principal (Protegido por Login Gatekeeper)
-├── painel_imprimir_a4.html      # Relatório Diagramado A4 / PDF (Com verificação de sessão RBAC)
 ├── auth_service.js              # Módulo Central de Autenticação e Regras de Papéis (RBAC)
 ├── data_unidades.js             # Base histórica offline (Funis e registros das 34 unidades)
 ├── apps_script_connector.js     # Script de automação Google Apps Script (Web App / Webhook)
@@ -32,7 +31,6 @@ O sistema possui dois níveis de acesso estritamente segregados:
   * Visão consolidada da rede: **" Toda a Rede (34 Unidades)"**.
   * Seletor de unidades ativo no topo da tela, permitindo auditar qualquer uma das 34 escolas individualmente.
   * Disparo de sincronização manual em tempo real com o Google Sheets.
-  * Geração de relatórios A4 de qualquer unidade ou do consolidado geral.
 
 ### B. Perfil Unidade Escolar (`role: UNIT`)
 * **Usuário Padrão:** E-mail ou slug da unidade (ex: `morumbi@fadelito.com.br`, `moema@fadelito.com.br`, `campinas@fadelito.com.br`)
@@ -41,7 +39,6 @@ O sistema possui dois níveis de acesso estritamente segregados:
   * O painel inicializa compulsoriamente na unidade do usuário.
   * O seletor de unidades no topo fica **desativado e travado** com o selo e cadeado da respectiva escola.
   * Qualquer tentativa de alteração via script, console ou parâmetros é interceptada pelo `AuthService` e pelo `loadUnitData`.
-  * O link de impressão A4 gera estritamente o relatório da sua unidade.
 
 ---
 

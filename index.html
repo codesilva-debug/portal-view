@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <!-- Base Multi-Unidades Oficial -->
@@ -42,7 +44,8 @@
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             width: 100%;
             max-width: 100%;
@@ -130,8 +133,17 @@
         }
 
         @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.85); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.85);
+            }
         }
 
         .nav-actions {
@@ -294,7 +306,8 @@
             transition: all 0.2s;
         }
 
-        .filter-select:hover, .filter-select:focus {
+        .filter-select:hover,
+        .filter-select:focus {
             border-color: #0f172a;
             background-color: #ffffff;
         }
@@ -419,7 +432,7 @@
             padding-bottom: 2px;
         }
 
-        
+
         /* Vector Icon System (No Emojis) */
         .app-icon {
             display: inline-block;
@@ -433,25 +446,35 @@
             stroke-linejoin: round;
             flex-shrink: 0;
         }
+
         .btn-nav .app-icon,
         .tab-btn .app-icon,
         .btn-filter-reset .app-icon {
             margin-right: 6px;
         }
+
         .btn-nav-logout .app-icon {
             margin-right: 4px;
         }
+
         .login-feature-item .app-icon {
             width: 16px;
             height: 16px;
             color: #93c5fd;
         }
+
         .app-icon-spin {
             animation: appIconSpin 1s linear infinite;
         }
+
         @keyframes appIconSpin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .tab-btn {
@@ -460,7 +483,6 @@
             font-weight: 600;
             background: transparent;
             border: none;
-            border-bottom: 2px solid transparent;
             color: var(--text-muted);
             cursor: pointer;
             transition: all 0.2s;
@@ -470,15 +492,530 @@
             gap: 6px;
         }
 
-        .tab-btn:hover { color: var(--text-main); }
-        .tab-btn.active {
+        .tab-btn:hover {
+            color: var(--text-main);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* ==================== NAVEGAÇÃO LATERAL MINIMALISTA (PADRÃO EXECUTIVO DO SITE) ==================== */
+        .lateral-nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1200;
+            pointer-events: none;
+        }
+
+        .lateral-hover-zone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 20px;
+            z-index: 1201;
+            pointer-events: auto;
+            background: transparent;
+        }
+
+        /* Aba Discreta e Profissional na Borda Esquerda */
+        .lateral-trigger-tab {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1202;
+            pointer-events: auto;
+            background: #ffffff;
             color: #0f172a;
-            border-bottom-color: #0f172a;
+            border: 1px solid #cbd5e1;
+            border-left: none;
+            border-radius: 0 9px 9px 0;
+            padding: 13px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.14), 0 1px 4px rgba(15, 23, 42, 0.08);
+            transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .lateral-trigger-tab:hover {
+            background: #ffffff;
+            border-color: #94a3b8;
+            padding-right: 11px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18), 0 2px 8px rgba(37, 99, 235, 0.16);
+            transform: translateY(-50%) translateX(2px);
+        }
+
+        .trigger-tab-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #1e293b;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        .lateral-trigger-tab .app-icon {
+            width: 16px;
+            height: 16px;
+            color: #2563eb;
+            margin: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .lateral-trigger-tab:hover .app-icon {
+            transform: scale(1.1);
+        }
+
+        /* Fundo escurecido sutil */
+        .lateral-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.3);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            z-index: 1205;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .lateral-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Painel Lateral Minimalista */
+        .lateral-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 300px;
+            max-width: 86vw;
+            background: #ffffff;
+            color: #0f172a;
+            z-index: 1210;
+            pointer-events: auto;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 24px rgba(15, 23, 42, 0.08);
+            border-right: 1px solid var(--border-color);
+            transform: translateX(-100%);
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow-y: auto;
+        }
+
+        /* Desktop: Expande com suavidade ao passar o mouse */
+        @media (min-width: 992px) {
+            .lateral-nav-container:hover .lateral-panel,
+            .lateral-hover-zone:hover ~ .lateral-panel,
+            .lateral-trigger-tab:hover ~ .lateral-panel,
+            .lateral-panel:hover,
+            .lateral-panel.is-hovered,
+            .lateral-panel.is-open,
+            .lateral-panel.is-pinned {
+                transform: translateX(0);
+            }
+
+            .lateral-panel.is-pinned {
+                box-shadow: 2px 0 12px rgba(15, 23, 42, 0.06);
+            }
+
+            body.sidebar-pinned .container {
+                margin-left: 300px;
+                transition: margin-left 0.28s ease;
+            }
+
+            body.sidebar-pinned .lateral-trigger-tab {
+                display: none;
+            }
+        }
+
+        /* Cabeçalho do Painel Lateral */
+        .lateral-panel-header {
+            padding: 18px 18px 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            background: #ffffff;
+        }
+
+        .lateral-brand-subtitle {
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748b;
+            margin-bottom: 2px;
+        }
+
+        .lateral-brand-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .lateral-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-lateral-pin,
+        .btn-lateral-close {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            color: #64748b;
+            border-radius: 6px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-lateral-pin:hover,
+        .btn-lateral-close:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+            border-color: #cbd5e1;
+        }
+
+        .btn-lateral-pin.is-active {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+        }
+
+        /* Lista de Módulos (Tab Buttons) Minimalistas */
+        .lateral-nav-list {
+            padding: 12px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .lateral-tab-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 14px;
+            border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            color: #334155;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            position: relative;
+            white-space: normal;
+        }
+
+        .lateral-tab-item:hover {
+            background: #f8fafc;
+            color: #0f172a;
+            border-color: #cbd5e1;
+        }
+
+        .lateral-tab-item.active {
+            background: #f8fafc !important;
+            color: #0f172a !important;
+            border-color: #cbd5e1 !important;
+            border-left: 4px solid #0f172a !important;
             font-weight: 700;
         }
 
-        .tab-pane { display: none; }
-        .tab-pane.active { display: block; }
+        .lateral-tab-item.active .tab-item-title {
+            color: #0f172a !important;
+            font-weight: 700;
+        }
+
+        .lateral-tab-item.active .tab-item-desc {
+            color: #64748b !important;
+        }
+
+        .tab-item-icon-box {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            transition: all 0.15s;
+        }
+
+        .lateral-tab-item:hover .tab-item-icon-box {
+            background: #ffffff;
+            color: #0f172a;
+            border-color: #cbd5e1;
+        }
+
+        .lateral-tab-item.active .tab-item-icon-box {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            border-color: #0f172a !important;
+        }
+
+        .tab-item-icon-box .app-icon {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            stroke: currentColor;
+        }
+
+        .tab-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .tab-item-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            line-height: 1.3;
+        }
+
+        .tab-item-desc {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 1px;
+            line-height: 1.2;
+        }
+
+        .lateral-tab-item.active .tab-item-desc {
+            color: #475569;
+        }
+
+        .badge-count-registros {
+            background: #e2e8f0;
+            color: #334155;
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 10px;
+        }
+
+        .lateral-tab-item.active .badge-count-registros {
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        /* Rodapé do Painel */
+        .lateral-panel-footer {
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .lateral-footer-unit {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .lateral-unit-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #16a34a;
+        }
+
+        .lateral-footer-hint {
+            font-size: 10px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        /* Oculta dock mobile no desktop */
+        .mobile-thumb-bar {
+            display: none;
+        }
+
+        .mobile-sheet-handle {
+            display: none;
+        }
+
+        /* ==================== EXPERIÊNCIA MOBILE MINIMALISTA ==================== */
+        @media (max-width: 991px) {
+            .lateral-trigger-tab,
+            .lateral-hover-zone,
+            .btn-lateral-pin {
+                display: none !important;
+            }
+
+            .container {
+                padding-bottom: 84px !important;
+            }
+
+            /* No celular, bottom sheet clean */
+            .lateral-panel {
+                top: auto;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                max-width: 100%;
+                max-height: 80vh;
+                border-radius: 16px 16px 0 0;
+                transform: translateY(100%);
+                border-right: none;
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 -8px 30px rgba(15, 23, 42, 0.15);
+                transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+                padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+            }
+
+            .lateral-panel.is-open {
+                transform: translateY(0) !important;
+            }
+
+            .mobile-sheet-handle {
+                display: block;
+                width: 36px;
+                height: 4px;
+                border-radius: 4px;
+                background: #cbd5e1;
+                margin: 10px auto 4px auto;
+                flex-shrink: 0;
+            }
+
+            .lateral-panel-header {
+                padding: 6px 16px 12px 16px;
+            }
+
+            .lateral-tab-item {
+                padding: 12px 14px;
+                min-height: 48px;
+            }
+
+            /* Dock Inferior Branco e Minimalista */
+            .mobile-thumb-bar {
+                position: fixed;
+                bottom: 10px;
+                left: 12px;
+                right: 12px;
+                height: 56px;
+                background: rgba(255, 255, 255, 0.96);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid var(--border-color);
+                border-radius: 28px;
+                box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+                z-index: 1100;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 3px 6px;
+                padding-bottom: max(3px, env(safe-area-inset-bottom, 3px));
+            }
+
+            .mobile-thumb-btn {
+                flex: 1;
+                background: transparent;
+                border: none;
+                color: #64748b;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2px;
+                padding: 5px 2px;
+                cursor: pointer;
+                border-radius: 12px;
+                transition: all 0.15s;
+                position: relative;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .mobile-thumb-btn .app-icon {
+                width: 17px;
+                height: 17px;
+                margin: 0;
+            }
+
+            .mobile-thumb-btn span {
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 1;
+            }
+
+            .mobile-thumb-btn.active {
+                color: #0f172a;
+            }
+
+            .mobile-thumb-btn.active span {
+                font-weight: 700;
+            }
+
+            .mobile-icon-wrap {
+                position: relative;
+                display: inline-flex;
+            }
+
+            .mobile-badge-pill {
+                position: absolute;
+                top: -3px;
+                right: -8px;
+                background: #0f172a;
+                color: #ffffff;
+                font-size: 9px;
+                font-weight: 700;
+                padding: 0 4px;
+                border-radius: 8px;
+                min-width: 13px;
+                text-align: center;
+                line-height: 12px;
+            }
+
+            .mobile-menu-burger {
+                width: 16px;
+                height: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .mobile-menu-burger span {
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: currentColor;
+                border-radius: 1px;
+            }
+        }
 
         /* Charts Grid */
         .chart-grid {
@@ -496,7 +1033,9 @@
         }
 
         @media (max-width: 1024px) {
-            .chart-grid, .chart-grid-3 {
+
+            .chart-grid,
+            .chart-grid-3 {
                 grid-template-columns: 1fr;
             }
         }
@@ -675,7 +1214,8 @@
             font-size: 13px;
         }
 
-        .custom-table th, .custom-table td {
+        .custom-table th,
+        .custom-table td {
             padding: 11px 14px;
             border-bottom: 1px solid var(--border-color);
             text-align: left;
@@ -709,12 +1249,41 @@
             letter-spacing: 0.3px;
         }
 
-        .badge-approved { background-color: #f0fdf4; color: #166534; border: 1px solid #86efac; }
-        .badge-vivencia { background-color: #eff6ff; color: #1e40af; border: 1px solid #93c5fd; }
-        .badge-warning { background-color: #fefce8; color: #854d0e; border: 1px solid #fde047; }
-        .badge-rejected { background-color: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
-        .badge-neutral { background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
-        .badge-open { background-color: #faf5ff; color: #6b21a8; border: 1px solid #d8b4fe; }
+        .badge-approved {
+            background-color: #f0fdf4;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+
+        .badge-vivencia {
+            background-color: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+
+        .badge-warning {
+            background-color: #fefce8;
+            color: #854d0e;
+            border: 1px solid #fde047;
+        }
+
+        .badge-rejected {
+            background-color: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .badge-neutral {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+
+        .badge-open {
+            background-color: #faf5ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
 
         /* WhatsApp Textarea */
         .whatsapp-container {
@@ -738,6 +1307,22 @@
             margin-bottom: 14px;
             resize: vertical;
             line-height: 1.5;
+        }
+
+        .code-textarea-box {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            resize: vertical;
+            background-color: #f8fafc;
+            color: #0f172a;
+            box-sizing: border-box;
+            outline: none;
+            margin-bottom: 14px;
         }
 
         /* Modal */
@@ -771,8 +1356,15 @@
         }
 
         @keyframes modalPop {
-            from { opacity: 0; transform: scale(0.96); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .modal-header {
@@ -809,7 +1401,8 @@
             text-transform: uppercase;
         }
 
-        .form-input, .form-select {
+        .form-input,
+        .form-select {
             padding: 8px 12px;
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -819,7 +1412,8 @@
             outline: none;
         }
 
-        .form-input:focus, .form-select:focus {
+        .form-input:focus,
+        .form-select:focus {
             border-color: #0f172a;
         }
 
@@ -856,10 +1450,17 @@
         }
 
         @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-    
+
         /* ==================== SELETOR DE UNIDADES & SESSÃO ==================== */
         .unit-selector-badge {
             display: flex;
@@ -871,6 +1472,7 @@
             border: 1px solid #334155;
             transition: all 0.2s ease;
         }
+
         .unit-selector-label {
             font-size: 11px;
             font-weight: 800;
@@ -878,6 +1480,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         .unit-selector-select {
             background: transparent;
             color: #ffffff;
@@ -887,18 +1490,22 @@
             outline: none;
             cursor: pointer;
         }
+
         .unit-selector-select option {
             background: #0f172a;
             color: #ffffff;
         }
+
         .unit-selector-badge.is-locked {
             background: #1e293b;
             border-color: #475569;
             opacity: 0.95;
         }
+
         .unit-selector-badge.is-locked .unit-selector-label {
             color: #94a3b8;
         }
+
         .unit-selector-badge.is-locked .unit-selector-select {
             cursor: not-allowed;
             color: #cbd5e1;
@@ -914,6 +1521,7 @@
             padding: 4px 10px;
             border-radius: 8px;
         }
+
         .session-role-badge {
             font-size: 11px;
             font-weight: 800;
@@ -922,16 +1530,25 @@
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
+
         .badge-master {
             background: #fef3c7;
             color: #92400e;
             border: 1px solid #fde68a;
         }
+
         .badge-unit {
             background: #e0f2fe;
             color: #0369a1;
             border: 1px solid #bae6fd;
         }
+
+        .badge-supervisor {
+            background: #ede9fe;
+            color: #5b21b6;
+            border: 1px solid #ddd6fe;
+        }
+
         .session-name-text {
             font-size: 12.5px;
             font-weight: 700;
@@ -941,6 +1558,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         .btn-nav-logout {
             background: #fee2e2;
             border: 1px solid #fca5a5;
@@ -955,6 +1573,7 @@
             align-items: center;
             gap: 4px;
         }
+
         .btn-nav-logout:hover {
             background: #fecaca;
             color: #7f1d1d;
@@ -987,8 +1606,15 @@
         }
 
         @keyframes loginCardFadeIn {
-            from { opacity: 0; transform: scale(0.96) translateY(16px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
 
         .login-gate-visual {
@@ -1193,9 +1819,19 @@
         }
 
         @keyframes shakeAlert {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-4px); }
-            75% { transform: translateX(4px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-4px);
+            }
+
+            75% {
+                transform: translateX(4px);
+            }
         }
 
         .btn-login-submit {
@@ -1223,7 +1859,7 @@
         }
 
         /* ==================== RESPONSIVIDADE MOBILE & TABLET ==================== */
-        
+
         /* Tablets e Telas Médias (<= 960px) */
         @media (max-width: 960px) {
             .navbar {
@@ -1232,10 +1868,12 @@
                 align-items: stretch;
                 gap: 12px;
             }
+
             .nav-brand {
                 width: 100%;
                 justify-content: space-between;
             }
+
             .nav-actions {
                 width: 100%;
                 display: flex;
@@ -1244,10 +1882,13 @@
                 align-items: center;
                 justify-content: flex-start;
             }
+
             .container {
                 padding: 16px 16px;
             }
-            .chart-grid, .chart-grid-3 {
+
+            .chart-grid,
+            .chart-grid-3 {
                 grid-template-columns: 1fr;
             }
         }
@@ -1262,36 +1903,45 @@
             #login-gate-screen {
                 padding: 14px;
             }
+
             .login-gate-card {
                 grid-template-columns: 1fr;
                 max-width: 440px;
                 border-radius: 20px;
             }
+
             .login-gate-visual {
                 display: none;
             }
+
             .login-gate-form-side {
                 padding: 28px 20px;
             }
+
             .login-form-header {
                 gap: 12px;
                 margin-bottom: 18px;
             }
+
             .login-form-avatar {
                 width: 46px;
                 height: 46px;
             }
+
             .login-form-title {
                 font-size: 18px;
             }
+
             .login-form-subtitle {
                 font-size: 12px;
             }
+
             /* Previne zoom inoportuno no iOS Safari mantendo font-size >= 16px */
             .login-text-input {
                 font-size: 16px;
                 padding: 12px 12px 12px 36px;
             }
+
             .btn-login-submit {
                 min-height: 48px;
                 font-size: 14px;
@@ -1302,21 +1952,26 @@
                 padding: 10px 14px;
                 gap: 10px;
             }
+
             .brand-logo-img {
                 width: 38px;
                 height: 38px;
             }
+
             .brand-title {
                 font-size: 14px;
             }
+
             .brand-subtitle {
                 font-size: 11px;
                 flex-wrap: wrap;
             }
+
             .sync-badge {
                 font-size: 10px;
                 padding: 2px 6px;
             }
+
             .nav-actions {
                 width: 100%;
                 display: flex;
@@ -1324,32 +1979,38 @@
                 gap: 8px;
                 justify-content: space-between;
             }
+
             .unit-selector-badge {
                 flex: 1 1 100%;
                 order: 2;
                 justify-content: space-between;
                 padding: 7px 12px;
             }
+
             .unit-selector-select {
                 font-size: 13px;
                 max-width: 220px;
             }
+
             .session-user-pill {
                 flex: 1 1 auto;
                 order: 1;
                 justify-content: space-between;
                 padding: 4px 8px;
             }
+
             .session-name-text {
                 max-width: 110px;
                 font-size: 11.5px;
             }
+
             .btn-nav-logout {
                 padding: 3px 6px;
                 font-size: 11px;
             }
-            #btn-sync-live, #btn-print-a4-link {
-                flex: 1 1 calc(50% - 4px);
+
+            #btn-sync-live {
+                flex: 1 1 auto;
                 order: 3;
                 justify-content: center;
                 padding: 8px 10px;
@@ -1363,13 +2024,16 @@
                 padding: 14px 16px;
                 gap: 12px;
             }
+
             .banner-title {
                 font-size: 13px;
                 flex-wrap: wrap;
             }
+
             .banner-desc {
                 font-size: 12px;
             }
+
             .banner-stats {
                 border-left: none;
                 border-top: 1px solid var(--border-color);
@@ -1379,12 +2043,15 @@
                 display: flex;
                 justify-content: space-around;
             }
+
             .banner-stat-item {
                 text-align: center;
             }
+
             .banner-stat-val {
                 font-size: 18px;
             }
+
             .banner-stat-lbl {
                 font-size: 10px;
             }
@@ -1394,6 +2061,7 @@
                 padding: 12px 14px;
                 gap: 8px;
             }
+
             .filter-group {
                 flex: 1 1 calc(50% - 4px);
                 min-width: 130px;
@@ -1401,20 +2069,24 @@
                 align-items: flex-start;
                 gap: 4px;
             }
+
             .filter-label {
                 font-size: 10.5px;
             }
+
             .filter-select {
                 width: 100%;
                 font-size: 12px;
                 padding: 8px 8px;
             }
+
             .filter-actions {
                 width: 100%;
                 margin-left: 0;
                 justify-content: stretch;
                 margin-top: 4px;
             }
+
             .btn-filter-reset {
                 width: 100%;
                 text-align: center;
@@ -1427,19 +2099,24 @@
                 gap: 8px !important;
                 margin-bottom: 18px;
             }
+
             .kpi-card {
                 padding: 10px 12px;
                 min-height: 85px;
             }
+
             .kpi-label {
                 font-size: 10px;
             }
+
             .kpi-value {
                 font-size: 20px;
             }
+
             .kpi-sub {
                 font-size: 10px;
             }
+
             .kpi-card:last-child {
                 grid-column: span 2;
             }
@@ -1453,10 +2130,12 @@
                 gap: 6px;
                 margin-bottom: 16px;
             }
+
             .tabs-header::-webkit-scrollbar {
                 display: none;
             }
-            .tab-btn {
+
+            .tabs-header .tab-btn {
                 flex-shrink: 0;
                 white-space: nowrap;
                 padding: 8px 14px;
@@ -1465,7 +2144,8 @@
                 background: #ffffff;
                 border: 1px solid var(--border-color);
             }
-            .tab-btn.active {
+
+            .tabs-header .tab-btn.active {
                 background: #0f172a;
                 color: #ffffff;
                 border-color: #0f172a;
@@ -1477,15 +2157,19 @@
                 gap: 8px !important;
                 margin-bottom: 16px;
             }
+
             .funnel-step {
                 padding: 12px 10px;
             }
+
             .funnel-title {
                 font-size: 10.5px;
             }
+
             .funnel-count {
                 font-size: 20px;
             }
+
             .funnel-sub {
                 font-size: 10px;
             }
@@ -1494,9 +2178,11 @@
             .chart-card {
                 padding: 14px 12px;
             }
+
             .chart-title {
                 font-size: 12.5px;
             }
+
             .chart-container {
                 height: 230px;
                 min-height: 200px;
@@ -1508,15 +2194,24 @@
                 align-items: stretch;
                 gap: 8px;
             }
+
             .table-search-box {
                 width: 100%;
             }
+
             .table-search-input {
                 font-size: 13px;
                 padding: 9px 12px;
             }
+
             .custom-table-card {
                 padding: 12px 8px;
+            }
+
+            /* Code Textarea */
+            .code-textarea-box {
+                font-size: 11px;
+                padding: 10px;
             }
 
             /* WhatsApp Tab */
@@ -1530,6 +2225,7 @@
     <!-- Lucide Icons Library -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
     <!-- ==================== TELA DE BLOQUEIO / LOGIN GATEKEEPER ==================== -->
@@ -1543,7 +2239,8 @@
                     </div>
                     <h1 class="login-visual-title">Portal Executivo de BI RH & Recrutamento</h1>
                     <p class="login-visual-desc">
-                        Painel de Inteligência Operacional da Rede Fadelito. Acompanhamento em tempo real do quadro de vagas, vivências práticas e funil de conversão.
+                        Painel de Inteligência Operacional da Rede Fadelito. Acompanhamento em tempo real do quadro de
+                        vagas, vivências práticas e funil de conversão.
                     </p>
                 </div>
 
@@ -1553,13 +2250,22 @@
 
                 <div class="login-visual-features">
                     <div class="login-feature-item">
-                        <svg class="app-icon" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg> Visão consolidada da rede e métricas isoladas por escola
+                        <svg class="app-icon" viewBox="0 0 24 24">
+                            <line x1="18" x2="18" y1="20" y2="10" />
+                            <line x1="12" x2="12" y1="20" y2="4" />
+                            <line x1="6" x2="6" y1="20" y2="14" />
+                        </svg> Visão consolidada da rede e métricas isoladas por escola
                     </div>
                     <div class="login-feature-item">
-                        <svg class="app-icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Sincronização automatizada e auto-cura com Google Sheets
+                        <svg class="app-icon" viewBox="0 0 24 24">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg> Sincronização automatizada e auto-cura com Google Sheets
                     </div>
                     <div class="login-feature-item">
-                        <svg class="app-icon" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Controle de acesso restrito (Diretoria Geral & Unidades)
+                        <svg class="app-icon" viewBox="0 0 24 24">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg> Controle de acesso restrito (Diretoria Geral, Supervisões & Unidades)
                     </div>
                 </div>
             </div>
@@ -1578,25 +2284,46 @@
 
                 <form id="form-login-gate" onsubmit="handleGateLogin(event)">
                     <div class="login-field-group">
-                        <label class="login-field-label" for="gate-input-user">Usuário ou E-mail da Unidade:</label>
+                        <label class="login-field-label" for="gate-input-user">Usuário ou E-mail (Diretoria, Supervisão ou Unidade):</label>
                         <div class="login-input-container">
-                            <span class="login-input-icon"><svg class="app-icon" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>
-                            <input type="text" id="gate-input-user" class="login-text-input" placeholder="ex: morumbi@fadelito.com.br ou campinas" autocomplete="username" required>
+                            <span class="login-input-icon"><svg class="app-icon" viewBox="0 0 24 24">
+                                    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                                    <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                                    <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+                                    <path d="M10 6h4" />
+                                    <path d="M10 10h4" />
+                                    <path d="M10 14h4" />
+                                    <path d="M10 18h4" />
+                                </svg></span>
+                            <input type="text" id="gate-input-user" class="login-text-input"
+                                placeholder="ex: luana, pamela, aurelio, diretoria ou morumbi" autocomplete="username" required>
                         </div>
                     </div>
 
                     <div class="login-field-group">
                         <label class="login-field-label" for="gate-input-pass">Senha de Acesso:</label>
                         <div class="login-input-container">
-                            <span class="login-input-icon"><svg class="app-icon" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></span>
-                            <input type="password" id="gate-input-pass" class="login-text-input" placeholder="••••••••••••" autocomplete="current-password" required>
-                            <button type="button" class="login-toggle-pass-btn" id="btn-gate-toggle-pass" onclick="toggleGatePasswordVisibility()" title="Mostrar/Ocultar Senha"><svg class="app-icon" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                            <span class="login-input-icon"><svg class="app-icon" viewBox="0 0 24 24">
+                                    <circle cx="7.5" cy="15.5" r="5.5" />
+                                    <path d="m21 2-9.6 9.6" />
+                                    <path d="m15.5 7.5 3 3L22 7l-3-3" />
+                                </svg></span>
+                            <input type="password" id="gate-input-pass" class="login-text-input"
+                                placeholder="••••••••••••" autocomplete="current-password" required>
+                            <button type="button" class="login-toggle-pass-btn" id="btn-gate-toggle-pass"
+                                onclick="toggleGatePasswordVisibility()" title="Mostrar/Ocultar Senha"><svg
+                                    class="app-icon" viewBox="0 0 24 24">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg></button>
                         </div>
                     </div>
 
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; font-size: 12.5px; color: #475569;">
+                    <div
+                        style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; font-size: 12.5px; color: #475569;">
                         <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
-                            <input type="checkbox" id="gate-check-remember" checked style="accent-color: #2563eb; cursor: pointer;">
+                            <input type="checkbox" id="gate-check-remember" checked
+                                style="accent-color: #2563eb; cursor: pointer;">
                             Lembrar meu acesso
                         </label>
                         <span style="font-size: 11.5px; color: #94a3b8; font-weight: 600;">Ambiente Seguro</span>
@@ -1617,6 +2344,109 @@
     <!-- ==================== DASHBOARD APLICAÇÃO (PROTEGIDO) ==================== -->
     <div id="dashboard-app" style="display: none;">
 
+        <!-- ==================== NAVEGAÇÃO LATERAL (DESKTOP HOVER & MOBILE BOTTOM SHEET) ==================== -->
+        <div id="lateral-nav-container" class="lateral-nav-container">
+            <!-- Zona de detecção de hover na borda esquerda do desktop -->
+            <div class="lateral-hover-zone" id="lateral-hover-zone"></div>
+
+            <!-- Aba flutuante visível na borda esquerda do desktop -->
+            <button class="lateral-trigger-tab" id="lateral-trigger-tab" onclick="toggleLateralMenu(true)" title="Menu de Módulos (Passe o mouse)">
+                <svg class="app-icon" viewBox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                <span class="trigger-tab-text">Módulos</span>
+            </button>
+
+            <!-- Fundo escurecido ao expandir menu -->
+            <div class="lateral-backdrop" id="lateral-backdrop" onclick="toggleLateralMenu(false)"></div>
+
+            <!-- Painel Lateral de Módulos -->
+            <aside class="lateral-panel" id="lateral-panel">
+                <!-- Puxador tátil no celular -->
+                <div class="mobile-sheet-handle"></div>
+
+                <!-- Cabeçalho -->
+                <div class="lateral-panel-header">
+                    <div class="lateral-brand">
+                        <div class="lateral-brand-subtitle">Rede Fadelito • RH</div>
+                        <div class="lateral-brand-title">Módulos</div>
+                    </div>
+                    <div class="lateral-header-actions">
+                        <button class="btn-lateral-pin" id="btn-lateral-pin" onclick="togglePinSidebar()" title="Fixar menu na tela">
+                            <svg class="app-icon" viewBox="0 0 24 24" style="width:13px;height:13px;"><line x1="12" x2="12" y1="17" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"/></svg>
+                        </button>
+                        <button class="btn-lateral-close" onclick="toggleLateralMenu(false)" title="Fechar menu">
+                            <svg class="app-icon" viewBox="0 0 24 24" style="width:13px;height:13px;"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lista de Categorias / Módulos -->
+                <nav class="lateral-nav-list">
+                    <button class="tab-btn lateral-tab-item active" data-tab="tab-dashboard" onclick="handleSelectTab('tab-dashboard', this)">
+                        <div class="tab-item-icon-box">
+                            <svg class="app-icon" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                        </div>
+                        <div class="tab-item-content">
+                            <div class="tab-item-title">Dashboard & KPIs</div>
+                            <div class="tab-item-desc">Quadro de vagas, funil e gráficos</div>
+                        </div>
+                    </button>
+
+                    <button class="tab-btn lateral-tab-item" data-tab="tab-multiano" onclick="handleSelectTab('tab-multiano', this)">
+                        <div class="tab-item-icon-box">
+                            <svg class="app-icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        </div>
+                        <div class="tab-item-content">
+                            <div class="tab-item-title">Análise Multi-Ano</div>
+                            <div class="tab-item-desc">Comparativo e tendências anuais</div>
+                        </div>
+                    </button>
+
+                    <button class="tab-btn lateral-tab-item" data-tab="tab-registros" onclick="handleSelectTab('tab-registros', this)">
+                        <div class="tab-item-icon-box">
+                            <svg class="app-icon" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/></svg>
+                        </div>
+                        <div class="tab-item-content">
+                            <div class="tab-item-title">
+                                <span>Gestor de Registros</span>
+                                <span class="badge-count-registros" id="tab-count-registros">21</span>
+                            </div>
+                            <div class="tab-item-desc">Tabela de vagas e candidatos</div>
+                        </div>
+                    </button>
+
+                    <button class="tab-btn lateral-tab-item" data-tab="tab-vivencias" onclick="handleSelectTab('tab-vivencias', this)">
+                        <div class="tab-item-icon-box">
+                            <svg class="app-icon" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                        </div>
+                        <div class="tab-item-content">
+                            <div class="tab-item-title">Conversão de Vivências</div>
+                            <div class="tab-item-desc">Taxas de aprovação por cargo</div>
+                        </div>
+                    </button>
+
+                    <!-- Botão de Sair / Trocar Gestor no Menu Lateral -->
+                    <button class="tab-btn lateral-tab-item" style="margin-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); padding-top: 12px;" onclick="handleUserLogout()" title="Sair da sessão atual e trocar de gestor">
+                        <div class="tab-item-icon-box" style="background: #fee2e2; color: #dc2626;">
+                            <svg class="app-icon" viewBox="0 0 24 24" style="color: #dc2626;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                        </div>
+                        <div class="tab-item-content">
+                            <div class="tab-item-title" style="color: #dc2626; font-weight: 700;">Sair / Trocar Gestor</div>
+                            <div class="tab-item-desc">Encerrar sessão e voltar ao login</div>
+                        </div>
+                    </button>
+                </nav>
+
+                <!-- Rodapé -->
+                <div class="lateral-panel-footer">
+                    <div class="lateral-footer-unit">
+                        <span class="lateral-unit-dot"></span>
+                        <span id="lateral-active-unit-name">Consolidado da Rede</span>
+                    </div>
+                    <div class="lateral-footer-hint">Passe o mouse para abrir • Clique no alfinete para fixar</div>
+                </div>
+            </aside>
+        </div>
+
         <!-- TOP NAVBAR -->
         <nav class="navbar">
             <div class="nav-brand">
@@ -1635,553 +2465,489 @@
             <div class="nav-actions">
                 <!-- Seletor de Unidades (Travado para perfil UNIT, liberado para MASTER) -->
                 <div class="unit-selector-badge" id="unit-selector-wrap">
-                    <span class="unit-selector-label" id="unit-selector-label"><svg class="app-icon" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg> Unidade:</span>
-                    <select id="select-active-unit" class="unit-selector-select" onchange="onSelectUnitChanged(this.value)">
+                    <span class="unit-selector-label" id="unit-selector-label"><svg class="app-icon"
+                            viewBox="0 0 24 24">
+                            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+                            <path d="M10 6h4" />
+                            <path d="M10 10h4" />
+                            <path d="M10 14h4" />
+                            <path d="M10 18h4" />
+                        </svg> Unidade:</span>
+                    <select id="select-active-unit" class="unit-selector-select"
+                        onchange="onSelectUnitChanged(this.value)">
                         <!-- Preenchido via JavaScript -->
                     </select>
                 </div>
-                
+
                 <!-- Sessão Ativa & Botão Sair -->
                 <div class="session-user-pill" id="session-user-pill">
                     <span class="session-role-badge badge-master" id="session-role-badge">Master</span>
                     <span class="session-name-text" id="session-name-text">Diretoria Geral</span>
-                    <button class="btn-nav-logout" onclick="handleUserLogout()" title="Desconectar da Sessão"><svg class="app-icon" viewBox="0 0 24 24" style="width: 13px; height: 13px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg> Sair</button>
+                    <button class="btn-nav-logout" onclick="handleUserLogout()" title="Desconectar da Sessão"><svg
+                            class="app-icon" viewBox="0 0 24 24" style="width: 13px; height: 13px;">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" x2="9" y1="12" y2="12" />
+                        </svg> Sair</button>
                 </div>
 
                 <button class="btn-nav" id="btn-sync-live" onclick="fetchLiveGoogleSheet()">
-                    <svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Sincronizar
+                    <svg class="app-icon" viewBox="0 0 24 24">
+                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                        <path d="M21 3v5h-5" />
+                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                        <path d="M8 16H3v5" />
+                    </svg> Sincronizar
                 </button>
-                <a href="painel_imprimir_a4.html" id="btn-print-a4-link" class="btn-nav" target="_blank">
-                    <svg class="app-icon" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg> Painel A4
-                </a>
             </div>
         </nav>
 
-    <div class="container">
+        <div class="container">
 
-        <!-- BANNER DE SÍNTESE E DIAGNÓSTICO -->
-        <div class="banner">
-            <div class="banner-text">
-                <div class="banner-title">
-                    <span><svg class="app-icon" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg> Diagnóstico Executivo de Recrutamento & Seleção (<span id="banner-unit-name">Portal do Morumbi</span>)</span>
-                </div>
-                <div class="banner-desc">
-                    Acompanhamento contínuo do quadro de vagas, vivências práticas e contratações. Base conectada em tempo real com a planilha <a href="https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/edit?gid=1399861337#gid=1399861337" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: none;">PLANILHA DE VAGAS REDE 2026 (Google Sheets)</a>. Gráficos dinâmicos multi-ano imunes a viradas de exercício.
-                </div>
-            </div>
-            <div class="banner-stats">
-                <div class="banner-stat-item">
-                    <div class="banner-stat-val" id="banner-total-vagas">21</div>
-                    <div class="banner-stat-lbl">Vagas Totais</div>
-                </div>
-                <div class="banner-stat-item">
-                    <div class="banner-stat-val" style="color: #16a34a;" id="banner-aprovados">19</div>
-                    <div class="banner-stat-lbl">Aprovados</div>
-                </div>
-                <div class="banner-stat-item">
-                    <div class="banner-stat-val" style="color: #7c3aed;" id="banner-vagas-abertas">1</div>
-                    <div class="banner-stat-lbl">Em Aberto</div>
-                </div>
-                <div class="banner-stat-item">
-                    <div class="banner-stat-val" style="color: #2563eb;" id="banner-taxa-preenchimento">90.5%</div>
-                    <div class="banner-stat-lbl">Preenchimento</div>
-                </div>
-            </div>
-        </div>
+            <!-- ==================== TAB 1: DASHBOARD EXECUTIVO ==================== -->
+            <div id="tab-dashboard" class="tab-pane active">
 
-        <!-- FILTROS GLOBAIS DINÂMICOS -->
-        <div class="filter-bar">
-            <div class="filter-group">
-                <span class="filter-label">Ano:</span>
-                <select class="filter-select" id="filter-year" onchange="applyFilters()">
-                    <option value="ALL">Todos os Anos</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <span class="filter-label">Mês:</span>
-                <select class="filter-select" id="filter-month" onchange="applyFilters()">
-                    <option value="ALL">Todos os Meses</option>
-                    <option value="1">01 - Janeiro</option>
-                    <option value="2">02 - Fevereiro</option>
-                    <option value="3">03 - Março</option>
-                    <option value="4">04 - Abril</option>
-                    <option value="5">05 - Maio</option>
-                    <option value="6">06 - Junho</option>
-                    <option value="7">07 - Julho</option>
-                    <option value="8">08 - Agosto</option>
-                    <option value="9">09 - Setembro</option>
-                    <option value="10">10 - Outubro</option>
-                    <option value="11">11 - Novembro</option>
-                    <option value="12">12 - Dezembro</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <span class="filter-label">Cargo / Função:</span>
-                <select class="filter-select" id="filter-role" onchange="applyFilters()">
-                    <option value="ALL">Todos os Cargos</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <span class="filter-label">Status:</span>
-                <select class="filter-select" id="filter-status" onchange="applyFilters()">
-                    <option value="ALL">Todos os Status</option>
-                    <option value="Aprovado">Aprovado</option>
-                    <option value="Vivência">Vivência</option>
-                    <option value="Em Aberto">Em Aberto</option>
-                    <option value="Reprovado">Reprovado</option>
-                    <option value="Desistente">Desistente</option>
-                    <option value="Não Compareceu">Não Compareceu</option>
-                    <option value="Desistiu Integração">Desistiu Integração</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <span class="filter-label">Turno / Horário:</span>
-                <select class="filter-select" id="filter-shift" onchange="applyFilters()">
-                    <option value="ALL">Todos os Turnos</option>
-                    <option value="MANHA">Manhã (ex: 7:00 às 13:00)</option>
-                    <option value="TARDE">Tarde (ex: 13:00 às 19:00)</option>
-                    <option value="INTERMEDIARIO">Intermediário (ex: 10:30/12:00)</option>
-                    <option value="INTEGRAL">Integral / 12h (ex: 9:30 às 19:30)</option>
-                </select>
-            </div>
-            <div class="filter-actions">
-                <button class="btn-filter-reset" onclick="resetFilters()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Limpar Filtros</button>
-            </div>
-        </div>
-
-        <!-- KPI CARDS GRID -->
-        <div class="kpi-grid">
-            <div class="kpi-card">
-                <div class="kpi-card-bar" style="background-color: #0f172a;"></div>
-                <div class="kpi-label">Quadro de Vagas</div>
-                <div class="kpi-value" id="kpi-total-vagas">21</div>
-                <div class="kpi-sub" style="color: #0f172a;" id="kpi-total-vagas-sub">Quadro Previsto da Unidade</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-card-bar" style="background-color: #16a34a;"></div>
-                <div class="kpi-label">Contratações / Aprovados</div>
-                <div class="kpi-value" style="color: #16a34a;" id="kpi-aprovados">19</div>
-                <div class="kpi-sub" style="color: #166534;" id="kpi-aprovados-sub">90.5% das vagas preenchidas</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-card-bar" style="background-color: #7c3aed;"></div>
-                <div class="kpi-label">Vagas em Aberto / Captação</div>
-                <div class="kpi-value" style="color: #7c3aed;" id="kpi-vagas-abertas">1</div>
-                <div class="kpi-sub" style="color: #6d28d9;" id="kpi-vagas-abertas-sub">1 vaga em captação ativa</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-card-bar" style="background-color: #2563eb;"></div>
-                <div class="kpi-label">Vivências em Andamento</div>
-                <div class="kpi-value" style="color: #2563eb;" id="kpi-vivencias">1</div>
-                <div class="kpi-sub" style="color: #1e40af;" id="kpi-vivencias-sub">Fase final de avaliação</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-card-bar" style="background-color: #059669;"></div>
-                <div class="kpi-label">Taxa Média de Conversão</div>
-                <div class="kpi-value" style="color: #059669;" id="kpi-conversao">61.3%</div>
-                <div class="kpi-sub" style="color: #047857;">Aprovados / Vivências</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-card-bar" style="background-color: #d97706;"></div>
-                <div class="kpi-label">Esforço Médio por Vaga</div>
-                <div class="kpi-value" style="color: #d97706;" id="kpi-ratio">1.48</div>
-                <div class="kpi-sub" style="color: #b45309;">Vivências p/ 1 contratação</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-card-bar" style="background-color: #0284c7;"></div>
-                <div class="kpi-label">Maior Demanda da Unidade</div>
-                <div class="kpi-value" style="font-size: 18px; line-height: 1.3;" id="kpi-maior-demanda">Inspetor de Alunos</div>
-                <div class="kpi-sub" style="color: #0369a1;" id="kpi-maior-demanda-sub">5 Vagas (24% do total)</div>
-            </div>
-        </div>
-
-        <!-- TABS HEADER -->
-        <div class="tabs-header">
-            <button class="tab-btn active" onclick="switchTab('tab-dashboard', this)"><svg class="app-icon" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg> Dashboard Executivo & KPIs</button>
-            <button class="tab-btn" onclick="switchTab('tab-multiano', this)"><svg class="app-icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> Análise Multi-Ano & Tendências</button>
-            <button class="tab-btn" onclick="switchTab('tab-registros', this)"><svg class="app-icon" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg> Gestor de Registros & Vagas (<span id="tab-count-registros">21</span>)</button>
-            <button class="tab-btn" onclick="switchTab('tab-vivencias', this)"><svg class="app-icon" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg> Conversão de Vivências & Cargos</button>
-            <button class="tab-btn" onclick="switchTab('tab-whatsapp', this)"><svg class="app-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> WhatsApp da Diretoria</button>
-            <button class="tab-btn" onclick="switchTab('tab-config', this)"><svg class="app-icon" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg> Conexão Google Sheets & Apps Script</button>
-        </div>
-
-        <!-- ==================== TAB 1: DASHBOARD EXECUTIVO ==================== -->
-        <div id="tab-dashboard" class="tab-pane active">
-
-            <!-- FUNIL DE SELEÇÃO GERAL -->
-            <div class="funnel-container">
-                <div class="funnel-step">
-                    <div class="funnel-step-label">1. Inscritos / Triados</div>
-                    <div class="funnel-step-val" id="funnel-inscritos">31</div>
-                    <div class="funnel-step-rate" id="funnel-rate-inscritos" style="background: #f1f5f9; color: #475569;">100% da Base</div>
+                <!-- FILTROS GLOBAIS DINÂMICOS -->
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <span class="filter-label">Ano:</span>
+                        <select class="filter-select" id="filter-year" onchange="applyFilters()">
+                            <option value="ALL">Todos os Anos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Mês:</span>
+                        <select class="filter-select" id="filter-month" onchange="applyFilters()">
+                            <option value="ALL">Todos os Meses</option>
+                            <option value="1">01 - Janeiro</option>
+                            <option value="2">02 - Fevereiro</option>
+                            <option value="3">03 - Março</option>
+                            <option value="4">04 - Abril</option>
+                            <option value="5">05 - Maio</option>
+                            <option value="6">06 - Junho</option>
+                            <option value="7">07 - Julho</option>
+                            <option value="8">08 - Agosto</option>
+                            <option value="9">09 - Setembro</option>
+                            <option value="10">10 - Outubro</option>
+                            <option value="11">11 - Novembro</option>
+                            <option value="12">12 - Dezembro</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Cargo / Função:</span>
+                        <select class="filter-select" id="filter-role" onchange="applyFilters()">
+                            <option value="ALL">Todos os Cargos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Status:</span>
+                        <select class="filter-select" id="filter-status" onchange="applyFilters()">
+                            <option value="ALL">Todos os Status</option>
+                            <option value="Aprovado">Aprovado</option>
+                            <option value="Vivência">Vivência</option>
+                            <option value="Em Aberto">Em Aberto</option>
+                            <option value="Reprovado">Reprovado</option>
+                            <option value="Desistente">Desistente</option>
+                            <option value="Não Compareceu">Não Compareceu</option>
+                            <option value="Desistiu Integração">Desistiu Integração</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Turno / Horário:</span>
+                        <select class="filter-select" id="filter-shift" onchange="applyFilters()">
+                            <option value="ALL">Todos os Turnos</option>
+                            <option value="MANHA">Manhã (ex: 7:00 às 13:00)</option>
+                            <option value="TARDE">Tarde (ex: 13:00 às 19:00)</option>
+                            <option value="INTERMEDIARIO">Intermediário (ex: 10:30/12:00)</option>
+                            <option value="INTEGRAL">Integral / 12h (ex: 9:30 às 19:30)</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn-filter-reset" onclick="resetFilters()"><svg class="app-icon" viewBox="0 0 24 24">
+                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                                <path d="M21 3v5h-5" />
+                                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                                <path d="M8 16H3v5" />
+                            </svg> Limpar Filtros</button>
+                    </div>
                 </div>
-                <div class="funnel-step">
-                    <div class="funnel-step-label">2. Vivências em Escola</div>
-                    <div class="funnel-step-val" id="funnel-vivencias">30</div>
-                    <div class="funnel-step-rate" id="funnel-rate-vivencias" style="background: #eff6ff; color: #1e40af;">96.8% Comparecimento</div>
-                </div>
-                <div class="funnel-step">
-                    <div class="funnel-step-label">3. Aprovados / Admitidos</div>
-                    <div class="funnel-step-val" id="funnel-aprovados" style="color: #16a34a;">19</div>
-                    <div class="funnel-step-rate" id="funnel-rate-aprovados" style="background: #f0fdf4; color: #166534;">63.3% Conversão</div>
-                </div>
-                <div class="funnel-step">
-                    <div class="funnel-step-label">4. Vagas Preenchidas</div>
-                    <div class="funnel-step-val" id="funnel-vagas" style="color: #0f172a;">19 / 21</div>
-                    <div class="funnel-step-rate" id="funnel-rate-vagas" style="background: #f0fdf4; color: #166534;">90.5% Preenchido</div>
-                </div>
-            </div>
 
-            <!-- GRÁFICOS PRINCIPAIS -->
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <div class="chart-title">Evolução Temporal das Contratações</div>
-                            <div class="chart-subtitle">Volume de admissões, vivências e novas vagas mês a mês</div>
+                <!-- KPI CARDS GRID -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-card-bar" style="background-color: #0f172a;"></div>
+                        <div class="kpi-label">Quadro de Vagas</div>
+                        <div class="kpi-value" id="kpi-total-vagas">21</div>
+                        <div class="kpi-sub" style="color: #0f172a;" id="kpi-total-vagas-sub">Quadro Previsto da Unidade
                         </div>
                     </div>
-                    <div class="chart-container">
-                        <canvas id="chartEvolucaoMensal"></canvas>
+                    <div class="kpi-card">
+                        <div class="kpi-card-bar" style="background-color: #16a34a;"></div>
+                        <div class="kpi-label">Contratações / Aprovados</div>
+                        <div class="kpi-value" style="color: #16a34a;" id="kpi-aprovados">19</div>
+                        <div class="kpi-sub" style="color: #166534;" id="kpi-aprovados-sub">90.5% das vagas preenchidas
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-bar" style="background-color: #7c3aed;"></div>
+                        <div class="kpi-label">Vagas em Aberto / Captação</div>
+                        <div class="kpi-value" style="color: #7c3aed;" id="kpi-vagas-abertas">1</div>
+                        <div class="kpi-sub" style="color: #6d28d9;" id="kpi-vagas-abertas-sub">1 vaga em captação ativa
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-bar" style="background-color: #2563eb;"></div>
+                        <div class="kpi-label">Vivências em Andamento</div>
+                        <div class="kpi-value" style="color: #2563eb;" id="kpi-vivencias">1</div>
+                        <div class="kpi-sub" style="color: #1e40af;" id="kpi-vivencias-sub">Fase final de avaliação</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-bar" style="background-color: #059669;"></div>
+                        <div class="kpi-label">Taxa Média de Conversão</div>
+                        <div class="kpi-value" style="color: #059669;" id="kpi-conversao">61.3%</div>
+                        <div class="kpi-sub" style="color: #047857;">Aprovados / Vivências</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-bar" style="background-color: #d97706;"></div>
+                        <div class="kpi-label">Esforço Médio por Vaga</div>
+                        <div class="kpi-value" style="color: #d97706;" id="kpi-ratio">1.48</div>
+                        <div class="kpi-sub" style="color: #b45309;">Vivências p/ 1 contratação</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-bar" style="background-color: #0284c7;"></div>
+                        <div class="kpi-label">Maior Demanda da Unidade</div>
+                        <div class="kpi-value" style="font-size: 18px; line-height: 1.3;" id="kpi-maior-demanda">Inspetor de
+                            Alunos</div>
+                        <div class="kpi-sub" style="color: #0369a1;" id="kpi-maior-demanda-sub">5 Vagas (24% do total)</div>
                     </div>
                 </div>
 
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <div class="chart-title">Distribuição de Vagas por Cargo</div>
-                            <div class="chart-subtitle">Vagas totais vs. Vagas já preenchidas por função</div>
-                        </div>
+                <!-- FUNIL DE SELEÇÃO GERAL -->
+                <div class="funnel-container">
+                    <div class="funnel-step">
+                        <div class="funnel-step-label">1. Inscritos / Triados</div>
+                        <div class="funnel-step-val" id="funnel-inscritos">31</div>
+                        <div class="funnel-step-rate" id="funnel-rate-inscritos"
+                            style="background: #f1f5f9; color: #475569;">100% da Base</div>
                     </div>
-                    <div class="chart-container">
-                        <canvas id="chartVagasPorCargo"></canvas>
+                    <div class="funnel-step">
+                        <div class="funnel-step-label">2. Vivências em Escola</div>
+                        <div class="funnel-step-val" id="funnel-vivencias">30</div>
+                        <div class="funnel-step-rate" id="funnel-rate-vivencias"
+                            style="background: #eff6ff; color: #1e40af;">96.8% Comparecimento</div>
+                    </div>
+                    <div class="funnel-step">
+                        <div class="funnel-step-label">3. Aprovados / Admitidos</div>
+                        <div class="funnel-step-val" id="funnel-aprovados" style="color: #16a34a;">19</div>
+                        <div class="funnel-step-rate" id="funnel-rate-aprovados"
+                            style="background: #f0fdf4; color: #166534;">63.3% Conversão</div>
+                    </div>
+                    <div class="funnel-step">
+                        <div class="funnel-step-label">4. Vagas Preenchidas</div>
+                        <div class="funnel-step-val" id="funnel-vagas" style="color: #0f172a;">19 / 21</div>
+                        <div class="funnel-step-rate" id="funnel-rate-vagas"
+                            style="background: #f0fdf4; color: #166534;">90.5% Preenchido</div>
                     </div>
                 </div>
+
+                <!-- GRÁFICOS PRINCIPAIS -->
+                <div class="chart-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-title">Evolução Temporal das Contratações</div>
+                                <div class="chart-subtitle">Volume de admissões, vivências e novas vagas mês a mês</div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="chartEvolucaoMensal"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-title">Distribuição de Vagas por Cargo</div>
+                                <div class="chart-subtitle">Vagas totais vs. Vagas já preenchidas por função</div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="chartVagasPorCargo"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-grid-3">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-title">Assertividade & Turnos</div>
+                                <div class="chart-subtitle">Vagas e taxa de preenchimento por horário</div>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="height: 180px;">
+                            <canvas id="chartHorarios"></canvas>
+                        </div>
+                        <div class="shift-assertiveness-grid" id="shift-assertiveness-grid">
+                            <!-- Preenchido via JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-title">Taxa de Conversão por Cargo</div>
+                                <div class="chart-subtitle">% de vivências que viraram contratação</div>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="height: 240px;">
+                            <canvas id="chartConversaoCargos"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-title">Motivos de Perdas / Descarte</div>
+                                <div class="chart-subtitle">Onde o funil perdeu candidatos</div>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="height: 240px;">
+                            <canvas id="chartPerdasFunil"></canvas>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="chart-grid-3">
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <div class="chart-title">Assertividade & Turnos</div>
-                            <div class="chart-subtitle">Vagas e taxa de preenchimento por horário</div>
+            <!-- ==================== TAB 2: ANÁLISE MULTI-ANO & TENDÊNCIAS ==================== -->
+            <div id="tab-multiano" class="tab-pane">
+                <div class="banner" style="border-left-color: #2563eb; margin-bottom: 20px;">
+                    <div class="banner-text">
+                        <div class="banner-title" style="color: #2563eb;">
+                            <span><svg class="app-icon" viewBox="0 0 24 24">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg> Proteção de Virada de Exercício & Análise Comparativa Anual</span>
+                        </div>
+                        <div class="banner-desc">
+                            Este módulo agrupa automaticamente qualquer data inserida na planilha ou no site. Ao virar o
+                            ano (ex: 2026 → 2027), novas datas são identificadas em tempo real sem necessidade de
+                            reconfigurar fórmulas, gráficos ou tabelas.
                         </div>
                     </div>
-                    <div class="chart-container" style="height: 180px;">
-                        <canvas id="chartHorarios"></canvas>
-                    </div>
-                    <div class="shift-assertiveness-grid" id="shift-assertiveness-grid">
-                        <!-- Preenchido via JavaScript -->
-                    </div>
                 </div>
 
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <div class="chart-title">Taxa de Conversão por Cargo</div>
-                            <div class="chart-subtitle">% de vivências que viraram contratação</div>
+                <div class="chart-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-title">Volume de Contratações por Ano</div>
+                                <div class="chart-subtitle">Comparativo anual consolidado</div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="chartComparativoAnual"></canvas>
                         </div>
                     </div>
-                    <div class="chart-container" style="height: 240px;">
-                        <canvas id="chartConversaoCargos"></canvas>
-                    </div>
-                </div>
 
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <div class="chart-title">Motivos de Perdas / Descarte</div>
-                            <div class="chart-subtitle">Onde o funil perdeu candidatos</div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <div class="chart-title">Sazonalidade & Pico de Contratações</div>
+                                <div class="chart-subtitle">Distribuição histórica por mês do ano</div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="chartSazonalidade"></canvas>
                         </div>
                     </div>
-                    <div class="chart-container" style="height: 240px;">
-                        <canvas id="chartPerdasFunil"></canvas>
-                    </div>
                 </div>
-            </div>
 
-        </div>
-
-        <!-- ==================== TAB 2: ANÁLISE MULTI-ANO & TENDÊNCIAS ==================== -->
-        <div id="tab-multiano" class="tab-pane">
-            <div class="banner" style="border-left-color: #2563eb; margin-bottom: 20px;">
-                <div class="banner-text">
-                    <div class="banner-title" style="color: #2563eb;">
-                        <span><svg class="app-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Proteção de Virada de Exercício & Análise Comparativa Anual</span>
-                    </div>
-                    <div class="banner-desc">
-                        Este módulo agrupa automaticamente qualquer data inserida na planilha ou no site. Ao virar o ano (ex: 2026 → 2027), novas datas são identificadas em tempo real sem necessidade de reconfigurar fórmulas, gráficos ou tabelas.
-                    </div>
-                </div>
-            </div>
-
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <div class="chart-title">Volume de Contratações por Ano</div>
-                            <div class="chart-subtitle">Comparativo anual consolidado</div>
+                <!-- TABELA DE RESUMO ANUAL -->
+                <div class="custom-table-card">
+                    <div class="table-toolbar">
+                        <div style="font-size: 13.5px; font-weight: 800; text-transform: uppercase; color: #0f172a;">
+                            <svg class="app-icon" viewBox="0 0 24 24">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                                <line x1="16" x2="16" y1="2" y2="6" />
+                                <line x1="8" x2="8" y1="2" y2="6" />
+                                <line x1="3" x2="21" y1="10" y2="10" />
+                            </svg> Histórico Consolidado por Exercício Anual
                         </div>
                     </div>
-                    <div class="chart-container">
-                        <canvas id="chartComparativoAnual"></canvas>
-                    </div>
-                </div>
-
-                <div class="chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <div class="chart-title">Sazonalidade & Pico de Contratações</div>
-                            <div class="chart-subtitle">Distribuição histórica por mês do ano</div>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="chartSazonalidade"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TABELA DE RESUMO ANUAL -->
-            <div class="custom-table-card">
-                <div class="table-toolbar">
-                    <div style="font-size: 13.5px; font-weight: 800; text-transform: uppercase; color: #0f172a;">
-                        <svg class="app-icon" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg> Histórico Consolidado por Exercício Anual
-                    </div>
-                </div>
-                <table class="custom-table">
-                    <thead>
-                        <tr>
-                            <th>Exercício (Ano)</th>
-                            <th>Total de Registros</th>
-                            <th>Aprovados</th>
-                            <th>Vivências</th>
-                            <th>Perdas / Reprovados</th>
-                            <th>Taxa de Eficiência</th>
-                            <th>Mês de Maior Volume</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-exercicios-body">
-                        <!-- Preenchido via JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ==================== TAB 3: GESTOR DE REGISTROS & VAGAS ==================== -->
-        <div id="tab-registros" class="tab-pane">
-            <div class="custom-table-card">
-                <div class="table-toolbar">
-                    <div class="table-search-box">
-                        <span style="display: flex; align-items: center; color: #64748b;"><svg class="app-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg></span>
-                        <input type="text" class="table-search-input" id="search-table-input" placeholder="Buscar por cargo, horário, status, data..." oninput="renderTableRecords()">
-                    </div>
-                    <div style="display: flex; gap: 8px;">
-                        <button class="btn-nav" onclick="exportTableToCSV()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Baixar CSV</button>
-                        <button class="btn-nav" onclick="resetToInitialData()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Restaurar Base Original</button>
-                    </div>
-                </div>
-
-                <div style="overflow-x: auto;">
                     <table class="custom-table">
                         <thead>
                             <tr>
-                                <th style="width: 40px;">#</th>
-                                <th>Data</th>
-                                <th>Cargo / Função</th>
-                                <th>Horário da Vaga</th>
-                                <th>Mês / Lote</th>
-                                <th>Status Atual</th>
-                                <th style="text-align: right;">Ações Rápidas</th>
+                                <th>Exercício (Ano)</th>
+                                <th>Total de Registros</th>
+                                <th>Aprovados</th>
+                                <th>Vivências</th>
+                                <th>Perdas / Reprovados</th>
+                                <th>Taxa de Eficiência</th>
+                                <th>Mês de Maior Volume</th>
                             </tr>
                         </thead>
-                        <tbody id="table-registros-body">
-                            <!-- Preenchido dinamicamente -->
+                        <tbody id="table-exercicios-body">
+                            <!-- Preenchido via JS -->
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <!-- ==================== TAB 3: GESTOR DE REGISTROS & VAGAS ==================== -->
+            <div id="tab-registros" class="tab-pane">
+                <div class="custom-table-card">
+                    <div class="table-toolbar">
+                        <div class="table-search-box">
+                            <span style="display: flex; align-items: center; color: #64748b;"><svg class="app-icon"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" x2="16.65" y1="21" y2="16.65" />
+                                </svg></span>
+                            <input type="text" class="table-search-input" id="search-table-input"
+                                placeholder="Buscar por cargo, horário, status, data..." oninput="renderTableRecords()">
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn-nav" onclick="exportTableToCSV()"><svg class="app-icon"
+                                    viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" x2="12" y1="15" y2="3" />
+                                </svg> Baixar CSV</button>
+                            <button class="btn-nav" onclick="resetToInitialData()"><svg class="app-icon"
+                                    viewBox="0 0 24 24">
+                                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                                    <path d="M21 3v5h-5" />
+                                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                                    <path d="M8 16H3v5" />
+                                </svg> Restaurar Base Original</button>
+                        </div>
+                    </div>
+
+                    <div style="overflow-x: auto;">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;">#</th>
+                                    <th>Data</th>
+                                    <th>Cargo / Função</th>
+                                    <th>Horário da Vaga</th>
+                                    <th>Mês / Lote</th>
+                                    <th>Status Atual</th>
+                                    <th style="text-align: right;">Ações Rápidas</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-registros-body">
+                                <!-- Preenchido dinamicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 4: MATRIZ DE VIVÊNCIAS & CONVERSÃO ==================== -->
+            <div id="tab-vivencias" class="tab-pane">
+                <div class="banner" style="border-left-color: #7c3aed; margin-bottom: 20px;">
+                    <div class="banner-text">
+                        <div class="banner-title" style="color: #7c3aed;">
+                            <span><svg class="app-icon" viewBox="0 0 24 24">
+                                    <path d="m16 3 4 4-4 4" />
+                                    <path d="M20 7H4" />
+                                    <path d="m8 21-4-4 4-4" />
+                                    <path d="M4 17h16" />
+                                </svg> Análise de Esforço de R&S e Vivências em Chão de Escola</span>
+                        </div>
+                        <div class="banner-desc">
+                            Relação entre a quantidade de vivências práticas realizadas pelos candidatos na Unidade
+                            Portal do Morumbi e as aprovações efetivas. Permite identificar quais cargos demandam maior
+                            esforço de atração e seleção.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-table-card">
+                    <div class="table-toolbar">
+                        <div style="font-size: 13.5px; font-weight: 800; text-transform: uppercase; color: #0f172a;">
+                            <svg class="app-icon" viewBox="0 0 24 24">
+                                <line x1="18" x2="18" y1="20" y2="10" />
+                                <line x1="12" x2="12" y1="20" y2="4" />
+                                <line x1="6" x2="6" y1="20" y2="14" />
+                            </svg> Eficiência de Conversão por Cargo (Aba VIVÊNCIAS)
+                        </div>
+                        <button class="btn-nav" onclick="exportVivenciasCSV()"><svg class="app-icon"
+                                viewBox="0 0 24 24">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" x2="12" y1="15" y2="3" />
+                            </svg> Exportar Métricas</button>
+                    </div>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Cargo / Função</th>
+                                <th style="text-align: center;">Vagas</th>
+                                <th style="text-align: center;">Vivências Realizadas</th>
+                                <th style="text-align: center;">Aprovados</th>
+                                <th style="text-align: center;">Taxa de Conversão</th>
+                                <th style="text-align: center;">Vivências / Vaga (Esforço)</th>
+                                <th>Diagnóstico de Recrutamento</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-vivencias-body">
+                            <!-- Preenchido dinamicamente -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-card" style="margin-top: 20px;">
+                    <div class="chart-header">
+                        <div>
+                            <div class="chart-title">Esforço de R&S: Vivências Necessárias por Vaga Fechada</div>
+                            <div class="chart-subtitle">Quanto menor o índice, mais eficiente é a assertividade da
+                                triagem</div>
+                        </div>
+                    </div>
+                    <div class="chart-container" style="height: 280px;">
+                        <canvas id="chartRatioEsforco"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
 
-        <!-- ==================== TAB 4: MATRIZ DE VIVÊNCIAS & CONVERSÃO ==================== -->
-        <div id="tab-vivencias" class="tab-pane">
-            <div class="banner" style="border-left-color: #7c3aed; margin-bottom: 20px;">
-                <div class="banner-text">
-                    <div class="banner-title" style="color: #7c3aed;">
-                        <span><svg class="app-icon" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg> Análise de Esforço de R&S e Vivências em Chão de Escola</span>
-                    </div>
-                    <div class="banner-desc">
-                        Relação entre a quantidade de vivências práticas realizadas pelos candidatos na Unidade Portal do Morumbi e as aprovações efetivas. Permite identificar quais cargos demandam maior esforço de atração e seleção.
-                    </div>
+        <!-- ==================== DOCK FLUTUANTE PARA POLEGAR NO CELULAR ==================== -->
+        <div class="mobile-thumb-bar" id="mobile-thumb-bar">
+            <button class="mobile-thumb-btn active" data-tab="tab-dashboard" onclick="handleSelectTab('tab-dashboard', this)">
+                <svg class="app-icon" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                <span>Dashboard</span>
+            </button>
+            <button class="mobile-thumb-btn" data-tab="tab-multiano" onclick="handleSelectTab('tab-multiano', this)">
+                <svg class="app-icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                <span>Multi-Ano</span>
+            </button>
+            <button class="mobile-thumb-btn" data-tab="tab-registros" onclick="handleSelectTab('tab-registros', this)">
+                <div class="mobile-icon-wrap">
+                    <svg class="app-icon" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/></svg>
+                    <span class="mobile-badge-pill" id="mobile-badge-registros">21</span>
                 </div>
-            </div>
-
-            <div class="custom-table-card">
-                <div class="table-toolbar">
-                    <div style="font-size: 13.5px; font-weight: 800; text-transform: uppercase; color: #0f172a;">
-                        <svg class="app-icon" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg> Eficiência de Conversão por Cargo (Aba VIVÊNCIAS)
-                    </div>
-                    <button class="btn-nav" onclick="exportVivenciasCSV()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Exportar Métricas</button>
+                <span>Vagas</span>
+            </button>
+            <button class="mobile-thumb-btn" data-tab="tab-vivencias" onclick="handleSelectTab('tab-vivencias', this)">
+                <svg class="app-icon" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                <span>Vivências</span>
+            </button>
+            <button class="mobile-thumb-btn mobile-thumb-more" onclick="toggleLateralMenu(true)" title="Todos os Módulos">
+                <div class="mobile-menu-burger">
+                    <span></span><span></span><span></span>
                 </div>
-                <table class="custom-table">
-                    <thead>
-                        <tr>
-                            <th>Cargo / Função</th>
-                            <th style="text-align: center;">Vagas</th>
-                            <th style="text-align: center;">Vivências Realizadas</th>
-                            <th style="text-align: center;">Aprovados</th>
-                            <th style="text-align: center;">Taxa de Conversão</th>
-                            <th style="text-align: center;">Vivências / Vaga (Esforço)</th>
-                            <th>Diagnóstico de Recrutamento</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-vivencias-body">
-                        <!-- Preenchido dinamicamente -->
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="chart-card" style="margin-top: 20px;">
-                <div class="chart-header">
-                    <div>
-                        <div class="chart-title">Esforço de R&S: Vivências Necessárias por Vaga Fechada</div>
-                        <div class="chart-subtitle">Quanto menor o índice, mais eficiente é a assertividade da triagem</div>
-                    </div>
-                </div>
-                <div class="chart-container" style="height: 280px;">
-                    <canvas id="chartRatioEsforco"></canvas>
-                </div>
-            </div>
+                <span>Módulos</span>
+            </button>
         </div>
-
-        <!-- ==================== TAB 5: WHATSAPP DA DIRETORIA ==================== -->
-        <div id="tab-whatsapp" class="tab-pane">
-            <div class="whatsapp-container">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                    <div>
-                        <div style="font-size: 16px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;"><svg class="app-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Relatório Executivo Semanal / Mensal para WhatsApp</div>
-                        <div style="font-size: 12.5px; color: var(--text-muted);">Texto formatado com métricas consolidadas para envio direto à liderança e diretoria da Rede Fadelito.</div>
-                    </div>
-                    <button class="btn-nav btn-primary" onclick="copyWhatsAppReport()">
-                        <svg class="app-icon" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> Copiar Mensagem
-                    </button>
-                </div>
-                <textarea id="whatsapp-text" class="whatsapp-box" readonly></textarea>
-            </div>
-        </div>
-
-        <!-- ==================== TAB 6: CONFIGURAÇÕES & CONEXÃO SEGURA ==================== -->
-        <div id="tab-config" class="tab-pane">
-
-            <!-- CARD 1: CONEXÃO PRIVADA SEGURA (RECOMENDADO / LGPD) -->
-            <div class="chart-card" style="margin-bottom: 20px; border-left: 4px solid #16a34a;">
-                <div class="chart-title" style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #166534;">
-                    <svg class="app-icon" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    Conexão Segura & Privada (Planilha 100% Restrita / LGPD)
-                </div>
-                <div style="font-size: 13px; color: #334155; margin-bottom: 12px; line-height: 1.5;">
-                    Com esta opção, você pode manter a planilha Google Sheets <strong>100% Restrita (com cadeado)</strong>. O App da Web do Google Apps Script atua como uma ponte segura autenticada com as permissões do proprietário, eliminando o risco de pessoas acessarem abas confidenciais pelo link direto.
-                </div>
-
-                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
-                    <div style="font-size: 12px; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 6px;">Passo a Passo Rápido (3 Minutos):</div>
-                    <ol style="font-size: 12.5px; color: #1e3a8a; margin-left: 20px; line-height: 1.6;">
-                        <li>Na sua planilha, clique em <strong>Compartilhar</strong> e mude o acesso para <strong>"Restrito"</strong> (assim ninguém abre sua planilha no Google);</li>
-                        <li>Vá no menu <strong>Extensões → Apps Script</strong>, apague tudo e cole o código do card abaixo;</li>
-                        <li>Clique em <strong>Implantar → Nova implantação → App da Web</strong> (Executar como: <em>"Eu"</em> | Quem tem acesso: <em>"Qualquer pessoa"</em>);</li>
-                        <li>Copie a URL gerada (terminada em <code>/exec</code>), cole no campo abaixo e clique em <strong>Salvar e Sincronizar</strong>!</li>
-                    </ol>
-                </div>
-
-                <div style="display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
-                    <input type="text" id="input-apps-script-url" class="form-input" style="flex: 1; min-width: 280px; font-family: monospace; font-size: 12.5px;" placeholder="Cole aqui a URL do seu App da Web (ex: https://script.google.com/macros/s/.../exec)">
-                    <button class="btn-nav btn-primary" onclick="saveAppsScriptUrl()" style="background: #16a34a; border-color: #15803d;">
-                        <svg class="app-icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Salvar e Sincronizar Privado
-                    </button>
-                    <button class="btn-nav" onclick="resetAppsScriptUrl()" title="Voltar ao modo padrão">
-                        <svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Limpar / Padrão
-                    </button>
-                </div>
-            </div>
-
-            <!-- CARD 2: CÓDIGO DO APPS SCRIPT PRONTO PARA CÓPIA -->
-            <div class="chart-card" style="margin-bottom: 20px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                    <div class="chart-title" style="display: flex; align-items: center; gap: 6px;">
-                        <svg class="app-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        Código Oficial do Apps Script (Copie e Cole na Planilha)
-                    </div>
-                    <button class="btn-nav" onclick="copyAppsScriptCode()">
-                        <svg class="app-icon" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> Copiar Código
-                    </button>
-                </div>
-                <textarea id="apps-script-code-box" class="whatsapp-box" style="height: 220px; font-family: monospace; font-size: 11.5px;" readonly>function getSheetByGidOrNames(ss, gid, possibleNames, defaultIndex) {
-  var sheets = ss.getSheets();
-  if (gid !== undefined && gid !== null) {
-    for (var i = 0; i < sheets.length; i++) {
-      if (sheets[i].getSheetId() === gid || sheets[i].getSheetId() === parseInt(gid, 10)) return sheets[i];
-    }
-  }
-  if (possibleNames && possibleNames.length > 0) {
-    for (var j = 0; j < possibleNames.length; j++) {
-      var found = ss.getSheetByName(possibleNames[j]);
-      if (found) return found;
-    }
-  }
-  return (defaultIndex !== undefined && sheets[defaultIndex]) ? sheets[defaultIndex] : (sheets[0] || null);
-}
-
-function doGet(e) {
-  try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheetLooker = getSheetByGidOrNames(ss, 1399861337, ["Dashboard", "GRAFICOS", "VAGAS", "Looker"], 0);
-    var sheetRanking = getSheetByGidOrNames(ss, 1503088086, ["Ranking", "FUNIL", "UNIDADES", "Funnels"], 1);
-    
-    var lookerValues = sheetLooker ? sheetLooker.getDataRange().getDisplayValues() : [];
-    var rankingValues = sheetRanking ? sheetRanking.getDataRange().getDisplayValues() : [];
-    
-    return ContentService.createTextOutput(JSON.stringify({
-      status: "success",
-      service: "BI RH Rede Fadelito - Private API Bridge",
-      timestamp: new Date().toISOString(),
-      looker: lookerValues,
-      ranking: rankingValues
-    })).setMimeType(ContentService.MimeType.JSON);
-  } catch (error) {
-    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() })).setMimeType(ContentService.MimeType.JSON);
-  }
-}
-
-function doPost(e) {
-  try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet = getSheetByGidOrNames(ss, 1399861337, ["Dashboard", "GRAFICOS", "VAGAS"], 0);
-    var data = (e && e.postData && e.postData.contents) ? JSON.parse(e.postData.contents) : {};
-    sheet.appendRow([data.data, data.mes || 1, data.unidade || "Portal do Morumbi", data.cargo || "", "", data.status || "Aprovado", "", "", data.vivencias || 1]);
-    return ContentService.createTextOutput(JSON.stringify({ status: "success" })).setMimeType(ContentService.MimeType.JSON);
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() })).setMimeType(ContentService.MimeType.JSON);
-  }
-}</textarea>
-            </div>
-
-            <!-- CARD 3: CONEXÃO PÚBLICA CSV (MODO LEGADO / CONTINGÊNCIA) -->
-            <div class="chart-card">
-                <div class="chart-title" style="margin-bottom: 8px; display: flex; align-items: center; gap: 6px; color: #64748b;">
-                    <svg class="app-icon" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/></svg>
-                    Conexão Direta CSV (Modo Legado / Fallback)
-                </div>
-                <div style="font-size: 12.5px; color: #64748b; margin-bottom: 12px;">
-                    Usado apenas se a URL do App da Web privado não estiver configurada. Exige que a planilha esteja com o link público.
-                </div>
-                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                    <input type="text" id="input-sheet-url" class="form-input" style="flex: 1; font-family: monospace; font-size: 12px;" value="https://docs.google.com/spreadsheets/d/17ZoXL-enZbUmpXgCroT7qkocvsbHYLPVu_cp0ACBpn0/export?format=csv&gid=1399861337">
-                    <button class="btn-nav" onclick="updateSheetUrl()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Conectar CSV</button>
-                    <button class="btn-nav" onclick="fetchLiveGoogleSheet()"><svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Testar CSV</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
     </div> <!-- /#dashboard-app -->
 
     <!-- TOAST NOTIFICATION -->
@@ -2193,12 +2959,12 @@ function doPost(e) {
     <script>
         // ==================== CADASTRO MESTRE DAS 34 UNIDADES ====================
         const UNITS_LIST = [
-            "Aclimação", "Alto da Boa Vista", "Analia Franco", "Bonfiglioli", "Brooklin", 
-            "Campinas", "Campo Belo", "Chacara Klabin", "Granja Viana", "Guarulhos", 
-            "Higienópolis", "Indianópolis", "Ipiranga", "Jardins", "Lapa", "Marajoara", 
-            "Moema", "Mooca", "Osasco", "Panamby", "Paraiso", "Perdizes", "Pinheiros", 
-            "Piracicaba", "Portal do Morumbi", "Real Parque", "Santo Andre", "Saúde", 
-            "São Caetano", "Tatuapé", "Vila Gumercindo", "Vila Leopoldina", "Vila Madalena", 
+            "Aclimação", "Alto da Boa Vista", "Analia Franco", "Bonfiglioli", "Brooklin",
+            "Campinas", "Campo Belo", "Chacara Klabin", "Granja Viana", "Guarulhos",
+            "Higienópolis", "Indianópolis", "Ipiranga", "Jardins", "Lapa", "Marajoara",
+            "Moema", "Mooca", "Osasco", "Panamby", "Paraiso", "Perdizes", "Pinheiros",
+            "Piracicaba", "Portal do Morumbi", "Real Parque", "Santo Andre", "Saúde",
+            "São Caetano", "Tatuapé", "Vila Gumercindo", "Vila Leopoldina", "Vila Madalena",
             "Vila Mariana", "Vila Sônia"
         ];
 
@@ -2224,7 +2990,7 @@ function doPost(e) {
         let chartRatioEsforcoInstance = null;
 
         const MONTH_NAMES = [
-            "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", 
+            "Jan", "Fev", "Mar", "Abr", "Mai", "Jun",
             "Jul", "Ago", "Set", "Out", "Nov", "Dez"
         ];
 
@@ -2254,12 +3020,20 @@ function doPost(e) {
 
         // ==================== CARREGADOR DE DADOS POR UNIDADE (BLINDADO) ====================
         function loadUnitData(unitName, resetFilters = true) {
-            // Guard de Permissão RBAC por Unidade
-            if (window.AuthService && window.AuthService.isUnit()) {
-                const allowed = window.AuthService.getAllowedUnit();
-                if (allowed && unitName !== allowed) {
-                    console.warn(`[RBAC Guard] Tentativa de carregar unidade "${unitName}" não autorizada. Forçando unidade "${allowed}".`);
-                    unitName = allowed;
+            // Guard de Permissão RBAC por Unidade ou Supervisão
+            if (window.AuthService) {
+                if (window.AuthService.isUnit()) {
+                    const allowed = window.AuthService.getAllowedUnit();
+                    if (allowed && unitName !== allowed) {
+                        console.warn(`[RBAC Guard] Tentativa de carregar unidade "${unitName}" não autorizada. Forçando unidade "${allowed}".`);
+                        unitName = allowed;
+                    }
+                } else if (window.AuthService.isSupervisor()) {
+                    const allowedUnits = window.AuthService.getAllowedUnits();
+                    if (unitName !== 'SUPERVISOR_ALL' && !allowedUnits.includes(unitName)) {
+                        console.warn(`[RBAC Guard] Tentativa de carregar unidade "${unitName}" não autorizada para esta supervisão.`);
+                        unitName = (allowedUnits.length > 1) ? 'SUPERVISOR_ALL' : (allowedUnits[0] || 'SUPERVISOR_ALL');
+                    }
                 }
             }
 
@@ -2267,6 +3041,9 @@ function doPost(e) {
             localStorage.setItem('fadelito_active_unit', unitName);
 
             const isNetwork = (unitName === 'ALL' || unitName === 'REDE');
+            const isSupervisor = (window.AuthService && window.AuthService.isSupervisor());
+            const supervisorUnits = isSupervisor ? window.AuthService.getAllowedUnits() : [];
+            const isSupervisorConsolidated = isSupervisor && (unitName === 'SUPERVISOR_ALL');
 
             // Resetar filtros secundários ao trocar de unidade para evitar "embaralhamento"
             if (resetFilters) {
@@ -2284,15 +3061,23 @@ function doPost(e) {
                 if (st) st.value = '';
             }
 
-            // Atualiza Título do Banner e Navbar
+            // Atualiza Título na Navbar e Lateral
             const navText = document.getElementById('nav-unit-subtitle');
-            const bannerName = document.getElementById('banner-unit-name');
-            const printLink = document.getElementById('btn-print-a4-link');
-
-            const displayName = isNetwork ? 'Toda a Rede (34 Unidades)' : unitName;
-            if (navText) navText.textContent = isNetwork ? 'Consolidado da Rede' : 'Unidade ' + unitName;
-            if (bannerName) bannerName.textContent = displayName;
-            if (printLink) printLink.href = 'painel_imprimir_a4.html?unidade=' + encodeURIComponent(unitName);
+            const latUnit = document.getElementById('lateral-active-unit-name');
+            let displayName = unitName;
+            if (isNetwork) {
+                displayName = 'Toda a Rede (34 Unidades)';
+                if (navText) navText.textContent = 'Consolidado da Rede';
+                if (latUnit) latUnit.textContent = displayName;
+            } else if (isSupervisorConsolidated) {
+                const supName = (currentUserSession && currentUserSession.name) ? currentUserSession.name : 'Supervisão';
+                displayName = `Consolidado (${supervisorUnits.length} Unidades)`;
+                if (navText) navText.textContent = `Supervisão: ${supName} (Consolidado)`;
+                if (latUnit) latUnit.textContent = displayName;
+            } else {
+                if (navText) navText.textContent = 'Unidade ' + unitName;
+                if (latUnit) latUnit.textContent = displayName;
+            }
 
             // Atualiza valor no dropdown
             const dropdown = document.getElementById('select-active-unit');
@@ -2307,6 +3092,13 @@ function doPost(e) {
                         arr.forEach(item => allRecs.push(Object.assign({}, item)));
                     }
                     records = allRecs;
+                } else if (isSupervisorConsolidated) {
+                    let supRecs = [];
+                    supervisorUnits.forEach(u => {
+                        const arr = window.ALL_UNITS_DATA.unitRecords[u] || [];
+                        arr.forEach(item => supRecs.push(Object.assign({}, item)));
+                    });
+                    records = supRecs;
                 } else {
                     const src = window.ALL_UNITS_DATA.unitRecords[unitName] || [];
                     records = src.map(item => Object.assign({}, item));
@@ -2315,18 +3107,21 @@ function doPost(e) {
 
             // Carrega Funil da Base Oficial (Diferenciando Enviados de Vivências Reais)
             if (window.ALL_UNITS_DATA && window.ALL_UNITS_DATA.unitFunnels) {
-                if (isNetwork) {
+                if (isNetwork || isSupervisorConsolidated) {
                     let env = 0, apr = 0, rep = 0, des = 0, nao = 0, dInt = 0, rInt = 0;
-                    for (const u in window.ALL_UNITS_DATA.unitFunnels) {
+                    const targetUnits = isNetwork ? Object.keys(window.ALL_UNITS_DATA.unitFunnels) : supervisorUnits;
+                    targetUnits.forEach(u => {
                         const f = window.ALL_UNITS_DATA.unitFunnels[u];
-                        env += (f.enviados || 0);
-                        apr += (f.aprovados || 0);
-                        rep += (f.reprovados || 0);
-                        des += (f.desistentes || 0);
-                        nao += (f.naoCompareceu || 0);
-                        dInt += (f.desistInteg || 0);
-                        rInt += (f.reprovInteg || 0);
-                    }
+                        if (f) {
+                            env += (f.enviados || 0);
+                            apr += (f.aprovados || 0);
+                            rep += (f.reprovados || 0);
+                            des += (f.desistentes || 0);
+                            nao += (f.naoCompareceu || 0);
+                            dInt += (f.desistInteg || 0);
+                            rInt += (f.reprovInteg || 0);
+                        }
+                    });
                     const totalV = Math.max(apr, records.length);
                     // Vivências efetivamente realizadas no chão de escola (desconta faltas/não compareceu)
                     const vivenciasRealizadas = Math.max(apr, env - nao);
@@ -2373,7 +3168,7 @@ function doPost(e) {
             if (!select) return;
 
             select.innerHTML = '';
-            
+
             // Opção Rede Geral
             const optAll = document.createElement('option');
             optAll.value = 'ALL';
@@ -2394,8 +3189,18 @@ function doPost(e) {
                 showToast('Seu perfil possui acesso exclusivo à sua unidade escolar.');
                 return;
             }
+            if (window.AuthService && window.AuthService.isSupervisor()) {
+                const allowed = window.AuthService.getAllowedUnits();
+                if (newUnit !== 'SUPERVISOR_ALL' && !allowed.includes(newUnit)) {
+                    showToast('Acesso restrito: Esta unidade não pertence à sua supervisão.');
+                    return;
+                }
+            }
             loadUnitData(newUnit);
-            showToast('Exibindo dados de: ' + (newUnit === 'ALL' ? 'Toda a Rede' : newUnit));
+            let labelMsg = newUnit;
+            if (newUnit === 'ALL') labelMsg = 'Toda a Rede';
+            else if (newUnit === 'SUPERVISOR_ALL') labelMsg = 'Consolidado da Supervisão';
+            showToast('Exibindo dados de: ' + labelMsg);
         }
 
         // ==================== CONTROLE DE SESSÃO & GATEKEEPER DE LOGIN (RBAC) ====================
@@ -2436,6 +3241,46 @@ function doPost(e) {
                 // Carrega a unidade ativa salva ou 'ALL' para visão geral da rede
                 const targetUnit = localStorage.getItem('fadelito_active_unit') || 'ALL';
                 loadUnitData(targetUnit);
+            } else if (session.role === 'SUPERVISOR') {
+                // Perfil Supervisão
+                if (roleBadge) {
+                    roleBadge.className = 'session-role-badge badge-supervisor';
+                    roleBadge.textContent = 'Supervisão';
+                }
+                if (nameText) nameText.textContent = session.name || session.username;
+
+                const supUnits = Array.isArray(session.units) ? session.units : [];
+                if (select) {
+                    select.innerHTML = '';
+                    if (supUnits.length > 1) {
+                        const optConsolidated = document.createElement('option');
+                        optConsolidated.value = 'SUPERVISOR_ALL';
+                        optConsolidated.textContent = `Consolidado Supervisão (${supUnits.length} Unidades)`;
+                        select.appendChild(optConsolidated);
+                    }
+                    supUnits.forEach(u => {
+                        const opt = document.createElement('option');
+                        opt.value = u;
+                        opt.textContent = (supUnits.length === 1) ? `${u} (Sua Unidade)` : u;
+                        select.appendChild(opt);
+                    });
+                    select.disabled = (supUnits.length <= 1);
+                }
+
+                if (unitWrap) {
+                    if (supUnits.length <= 1) {
+                        unitWrap.classList.add('is-locked');
+                    } else {
+                        unitWrap.classList.remove('is-locked');
+                    }
+                }
+
+                const savedUnit = localStorage.getItem('fadelito_active_unit');
+                const targetUnit = (savedUnit && (savedUnit === 'SUPERVISOR_ALL' || supUnits.includes(savedUnit)))
+                    ? savedUnit
+                    : (supUnits.length > 1 ? 'SUPERVISOR_ALL' : (supUnits[0] || 'SUPERVISOR_ALL'));
+
+                loadUnitData(targetUnit);
             } else {
                 // Perfil Unidade Escolar
                 if (roleBadge) {
@@ -2444,7 +3289,7 @@ function doPost(e) {
                 }
                 if (nameText) nameText.textContent = session.unit;
                 if (unitWrap) unitWrap.classList.add('is-locked');
-                
+
                 if (select) {
                     select.innerHTML = `<option value="${session.unit}">${session.unit} (Sua Unidade)</option>`;
                     select.disabled = true;
@@ -2470,7 +3315,7 @@ function doPost(e) {
 
             if (!user) {
                 if (errBox) {
-                    errBox.textContent = 'Por favor, informe seu e-mail ou o nome da unidade.';
+                    errBox.textContent = 'Por favor, informe seu usuário ou e-mail institucional.';
                     errBox.style.display = 'block';
                 }
                 return;
@@ -2498,7 +3343,15 @@ function doPost(e) {
 
                 if (res.success) {
                     initAuthGuard();
-                    showToast(res.session.role === 'MASTER' ? 'Acesso Master liberado! Visão Consolidada.' : `Logado na Unidade ${res.session.unit}`);
+                    let msg = 'Acesso liberado!';
+                    if (res.session.role === 'MASTER') {
+                        msg = 'Acesso Master liberado! Visão Consolidada da Rede.';
+                    } else if (res.session.role === 'SUPERVISOR') {
+                        msg = `Bem-vindo(a), ${res.session.name}! Acesso de Supervisão (${(res.session.units || []).length} unidades).`;
+                    } else {
+                        msg = `Logado na Unidade ${res.session.unit}`;
+                    }
+                    showToast(msg);
                 } else {
                     if (errBox) {
                         errBox.textContent = res.error || 'Credenciais inválidas.';
@@ -2530,27 +3383,54 @@ function doPost(e) {
         }
 
         function handleUserLogout() {
-            if (confirm('Deseja realmente encerrar sua sessão no Portal?')) {
-                window.AuthService.logout();
-                currentUserSession = null;
-                records = [];
-                funnelData = {};
-                
-                const gate = document.getElementById('login-gate-screen');
-                const app = document.getElementById('dashboard-app');
-                if (gate) gate.style.display = 'flex';
-                if (app) app.style.display = 'none';
-
-                const errBox = document.getElementById('login-gate-error');
-                if (errBox) errBox.style.display = 'none';
-
-                const passInput = document.getElementById('gate-input-pass');
-                if (passInput) passInput.value = '';
-
-                showToast('Sessão encerrada com sucesso.');
-                // Recarrega a página de forma limpa para zerar o estado de gráficos e purgar memória
-                window.location.reload();
+            try {
+                if (window.AuthService && typeof window.AuthService.logout === 'function') {
+                    window.AuthService.logout();
+                }
+            } catch (e) {
+                console.warn('Erro ao executar AuthService.logout:', e);
             }
+
+            // Limpeza forçada e abrangente de todas as chaves de sessão possíveis
+            try {
+                localStorage.removeItem('fadelito_auth_session');
+                sessionStorage.removeItem('fadelito_auth_session');
+                localStorage.removeItem('fadelito_user_session');
+                sessionStorage.removeItem('fadelito_user_session');
+                localStorage.removeItem('fadelito_active_unit');
+                sessionStorage.removeItem('fadelito_active_unit');
+                localStorage.removeItem('fadelito_bi_records');
+            } catch (e) {
+                console.warn('Erro ao limpar storage:', e);
+            }
+
+            currentUserSession = null;
+            records = [];
+            funnelData = {};
+
+            // Oculta área autenticada e exibe imediatamente a tela de login
+            const gate = document.getElementById('login-gate-screen');
+            const app = document.getElementById('dashboard-app');
+            if (gate) gate.style.display = 'flex';
+            if (app) app.style.display = 'none';
+
+            const errBox = document.getElementById('login-gate-error');
+            if (errBox) errBox.style.display = 'none';
+
+            const userInput = document.getElementById('gate-input-user');
+            const passInput = document.getElementById('gate-input-pass');
+            if (userInput) {
+                userInput.value = '';
+                userInput.focus();
+            }
+            if (passInput) passInput.value = '';
+
+            showToast('Sessão encerrada com sucesso! Digite seu usuário para entrar.');
+
+            // Recarrega a página de forma limpa para zerar instâncias de gráficos e memória
+            setTimeout(() => {
+                window.location.reload();
+            }, 250);
         }
 
         // ==================== RECALCULATE VIVENCIAS STATS (DADOS REAIS DA PLANILHA) ====================
@@ -2603,12 +3483,28 @@ function doPost(e) {
             }
         }
 
-        // ==================== TAB SWITCHING ====================
+        // ==================== TAB SWITCHING & LATERAL NAV ====================
+        const TAB_TITLES = {
+            'tab-dashboard': 'Dashboard Executivo & KPIs',
+            'tab-multiano': 'Análise Multi-Ano & Tendências',
+            'tab-registros': 'Gestor de Registros & Vagas',
+            'tab-vivencias': 'Conversão de Vivências & Cargos'
+        };
+
         function switchTab(tabId, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Sincroniza estado ativo em todos os botões (lateral e mobile thumb dock)
+            document.querySelectorAll('.tab-btn, .mobile-thumb-btn').forEach(b => {
+                b.classList.remove('active');
+                if (b.getAttribute('data-tab') === tabId) {
+                    b.classList.add('active');
+                }
+            });
+            if (btn && btn.classList) {
+                btn.classList.add('active');
+            }
+
             document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-            
-            btn.classList.add('active');
+
             const targetPane = document.getElementById(tabId);
             if (targetPane) {
                 targetPane.classList.add('active');
@@ -2617,6 +3513,87 @@ function doPost(e) {
             // Trigger chart resize
             window.dispatchEvent(new Event('resize'));
         }
+
+        function handleSelectTab(tabId, btn) {
+            switchTab(tabId, btn);
+
+            // No celular ou no desktop (se não estiver fixado), fecha suavemente o menu
+            const panel = document.getElementById('lateral-panel');
+            const isPinned = panel && panel.classList.contains('is-pinned');
+
+            if (window.innerWidth <= 991 || !isPinned) {
+                setTimeout(() => {
+                    toggleLateralMenu(false);
+                }, 120);
+            }
+
+            // Posicionamento inteligente no mobile: reposiciona suavemente no início do módulo caso o usuário esteja rolado para baixo
+            if (window.innerWidth <= 991) {
+                const container = document.querySelector('.container');
+                if (container) {
+                    const navHeight = document.querySelector('.navbar')?.offsetHeight || 60;
+                    const containerTop = container.getBoundingClientRect().top + window.pageYOffset;
+                    if (window.pageYOffset > containerTop - navHeight) {
+                        window.scrollTo({ top: Math.max(0, containerTop - navHeight - 8), behavior: 'smooth' });
+                    }
+                }
+            }
+        }
+
+        function toggleLateralMenu(forceState) {
+            const panel = document.getElementById('lateral-panel');
+            const backdrop = document.getElementById('lateral-backdrop');
+            if (!panel) return;
+
+            const isOpen = (forceState !== undefined) ? forceState : !panel.classList.contains('is-open');
+
+            if (isOpen) {
+                panel.classList.add('is-open');
+                if (backdrop) backdrop.classList.add('active');
+            } else {
+                panel.classList.remove('is-open');
+                if (backdrop) backdrop.classList.remove('active');
+            }
+        }
+
+        function togglePinSidebar() {
+            const panel = document.getElementById('lateral-panel');
+            const pinBtn = document.getElementById('btn-lateral-pin');
+            if (!panel) return;
+
+            const isPinned = panel.classList.toggle('is-pinned');
+            document.body.classList.toggle('sidebar-pinned', isPinned);
+            if (pinBtn) pinBtn.classList.toggle('is-active', isPinned);
+            localStorage.setItem('fadelito_sidebar_pinned', isPinned ? '1' : '0');
+
+            if (isPinned) {
+                toggleLateralMenu(false); // remove classe is-open temporária
+            }
+            window.dispatchEvent(new Event('resize'));
+        }
+
+        // Restaura estado fixado salvo se estiver em desktop grande e configura listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.innerWidth >= 1200 && localStorage.getItem('fadelito_sidebar_pinned') === '1') {
+                togglePinSidebar();
+            }
+
+            // Eventos adicionais para hover ultra-responsivo
+            const navContainer = document.getElementById('lateral-nav-container');
+            const lateralPanel = document.getElementById('lateral-panel');
+            if (navContainer && lateralPanel) {
+                navContainer.addEventListener('mouseenter', () => {
+                    if (window.innerWidth >= 992 && !lateralPanel.classList.contains('is-pinned')) {
+                        lateralPanel.classList.add('is-hovered');
+                    }
+                });
+                navContainer.addEventListener('mouseleave', () => {
+                    if (window.innerWidth >= 992) {
+                        lateralPanel.classList.remove('is-hovered');
+                    }
+                });
+            }
+        });
 
         // ==================== PARSE DATE HELPER (NORMALIZAÇÃO RIGOROSA) ====================
         function parseDateString(str) {
@@ -2735,7 +3712,6 @@ function doPost(e) {
             renderTableRecords();
             renderVivenciasTable();
             renderExerciciosTable();
-            generateWhatsAppReport(filtered);
         }
 
         // ==================== UPDATE KPIS ====================
@@ -2747,19 +3723,15 @@ function doPost(e) {
             const totalVagas = Math.max(funnelData.totalVagas || 0, records.length);
 
             document.getElementById('tab-count-registros').textContent = totalRecords;
-            document.getElementById('banner-total-vagas').textContent = totalVagas;
-            document.getElementById('banner-aprovados').textContent = aprovados;
-            
-            const bannerAbertas = document.getElementById('banner-vagas-abertas');
-            if (bannerAbertas) bannerAbertas.textContent = vagasAbertas;
+            const mobBadge = document.getElementById('mobile-badge-registros');
+            if (mobBadge) mobBadge.textContent = totalRecords;
 
             const pct = Math.round((aprovados / Math.max(1, totalVagas)) * 100);
-            document.getElementById('banner-taxa-preenchimento').textContent = `${pct}%`;
 
             document.getElementById('kpi-total-vagas').textContent = totalVagas;
             document.getElementById('kpi-aprovados').textContent = aprovados;
             document.getElementById('kpi-aprovados-sub').textContent = `${pct}% das vagas preenchidas`;
-            
+
             const kpiAbertas = document.getElementById('kpi-vagas-abertas');
             if (kpiAbertas) kpiAbertas.textContent = vagasAbertas;
             const kpiAbertasSub = document.getElementById('kpi-vagas-abertas-sub');
@@ -2793,7 +3765,7 @@ function doPost(e) {
                 }
             }
             document.getElementById('kpi-maior-demanda').textContent = topRole;
-            document.getElementById('kpi-maior-demanda-sub').textContent = `${topCount} Vagas (${Math.round((topCount/Math.max(1, totalRecords))*100)}% do filtro)`;
+            document.getElementById('kpi-maior-demanda-sub').textContent = `${topCount} Vagas (${Math.round((topCount / Math.max(1, totalRecords)) * 100)}% do filtro)`;
 
             // Funnel Dynamic Update
             const fInscritos = funnelData.inscritos || 31;
@@ -2950,7 +3922,7 @@ function doPost(e) {
                 else if (h.includes('13:00') || h.includes('13H')) key = 'tarde';
                 else if (h.includes('10:30') || h.includes('11:00') || h.includes('12:00')) key = 'inter';
                 else if (h.includes('9:30') || h.includes('9:00') || h.includes('6:45') || h.includes('16:45') || h.includes('19:30')) key = 'integral';
-                
+
                 shiftData[key].total++;
                 const numViv = parseInt(r.vivencias, 10) || 1;
                 shiftData[key].vivencias += numViv;
@@ -3268,78 +4240,7 @@ function doPost(e) {
             });
         }
 
-        // ==================== WHATSAPP REPORT GENERATOR (DINÂMICO) ====================
-        function generateWhatsAppReport(filtered) {
-            const aprovados = filtered.filter(r => r.status === 'Aprovado').length;
-            const vivencias = filtered.filter(r => r.status === 'Vivência').length;
-            const vagasAbertas = filtered.filter(r => r.status === 'Em Aberto' || (r.status !== 'Aprovado' && r.status !== 'Vivência')).length;
-            const totalVagas = Math.max(funnelData.totalVagas || 0, records.length);
-            const dataHoje = new Date().toLocaleDateString('pt-BR');
 
-            const totalVivencias = funnelData.vivencias || 30;
-            const convPct = ((aprovados / Math.max(1, totalVivencias)) * 100).toFixed(1);
-            const effortRatio = (totalVivencias / Math.max(1, totalVagas)).toFixed(2);
-            const metaPct = Math.round((aprovados / Math.max(1, totalVagas)) * 100);
-
-            // Group by cargo
-            const cargoStats = {};
-            records.forEach(r => {
-                const c = (r.cargo || 'OUTROS').trim().toUpperCase();
-                if (!cargoStats[c]) {
-                    cargoStats[c] = { total: 0, aprovados: 0, vivencias: 0, emAberto: 0 };
-                }
-                cargoStats[c].total++;
-                if (r.status === 'Aprovado') cargoStats[c].aprovados++;
-                else if (r.status === 'Vivência') cargoStats[c].vivencias++;
-                else cargoStats[c].emAberto++;
-            });
-
-            const sortedCargos = Object.entries(cargoStats).sort((a, b) => b[1].total - a[1].total);
-            let cargoLines = '';
-            sortedCargos.forEach(([cargo, stats], index) => {
-                let statusDetail = '';
-                if (stats.aprovados === stats.total) {
-                    statusDetail = '100% preenchido';
-                } else {
-                    const parts = [];
-                    if (stats.aprovados > 0) parts.push(`${stats.aprovados} aprovado(s)`);
-                    if (stats.vivencias > 0) parts.push(`${stats.vivencias} em vivência`);
-                    if (stats.emAberto > 0) parts.push(`${stats.emAberto} em aberto`);
-                    statusDetail = parts.join(', ') || 'em andamento';
-                }
-                cargoLines += `${index + 1}. *${cargo}:* ${stats.total} vaga(s) (${statusDetail})\n`;
-            });
-
-            const unitTitle = currentActiveUnit || 'Portal do Morumbi';
-            const text = `*RELATÓRIO EXECUTIVO DE RECRUTAMENTO & SELEÇÃO — REDE FADELITO*
-*Unidade:* ${unitTitle}
-*Data de Emissão:* ${dataHoje}
-*Status de Sincronização:* Planilha Conectada em Tempo Real
-
-*RESUMO CONSOLIDADO:*
-• *Quadro de Vagas:* ${totalVagas} Vagas Totais
-• *Contratações Concluídas:* ${aprovados} aprovados (${metaPct}% do quadro preenchido)
-• *Vivências em Andamento:* ${vivencias} candidata(s)
-• *Vagas em Aberto:* ${vagasAbertas} vaga(s) em captação
-• *Taxa de Conversão Global:* ${convPct}% (Aprovados / Vivências)
-• *Esforço Médio:* ${effortRatio} vivências realizadas por contratação
-
-*DEMANDAS & STATUS POR CARGO:*
-${cargoLines}
-*PARECER OPERACIONAL:*
-A Unidade ${unitTitle} opera com ${metaPct}% do quadro contratado${vivencias > 0 ? ` e ${vivencias} vaga(s) em validação prática de vivência` : ''}${vagasAbertas > 0 ? `, restando ${vagasAbertas} vaga(s) em aberto para fechamento` : ''}. Processo ágil e em consonância com as diretrizes da Diretoria de Operações.
-
-_Painel BI RH & Recrutamento — Rede Fadelito_`;
-
-            document.getElementById('whatsapp-text').value = text;
-        }
-
-        function copyWhatsAppReport() {
-            const textarea = document.getElementById('whatsapp-text');
-            textarea.select();
-            navigator.clipboard.writeText(textarea.value);
-            showToast('Relatório copiado para a área de transferência!');
-        }
 
         // ==================== LIVE GOOGLE SHEETS SYNC (MULTI-UNIDADE REAL) ====================
         let lastSyncHash = '';
@@ -3383,7 +4284,9 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
                 // Blindagem de Dados por Perfil (Zero Data Leak no F12 / DevTools)
                 const activeSession = window.AuthService ? window.AuthService.getSession() : null;
                 const isUnitUser = activeSession && activeSession.role === 'UNIT';
+                const isSupervisorUser = activeSession && activeSession.role === 'SUPERVISOR';
                 const userUnit = isUnitUser ? activeSession.unit : null;
+                const allowedSupUnits = isSupervisorUser ? (activeSession.units || []) : [];
 
                 let newFunnels = {};
                 let newRecordsMap = {};
@@ -3406,6 +4309,7 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
                                     const unit = (cols[0] || '').trim();
                                     if (!unit || unit === 'TOTAL' || unit.includes('MÉDIA')) continue;
                                     if (isUnitUser && userUnit && normalizeStr(unit) !== normalizeStr(userUnit)) continue;
+                                    if (isSupervisorUser && !allowedSupUnits.some(u => normalizeStr(u) === normalizeStr(unit))) continue;
 
                                     newFunnels[unit] = {
                                         enviados: parseInt(cols[1], 10) || 0,
@@ -3435,6 +4339,7 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
 
                                     if (!unidade || !cargo || cargo.includes('FUNÇÃO') || cargo.includes('CARGO')) continue;
                                     if (isUnitUser && userUnit && normalizeStr(unidade) !== normalizeStr(userUnit)) continue;
+                                    if (isSupervisorUser && !allowedSupUnits.some(u => normalizeStr(u) === normalizeStr(unidade))) continue;
 
                                     let matchedUnit = Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase()) || unidade;
                                     if (!newRecordsMap[matchedUnit]) newRecordsMap[matchedUnit] = [];
@@ -3500,6 +4405,7 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
                         const unit = cols[0];
                         if (!unit || unit === 'TOTAL' || unit.includes('MÉDIA')) continue;
                         if (isUnitUser && userUnit && normalizeStr(unit) !== normalizeStr(userUnit)) continue;
+                        if (isSupervisorUser && !allowedSupUnits.some(u => normalizeStr(u) === normalizeStr(unit))) continue;
 
                         newFunnels[unit] = {
                             enviados: parseInt(cols[1], 10) || 0,
@@ -3530,6 +4436,7 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
 
                         if (!unidade || !cargo || cargo.includes('FUNÇÃO') || cargo.includes('CARGO')) continue;
                         if (isUnitUser && userUnit && normalizeStr(unidade) !== normalizeStr(userUnit)) continue;
+                        if (isSupervisorUser && !allowedSupUnits.some(u => normalizeStr(u) === normalizeStr(unidade))) continue;
 
                         let matchedUnit = Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase()) || unidade;
                         if (!newRecordsMap[matchedUnit]) newRecordsMap[matchedUnit] = [];
@@ -3749,4 +4656,5 @@ _Painel BI RH & Recrutamento — Rede Fadelito_`;
         }
     </script>
 </body>
+
 </html>

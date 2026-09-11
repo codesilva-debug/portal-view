@@ -4,8 +4,6 @@
   "cleanUrls": true,
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/a4", "dest": "/painel_imprimir_a4.html" },
-    { "src": "/imprimir", "dest": "/painel_imprimir_a4.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
