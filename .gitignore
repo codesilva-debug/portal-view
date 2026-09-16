@@ -34,3 +34,10 @@ yarn-error.log*
 *.xlsx
 *.csv
 scratch/
+
+# Vídeos e Gravações Locais (Arquivos Pesados)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm

@@ -20,6 +20,17 @@ Este documento contém a relação oficial dos **10 Gestores e Supervisores**, s
 | **09** | **Marcelo Albuquerque** | `marcelo` | `marcelo@fadelito.com.br` | `morumbimarcelo26` | **Portal do Morumbi**, **Real Parque**, **Vila Leopoldina**, **Vila Sônia** *(4)* | Base `morumbi` + `marcelo` + `26` |
 | **10** | **Tatiane Ramos** | `tatiane` | `tatiane@fadelito.com.br` | `tatiane2026#ackiv` | **Aclimação**, **Chacara Klabin**, **Indianópolis**, **Paraiso**, **Vila Mariana** *(5)* | `tatiane` + `2026` + `#ackiv` (*Aclimação, Chacara Klabin, Indianópolis, Paraíso, Vila Mariana*) |
 
+luana@fadelito.com.br | 5luanalpm
+pamela@fadelito.com.br | 2026pamfadelitos
+aurelio@fadelito.com.br | sulaurelio2026
+camila@fadelito.com.br | intercamila#26
+rodrigo@fadelito.com.br | 7rodrigogob
+juliana@fadelito.com.br | 2026julizl#amtg
+fernando@fadelito.com.br | sulfernando*bcam
+beatriz@fadelito.com.br | 8biafadelito#hppm
+marcelo@fadelito.com.br | morumbimarcelo26
+tatiane@fadelito.com.br | tatiane2026#ackiv
+
 > **Total de Unidades Supervisionadas:** 3 + 1 + 5 + 2 + 3 + 4 + 4 + 4 + 4 + 5 = **35 Unidades Escolares** (100% da rede contemplada).
 
 ---

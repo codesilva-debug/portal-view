@@ -63,33 +63,44 @@ function getSheetByGidOrNames(ss, gid, possibleNames, defaultIndex) {
 }
 
 /**
- * Endpoint de Leitura GET: Retorna os dados das abas de Vagas e Ranking em formato JSON estruturado.
+ * Endpoint de Leitura GET: Retorna os dados das abas de Vagas e Validação em formato JSON estruturado.
  */
 function doGet(e) {
   try {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     
-    // GID 1399861337 = Aba Looker / Dashboard de Vagas
-    var sheetLooker = getSheetByGidOrNames(ss, 1399861337, ["Dashboard", "GRAFICOS", "VAGAS", "Looker"], 0);
+    // 1. Aba Oficial de Vagas (VALIDAÇÃO VAGAS JUL/DEZ - Padrão Direção)
+    var sheetVagas = getSheetByGidOrNames(ss, null, [
+      "VALIDAÇÃO VAGAS JUL/DEZ", 
+      "VALIDAÇÃO VAGAS JULDEZ", 
+      "VALIDACAO VAGAS JUL/DEZ", 
+      "VALIDACAO VAGAS", 
+      "VAGAS", 
+      "VAGAS_UNID"
+    ], 0);
     
-    // GID 1503088086 = Aba de Ranking / Funil Multi-Unidades
-    var sheetRanking = getSheetByGidOrNames(ss, 1503088086, ["Ranking", "FUNIL", "UNIDADES", "Funnels"], 1);
+    // 2. Abas legadas para compatibilidade (Looker / Ranking)
+    var sheetLooker = getSheetByGidOrNames(ss, 1399861337, ["BASE_LOOKER", "Looker", "Dashboard", "GRAFICOS"], null);
+    var sheetRanking = getSheetByGidOrNames(ss, 1503088086, ["Ranking", "BI - RANKING UNIDADES", "FUNIL", "UNIDADES"], null);
     
-    // getDisplayValues() preserva as datas e números exatamente como o usuário enxerga (ex: "05/01/2026")
+    var vagasValues = sheetVagas ? sheetVagas.getDataRange().getDisplayValues() : [];
     var lookerValues = sheetLooker ? sheetLooker.getDataRange().getDisplayValues() : [];
     var rankingValues = sheetRanking ? sheetRanking.getDataRange().getDisplayValues() : [];
     
     var output = {
       status: "success",
-      service: "BI RH Rede Fadelito - Private API Bridge",
+      service: "BI RH Rede Fadelito - Private API Bridge (Modelo Atualizado)",
       timestamp: new Date().toISOString(),
       sheets: {
+        vagasName: sheetVagas ? sheetVagas.getName() : "Desconhecida",
+        vagasRows: vagasValues.length,
         lookerName: sheetLooker ? sheetLooker.getName() : "Desconhecida",
         lookerRows: lookerValues.length,
         rankingName: sheetRanking ? sheetRanking.getName() : "Desconhecida",
         rankingRows: rankingValues.length
       },
-      looker: lookerValues,
+      vagas: vagasValues,
+      looker: lookerValues.length > 0 ? lookerValues : vagasValues,
       ranking: rankingValues
     };
     

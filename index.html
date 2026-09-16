@@ -1102,10 +1102,10 @@
             border-radius: 4px;
         }
 
-        /* Funnel Layout */
+        /* Funnel Layout (3 Etapas - Alinhado à Diretoria) */
         .funnel-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
             margin-bottom: 24px;
         }
@@ -2546,12 +2546,12 @@
                         <select class="filter-select" id="filter-status" onchange="applyFilters()">
                             <option value="ALL">Todos os Status</option>
                             <option value="Aprovado">Aprovado</option>
+                            <option value="Triagem">Triagem</option>
+                            <option value="Briefing">Briefing</option>
+                            <option value="Aguardar">Aguardar</option>
+                            <option value="Entrevista">Entrevista</option>
                             <option value="Vivência">Vivência</option>
-                            <option value="Em Aberto">Em Aberto</option>
-                            <option value="Reprovado">Reprovado</option>
-                            <option value="Desistente">Desistente</option>
-                            <option value="Não Compareceu">Não Compareceu</option>
-                            <option value="Desistiu Integração">Desistiu Integração</option>
+                            <option value="Cancelada">Cancelada</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -2624,31 +2624,25 @@
                     </div>
                 </div>
 
-                <!-- FUNIL DE SELEÇÃO GERAL -->
+                <!-- FUNIL DE SELEÇÃO GERAL (3 ETAPAS - SEM INSCRITOS/TRIADOS CONFORME DIRETORIA) -->
                 <div class="funnel-container">
                     <div class="funnel-step">
-                        <div class="funnel-step-label">1. Inscritos / Triados</div>
-                        <div class="funnel-step-val" id="funnel-inscritos">31</div>
-                        <div class="funnel-step-rate" id="funnel-rate-inscritos"
-                            style="background: #f1f5f9; color: #475569;">100% da Base</div>
-                    </div>
-                    <div class="funnel-step">
-                        <div class="funnel-step-label">2. Vivências em Escola</div>
-                        <div class="funnel-step-val" id="funnel-vivencias">30</div>
+                        <div class="funnel-step-label">1. Vivências em Escola</div>
+                        <div class="funnel-step-val" id="funnel-vivencias">29</div>
                         <div class="funnel-step-rate" id="funnel-rate-vivencias"
-                            style="background: #eff6ff; color: #1e40af;">96.8% Comparecimento</div>
+                            style="background: #eff6ff; color: #1e40af;">Total de Vivências</div>
                     </div>
                     <div class="funnel-step">
-                        <div class="funnel-step-label">3. Aprovados / Admitidos</div>
+                        <div class="funnel-step-label">2. Aprovados / Admitidos</div>
                         <div class="funnel-step-val" id="funnel-aprovados" style="color: #16a34a;">19</div>
                         <div class="funnel-step-rate" id="funnel-rate-aprovados"
-                            style="background: #f0fdf4; color: #166534;">63.3% Conversão</div>
+                            style="background: #f0fdf4; color: #166534;">65.5% Conversão</div>
                     </div>
                     <div class="funnel-step">
-                        <div class="funnel-step-label">4. Vagas Preenchidas</div>
-                        <div class="funnel-step-val" id="funnel-vagas" style="color: #0f172a;">19 / 21</div>
+                        <div class="funnel-step-label">3. Vagas Preenchidas</div>
+                        <div class="funnel-step-val" id="funnel-vagas" style="color: #0f172a;">19 / 19</div>
                         <div class="funnel-step-rate" id="funnel-rate-vagas"
-                            style="background: #f0fdf4; color: #166534;">90.5% Preenchido</div>
+                            style="background: #f0fdf4; color: #166534;">100% Preenchido</div>
                     </div>
                 </div>
 
@@ -3105,54 +3099,52 @@
                 }
             }
 
-            // Carrega Funil da Base Oficial (Diferenciando Enviados de Vivências Reais)
+            // Carrega Funil da Base Oficial (Padrão Atualizado pela Diretoria)
             if (window.ALL_UNITS_DATA && window.ALL_UNITS_DATA.unitFunnels) {
                 if (isNetwork || isSupervisorConsolidated) {
-                    let env = 0, apr = 0, rep = 0, des = 0, nao = 0, dInt = 0, rInt = 0;
+                    let apr = 0, rep = 0, des = 0, nao = 0, dInt = 0, rInt = 0, totV = 0, abtV = 0, viv = 0;
                     const targetUnits = isNetwork ? Object.keys(window.ALL_UNITS_DATA.unitFunnels) : supervisorUnits;
                     targetUnits.forEach(u => {
                         const f = window.ALL_UNITS_DATA.unitFunnels[u];
                         if (f) {
-                            env += (f.enviados || 0);
+                            viv += (f.vivencias || 0);
                             apr += (f.aprovados || 0);
                             rep += (f.reprovados || 0);
                             des += (f.desistentes || 0);
                             nao += (f.naoCompareceu || 0);
                             dInt += (f.desistInteg || 0);
                             rInt += (f.reprovInteg || 0);
+                            totV += (f.totalVagas || 0);
+                            abtV += (f.vagasAbertas || 0);
                         }
                     });
-                    const totalV = Math.max(apr, records.length);
-                    // Vivências efetivamente realizadas no chão de escola (desconta faltas/não compareceu)
-                    const vivenciasRealizadas = Math.max(apr, env - nao);
+                    const totalV = totV || records.length;
                     funnelData = {
-                        inscritos: env,
-                        vivencias: vivenciasRealizadas,
+                        vivencias: viv,
                         aprovados: apr,
                         reprovados: rep,
                         desistentes: des,
                         naoCompareceu: nao,
                         desistiuIntegracao: dInt,
                         reprovadoIntegracao: rInt,
-                        totalVagas: totalV
+                        totalVagas: totalV,
+                        vagasAbertas: abtV
                     };
                 } else {
                     const f = window.ALL_UNITS_DATA.unitFunnels[unitName] || {};
-                    const totalV = Math.max(f.aprovados || 0, records.length, 1);
-                    const unitApr = f.aprovados || records.filter(r => r.status === 'Aprovado').length;
-                    const env = f.enviados || (totalV + 5);
-                    const nao = f.naoCompareceu || 0;
-                    const vivenciasRealizadas = Math.max(unitApr, env - nao);
+                    const unitApr = f.aprovados !== undefined ? f.aprovados : records.filter(r => r.status === 'Aprovado').length;
+                    const totalV = f.totalVagas || records.length;
+                    const viv = f.vivencias !== undefined ? f.vivencias : unitApr;
                     funnelData = {
-                        inscritos: env,
-                        vivencias: vivenciasRealizadas,
+                        vivencias: viv,
                         aprovados: unitApr,
                         reprovados: f.reprovados || 0,
                         desistentes: f.desistentes || 0,
-                        naoCompareceu: nao,
+                        naoCompareceu: f.naoCompareceu || 0,
                         desistiuIntegracao: f.desistInteg || 0,
                         reprovadoIntegracao: f.reprovInteg || 0,
-                        totalVagas: totalV
+                        totalVagas: totalV,
+                        vagasAbertas: f.vagasAbertas !== undefined ? f.vagasAbertas : (totalV - unitApr)
                     };
                 }
             }
@@ -3442,31 +3434,18 @@
                     cargoMap[c] = { cargo: c, vagas: 0, aprovados: 0, vivencias: 0 };
                 }
                 cargoMap[c].vagas++;
-                const numViv = parseInt(r.vivencias, 10) || 1;
+                const numViv = parseInt(r.vivencias, 10) || 0;
                 cargoMap[c].vivencias += numViv;
                 if (r.status === 'Aprovado') {
                     cargoMap[c].aprovados++;
                 }
             });
 
-            // Ajuste histórico de vivências apenas para Portal do Morumbi (base original de calibração)
-            const isMorumbi = (currentActiveUnit === 'Portal do Morumbi');
-            const baseMap = {
-                "INSPETOR DE ALUNOS": { vivenciasExtra: 1 },
-                "ESTAGIÁRIA MATII": { vivenciasExtra: 1 },
-                "ESTAGIÁRIA MAT I": { vivenciasExtra: 2 },
-                "ESTAGIÁRIA JARD": { vivenciasExtra: 2 },
-                "ESTAGIÁRIA BERÇ": { vivenciasExtra: 1 },
-                "ESTAGIÁRIA MINI": { vivenciasExtra: 2 },
-                "ESTAGIÁRIA PRÉ": { vivenciasExtra: 1 }
-            };
-
             const result = [];
             for (const [cargo, data] of Object.entries(cargoMap)) {
-                const extra = (isMorumbi && baseMap[cargo] && baseMap[cargo].vivenciasExtra) ? baseMap[cargo].vivenciasExtra : 0;
-                const totalViv = Math.max(data.vagas, data.vivencias + extra);
-                const conv = Math.round((data.aprovados / Math.max(1, totalViv)) * 100);
-                const ratio = parseFloat((totalViv / Math.max(1, data.vagas)).toFixed(2));
+                const totalViv = Math.max(data.aprovados, data.vivencias);
+                const conv = totalViv > 0 ? Math.round((data.aprovados / totalViv) * 100) : 0;
+                const ratio = data.aprovados > 0 ? parseFloat((totalViv / data.aprovados).toFixed(2)) : 1.0;
                 result.push({
                     cargo: cargo,
                     vagas: data.vagas,
@@ -3714,13 +3693,27 @@
             renderExerciciosTable();
         }
 
-        // ==================== UPDATE KPIS ====================
+        // ==================== UPDATE KPIS (REGRAS OFICIAIS DIRETORIA) ====================
         function updateKPIs(filtered) {
+            // Regras Oficiais do Gestor Marcos:
+            // Quadro de vagas: igual a todas as vagas cujo Status contenha: "Triagem", "Aprovado", "Briefing", "Aguardar", "Entrevista", "Vivência"
+            // Vagas aprovadas: igual a todas as vagas cujo Status contenha: "Aprovado"
+            // Vagas em aberto: igual a todas as vagas cujo Status contenha: "Triagem", "Briefing", "Aguardar", "Entrevista", "Vivência"
+            // Vivência: soma de todas as colunas v1..v12 que contenham 1
+            const STATUS_QUADRO = ["Triagem", "Aprovado", "Briefing", "Aguardar", "Entrevista", "Vivência"];
+            const STATUS_ABERTAS = ["Triagem", "Briefing", "Aguardar", "Entrevista", "Vivência"];
+
+            const isQuadro = r => STATUS_QUADRO.some(s => r.status && r.status.toLowerCase().includes(s.toLowerCase()));
+            const isAprovado = r => r.status && r.status.toLowerCase().includes('aprovado');
+            const isAberta = r => STATUS_ABERTAS.some(s => r.status && r.status.toLowerCase().includes(s.toLowerCase()));
+            const isVivencia = r => r.status && r.status.toLowerCase().includes('vivência');
+
+            const validRecords = filtered.filter(isQuadro);
             const totalRecords = filtered.length;
-            const aprovados = filtered.filter(r => r.status === 'Aprovado').length;
-            const vivenciasAndamento = filtered.filter(r => r.status === 'Vivência').length;
-            const vagasAbertas = filtered.filter(r => r.status === 'Em Aberto' || (r.status !== 'Aprovado' && r.status !== 'Vivência')).length;
-            const totalVagas = Math.max(funnelData.totalVagas || 0, records.length);
+            const totalVagas = validRecords.length > 0 ? validRecords.length : filtered.length;
+            const aprovados = filtered.filter(isAprovado).length;
+            const vagasAbertas = filtered.filter(isAberta).length;
+            const vivenciasAndamento = filtered.filter(isVivencia).length;
 
             document.getElementById('tab-count-registros').textContent = totalRecords;
             const mobBadge = document.getElementById('mobile-badge-registros');
@@ -3739,10 +3732,11 @@
 
             document.getElementById('kpi-vivencias').textContent = vivenciasAndamento;
 
-            // Global conversion & ratio metrics
-            const totalVivencias = funnelData.vivencias || 30;
-            const globalConv = ((aprovados / Math.max(1, totalVivencias)) * 100).toFixed(1);
-            const globalRatio = (totalVivencias / Math.max(1, totalVagas)).toFixed(2);
+            // Vivências totais somadas das colunas v1..v12
+            const vivenciasSomadas = filtered.reduce((acc, r) => acc + (parseInt(r.vivencias, 10) || 0), 0);
+            const totalVivencias = vivenciasSomadas > 0 ? vivenciasSomadas : (funnelData.vivencias || aprovados);
+            const globalConv = totalVivencias > 0 ? ((aprovados / totalVivencias) * 100).toFixed(1) : '0.0';
+            const globalRatio = aprovados > 0 ? (totalVivencias / aprovados).toFixed(2) : '1.00';
 
             const kpiConv = document.getElementById('kpi-conversao');
             if (kpiConv) kpiConv.textContent = `${globalConv}%`;
@@ -3756,7 +3750,7 @@
                 const c = (r.cargo || 'OUTROS').trim().toUpperCase();
                 roleCount[c] = (roleCount[c] || 0) + 1;
             });
-            let topRole = "INSPETOR DE ALUNOS";
+            let topRole = "ESTAGIÁRIA MAT I";
             let topCount = 0;
             for (const [role, count] of Object.entries(roleCount)) {
                 if (count > topCount) {
@@ -3767,22 +3761,19 @@
             document.getElementById('kpi-maior-demanda').textContent = topRole;
             document.getElementById('kpi-maior-demanda-sub').textContent = `${topCount} Vagas (${Math.round((topCount / Math.max(1, totalRecords)) * 100)}% do filtro)`;
 
-            // Funnel Dynamic Update
-            const fInscritos = funnelData.inscritos || 31;
-            const fVivencias = funnelData.vivencias || 30;
-            document.getElementById('funnel-inscritos').textContent = fInscritos;
-            document.getElementById('funnel-vivencias').textContent = fVivencias;
-            document.getElementById('funnel-aprovados').textContent = aprovados;
-            document.getElementById('funnel-vagas').textContent = `${aprovados} / ${totalVagas}`;
-
-            const rateInsc = document.getElementById('funnel-rate-inscritos');
-            if (rateInsc) rateInsc.textContent = `100% da Base (${fInscritos})`;
+            // Funil Atualizado de 3 Etapas (Sem Inscritos/Triados, conforme instrução do Chefe Marcos)
+            const elViv = document.getElementById('funnel-vivencias');
+            if (elViv) elViv.textContent = totalVivencias;
+            const elApr = document.getElementById('funnel-aprovados');
+            if (elApr) elApr.textContent = aprovados;
+            const elVag = document.getElementById('funnel-vagas');
+            if (elVag) elVag.textContent = `${aprovados} / ${totalVagas}`;
 
             const rateViv = document.getElementById('funnel-rate-vivencias');
-            if (rateViv) rateViv.textContent = `${((fVivencias / Math.max(1, fInscritos)) * 100).toFixed(1)}% Comparecimento`;
+            if (rateViv) rateViv.textContent = `Total Realizado (${totalVivencias})`;
 
             const rateApr = document.getElementById('funnel-rate-aprovados');
-            if (rateApr) rateApr.textContent = `${((aprovados / Math.max(1, fVivencias)) * 100).toFixed(1)}% Conversão`;
+            if (rateApr) rateApr.textContent = `${globalConv}% Conversão`;
 
             const rateVag = document.getElementById('funnel-rate-vagas');
             if (rateVag) rateVag.textContent = `${pct}% Preenchido`;
@@ -4323,19 +4314,49 @@
                                     };
                                 }
 
-                                // 1.2 Processar Vagas e Linhas
-                                const lRows = apiJson.looker;
+                                // 1.2 Processar Vagas e Linhas (Suporte ao Modelo Atualizado da Diretoria)
+                                const rowsData = (apiJson.vagas && apiJson.vagas.length > 1) ? apiJson.vagas : apiJson.looker;
+                                const header = rowsData[0] || [];
+                                const isValidaSheet = header.some(h => String(h).toUpperCase().includes('VIVÊNCIA') || String(h).toUpperCase().includes('V1'));
+
                                 let rowId = 1;
-                                for (let i = 1; i < lRows.length; i++) {
-                                    const cols = lRows[i];
+                                for (let i = 1; i < rowsData.length; i++) {
+                                    const cols = rowsData[i];
                                     if (!cols || !cols.length) continue;
-                                    const dataAbertura = String(cols[0] || '').trim();
-                                    const mes = parseInt(cols[1], 10) || 1;
-                                    const unidade = String(cols[2] || '').trim();
-                                    const cargo = String(cols[3] || '').trim();
-                                    const status = String(cols[5] || '').trim() || 'Em Aberto';
-                                    const colaborador = String(cols[7] || '').trim();
-                                    const vivencias = String(cols[8] || '').trim() || '1';
+
+                                    let dataAbertura, mes, unidade, cargo, horario, status, colaborador, vivenciasCount = 0;
+
+                                    if (isValidaSheet) {
+                                        cargo = String(cols[1] || '').trim();
+                                        dataAbertura = String(cols[2] || cols[0] || '').trim();
+                                        unidade = String(cols[3] || '').trim();
+                                        horario = String(cols[4] || '').trim() || '13:00 ÀS 19:00';
+                                        mes = parseInt(cols[7], 10) || 1;
+                                        status = String(cols[8] || '').trim() || 'Triagem';
+                                        colaborador = String(cols[9] || '').trim();
+
+                                        const vIndices = [21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65];
+                                        vIndices.forEach(idx => {
+                                            if (cols[idx] && (cols[idx] == 1 || String(cols[idx]).trim() === '1')) {
+                                                vivenciasCount++;
+                                            }
+                                        });
+                                    } else {
+                                        dataAbertura = String(cols[0] || '').trim();
+                                        mes = parseInt(cols[1], 10) || 1;
+                                        unidade = String(cols[2] || '').trim();
+                                        cargo = String(cols[3] || '').trim();
+                                        status = String(cols[5] || '').trim() || 'Em Aberto';
+                                        colaborador = String(cols[7] || '').trim();
+                                        vivenciasCount = parseInt(cols[8], 10) || 1;
+                                        horario = '13:00 ÀS 19:00';
+                                    }
+
+                                    // Regra Oficial: Apenas status válidos do processo
+                                    const STATUS_QUADRO = ["Triagem", "Aprovado", "Briefing", "Aguardar", "Entrevista", "Vivência"];
+                                    if (status && !STATUS_QUADRO.some(s => status.toLowerCase().includes(s.toLowerCase()))) {
+                                        continue; // Ignora 'Cancelada'
+                                    }
 
                                     if (!unidade || !cargo || cargo.includes('FUNÇÃO') || cargo.includes('CARGO')) continue;
                                     if (isUnitUser && userUnit && normalizeStr(unidade) !== normalizeStr(userUnit)) continue;
@@ -4343,16 +4364,6 @@
 
                                     let matchedUnit = Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase()) || unidade;
                                     if (!newRecordsMap[matchedUnit]) newRecordsMap[matchedUnit] = [];
-
-                                    let defHorario = '13:00 ÀS 19:00';
-                                    const uc = cargo.toUpperCase();
-                                    if (uc.includes('INSPETOR')) defHorario = '9:30 ÀS 19:30';
-                                    else if (uc.includes('LIMPEZA') || uc.includes('COZINHA')) defHorario = '6:45 ÀS 16:45';
-                                    else if (uc.includes('BERÇ')) defHorario = '10:30 ÀS 17:30';
-                                    else if (uc.includes('JARD')) defHorario = '12:00 ÀS 18:00';
-                                    else if (uc.includes('MAT I') || uc.includes('MATII')) {
-                                        defHorario = (rowId % 2 === 1) ? '7:00 ÀS 13:00' : '13:00 ÀS 19:00';
-                                    }
 
                                     const pDate = parseDateString(dataAbertura);
                                     const cleanDateStr = `${String(pDate.day).padStart(2, '0')}/${String(pDate.month).padStart(2, '0')}/${pDate.year}`;
@@ -4362,11 +4373,11 @@
                                         data: cleanDateStr,
                                         cargo: cargo,
                                         unidade: matchedUnit,
-                                        horario: defHorario,
+                                        horario: horario,
                                         mes: pDate.month,
-                                        status: status === 'Aprovado' ? 'Aprovado' : (status === 'Vivência' ? 'Vivência' : (status === 'Em Aberto' ? 'Em Aberto' : status)),
+                                        status: status,
                                         colaborador: colaborador,
-                                        vivencias: vivencias
+                                        vivencias: vivenciasCount
                                     });
                                 }
 
