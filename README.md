@@ -1,6 +1,6 @@
 # Portal View — BI RH & Recrutamento (Rede Fadelito)
 
-Painel Executivo de Business Intelligence para acompanhamento em tempo real de vagas, vivências práticas e contratações da **Rede Fadelito de Educação Infantil** (34 Unidades Integradas).
+Painel Executivo de Business Intelligence para acompanhamento em tempo real de vagas, vivências práticas e contratações da **Rede Fadelito de Educação Infantil** (35 Unidades Integradas).
 
 ---
 
@@ -10,7 +10,7 @@ O sistema conta com tela de bloqueio executiva (*Login Gatekeeper*), autenticaç
 
 1. **Diretoria Geral (`MASTER`)**:
    - **Login:** `diretoria@fadelito.com.br` | **Senha:** `Diretoria@2026`
-   - **Visão:** Consolidado de Toda a Rede (34 Unidades) com seletor ativo no topo para auditar qualquer unidade escolar individualmente.
+   - **Visão:** Consolidado de Toda a Rede (35 Unidades) com seletor ativo no topo para auditar qualquer unidade escolar individualmente.
 2. **Unidades Escolares (`UNIT`)**:
    - **Login:** E-mail ou slug da escola (ex: `morumbi@fadelito.com.br`, `moema@fadelito.com.br`) | **Senha:** `Fadelito@2026`
    - **Visão:** Restrita **exclusivamente** à própria unidade escolar. Seletor de unidades travado e com selo da respectiva escola.
@@ -43,7 +43,7 @@ O projeto foi arquitetado para rodar nativamente com performance máxima e latê
 ├── index.html                   # Dashboard Executivo Principal (Login Gatekeeper + Chart.js)
 ├── auth_service.js              # Módulo de Autenticação, RBAC e integração serverless
 ├── data_unidades.js             # Base histórica segura com DataManager encapsulado
-├── CREDENCIAIS_ACESSO.txt       # Tabela oficial de acessos (Diretoria e 34 Unidades)
+├── CREDENCIAIS_ACESSO.txt       # Tabela oficial de acessos (Diretoria e 35 Unidades)
 ├── CLOUDFLARE_GUIA_TECNICO.md   # Guia detalhado para a equipe de TI no Cloudflare
 ├── vercel.json                  # Roteamento e configurações para deploy no Vercel
 ├── api/

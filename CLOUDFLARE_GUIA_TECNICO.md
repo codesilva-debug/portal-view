@@ -28,8 +28,8 @@ O sistema possui dois níveis de acesso estritamente segregados:
 * **Usuário Padrão:** `diretoria@fadelito.com.br` (ou `diretoria`, `admin`)
 * **Senha Inicial Padrão:** `Diretoria@2026`
 * **Permissões:**
-  * Visão consolidada da rede: **" Toda a Rede (34 Unidades)"**.
-  * Seletor de unidades ativo no topo da tela, permitindo auditar qualquer uma das 34 escolas individualmente.
+  * Visão consolidada da rede: **" Toda a Rede (35 Unidades)"**.
+  * Seletor de unidades ativo no topo da tela, permitindo auditar qualquer uma das 35 escolas individualmente.
   * Disparo de sincronização manual em tempo real com o Google Sheets.
 
 ### B. Perfil Unidade Escolar (`role: UNIT`)
@@ -42,7 +42,7 @@ O sistema possui dois níveis de acesso estritamente segregados:
 
 ---
 
-## 3. Tabela das 34 Unidades Catalogadas
+## 3. Tabela das 35 Unidades Catalogadas
 
 | # | Unidade Escolar | E-mail Sugerido | Senha Padrão |
 |---|---|---|---|

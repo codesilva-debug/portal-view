@@ -3,7 +3,7 @@
  * 
  * Executado no runtime serverless da Vercel (Node.js / Edge).
  * Fornece validação segura de credenciais para Diretoria Geral (Master)
- * e para as 34 Unidades Escolares da Rede Fadelito.
+ * e para as 35 Unidades Escolares da Rede Fadelito.
  */
 
 const CANONICAL_UNITS = [

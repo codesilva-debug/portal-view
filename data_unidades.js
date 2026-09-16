@@ -24,8 +24,8 @@
       "naoCompareceu": 5,
       "desistInteg": 0,
       "reprovInteg": 0,
-      "totalVagas": 11,
-      "vagasAbertas": 2,
+      "totalVagas": 10,
+      "vagasAbertas": 1,
       "enviados": 21
     },
     "Analia Franco": {
@@ -84,8 +84,8 @@
       "naoCompareceu": 13,
       "desistInteg": 8,
       "reprovInteg": 4,
-      "totalVagas": 17,
-      "vagasAbertas": 0,
+      "totalVagas": 18,
+      "vagasAbertas": 1,
       "enviados": 54
     },
     "Chacara Klabin": {
@@ -132,8 +132,8 @@
       "naoCompareceu": 14,
       "desistInteg": 2,
       "reprovInteg": 0,
-      "totalVagas": 21,
-      "vagasAbertas": 1,
+      "totalVagas": 20,
+      "vagasAbertas": 0,
       "enviados": 48
     },
     "Indianópolis": {
@@ -156,8 +156,8 @@
       "naoCompareceu": 22,
       "desistInteg": 3,
       "reprovInteg": 1,
-      "totalVagas": 31,
-      "vagasAbertas": 2,
+      "totalVagas": 30,
+      "vagasAbertas": 1,
       "enviados": 67
     },
     "Jardins": {
@@ -180,8 +180,8 @@
       "naoCompareceu": 5,
       "desistInteg": 0,
       "reprovInteg": 2,
-      "totalVagas": 16,
-      "vagasAbertas": 0,
+      "totalVagas": 17,
+      "vagasAbertas": 1,
       "enviados": 25
     },
     "Marajoara": {
@@ -204,8 +204,8 @@
       "naoCompareceu": 15,
       "desistInteg": 5,
       "reprovInteg": 3,
-      "totalVagas": 17,
-      "vagasAbertas": 0,
+      "totalVagas": 18,
+      "vagasAbertas": 1,
       "enviados": 58
     },
     "Mooca": {
@@ -240,8 +240,8 @@
       "naoCompareceu": 4,
       "desistInteg": 1,
       "reprovInteg": 0,
-      "totalVagas": 15,
-      "vagasAbertas": 1,
+      "totalVagas": 14,
+      "vagasAbertas": 0,
       "enviados": 27
     },
     "Paraiso": {
@@ -252,8 +252,8 @@
       "naoCompareceu": 18,
       "desistInteg": 1,
       "reprovInteg": 3,
-      "totalVagas": 30,
-      "vagasAbertas": 2,
+      "totalVagas": 29,
+      "vagasAbertas": 1,
       "enviados": 63
     },
     "Perdizes": {
@@ -276,8 +276,8 @@
       "naoCompareceu": 6,
       "desistInteg": 2,
       "reprovInteg": 0,
-      "totalVagas": 20,
-      "vagasAbertas": 2,
+      "totalVagas": 19,
+      "vagasAbertas": 1,
       "enviados": 38
     },
     "Piracicaba": {
@@ -336,8 +336,8 @@
       "naoCompareceu": 6,
       "desistInteg": 2,
       "reprovInteg": 0,
-      "totalVagas": 18,
-      "vagasAbertas": 0,
+      "totalVagas": 20,
+      "vagasAbertas": 2,
       "enviados": 34
     },
     "São Caetano": {
@@ -348,8 +348,8 @@
       "naoCompareceu": 3,
       "desistInteg": 0,
       "reprovInteg": 1,
-      "totalVagas": 20,
-      "vagasAbertas": 1,
+      "totalVagas": 21,
+      "vagasAbertas": 2,
       "enviados": 34
     },
     "Tatuapé": {
@@ -372,8 +372,8 @@
       "naoCompareceu": 7,
       "desistInteg": 6,
       "reprovInteg": 2,
-      "totalVagas": 20,
-      "vagasAbertas": 0,
+      "totalVagas": 22,
+      "vagasAbertas": 2,
       "enviados": 42
     },
     "Vila Leopoldina": {
@@ -396,8 +396,8 @@
       "naoCompareceu": 2,
       "desistInteg": 3,
       "reprovInteg": 0,
-      "totalVagas": 13,
-      "vagasAbertas": 1,
+      "totalVagas": 12,
+      "vagasAbertas": 0,
       "enviados": 22
     },
     "Vila Mariana": {
@@ -538,16 +538,6 @@
         "vivencias": 1
       },
       {
-        "id": 436,
-        "data": "06/08/2026",
-        "cargo": "ESTAGIÁRIA ADM/RECEPCIONISTA",
-        "horario": "7:00 ÀS 13:00",
-        "mes": 8,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 0
-      },
-      {
         "id": 450,
         "data": "13/08/2026",
         "cargo": "ESTAGIÁRIA MATII",
@@ -558,11 +548,23 @@
         "vivencias": 1
       },
       {
-        "id": 506,
+        "id": 82,
         "data": "02/09/2026",
         "cargo": "ESTAGIÁRIA MATII",
+        "unidade": "Aclimação",
         "horario": "13:00 ÀS 19:00",
         "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
+      },
+      {
+        "id": 541,
+        "data": "06/08/2026",
+        "cargo": "ESTAGIÁRIA ADM/RECEPCIONISTA",
+        "unidade": "Aclimação",
+        "horario": "7:00 ÀS 13:00",
+        "mes": 8,
         "status": "Triagem",
         "colaborador": "",
         "vivencias": 0
@@ -650,16 +652,6 @@
         "vivencias": 1
       },
       {
-        "id": 487,
-        "data": "26/08/2026",
-        "cargo": "ESTAGIÁRIA BERÇ",
-        "horario": "13:00 ÀS 19:00",
-        "mes": 8,
-        "status": "Vivência",
-        "colaborador": "",
-        "vivencias": 3
-      },
-      {
         "id": 492,
         "data": "27/08/2026",
         "cargo": "ESTAGIÁRIA MINI",
@@ -670,14 +662,15 @@
         "vivencias": 1
       },
       {
-        "id": 507,
-        "data": "03/09/2026",
-        "cargo": "ESTAGIÁRIA MATII",
-        "horario": "13:00 ÀS 19:00",
+        "id": 643,
+        "data": "14/09/2026",
+        "cargo": "ESTAGIÁRIA VOLANTE",
+        "unidade": "Alto da Boa Vista",
+        "horario": "9:30 ÀS 16:30",
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 1
+        "vivencias": 0
       }
     ],
     "Analia Franco": [
@@ -1046,14 +1039,15 @@
         "vivencias": 1
       },
       {
-        "id": 491,
+        "id": 606,
         "data": "27/08/2026",
         "cargo": "AUX LIMPEZA",
+        "unidade": "Brooklin",
         "horario": "7:00 ÀS 17:00",
         "mes": 8,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 3
+        "vivencias": 0
       }
     ],
     "Campinas": [
@@ -1248,6 +1242,17 @@
         "status": "Aprovado",
         "colaborador": "Kenia Judyt Torres Silva",
         "vivencias": 2
+      },
+      {
+        "id": 228,
+        "data": "14/09/2026",
+        "cargo": "ESTAGIÁRIA MAT I",
+        "unidade": "Campo Belo",
+        "horario": "13:00 ÀS 19:00",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
       }
     ],
     "Chacara Klabin": [
@@ -1452,14 +1457,15 @@
         "vivencias": 2
       },
       {
-        "id": 472,
-        "data": "19/08/2026",
-        "cargo": "ESTAGIÁRIA MAT I",
-        "horario": "13:00 ÀS 19:00",
-        "mes": 8,
-        "status": "Vivência",
+        "id": 633,
+        "data": "10/09/2026",
+        "cargo": "AUX LIMPEZA",
+        "unidade": "Chacara Klabin",
+        "horario": "7:00 ÀS 17:00",
+        "mes": 9,
+        "status": "Triagem",
         "colaborador": "",
-        "vivencias": 2
+        "vivencias": 0
       }
     ],
     "Granja Viana": [
@@ -1584,9 +1590,10 @@
         "vivencias": 1
       },
       {
-        "id": 500,
-        "data": "01/09/2025",
+        "id": 615,
+        "data": "01/09/2026",
         "cargo": "ESTAGIÁRIA BERÇ",
+        "unidade": "Granja Viana",
         "horario": "7:00 ÀS 13:00",
         "mes": 9,
         "status": "Triagem",
@@ -1806,16 +1813,6 @@
         "status": "Aprovado",
         "colaborador": "Eduarda Damasceno Lima",
         "vivencias": 2
-      },
-      {
-        "id": 490,
-        "data": "27/08/2026",
-        "cargo": "AUX LIMPEZA",
-        "horario": "8:30 às 18:30",
-        "mes": 8,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 3
       }
     ],
     "Indianópolis": [
@@ -2182,16 +2179,6 @@
         "vivencias": 2
       },
       {
-        "id": 453,
-        "data": "14/08/2026",
-        "cargo": "RECEPÇÃO",
-        "horario": "8:30 às 18:30",
-        "mes": 8,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 7
-      },
-      {
         "id": 459,
         "data": "17/08/2026",
         "cargo": "ESTAGIÁRIA MAT I",
@@ -2222,9 +2209,10 @@
         "vivencias": 1
       },
       {
-        "id": 503,
+        "id": 619,
         "data": "01/09/2026",
         "cargo": "ESTAGIÁRIA MINI",
+        "unidade": "Ipiranga",
         "horario": "13:00 ÀS 19:00",
         "mes": 9,
         "status": "Triagem",
@@ -2393,6 +2381,17 @@
         "status": "Aprovado",
         "colaborador": "Poliana Izidoro Telles",
         "vivencias": 2
+      },
+      {
+        "id": 644,
+        "data": "09/09/2026",
+        "cargo": "ESTAGIÁRIA MAT I",
+        "unidade": "Lapa",
+        "horario": "13:00 ÀS 19:00",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
       }
     ],
     "Marajoara": [
@@ -2707,6 +2706,17 @@
         "status": "Aprovado",
         "colaborador": "Yasmin Aleixo",
         "vivencias": 2
+      },
+      {
+        "id": 338,
+        "data": "11/09/2026",
+        "cargo": "ESTAGIÁRIA VOLANTE",
+        "unidade": "Moema",
+        "horario": "10:00 ÀS 17:00",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
       }
     ],
     "Mooca": [
@@ -3153,16 +3163,6 @@
         "status": "Aprovado",
         "colaborador": "Manuela França Santos",
         "vivencias": 2
-      },
-      {
-        "id": 511,
-        "data": "09/09/2026",
-        "cargo": "RECEPÇÃO",
-        "horario": "9:00 ÀS 19:00",
-        "mes": 9,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 0
       }
     ],
     "Paraiso": [
@@ -3417,16 +3417,6 @@
         "vivencias": 3
       },
       {
-        "id": 426,
-        "data": "04/08/2026",
-        "cargo": "ESTAGIÁRIA MINI",
-        "horario": "12:00 ÀS 18:00",
-        "mes": 8,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 5
-      },
-      {
         "id": 457,
         "data": "14/08/2026",
         "cargo": "ESTAGIÁRIA MAT I",
@@ -3457,9 +3447,10 @@
         "vivencias": 2
       },
       {
-        "id": 512,
+        "id": 629,
         "data": "09/09/2026",
         "cargo": "RECEPÇÃO",
+        "unidade": "Paraiso",
         "horario": "9:00 ÀS 19:00",
         "mes": 9,
         "status": "Triagem",
@@ -3579,14 +3570,15 @@
         "vivencias": 1
       },
       {
-        "id": 505,
+        "id": 621,
         "data": "01/09/2026",
         "cargo": "ESTAGIÁRIA MATII",
+        "unidade": "Perdizes",
         "horario": "13:00 ÀS 19:00",
         "mes": 9,
-        "status": "Vivência",
+        "status": "Triagem",
         "colaborador": "",
-        "vivencias": 2
+        "vivencias": 0
       }
     ],
     "Pinheiros": [
@@ -3751,16 +3743,6 @@
         "vivencias": 1
       },
       {
-        "id": 461,
-        "data": "8/17/0026",
-        "cargo": "ESTAGIÁRIA BERÇ",
-        "horario": "13:00 ÀS 19:00",
-        "mes": 8,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 3
-      },
-      {
         "id": 478,
         "data": "21/08/2026",
         "cargo": "ESTAGIÁRIA BERÇ",
@@ -3771,16 +3753,6 @@
         "vivencias": 2
       },
       {
-        "id": 479,
-        "data": "21/08/2026",
-        "cargo": "ESTAGIÁRIA BERÇ",
-        "horario": "9:30 ÀS 16:30",
-        "mes": 8,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 1
-      },
-      {
         "id": 485,
         "data": "26/08/2026",
         "cargo": "ASSIST CLASSE",
@@ -3789,6 +3761,17 @@
         "status": "Aprovado",
         "colaborador": "Eliane Réges De Lima",
         "vivencias": 5
+      },
+      {
+        "id": 573,
+        "data": "17/08/2026",
+        "cargo": "ESTAGIÁRIA BERÇ",
+        "unidade": "Pinheiros",
+        "horario": "13:00 ÀS 19:00",
+        "mes": 8,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
       }
     ],
     "Piracicaba": [],
@@ -4298,14 +4281,15 @@
         "vivencias": 3
       },
       {
-        "id": 509,
+        "id": 625,
         "data": "04/09/2026",
         "cargo": "ESTAGIÁRIA MINI",
+        "unidade": "Santo Andre",
         "horario": "13:00 ÀS 19:00",
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 1
+        "vivencias": 0
       }
     ],
     "Saúde": [
@@ -4488,6 +4472,28 @@
         "status": "Aprovado",
         "colaborador": "Vanessa Torres Avelino",
         "vivencias": 1
+      },
+      {
+        "id": 639,
+        "data": "14/09/2026",
+        "cargo": "ESTAGIÁRIA MAT I",
+        "unidade": "Saúde",
+        "horario": "13:00 ÀS 19:00",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
+      },
+      {
+        "id": 640,
+        "data": "14/09/2026",
+        "cargo": "ESTAGIÁRIA MATII",
+        "unidade": "Saúde",
+        "horario": "12:30 ÀS 18:30",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
       }
     ],
     "São Caetano": [
@@ -4682,10 +4688,22 @@
         "vivencias": 3
       },
       {
-        "id": 510,
+        "id": 627,
         "data": "09/09/2026",
         "cargo": "ESTAGIÁRIA VOLANTE",
+        "unidade": "São Caetano",
         "horario": "7:00 ÀS 13:00",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
+      },
+      {
+        "id": 636,
+        "data": "11/09/2026",
+        "cargo": "ESTAGIÁRIA VOLANTE",
+        "unidade": "São Caetano",
+        "horario": "12:00 ÀS 18:00",
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
@@ -4934,6 +4952,28 @@
         "status": "Aprovado",
         "colaborador": "Adina Maria Pinheiro",
         "vivencias": 4
+      },
+      {
+        "id": 641,
+        "data": "14/09/2026",
+        "cargo": "OUTROS",
+        "unidade": "Vila Gumercindo",
+        "horario": "8:00 ÀS 18:00",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
+      },
+      {
+        "id": 645,
+        "data": "15/09/2026",
+        "cargo": "ESTAGIÁRIA MAT I",
+        "unidade": "Vila Gumercindo",
+        "horario": "7:00 ÀS 13:00",
+        "mes": 9,
+        "status": "Triagem",
+        "colaborador": "",
+        "vivencias": 0
       }
     ],
     "Vila Leopoldina": [
@@ -5308,16 +5348,6 @@
         "status": "Aprovado",
         "colaborador": "Georgia Potenza Moreira",
         "vivencias": 1
-      },
-      {
-        "id": 508,
-        "data": "03/09/2026",
-        "cargo": "RECEPÇÃO",
-        "horario": "7:00 ÀS 17:00",
-        "mes": 9,
-        "status": "Triagem",
-        "colaborador": "",
-        "vivencias": 1
       }
     ],
     "Vila Mariana": [
@@ -5462,14 +5492,15 @@
         "vivencias": 2
       },
       {
-        "id": 489,
+        "id": 603,
         "data": "27/08/2026",
         "cargo": "ESTAGIÁRIA MINI",
+        "unidade": "Vila Mariana",
         "horario": "8:00 ÀS 14:00",
         "mes": 8,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 1
+        "vivencias": 0
       }
     ],
     "Vila Sônia": [
@@ -5617,19 +5648,19 @@
   }
 };
 
-    // Gerenciador Seguro de Acesso a Dados (RBAC & LGPD)
     const DataManager = {
-        getAuthorizedData(session) {
-            if (!session || !session.role) {
+        getAuthorizedData: function(session) {
+            if (!session) {
                 return { unitRecords: {}, unitFunnels: {} };
             }
             if (session.role === 'MASTER') {
-                return _PRIVATE_RAW_DATA;
+                return JSON.parse(JSON.stringify(_PRIVATE_RAW_DATA));
             }
-            if (session.role === 'SUPERVISOR' && Array.isArray(session.units)) {
+            if (session.role === 'SUPERVISOR') {
+                const allowed = session.units || [];
                 const recs = {};
                 const funs = {};
-                session.units.forEach(u => {
+                allowed.forEach(u => {
                     if (_PRIVATE_RAW_DATA.unitRecords && _PRIVATE_RAW_DATA.unitRecords[u]) {
                         recs[u] = _PRIVATE_RAW_DATA.unitRecords[u].map(item => Object.assign({}, item));
                     }
@@ -5642,7 +5673,7 @@
                     unitFunnels: funs
                 };
             }
-            if (session.role === 'UNIT' && session.unit) {
+            if (session.role === 'UNIT') {
                 const u = session.unit;
                 return {
                     unitRecords: {
