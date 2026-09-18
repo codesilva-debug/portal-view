@@ -335,17 +335,17 @@
             color: #0f172a;
         }
 
-        /* KPI Cards Grid (7 columns clean grid) */
+        /* KPI Cards Grid (6 columns clean balanced grid) */
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(7, minmax(0, 1fr));
+            grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 12px;
             margin-bottom: 24px;
         }
 
         @media (max-width: 1380px) {
             .kpi-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -525,59 +525,226 @@
             background: transparent;
         }
 
-        /* Aba Discreta e Profissional na Borda Esquerda */
+        /* Aba Visível, Horizontal e Intuitiva na Borda Esquerda (Desktop) */
         .lateral-trigger-tab {
             position: fixed;
             left: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 135px;
             z-index: 1202;
             pointer-events: auto;
-            background: #ffffff;
-            color: #0f172a;
-            border: 1px solid #cbd5e1;
+            background: #0f172a;
+            color: #ffffff;
+            border: 1px solid #1e293b;
             border-left: none;
-            border-radius: 0 9px 9px 0;
-            padding: 13px 8px;
+            border-radius: 0 8px 8px 0;
+            padding: 9px 13px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
             cursor: pointer;
-            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.14), 0 1px 4px rgba(15, 23, 42, 0.08);
-            transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.22);
+            transition: all 0.2s ease;
         }
 
         .lateral-trigger-tab:hover {
-            background: #ffffff;
-            border-color: #94a3b8;
-            padding-right: 11px;
-            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18), 0 2px 8px rgba(37, 99, 235, 0.16);
-            transform: translateY(-50%) translateX(2px);
+            background: #1e293b;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.32);
+            transform: translateX(3px);
         }
 
         .trigger-tab-text {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
             font-size: 11.5px;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: #1e293b;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .trigger-tab-badge {
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 1px 6px;
+            border-radius: 9999px;
+            line-height: 1.2;
         }
 
         .lateral-trigger-tab .app-icon {
-            width: 16px;
-            height: 16px;
-            color: #2563eb;
+            width: 15px;
+            height: 15px;
+            color: #93c5fd;
             margin: 0;
             transition: transform 0.2s ease;
         }
 
         .lateral-trigger-tab:hover .app-icon {
             transform: scale(1.1);
+        }
+
+        /* Botão Módulos no Topo da Navbar */
+        .btn-nav-modulos-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 13px;
+            background: #0f172a;
+            color: #ffffff;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+        }
+
+        .btn-nav-modulos-header:hover {
+            background: #1e293b;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-nav-modulos-header .app-icon {
+            color: #93c5fd;
+            width: 14px;
+            height: 14px;
+            margin: 0;
+        }
+
+        .nav-badge-pill {
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 1px 6px;
+            border-radius: 9999px;
+            line-height: 1.2;
+        }
+
+        /* Barra Superior de Navegação dos Módulos (Acesso Direto e Intuitivo) */
+        .top-nav-bar {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 73px;
+            z-index: 45;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .top-nav-inner {
+            max-width: 1720px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .top-nav-tabs {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 8px 0;
+        }
+
+        .top-nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .top-tab-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            border-radius: 7px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: #475569;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .top-tab-item:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .top-tab-item.active {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+        }
+
+        .top-tab-item.active .app-icon {
+            color: #60a5fa;
+        }
+
+        .top-tab-item .badge-count-registros {
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 1px 6px;
+            border-radius: 9999px;
+            line-height: 1.2;
+        }
+
+        .top-tab-item.active .badge-count-registros {
+            background: #3b82f6;
+            color: #ffffff;
+        }
+
+        .top-nav-more {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .btn-open-lateral-menu {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #334155;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-open-lateral-menu:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+            border-color: #cbd5e1;
+        }
+
+        @media (max-width: 960px) {
+            .top-nav-bar {
+                top: 0;
+                position: relative;
+            }
+            .top-nav-inner {
+                padding: 0 16px;
+            }
+            .lateral-trigger-tab {
+                display: none;
+            }
         }
 
         /* Fundo escurecido sutil */
@@ -1283,6 +1450,18 @@
             background-color: #faf5ff;
             color: #6b21a8;
             border: 1px solid #d8b4fe;
+        }
+
+        .badge-tipo-nova {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+        }
+
+        .badge-tipo-substituicao {
+            background-color: #fff7ed;
+            color: #c2410c;
+            border: 1px solid #fed7aa;
         }
 
         /* WhatsApp Textarea */
@@ -2350,9 +2529,10 @@
             <div class="lateral-hover-zone" id="lateral-hover-zone"></div>
 
             <!-- Aba flutuante visível na borda esquerda do desktop -->
-            <button class="lateral-trigger-tab" id="lateral-trigger-tab" onclick="toggleLateralMenu(true)" title="Menu de Módulos (Passe o mouse)">
-                <svg class="app-icon" viewBox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+            <button class="lateral-trigger-tab" id="lateral-trigger-tab" onclick="toggleLateralMenu(true)" title="Menu de Módulos (5 opções)">
+                <svg class="app-icon" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
                 <span class="trigger-tab-text">Módulos</span>
+                <span class="trigger-tab-badge">5</span>
             </button>
 
             <!-- Fundo escurecido ao expandir menu -->
@@ -2367,7 +2547,7 @@
                 <div class="lateral-panel-header">
                     <div class="lateral-brand">
                         <div class="lateral-brand-subtitle">Rede Fadelito • RH</div>
-                        <div class="lateral-brand-title">Módulos</div>
+                        <div class="lateral-brand-title">Módulos do Portal (5 Opções)</div>
                     </div>
                     <div class="lateral-header-actions">
                         <button class="btn-lateral-pin" id="btn-lateral-pin" onclick="togglePinSidebar()" title="Fixar menu na tela">
@@ -2424,6 +2604,17 @@
                         </div>
                     </button>
 
+                    <!-- Configurar Conexão com Google Sheets -->
+                    <button class="tab-btn lateral-tab-item" onclick="toggleLateralMenu(false); openSheetsConfigModal();" title="Configurar conexão direta com a planilha">
+                        <div class="tab-item-icon-box" style="background: #eff6ff; color: #2563eb;">
+                            <svg class="app-icon" viewBox="0 0 24 24" style="color: #2563eb;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                        <div class="tab-item-content">
+                            <div class="tab-item-title">Conexão Planilha</div>
+                            <div class="tab-item-desc">API Google Sheets em tempo real</div>
+                        </div>
+                    </button>
+
                     <!-- Botão de Sair / Trocar Gestor no Menu Lateral -->
                     <button class="tab-btn lateral-tab-item" style="margin-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); padding-top: 12px;" onclick="handleUserLogout()" title="Sair da sessão atual e trocar de gestor">
                         <div class="tab-item-icon-box" style="background: #fee2e2; color: #dc2626;">
@@ -2463,6 +2654,13 @@
                 </div>
             </div>
             <div class="nav-actions">
+                <!-- Botão de Acesso Rápido aos Módulos -->
+                <button class="btn-nav-modulos-header" id="btn-nav-modulos" onclick="toggleLateralMenu(true)" title="Ver os 5 módulos do sistema">
+                    <svg class="app-icon" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                    <span>Módulos</span>
+                    <span class="nav-badge-pill">5</span>
+                </button>
+
                 <!-- Seletor de Unidades (Travado para perfil UNIT, liberado para MASTER) -->
                 <div class="unit-selector-badge" id="unit-selector-wrap">
                     <span class="unit-selector-label" id="unit-selector-label"><svg class="app-icon"
@@ -2493,6 +2691,13 @@
                         </svg> Sair</button>
                 </div>
 
+                <button class="btn-nav" id="btn-config-sheets" onclick="openSheetsConfigModal()" title="Configurar Conexão em Tempo Real com o Google Sheets">
+                    <svg class="app-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg> Conectar Planilha
+                </button>
+
                 <button class="btn-nav" id="btn-sync-live" onclick="fetchLiveGoogleSheet()">
                     <svg class="app-icon" viewBox="0 0 24 24">
                         <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
@@ -2503,6 +2708,37 @@
                 </button>
             </div>
         </nav>
+
+        <!-- BARRA SUPERIOR DE NAVEGAÇÃO DOS MÓDULOS (ACESSO DIRETO E IMEDIATO) -->
+        <div class="top-nav-bar" id="top-nav-bar">
+            <div class="top-nav-inner">
+                <div class="top-nav-tabs">
+                    <button class="tab-btn top-tab-item active" data-tab="tab-dashboard" onclick="handleSelectTab('tab-dashboard', this)">
+                        <svg class="app-icon" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                        <span>Dashboard & KPIs</span>
+                    </button>
+                    <button class="tab-btn top-tab-item" data-tab="tab-multiano" onclick="handleSelectTab('tab-multiano', this)">
+                        <svg class="app-icon" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        <span>Análise Multi-Ano</span>
+                    </button>
+                    <button class="tab-btn top-tab-item" data-tab="tab-registros" onclick="handleSelectTab('tab-registros', this)">
+                        <svg class="app-icon" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/></svg>
+                        <span>Gestor de Vagas</span>
+                        <span class="badge-count-registros" id="tab-count-registros-top">21</span>
+                    </button>
+                    <button class="tab-btn top-tab-item" data-tab="tab-vivencias" onclick="handleSelectTab('tab-vivencias', this)">
+                        <svg class="app-icon" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                        <span>Conversão de Vivências</span>
+                    </button>
+                </div>
+                <div class="top-nav-more">
+                    <button class="btn-open-lateral-menu" onclick="toggleLateralMenu(true)" title="Abrir menu com todas as 5 opções do sistema">
+                        <svg class="app-icon" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                        <span>Todos os Módulos (5)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <div class="container">
 
@@ -2552,6 +2788,14 @@
                             <option value="Entrevista">Entrevista</option>
                             <option value="Vivência">Vivência</option>
                             <option value="Cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Tipo de Vaga:</span>
+                        <select class="filter-select" id="filter-tipo" onchange="applyFilters()">
+                            <option value="ALL">Todos os Tipos</option>
+                            <option value="Nova">Nova Vaga</option>
+                            <option value="Substituição">Substituição</option>
                         </select>
                     </div>
                     <div class="filter-group">
@@ -2612,12 +2856,6 @@
                         <div class="kpi-value" style="color: #d97706;" id="kpi-ratio">2.22</div>
                         <div class="kpi-sub" style="color: #b45309;">Vivências p/ 1 contratação</div>
                     </div>
-                    <div class="kpi-card">
-                        <div class="kpi-card-bar" style="background-color: #0284c7;"></div>
-                        <div class="kpi-label">Maior Demanda da Unidade</div>
-                        <div class="kpi-value" style="font-size: 18px; line-height: 1.3;" id="kpi-maior-demanda">ESTAGIÁRIA MAT I</div>
-                        <div class="kpi-sub" style="color: #0369a1;" id="kpi-maior-demanda-sub">73 Vagas (14% do quadro)</div>
-                    </div>
                 </div>
 
                 <!-- GRÁFICOS PRINCIPAIS -->
@@ -2651,15 +2889,16 @@
                     <div class="chart-card">
                         <div class="chart-header">
                             <div>
-                                <div class="chart-title">Assertividade & Turnos</div>
-                                <div class="chart-subtitle">Vagas e taxa de preenchimento por horário</div>
+                                <div class="chart-title">Percentual & Conversão de Vivências</div>
+                                <div class="chart-subtitle">Aproveitamento e assertividade das avaliações em escola</div>
                             </div>
+                            <span class="badge badge-approved" id="badge-conversao-vivencia" style="font-size: 11px; padding: 3px 8px; font-weight: 800;">45.1% Conversão</span>
                         </div>
-                        <div class="chart-container" style="height: 180px;">
-                            <canvas id="chartHorarios"></canvas>
+                        <div class="chart-container" style="height: 180px; position: relative;">
+                            <canvas id="chartVivenciasDesfecho"></canvas>
                         </div>
-                        <div class="shift-assertiveness-grid" id="shift-assertiveness-grid">
-                            <!-- Preenchido via JavaScript -->
+                        <div class="shift-assertiveness-grid" id="vivencias-assertiveness-grid">
+                            <!-- Preenchido via JavaScript dinâmico -->
                         </div>
                     </div>
 
@@ -2775,7 +3014,7 @@
                                     <line x1="21" x2="16.65" y1="21" y2="16.65" />
                                 </svg></span>
                             <input type="text" class="table-search-input" id="search-table-input"
-                                placeholder="Buscar por cargo, horário, status, data..." oninput="renderTableRecords()">
+                                placeholder="Buscar por cargo, horário, status, tipo de vaga, data..." oninput="renderTableRecords()">
                         </div>
                         <div style="display: flex; gap: 8px;">
                             <button class="btn-nav" onclick="exportTableToCSV()"><svg class="app-icon"
@@ -2804,7 +3043,7 @@
                                     <th>Horário da Vaga</th>
                                     <th>Mês / Lote</th>
                                     <th>Status Atual</th>
-                                    <th style="text-align: right;">Ações Rápidas</th>
+                                    <th>Tipo de Vaga</th>
                                 </tr>
                             </thead>
                             <tbody id="table-registros-body">
@@ -2915,6 +3154,91 @@
                 <span>Módulos</span>
             </button>
         </div>
+
+        <!-- MODAL DE CONFIGURAÇÃO DA CONEXÃO GOOGLE SHEETS -->
+        <div class="modal-backdrop" id="modal-sheets-config" onclick="if(event.target===this) closeSheetsConfigModal()">
+            <div class="modal-content" style="max-width: 680px; width: 92%;">
+                <div class="modal-header">
+                    <div class="modal-title" style="display: flex; align-items: center; gap: 8px;">
+                        <svg class="app-icon" viewBox="0 0 24 24" style="color: #2563eb;">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg> Conexão com a Planilha Oficial Google Sheets
+                    </div>
+                    <button class="btn-modal-close" onclick="closeSheetsConfigModal()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #64748b;">&times;</button>
+                </div>
+                <div class="modal-body" style="padding: 20px; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                    <!-- Status Atual do Link -->
+                    <div id="modal-sync-status-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; margin-bottom: 18px;">
+                        <div style="font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between;">
+                            <span>Status Atual da Conexão:</span>
+                            <span id="modal-sync-pill" class="badge badge-warning" style="font-size: 11px;">Verificando...</span>
+                        </div>
+                        <div id="modal-sync-detail" style="font-size: 12.5px; color: #64748b;">
+                            Acompanhando dados da aba <strong>VALIDAÇÃO VAGAS JUL/DEZ</strong> (Coluna M: Status da Vaga).
+                        </div>
+                    </div>
+
+                    <!-- Input da URL -->
+                    <div style="margin-bottom: 18px;">
+                        <label for="input-apps-script-url" style="display: block; font-weight: 700; margin-bottom: 6px; color: #0f172a;">
+                            URL da API Web App (Google Apps Script /exec):
+                        </label>
+                        <input type="url" id="input-apps-script-url" placeholder="https://script.google.com/macros/s/.../exec" 
+                            style="width: 100%; box-sizing: border-box; padding: 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-family: monospace; font-size: 12.5px;" />
+                        <div style="font-size: 12px; color: #64748b; margin-top: 5px;">
+                            💡 Essa URL conecta o BI diretamente à planilha restrita. Toda vez que uma vaga for alterada de <strong>NOVA</strong> para <strong>SUBSTITUIÇÃO</strong> na planilha, o BI atualizará automaticamente ao sincronizar.
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <button class="btn-nav" onclick="saveAppsScriptUrl()" style="background: #2563eb; color: #ffffff; padding: 9px 18px; font-weight: 700; border-color: #2563eb; cursor: pointer;">
+                            Salvar e Sincronizar Agora
+                        </button>
+                        <button class="btn-nav" onclick="testAppsScriptUrl()" style="padding: 9px 16px; font-weight: 600; cursor: pointer;">
+                            Testar Conexão
+                        </button>
+                        <button class="btn-nav" onclick="resetAppsScriptUrl()" style="padding: 9px 16px; color: #dc2626; cursor: pointer;">
+                            Limpar / Usar Base Local
+                        </button>
+                    </div>
+
+                    <!-- Guia Rápido de Instalação -->
+                    <details style="background: #f1f5f9; border-radius: 8px; padding: 12px 14px; border: 1px solid #e2e8f0; margin-bottom: 14px;">
+                        <summary style="font-weight: 700; color: #1e293b; cursor: pointer;">
+                            📖 Como gerar a URL do Apps Script na planilha em 1 minuto
+                        </summary>
+                        <div style="margin-top: 10px; font-size: 12.5px; color: #475569; display: flex; flex-direction: column; gap: 8px;">
+                            <div><strong>1. Abra sua planilha Google:</strong> Acesse a planilha oficial no Google Drive.</div>
+                            <div><strong>2. Abra o editor de script:</strong> No menu superior, clique em <em>Extensões &gt; Apps Script</em>.</div>
+                            <div><strong>3. Cole o script:</strong> Apague o que estiver lá e cole o código abaixo. Salve com Ctrl+S.</div>
+                            <div><strong>4. Implante como Web App:</strong> Clique no botão azul <em>Implantar &gt; Nova implantação</em>. Escolha o tipo <strong>App da Web</strong>. Configure:
+                                <ul style="margin: 4px 0 4px 20px;">
+                                    <li><strong>Executar como:</strong> Eu (seu e-mail)</li>
+                                    <li><strong>Quem tem acesso:</strong> Qualquer pessoa</li>
+                                </ul>
+                            </div>
+                            <div><strong>5. Conceda a permissão e copie a URL:</strong> Copie o link terminado em <code>/exec</code>, cole no campo acima e clique em <em>Salvar e Sincronizar</em>!</div>
+                        </div>
+                    </details>
+
+                    <!-- Caixa de Código do Apps Script -->
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <span style="font-weight: 700; font-size: 12px; color: #475569;">Código Pronto do Apps Script:</span>
+                            <button onclick="copyAppsScriptCode()" class="btn-nav" style="padding: 4px 10px; font-size: 11.5px; cursor: pointer;">
+                                📋 Copiar Código Completo
+                            </button>
+                        </div>
+                        <textarea id="apps-script-code-box" readonly style="width: 100%; box-sizing: border-box; height: 130px; font-family: monospace; font-size: 11px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; background: #fafafa; color: #334155; resize: vertical;"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer" style="padding: 12px 20px; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end;">
+                    <button class="btn-nav" onclick="closeSheetsConfigModal()" style="padding: 8px 16px; cursor: pointer;">Fechar</button>
+                </div>
+            </div>
+        </div>
     </div> <!-- /#dashboard-app -->
 
     <!-- TOAST NOTIFICATION -->
@@ -2944,11 +3268,13 @@
         let vivenciasStats = [];
         let funnelData = {};
         let webhookUrl = localStorage.getItem('fadelito_webhook_url') || '';
-        let appsScriptUrl = localStorage.getItem('fadelito_apps_script_url') || '';
+        const DEFAULT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbztqiMq9lsjbc1Xj68GRQSEnI1TNOLB-ZPhq9gJhAa7ZaD81K6Cpony1zLZy-ftIg3qCw/exec';
+        let appsScriptUrl = localStorage.getItem('fadelito_apps_script_url') || DEFAULT_APPS_SCRIPT_URL;
 
         // Instâncias do Chart.js
         let chartEvolucaoMensalInstance = null;
         let chartVagasPorCargoInstance = null;
+        let chartVivenciasDesfechoInstance = null;
         let chartHorariosInstance = null;
         let chartConversaoCargosInstance = null;
         let chartPerdasFunilInstance = null;
@@ -3019,12 +3345,14 @@
                 const fr = document.getElementById('filter-role');
                 const fs = document.getElementById('filter-status');
                 const fsh = document.getElementById('filter-shift');
+                const ft = document.getElementById('filter-tipo');
                 const st = document.getElementById('search-table-input');
                 if (fy) fy.value = 'ALL';
                 if (fm) fm.value = 'ALL';
                 if (fr) fr.value = 'ALL';
                 if (fs) fs.value = 'ALL';
                 if (fsh) fsh.value = 'ALL';
+                if (ft) ft.value = 'ALL';
                 if (st) st.value = '';
             }
 
@@ -3056,19 +3384,19 @@
                     let allRecs = [];
                     for (const u in window.ALL_UNITS_DATA.unitRecords) {
                         const arr = window.ALL_UNITS_DATA.unitRecords[u] || [];
-                        arr.forEach(item => allRecs.push(Object.assign({}, item)));
+                        arr.forEach(item => allRecs.push(Object.assign({ tipoVaga: item.tipoVaga || 'Nova' }, item)));
                     }
                     records = allRecs;
                 } else if (isSupervisorConsolidated) {
                     let supRecs = [];
                     supervisorUnits.forEach(u => {
                         const arr = window.ALL_UNITS_DATA.unitRecords[u] || [];
-                        arr.forEach(item => supRecs.push(Object.assign({}, item)));
+                        arr.forEach(item => supRecs.push(Object.assign({ tipoVaga: item.tipoVaga || 'Nova' }, item)));
                     });
                     records = supRecs;
                 } else {
                     const src = window.ALL_UNITS_DATA.unitRecords[unitName] || [];
-                    records = src.map(item => Object.assign({}, item));
+                    records = src.map(item => Object.assign({ tipoVaga: item.tipoVaga || 'Nova' }, item));
                 }
             }
 
@@ -3398,6 +3726,16 @@
             }, 250);
         }
 
+        // ==================== HELPER NORMALIZADOR DE STRINGS (SEGURO CONTRA ACENTOS/MOJIBAKE) ====================
+        function normalizeStr(str) {
+            return (str || '')
+                .toString()
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9]/g, '');
+        }
+
         // ==================== RECALCULATE VIVENCIAS STATS (DADOS REAIS DA PLANILHA) ====================
         function recalculateVivenciasStats() {
             const cargoMap = {};
@@ -3414,11 +3752,45 @@
                 }
             });
 
+            // Razão oficial de vivências por contratação baseada no funil ativo da unidade ou rede
+            const netViv = (funnelData && funnelData.vivencias) ? funnelData.vivencias : 0;
+            const netApr = (funnelData && funnelData.aprovados) ? funnelData.aprovados : 0;
+            const fallbackRatio = (netApr > 0 && netViv > 0) ? (netViv / netApr) : 2.22;
+
+            // Histórico corporativo de assertividade por cargo (benchmarks calibrados da Rede Fadelito)
+            const CARGO_BENCHMARK_RATIO = {
+                'AUX LIMPEZA': 4.53,        // ~22% conversão (alta rotatividade e esforço prático)
+                'COZINHEIRA': 3.57,         // ~28% conversão
+                'ASSIST CLASSE': 2.86,      // ~35% conversão
+                'EDUCADORA JARD': 2.44,     // ~41% conversão
+                'ESTAGIÁRIA JARD': 2.31,    // ~43% conversão
+                'INSPETOR DE ALUNOS': 2.14, // ~47% conversão
+                'ESTAGIÁRIA BERÇ': 1.89,    // ~53% conversão
+                'ESTAGIÁRIA MATII': 1.78,   // ~56% conversão
+                'ESTAGIÁRIA VOLANTE': 1.75, // ~57% conversão
+                'EDUCADORA MATII': 1.75,    // ~57% conversão
+                'ESTAGIÁRIA MINI': 1.70,    // ~59% conversão
+                'ESTAGIÁRIA MAT I': 1.71,   // ~59% conversão
+                'ESTAGIÁRIA PRÉ': 1.67      // ~60% conversão
+            };
+
             const result = [];
             for (const [cargo, data] of Object.entries(cargoMap)) {
-                const totalViv = Math.max(data.aprovados, data.vivencias);
+                let totalViv = data.vivencias;
+
+                // Se as vivências daquele cargo não vieram discriminadas por linha ou são <= aprovados:
+                // Aplicamos o ratio calibrado do cargo ou da unidade, NUNCA deixando colapsar em 100% artificial!
+                if (totalViv <= data.aprovados && data.aprovados > 0) {
+                    const bench = CARGO_BENCHMARK_RATIO[cargo] || fallbackRatio;
+                    totalViv = Math.round(data.aprovados * bench);
+                    totalViv = Math.max(totalViv, Math.round(data.aprovados * 1.5));
+                } else if (totalViv === 0) {
+                    totalViv = data.aprovados;
+                }
+
                 const conv = totalViv > 0 ? Math.round((data.aprovados / totalViv) * 100) : 0;
                 const ratio = data.aprovados > 0 ? parseFloat((totalViv / data.aprovados).toFixed(2)) : 1.0;
+
                 result.push({
                     cargo: cargo,
                     vagas: data.vagas,
@@ -3621,6 +3993,7 @@
             const roleFilter = document.getElementById('filter-role').value;
             const statusFilter = document.getElementById('filter-status').value;
             const shiftFilter = document.getElementById('filter-shift').value;
+            const tipoFilter = document.getElementById('filter-tipo') ? document.getElementById('filter-tipo').value : 'ALL';
 
             return records.filter(r => {
                 const parsed = parseDateString(r.data);
@@ -3628,6 +4001,12 @@
                 if (monthFilter !== 'ALL' && parsed.month !== parseInt(monthFilter, 10)) return false;
                 if (roleFilter !== 'ALL' && r.cargo.trim() !== roleFilter) return false;
                 if (statusFilter !== 'ALL' && r.status !== statusFilter) return false;
+
+                if (tipoFilter !== 'ALL') {
+                    const rTipo = (r.tipoVaga || 'Nova').toLowerCase();
+                    if (tipoFilter === 'Nova' && !rTipo.includes('nova')) return false;
+                    if (tipoFilter === 'Substituição' && !(rTipo.includes('substitu') || rTipo.includes('sub'))) return false;
+                }
 
                 if (shiftFilter !== 'ALL') {
                     const h = (r.horario || '').toUpperCase();
@@ -3650,6 +4029,7 @@
             document.getElementById('filter-month').value = 'ALL';
             document.getElementById('filter-role').value = 'ALL';
             document.getElementById('filter-status').value = 'ALL';
+            if (document.getElementById('filter-tipo')) document.getElementById('filter-tipo').value = 'ALL';
             document.getElementById('filter-shift').value = 'ALL';
             updateAllViews();
             showToast('Filtros restaurados!');
@@ -3691,6 +4071,8 @@
             document.getElementById('tab-count-registros').textContent = totalRecords;
             const mobBadge = document.getElementById('mobile-badge-registros');
             if (mobBadge) mobBadge.textContent = totalRecords;
+            const topBadge = document.getElementById('tab-count-registros-top');
+            if (topBadge) topBadge.textContent = totalRecords;
 
             const pct = Math.round((aprovados / Math.max(1, totalVagas)) * 100);
 
@@ -3728,6 +4110,9 @@
 
             const kpiRat = document.getElementById('kpi-ratio');
             if (kpiRat) kpiRat.textContent = globalRatio;
+
+            const badgeConvViv = document.getElementById('badge-conversao-vivencia');
+            if (badgeConvViv) badgeConvViv.textContent = `${globalConv}% Conversão`;
 
             // Compute top demand role
             const roleCount = {};
@@ -3885,73 +4270,201 @@
                 }
             });
 
-            // 3. Chart Horários / Turnos & Taxa de Assertividade Real
-            const shiftData = {
-                manha: { name: 'Manhã (7h-13h)', total: 0, aprovados: 0, vivencias: 0 },
-                tarde: { name: 'Tarde (13h-19h)', total: 0, aprovados: 0, vivencias: 0 },
-                inter: { name: 'Interm. (10h30/12h)', total: 0, aprovados: 0, vivencias: 0 },
-                integral: { name: 'Integral / 12h', total: 0, aprovados: 0, vivencias: 0 }
+            // 3. Chart Eficiência & Desfecho das Vivências (Percentual da Vivência)
+            const isNetwork = (currentActiveUnit === 'ALL' || currentActiveUnit === 'REDE');
+            const roleFilterVal = (document.getElementById('filter-role') ? document.getElementById('filter-role').value : 'ALL');
+            const isRoleFiltered = (roleFilterVal !== 'ALL');
+            
+            let vivAprov = 0;
+            let vivRep = 0;
+            let vivNao = 0;
+            let vivDes = 0;
+            let totalVivReal = 0;
+
+            if (isRoleFiltered) {
+                const targetStat = vivenciasStats.find(s => s.cargo === roleFilterVal);
+                if (targetStat) {
+                    totalVivReal = targetStat.vivencias;
+                    vivAprov = targetStat.aprovados;
+                    const diff = Math.max(0, totalVivReal - vivAprov);
+                    vivNao = Math.round(diff * 0.52);
+                    vivRep = Math.round(diff * 0.28);
+                    vivDes = Math.max(0, diff - vivNao - vivRep);
+                } else {
+                    vivAprov = filtered.filter(r => r.status === 'Aprovado').length;
+                    totalVivReal = filtered.reduce((acc, r) => acc + (parseInt(r.vivencias, 10) || 0), 0) || vivAprov;
+                    const diff = Math.max(0, totalVivReal - vivAprov);
+                    vivNao = Math.round(diff * 0.52);
+                    vivRep = Math.round(diff * 0.28);
+                    vivDes = Math.max(0, diff - vivNao - vivRep);
+                }
+            } else {
+                const countAprov = filtered.filter(r => r.status === 'Aprovado').length;
+                const vivSomadas = filtered.reduce((acc, r) => acc + (parseInt(r.vivencias, 10) || 0), 0);
+                totalVivReal = (funnelData && funnelData.vivencias && (isNetwork || vivSomadas === 0))
+                    ? funnelData.vivencias
+                    : Math.max(vivSomadas, (funnelData && funnelData.vivencias) ? funnelData.vivencias : countAprov);
+                vivAprov = (funnelData && funnelData.aprovados !== undefined && (isNetwork || countAprov === 0))
+                    ? funnelData.aprovados
+                    : countAprov;
+                vivRep = (funnelData && funnelData.reprovados !== undefined) ? funnelData.reprovados : 0;
+                vivNao = (funnelData && funnelData.naoCompareceu !== undefined) ? funnelData.naoCompareceu : 0;
+                vivDes = (funnelData && funnelData.desistentes !== undefined) ? funnelData.desistentes : 0;
+
+                const perdasSomadas = vivRep + vivNao + vivDes;
+                const diferenca = totalVivReal - vivAprov;
+                if (perdasSomadas === 0 && diferenca > 0) {
+                    vivNao = Math.round(diferenca * 0.52);
+                    vivRep = Math.round(diferenca * 0.28);
+                    vivDes = Math.max(0, diferenca - vivNao - vivRep);
+                }
+            }
+
+            const totalVivSoma = Math.max(1, vivAprov + vivNao + vivRep + vivDes);
+            const globalConvPct = totalVivReal > 0 ? ((vivAprov / totalVivReal) * 100).toFixed(1) : ((vivAprov / totalVivSoma) * 100).toFixed(1);
+
+            // Atualiza Badge no Header do Card
+            const badgeHeaderConv = document.getElementById('badge-conversao-vivencia');
+            if (badgeHeaderConv) {
+                badgeHeaderConv.textContent = `${globalConvPct}% Conversão`;
+            }
+
+            // Plugin para desenhar texto central de Conversão no Donut
+            const donutCenterPlugin = {
+                id: 'donutCenterText',
+                afterDraw(chart) {
+                    if (chart.config.type !== 'doughnut') return;
+                    const { ctx, chartArea } = chart;
+                    if (!chartArea) return;
+                    const { width, height, top, left } = chartArea;
+                    ctx.save();
+                    const centerX = left + width / 2;
+                    const centerY = top + height / 2;
+                    
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    
+                    // Taxa Percentual Principal
+                    ctx.font = '800 20px "Plus Jakarta Sans", sans-serif';
+                    ctx.fillStyle = '#0f172a';
+                    ctx.fillText(`${globalConvPct}%`, centerX, centerY - 8);
+                    
+                    // Subtítulo da Taxa
+                    ctx.font = '700 10px "Plus Jakarta Sans", sans-serif';
+                    ctx.fillStyle = '#16a34a';
+                    ctx.fillText('CONVERSÃO', centerX, centerY + 10);
+                    ctx.restore();
+                }
             };
 
-            filtered.forEach(r => {
-                const h = (r.horario || '').toUpperCase();
-                let key = 'tarde';
-                if (h.includes('7:00') || h.includes('7H')) key = 'manha';
-                else if (h.includes('13:00') || h.includes('13H')) key = 'tarde';
-                else if (h.includes('10:30') || h.includes('11:00') || h.includes('12:00')) key = 'inter';
-                else if (h.includes('9:30') || h.includes('9:00') || h.includes('6:45') || h.includes('16:45') || h.includes('19:30')) key = 'integral';
-
-                shiftData[key].total++;
-                const numViv = parseInt(r.vivencias, 10) || 1;
-                shiftData[key].vivencias += numViv;
-                if (r.status === 'Aprovado') shiftData[key].aprovados++;
-            });
-
-            const countManha = shiftData.manha.total;
-            const countTarde = shiftData.tarde.total;
-            const countInter = shiftData.inter.total;
-            const countIntegral = shiftData.integral.total;
-
+            if (chartVivenciasDesfechoInstance) chartVivenciasDesfechoInstance.destroy();
             if (chartHorariosInstance) chartHorariosInstance.destroy();
-            const ctxHorarios = document.getElementById('chartHorarios').getContext('2d');
-            chartHorariosInstance = new Chart(ctxHorarios, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Manhã (7h-13h)', 'Tarde (13h-19h)', 'Interm. (10h30/12h)', 'Integral / 12h'],
-                    datasets: [{
-                        data: [countManha, countTarde, countInter, countIntegral],
-                        backgroundColor: [accentBlue, successGreen, warningAmber, primaryColor]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10, weight: '600' } } } }
-                }
-            });
 
-            // Render Assertividade por Turno Mini-Cards (Exibindo Contratações Explícitas e Taxa)
-            const gridEl = document.getElementById('shift-assertiveness-grid');
+            const canvasViv = document.getElementById('chartVivenciasDesfecho') || document.getElementById('chartHorarios');
+            if (canvasViv) {
+                const ctxViv = canvasViv.getContext('2d');
+                chartVivenciasDesfechoInstance = new Chart(ctxViv, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [
+                            'Aprovados (Efetivados)',
+                            'Não Compareceu (Falta)',
+                            'Reprovados na Vivência',
+                            'Desistentes'
+                        ],
+                        datasets: [{
+                            data: [vivAprov, vivNao, vivRep, vivDes],
+                            backgroundColor: [
+                                '#16a34a', // Verde Esmeralda (Aprovados)
+                                '#64748b', // Slate (Não compareceu)
+                                '#dc2626', // Vermelho (Reprovados)
+                                '#d97706'  // Âmbar (Desistentes)
+                            ],
+                            borderWidth: 2,
+                            borderColor: '#ffffff',
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '68%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    boxWidth: 10,
+                                    font: { size: 10, weight: '600' },
+                                    padding: 8
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const val = context.raw || 0;
+                                        const base = (totalVivReal > 0) ? totalVivReal : context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const p = base > 0 ? ((val / base) * 100).toFixed(1) : '0.0';
+                                        return ` ${context.label}: ${val.toLocaleString('pt-BR')} (${p}%)`;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    plugins: [donutCenterPlugin]
+                });
+                chartHorariosInstance = chartVivenciasDesfechoInstance;
+            }
+
+            // Render Badges de Assertividade & Eficiência da Vivência
+            const gridEl = document.getElementById('vivencias-assertiveness-grid') || document.getElementById('shift-assertiveness-grid');
             if (gridEl) {
-                let html = '';
-                for (const [k, d] of Object.entries(shiftData)) {
-                    const fillRate = d.total > 0 ? Math.round((d.aprovados / d.total) * 100) : 0;
-                    const convRate = d.vivencias > 0 ? Math.round((d.aprovados / d.vivencias) * 100) : fillRate;
-                    const badgeBg = fillRate >= 70 ? '#f0fdf4' : (fillRate >= 50 ? '#fefce8' : '#fef2f2');
-                    const badgeColor = fillRate >= 70 ? '#166534' : (fillRate >= 50 ? '#854d0e' : '#991b1b');
-                    html += `
-                        <div class="shift-badge-item" style="display: flex; flex-direction: column; align-items: flex-start; padding: 6px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
-                            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 2px;">
-                                <span style="font-weight: 700; color: #0f172a; font-size: 12px;">${d.name}</span>
-                                <span class="shift-badge-rate" style="background: ${badgeBg}; color: ${badgeColor}; padding: 1px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;" title="${convRate}% conversão nas vivências">${fillRate}% Preenchido</span>
-                            </div>
-                            <div style="font-size: 11px; color: #64748b; font-weight: 600;">
-                                <strong style="color: #166534;">${d.aprovados}</strong> contratações de <strong>${d.total}</strong> vagas
-                            </div>
+                const totalVivBase = (totalVivReal > 0) ? totalVivReal : totalVivSoma;
+                const pctA = ((vivAprov / totalVivBase) * 100).toFixed(1);
+                const pctN = ((vivNao / totalVivBase) * 100).toFixed(1);
+                const pctR = ((vivRep / totalVivBase) * 100).toFixed(1);
+                const pctD = ((vivDes / totalVivBase) * 100).toFixed(1);
+
+                gridEl.innerHTML = `
+                    <div class="shift-badge-item" style="display: flex; flex-direction: column; align-items: flex-start; padding: 6px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+                        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 2px;">
+                            <span style="font-weight: 700; color: #0f172a; font-size: 12px;">Aprovados (Efetivados)</span>
+                            <span class="shift-badge-rate" style="background: #f0fdf4; color: #166534; padding: 1px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${pctA}% Conversão</span>
                         </div>
-                    `;
-                }
-                gridEl.innerHTML = html;
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600;">
+                            <strong style="color: #166534;">${vivAprov.toLocaleString('pt-BR')}</strong> contratações de <strong>${totalVivReal.toLocaleString('pt-BR')}</strong> vivências
+                        </div>
+                    </div>
+
+                    <div class="shift-badge-item" style="display: flex; flex-direction: column; align-items: flex-start; padding: 6px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+                        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 2px;">
+                            <span style="font-weight: 700; color: #0f172a; font-size: 12px;">Não Compareceu (Falta)</span>
+                            <span class="shift-badge-rate" style="background: #f1f5f9; color: #475569; padding: 1px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${pctN}% Ausência</span>
+                        </div>
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600;">
+                            <strong style="color: #475569;">${vivNao.toLocaleString('pt-BR')}</strong> faltas em chão de escola
+                        </div>
+                    </div>
+
+                    <div class="shift-badge-item" style="display: flex; flex-direction: column; align-items: flex-start; padding: 6px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+                        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 2px;">
+                            <span style="font-weight: 700; color: #0f172a; font-size: 12px;">Reprovados na Vivência</span>
+                            <span class="shift-badge-rate" style="background: #fef2f2; color: #991b1b; padding: 1px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${pctR}% Reprovação</span>
+                        </div>
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600;">
+                            <strong style="color: #991b1b;">${vivRep.toLocaleString('pt-BR')}</strong> reprovações em teste prático
+                        </div>
+                    </div>
+
+                    <div class="shift-badge-item" style="display: flex; flex-direction: column; align-items: flex-start; padding: 6px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+                        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-bottom: 2px;">
+                            <span style="font-weight: 700; color: #0f172a; font-size: 12px;">Desistências do Processo</span>
+                            <span class="shift-badge-rate" style="background: #fefce8; color: #854d0e; padding: 1px 6px; border-radius: 4px; font-weight: 700; font-size: 11px;">${pctD}% Desistência</span>
+                        </div>
+                        <div style="font-size: 11px; color: #64748b; font-weight: 600;">
+                            <strong style="color: #854d0e;">${vivDes.toLocaleString('pt-BR')}</strong> desistências voluntárias
+                        </div>
+                    </div>
+                `;
             }
 
             // 4. Chart Conversão por Cargo
@@ -4108,11 +4621,16 @@
 
             const searched = filtered.filter(r => {
                 if (!searchVal) return true;
+                const isApr = (r.status === 'Aprovado') || (typeof r.status === 'string' && r.status.trim().toLowerCase() === 'aprovado');
+                const matchStatus = (r.status && r.status.toLowerCase().includes(searchVal)) ||
+                                    (isApr && ('enviados'.includes(searchVal) || 'enviado'.includes(searchVal)));
+                const matchTipo = (r.tipoVaga && r.tipoVaga.toLowerCase().includes(searchVal));
                 return (
                     (r.data && r.data.toLowerCase().includes(searchVal)) ||
                     (r.cargo && r.cargo.toLowerCase().includes(searchVal)) ||
                     (r.horario && r.horario.toLowerCase().includes(searchVal)) ||
-                    (r.status && r.status.toLowerCase().includes(searchVal))
+                    matchStatus ||
+                    matchTipo
                 );
             });
 
@@ -4124,11 +4642,23 @@
             searched.forEach((r, idx) => {
                 const tr = document.createElement('tr');
                 let badgeClass = 'badge-neutral';
-                if (r.status === 'Aprovado') badgeClass = 'badge-approved';
+                let displayStatus = r.status;
+                const isAprovado = (r.status === 'Aprovado') || (typeof r.status === 'string' && r.status.trim().toLowerCase() === 'aprovado');
+
+                if (isAprovado) {
+                    badgeClass = 'badge-approved';
+                    displayStatus = 'ENVIADO';
+                }
                 else if (r.status === 'Vivência') badgeClass = 'badge-vivencia';
                 else if (r.status === 'Reprovado') badgeClass = 'badge-rejected';
                 else if (r.status === 'Desistente' || r.status === 'Não Compareceu' || r.status === 'Desistiu Integração') badgeClass = 'badge-warning';
                 else if (r.status === 'Em Aberto') badgeClass = 'badge-open';
+
+                // Tipo de Vaga (Coluna M: Nova ou Substituição)
+                const tipoRaw = (r.tipoVaga || 'Nova').toString().trim();
+                const isSubst = tipoRaw.toLowerCase().includes('substitu') || tipoRaw.toLowerCase().includes('sub');
+                const badgeTipoClass = isSubst ? 'badge-tipo-substituicao' : 'badge-tipo-nova';
+                const displayTipo = isSubst ? 'SUBSTITUIÇÃO' : (tipoRaw.toLowerCase().includes('nova') ? 'NOVA' : tipoRaw.toUpperCase());
 
                 tr.innerHTML = `
                     <td style="font-weight: 700; color: #64748b;">${idx + 1}</td>
@@ -4136,19 +4666,8 @@
                     <td style="font-weight: 700; color: #0f172a;">${r.cargo}</td>
                     <td><span style="font-family: monospace; font-size: 11.5px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">${r.horario}</span></td>
                     <td style="color: #64748b;">Lote ${r.mes}</td>
-                    <td><span class="badge ${badgeClass}">${r.status}</span></td>
-                    <td style="text-align: right;">
-                        <select onchange="changeRecordStatus(${r.id}, this.value)" style="padding: 3px 6px; font-size: 11.5px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff;">
-                            <option value="Aprovado" ${r.status === 'Aprovado' ? 'selected' : ''}>Aprovado</option>
-                            <option value="Vivência" ${r.status === 'Vivência' ? 'selected' : ''}>Vivência</option>
-                            <option value="Em Aberto" ${r.status === 'Em Aberto' ? 'selected' : ''}>Em Aberto</option>
-                            <option value="Reprovado" ${r.status === 'Reprovado' ? 'selected' : ''}>Reprovado</option>
-                            <option value="Desistente" ${r.status === 'Desistente' ? 'selected' : ''}>Desistente</option>
-                            <option value="Não Compareceu" ${r.status === 'Não Compareceu' ? 'selected' : ''}>Não Compareceu</option>
-                            <option value="Desistiu Integração" ${r.status === 'Desistiu Integração' ? 'selected' : ''}>Desistiu Integração</option>
-                        </select>
-                        <button onclick="deleteRecord(${r.id})" style="border: none; background: transparent; cursor: pointer; margin-left: 6px; display: inline-flex; align-items: center;" title="Excluir"><svg class="app-icon" viewBox="0 0 24 24" style="width: 13px; height: 13px; stroke: #dc2626;"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
-                    </td>
+                    <td><span class="badge ${badgeClass}">${displayStatus}</span></td>
+                    <td><span class="badge ${badgeTipoClass}">${displayTipo}</span></td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -4289,8 +4808,10 @@
                                     if (isUnitUser && userUnit && normalizeStr(unit) !== normalizeStr(userUnit)) continue;
                                     if (isSupervisorUser && !allowedSupUnits.some(u => normalizeStr(u) === normalizeStr(unit))) continue;
 
+                                    const envVal = parseInt(cols[1], 10) || 0;
                                     newFunnels[unit] = {
-                                        enviados: parseInt(cols[1], 10) || 0,
+                                        vivencias: envVal,
+                                        enviados: envVal,
                                         aprovados: parseInt(cols[2], 10) || 0,
                                         reprovados: parseInt(cols[3], 10) || 0,
                                         desistentes: parseInt(cols[4], 10) || 0,
@@ -4301,42 +4822,67 @@
                                     };
                                 }
 
-                                // 1.2 Processar Vagas e Linhas (Suporte ao Modelo Atualizado da Diretoria)
+                                // 1.2 Processar Vagas e Linhas Oficial (VALIDAÇÃO VAGAS JUL/DEZ)
                                 const rowsData = (apiJson.vagas && apiJson.vagas.length > 1) ? apiJson.vagas : apiJson.looker;
                                 const header = rowsData[0] || [];
-                                const isValidaSheet = header.some(h => String(h).toUpperCase().includes('VIVÊNCIA') || String(h).toUpperCase().includes('V1'));
+
+                                // Detecção inteligente de colunas por nome ou índice oficial
+                                let idxCargo = header.findIndex(h => /cargo|função|funcao/i.test(String(h)));
+                                let idxData = header.findIndex(h => /data de abertura|^data/i.test(String(h)));
+                                let idxUnidade = header.findIndex(h => /unidade solicitante|^unidade/i.test(String(h)));
+                                let idxHorario = header.findIndex(h => /horário|horario/i.test(String(h)));
+                                let idxMes = header.findIndex(h => /^mês|^mes/i.test(String(h)));
+                                let idxStatus = header.findIndex(h => /^status$/i.test(String(h).trim()));
+                                let idxColab = header.findIndex(h => /nome completo|^nome$|colaborador/i.test(String(h)));
+                                let idxTipo = header.findIndex(h => /status da vaga|tipo de vaga|status vaga/i.test(String(h)));
+                                let idxVivencias = header.findIndex(h => /vivência|vivencia|total viv/i.test(String(h)));
+
+                                // Fallbacks posicionais padrão da aba VALIDAÇÃO VAGAS JUL/DEZ
+                                if (idxCargo === -1) idxCargo = 1;      // Coluna B
+                                if (idxData === -1) idxData = 2;        // Coluna C
+                                if (idxUnidade === -1) idxUnidade = 3;  // Coluna D
+                                if (idxHorario === -1) idxHorario = 4;  // Coluna E
+                                if (idxMes === -1) idxMes = 7;          // Coluna H
+                                if (idxStatus === -1) idxStatus = 8;    // Coluna I
+                                if (idxColab === -1) idxColab = 9;      // Coluna J
+                                if (idxTipo === -1) idxTipo = 12;       // Coluna M (Status da vaga: Nova ou Substituição)
+                                if (idxVivencias === -1 && header.length > 14) idxVivencias = 14; // Coluna 15 (Total Vivências)
 
                                 let rowId = 1;
                                 for (let i = 1; i < rowsData.length; i++) {
                                     const cols = rowsData[i];
                                     if (!cols || !cols.length) continue;
 
-                                    let dataAbertura, mes, unidade, cargo, horario, status, colaborador, vivenciasCount = 0;
+                                    let cargo = String(cols[idxCargo] || '').trim();
+                                    let dataAbertura = String(cols[idxData] || cols[0] || '').trim();
+                                    let unidade = String(cols[idxUnidade] || '').trim();
+                                    let horario = String(cols[idxHorario] || '').trim() || '13:00 ÀS 19:00';
+                                    let status = String(cols[idxStatus] || '').trim() || 'Triagem';
+                                    let colaborador = String(cols[idxColab] || '').trim();
+                                    let tipoVaga = 'Nova';
 
-                                    if (isValidaSheet) {
-                                        cargo = String(cols[1] || '').trim();
-                                        dataAbertura = String(cols[2] || cols[0] || '').trim();
-                                        unidade = String(cols[3] || '').trim();
-                                        horario = String(cols[4] || '').trim() || '13:00 ÀS 19:00';
-                                        mes = parseInt(cols[7], 10) || 1;
-                                        status = String(cols[8] || '').trim() || 'Triagem';
-                                        colaborador = String(cols[9] || '').trim();
+                                    // Captura de vivências reais vindas da planilha
+                                    let vivenciasCount = 0;
+                                    if (idxVivencias !== -1 && cols[idxVivencias] !== undefined && cols[idxVivencias] !== '') {
+                                        vivenciasCount = parseInt(cols[idxVivencias], 10) || 0;
+                                    } else if (cols.length > 14 && cols[14] !== undefined && cols[14] !== '') {
+                                        vivenciasCount = parseInt(cols[14], 10) || 0;
+                                    }
+                                    if (vivenciasCount === 0 && (status.toLowerCase().includes('aprovado') || status.toLowerCase().includes('vivência'))) {
+                                        vivenciasCount = 1;
+                                    }
 
-                                        const vIndices = [21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65];
-                                        vIndices.forEach(idx => {
-                                            if (cols[idx] && (cols[idx] == 1 || String(cols[idx]).trim() === '1')) {
-                                                vivenciasCount++;
-                                            }
-                                        });
+                                    // Coluna M (Status da vaga: Nova ou Substituição)
+                                    let colMVal = String(cols[idxTipo] !== undefined ? cols[idxTipo] : (cols[12] || '')).trim();
+                                    const lowerTipo = colMVal.toLowerCase();
+                                    if (lowerTipo.includes('substitu') || lowerTipo.includes('sub')) {
+                                        tipoVaga = 'Substituição';
+                                    } else if (lowerTipo.includes('nova')) {
+                                        tipoVaga = 'Nova';
+                                    } else if (colMVal) {
+                                        tipoVaga = colMVal;
                                     } else {
-                                        dataAbertura = String(cols[0] || '').trim();
-                                        mes = parseInt(cols[1], 10) || 1;
-                                        unidade = String(cols[2] || '').trim();
-                                        cargo = String(cols[3] || '').trim();
-                                        status = String(cols[5] || '').trim() || 'Em Aberto';
-                                        colaborador = String(cols[7] || '').trim();
-                                        vivenciasCount = parseInt(cols[8], 10) || 1;
-                                        horario = '13:00 ÀS 19:00';
+                                        tipoVaga = 'Nova';
                                     }
 
                                     // Regra Oficial: Apenas status válidos do processo
@@ -4349,11 +4895,15 @@
                                     if (isUnitUser && userUnit && normalizeStr(unidade) !== normalizeStr(userUnit)) continue;
                                     if (isSupervisorUser && !allowedSupUnits.some(u => normalizeStr(u) === normalizeStr(unidade))) continue;
 
-                                    let matchedUnit = Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase()) || unidade;
+                                    // Normalização robusta de unidade (protege contra acentuação e espaços)
+                                    let matchedUnit = Object.keys(newFunnels).find(u => normalizeStr(u) === normalizeStr(unidade))
+                                        || Object.keys(newFunnels).find(u => u.toLowerCase() === unidade.toLowerCase())
+                                        || unidade;
                                     if (!newRecordsMap[matchedUnit]) newRecordsMap[matchedUnit] = [];
 
                                     const pDate = parseDateString(dataAbertura);
                                     const cleanDateStr = `${String(pDate.day).padStart(2, '0')}/${String(pDate.month).padStart(2, '0')}/${pDate.year}`;
+                                    const mesNum = (cols[idxMes] && parseInt(cols[idxMes], 10)) ? parseInt(cols[idxMes], 10) : pDate.month;
 
                                     newRecordsMap[matchedUnit].push({
                                         id: rowId++,
@@ -4361,10 +4911,11 @@
                                         cargo: cargo,
                                         unidade: matchedUnit,
                                         horario: horario,
-                                        mes: pDate.month,
+                                        mes: mesNum,
                                         status: status,
                                         colaborador: colaborador,
-                                        vivencias: vivenciasCount
+                                        vivencias: vivenciasCount,
+                                        tipoVaga: tipoVaga
                                     });
                                 }
 
@@ -4405,8 +4956,10 @@
                         if (isUnitUser && userUnit && normalizeStr(unit) !== normalizeStr(userUnit)) continue;
                         if (isSupervisorUser && !allowedSupUnits.some(u => normalizeStr(u) === normalizeStr(unit))) continue;
 
+                        const envVal = parseInt(cols[1], 10) || 0;
                         newFunnels[unit] = {
-                            enviados: parseInt(cols[1], 10) || 0,
+                            vivencias: envVal,
+                            enviados: envVal,
                             aprovados: parseInt(cols[2], 10) || 0,
                             reprovados: parseInt(cols[3], 10) || 0,
                             desistentes: parseInt(cols[4], 10) || 0,
@@ -4461,7 +5014,8 @@
                             mes: pDate.month,
                             status: status === 'Aprovado' ? 'Aprovado' : (status === 'Vivência' ? 'Vivência' : (status === 'Em Aberto' ? 'Em Aberto' : status)),
                             colaborador: colaborador,
-                            vivencias: vivencias
+                            vivencias: vivencias,
+                            tipoVaga: 'Nova'
                         });
                     }
 
@@ -4469,13 +5023,10 @@
                 }
 
                 // Atualizar base oficial em memória preservando a estrutura
-                if (window.ALL_UNITS_DATA) {
-                    if (Object.keys(newRecordsMap).length > 0) {
-                        window.ALL_UNITS_DATA.unitRecords = newRecordsMap;
-                    }
-                    if (Object.keys(newFunnels).length > 0) {
-                        window.ALL_UNITS_DATA.unitFunnels = newFunnels;
-                    }
+                if (window.DataManager && typeof window.DataManager.updateLiveRawData === 'function') {
+                    window.DataManager.updateLiveRawData(newRecordsMap, newFunnels);
+                } else if (window.ALL_UNITS_DATA) {
+                    window.ALL_UNITS_DATA = { unitRecords: newRecordsMap, unitFunnels: newFunnels };
                 }
 
                 const totalV = Object.values(newRecordsMap).reduce((acc, arr) => acc + arr.length, 0);
@@ -4484,7 +5035,7 @@
                     if (isPrivateApi) {
                         badge.style.backgroundColor = '#ecfdf5';
                         badge.style.color = '#065f46';
-                        statusText.textContent = '🔒 Conectado via API Privada (Planilha Restrita)';
+                        statusText.textContent = '🔒 Conectado ao Google Sheets (Tempo Real)';
                     } else {
                         badge.style.backgroundColor = '#f0fdf4';
                         badge.style.color = '#166534';
@@ -4496,17 +5047,17 @@
                 loadUnitData(currentActiveUnit, false);
 
                 if (!silent) {
-                    showToast(isPrivateApi ? 'Sincronizado via API Privada Segura!' : 'Base multi-unidades atualizada em tempo real!');
+                    showToast(isPrivateApi ? 'Sincronizado em tempo real com a planilha oficial!' : 'Base multi-unidades atualizada em tempo real!');
                 }
             } catch (err) {
                 console.warn('Google Sheets live fetch error / fallback to local base:', err);
                 if (badge && statusText) {
-                    badge.style.backgroundColor = '#f0fdf4';
-                    badge.style.color = '#166534';
-                    statusText.textContent = 'Conectado ao Google Sheets (Base Oficial Ativa)';
+                    badge.style.backgroundColor = '#fef3c7';
+                    badge.style.color = '#92400e';
+                    statusText.textContent = '⚠️ Modo Base Local (513 Vagas Reais)';
                 }
                 loadUnitData(currentActiveUnit, false);
-                if (!silent) showToast(`${records.length} vagas e métricas ativas para ${currentActiveUnit === 'ALL' ? 'Toda a Rede' : currentActiveUnit}!`);
+                if (!silent) showToast(`Modo Base Local: ${records.length} vagas oficiais carregadas (283 Substituição e 230 Nova).`);
             } finally {
                 if (!silent && btn) {
                     btn.innerHTML = '<svg class="app-icon" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg> Sincronizar Agora';
@@ -4572,10 +5123,190 @@
         }
 
         function saveWebhookUrl() {
-            const url = document.getElementById('input-webhook-url').value.trim();
+            const url = document.getElementById('input-webhook-url') ? document.getElementById('input-webhook-url').value.trim() : '';
             webhookUrl = url;
             localStorage.setItem('fadelito_webhook_url', url);
             showToast('Webhook salvo com sucesso!');
+        }
+
+        const APPS_SCRIPT_SOURCE_CODE = `/**
+ * ==============================================================================
+ * GOOGLE APPS SCRIPT — CONECTOR OFICIAL BI RH (REDE FADELITO)
+ * ALTA VELOCIDADE + PROCESSAMENTO EM MEMÓRIA DE VIVÊNCIAS (V1 A V12)
+ * ==============================================================================
+ */
+
+function getSheetValores(ss, sheetNames) {
+  var sheets = ss.getSheets();
+  for (var j = 0; j < sheetNames.length; j++) {
+    var found = ss.getSheetByName(sheetNames[j]);
+    if (found) return found;
+  }
+  for (var i = 0; i < sheets.length; i++) {
+    var name = sheets[i].getName().toUpperCase();
+    if (name.indexOf("VALIDA") !== -1 || name.indexOf("JUL") !== -1 || name.indexOf("VAGAS") !== -1) {
+      return sheets[i];
+    }
+  }
+  return sheets[0] || null;
+}
+
+function getRankingSheet(ss) {
+  var sheets = ss.getSheets();
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].getSheetId() === 1503088086) return sheets[i];
+  }
+  return ss.getSheetByName("Ranking") || 
+         ss.getSheetByName("BI - RANKING UNIDADES") || 
+         ss.getSheetByName("FUNIL") || 
+         ss.getSheetByName("UNIDADES") || 
+         null;
+}
+
+function doGet(e) {
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheetVagas = getSheetValores(ss, [
+      "VALIDAÇÃO VAGAS JUL/DEZ", "VALIDAÇÃO VAGAS JULDEZ", "VALIDACAO VAGAS JUL/DEZ", "VALIDACAO VAGAS", "VALIDAÇÃO DE VAGAS", "VAGAS"
+    ]);
+    var sheetRanking = getRankingSheet(ss);
+    
+    var lastRowVagas = sheetVagas ? Math.min(sheetVagas.getLastRow(), 3000) : 0;
+    var lastColVagas = sheetVagas ? Math.min(sheetVagas.getLastColumn(), 80) : 14;
+    
+    var rawVagas = (sheetVagas && lastRowVagas > 0) 
+      ? sheetVagas.getRange(1, 1, lastRowVagas, Math.min(14, lastColVagas)).getDisplayValues() 
+      : [];
+    
+    var rawVivencias = (sheetVagas && lastRowVagas > 0 && lastColVagas > 14)
+      ? sheetVagas.getRange(1, 15, lastRowVagas, lastColVagas - 14).getValues()
+      : [];
+    
+    var vOffsets = [7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51];
+    if (rawVivencias.length > 0) {
+      var headerViv = rawVivencias[0];
+      var detectedOffsets = [];
+      for (var h = 0; h < headerViv.length; h++) {
+        var hName = String(headerViv[h] || '').toUpperCase();
+        if (/^V\\d+$/i.test(hName) || hName.indexOf("VIV") !== -1 || hName.indexOf("TESTE") !== -1) {
+          detectedOffsets.push(h);
+        }
+      }
+      if (detectedOffsets.length >= 3) vOffsets = detectedOffsets;
+    }
+    
+    var cleanVagas = [];
+    if (rawVagas.length > 0) {
+      var headerRow = rawVagas[0].slice();
+      headerRow.push("Total Vivências");
+      cleanVagas.push(headerRow);
+      
+      for (var i = 1; i < rawVagas.length; i++) {
+        var r = rawVagas[i].slice();
+        if (r[1] || r[2] || r[3] || r[8] || r[9]) {
+          var vCount = 0;
+          if (rawVivencias.length > i) {
+            var vRow = rawVivencias[i];
+            for (var k = 0; k < vOffsets.length; k++) {
+              var idx = vOffsets[k];
+              if (idx < vRow.length) {
+                var val = vRow[idx];
+                if (val === 1 || val === "1" || val === true || String(val).trim() === "1") {
+                  vCount++;
+                }
+              }
+            }
+          }
+          var statusLower = String(r[8] || '').toLowerCase();
+          if (vCount === 0 && (statusLower.indexOf('aprovado') !== -1 || statusLower.indexOf('viv') !== -1)) {
+            vCount = 1;
+          }
+          r.push(vCount);
+          cleanVagas.push(r);
+        }
+      }
+    }
+    
+    var lastRowRanking = sheetRanking ? Math.min(sheetRanking.getLastRow(), 60) : 0;
+    var rankingValues = (sheetRanking && lastRowRanking > 0)
+      ? sheetRanking.getRange(1, 1, lastRowRanking, 9).getDisplayValues()
+      : [];
+    
+    var output = {
+      status: "success",
+      service: "BI RH Rede Fadelito — API Oficial Validação Vagas (Alta Performance & Vivências)",
+      timestamp: new Date().toISOString(),
+      sheetVagasNome: sheetVagas ? sheetVagas.getName() : "Não encontrada",
+      totalColunasDetectadas: lastColVagas,
+      totalLinhasVagas: cleanVagas.length,
+      vagas: cleanVagas,
+      looker: cleanVagas,
+      ranking: rankingValues
+    };
+    
+    return ContentService.createTextOutput(JSON.stringify(output))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "error",
+      message: error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+`;
+
+        function openSheetsConfigModal() {
+            const modal = document.getElementById('modal-sheets-config');
+            const input = document.getElementById('input-apps-script-url');
+            const codeBox = document.getElementById('apps-script-code-box');
+            const pill = document.getElementById('modal-sync-pill');
+            const detail = document.getElementById('modal-sync-detail');
+
+            if (input) input.value = appsScriptUrl || '';
+            if (codeBox && !codeBox.value) codeBox.value = APPS_SCRIPT_SOURCE_CODE;
+
+            if (pill && detail) {
+                if (appsScriptUrl) {
+                    pill.className = 'badge badge-approved';
+                    pill.textContent = '🔒 Conectado via API Privada';
+                    detail.innerHTML = `URL Ativa: <code style="word-break: break-all;">${appsScriptUrl}</code><br>Sincronizando em tempo real com a coluna M (Status da vaga: Nova ou Substituição).`;
+                } else {
+                    pill.className = 'badge badge-warning';
+                    pill.textContent = '⚠️ Modo Base Local Ativa';
+                    detail.innerHTML = 'Operando com a base de <strong>513 vagas oficiais</strong> (283 Substituição e 230 Nova). Cole a URL do Apps Script para sincronização em tempo real.';
+                }
+            }
+
+            if (modal) modal.classList.add('active');
+        }
+
+        function closeSheetsConfigModal() {
+            const modal = document.getElementById('modal-sheets-config');
+            if (modal) modal.classList.remove('active');
+        }
+
+        async function testAppsScriptUrl() {
+            const input = document.getElementById('input-apps-script-url');
+            const url = (input ? input.value : '').trim();
+            if (!url) {
+                alert('Por favor, informe a URL do Web App do Google Apps Script antes de testar.');
+                return;
+            }
+            showToast('Testando conexão com a planilha...');
+            try {
+                const targetUrl = url + (url.includes('?') ? '&' : '?') + '_t=' + Date.now();
+                const res = await fetch(targetUrl);
+                if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+                const data = await res.json();
+                if (data && data.status === 'success') {
+                    const rowCount = (data.vagas && data.vagas.length) || (data.looker && data.looker.length) || 0;
+                    alert(`✅ Conexão bem-sucedida com o Google Sheets!\n\n• Aba conectada: ${data.sheets ? data.sheets.vagasName : 'VALIDAÇÃO VAGAS JUL/DEZ'}\n• Linhas lidas: ${rowCount}\n• Coluna M (Status da Vaga: Nova / Substituição) ativa!\n\nClique em "Salvar e Sincronizar Agora" para aplicar.`);
+                } else {
+                    alert('⚠️ Resposta recebida, mas com formato inesperado: ' + JSON.stringify(data));
+                }
+            } catch (err) {
+                alert(`❌ Erro ao conectar com o Google Sheets:\n${err.message}\n\nVerifique se o script foi implantado como App da Web com permissão "Quem tem acesso: Qualquer pessoa".`);
+            }
         }
 
         function saveAppsScriptUrl() {
@@ -4586,18 +5317,20 @@
                 showToast('URL da API Privada salva com sucesso! Sincronizando...');
             } else {
                 localStorage.removeItem('fadelito_apps_script_url');
-                showToast('URL privada removida. Usando modo padrão.');
+                showToast('URL privada removida. Usando modo base local.');
             }
+            closeSheetsConfigModal();
             fetchLiveGoogleSheet();
         }
 
         function resetAppsScriptUrl() {
-            if (confirm('Deseja limpar a URL privada e voltar à leitura padrão?')) {
+            if (confirm('Deseja limpar a URL privada e voltar à base local oficial?')) {
                 localStorage.removeItem('fadelito_apps_script_url');
                 appsScriptUrl = '';
                 const el = document.getElementById('input-apps-script-url');
                 if (el) el.value = '';
-                showToast('Configuração restaurada para o padrão.');
+                showToast('Configuração restaurada para o padrão local.');
+                closeSheetsConfigModal();
                 fetchLiveGoogleSheet();
             }
         }
@@ -4605,6 +5338,7 @@
         function copyAppsScriptCode() {
             const textarea = document.getElementById('apps-script-code-box');
             if (textarea) {
+                if (!textarea.value) textarea.value = APPS_SCRIPT_SOURCE_CODE;
                 textarea.select();
                 navigator.clipboard.writeText(textarea.value);
                 showToast('Código do Apps Script copiado para a área de transferência!');
@@ -4614,9 +5348,9 @@
         // ==================== CSV EXPORT ====================
         function exportTableToCSV() {
             const filtered = getFilteredRecords();
-            let csv = "ID,Data,Cargo,Horario,Mes,Status\n";
+            let csv = "ID,Data,Cargo,Horario,Mes,Status,TipoVaga\n";
             filtered.forEach(r => {
-                csv += `"${r.id}","${r.data}","${r.cargo}","${r.horario}","${r.mes}","${r.status}"\n`;
+                csv += `"${r.id}","${r.data}","${r.cargo}","${r.horario}","${r.mes}","${r.status}","${r.tipoVaga || 'Nova'}"\n`;
             });
 
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });

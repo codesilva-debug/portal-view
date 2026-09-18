@@ -435,7 +435,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Roselaine Lima",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 23,
@@ -445,7 +446,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Kenia Ferraz",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 67,
@@ -455,7 +457,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Andressa Pereira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 171,
@@ -465,7 +468,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Eneida Cardoso de oliveira",
-        "vivencias": 6
+        "vivencias": 6,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 182,
@@ -475,7 +479,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "ANDRESSA",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 198,
@@ -485,7 +490,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Letícia Souza Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 204,
@@ -495,7 +501,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Maria Silva",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 239,
@@ -505,7 +512,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Wilson Francisco De Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 247,
@@ -515,7 +523,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Maria Elisangela Ferreira Andrade",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 326,
@@ -525,7 +534,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Adriana Do Carmo Rodrigues",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 370,
@@ -535,7 +545,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Eduardo Pereira de Souza",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 450,
@@ -545,7 +556,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Sabrina Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 82,
@@ -556,7 +568,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 541,
@@ -567,7 +580,8 @@
         "mes": 8,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       }
     ],
     "Alto da Boa Vista": [
@@ -579,7 +593,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Adriana Cezar Rego Do Espirito Santo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 233,
@@ -589,7 +604,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Pedro Henrique Dos Santos",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 255,
@@ -599,7 +615,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Leticia Sena Mendes",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 286,
@@ -609,7 +626,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Erika Cabral",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 345,
@@ -619,7 +637,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Veronica Aparecida Santos Conceição",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 402,
@@ -629,7 +648,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Sofia Caetano Quental",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 428,
@@ -639,7 +659,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Débora Nascimento",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 429,
@@ -649,7 +670,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Edilene Alves Dos Santos Alves",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 492,
@@ -659,7 +681,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Alice De Oliveira Pires",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 643,
@@ -670,7 +693,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Analia Franco": [
@@ -682,7 +706,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Adriano Junior",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 20,
@@ -692,7 +717,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Monica Amaro do Nascimento Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 88,
@@ -702,7 +728,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Ana Carolina França Pereira",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 103,
@@ -712,7 +739,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "GEOVANNA SANTOS",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Nova"
       },
       {
         "id": 104,
@@ -722,7 +750,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Edirene Maciel",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 188,
@@ -732,7 +761,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Frishta Naemi",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 256,
@@ -742,7 +772,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Gabrielly Guimarães",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 271,
@@ -752,7 +783,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Marcia Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 272,
@@ -762,7 +794,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Danielly Carvalho Dos Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 279,
@@ -772,7 +805,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Julia Oliveira Araújo",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 285,
@@ -782,7 +816,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Sara Ribeiro Brito Portal",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 349,
@@ -792,7 +827,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "ESTHER DE SENA BARBOSA",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 395,
@@ -802,7 +838,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Bruna Aguiar",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 449,
@@ -812,7 +849,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Jozelaine Alves",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 488,
@@ -822,7 +860,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Cecilia Sparano",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       }
     ],
     "Bonfiglioli": [
@@ -834,7 +873,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Keila Ribeiro Pardinho",
-        "vivencias": 7
+        "vivencias": 7,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 179,
@@ -844,7 +884,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Evellyn Caetano",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 180,
@@ -854,7 +895,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Giovanna Lovessi",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 262,
@@ -864,7 +906,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Danielle Paula Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 322,
@@ -874,7 +917,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Franciele Dos Santos Pedro",
-        "vivencias": 10
+        "vivencias": 10,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 351,
@@ -884,7 +928,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Cintia Ferreira Costa Patriota",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 352,
@@ -894,7 +939,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Tamires Carvalho",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 369,
@@ -904,7 +950,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Sandra Raimundo Oliveira",
-        "vivencias": 8
+        "vivencias": 8,
+        "tipoVaga": "Nova"
       },
       {
         "id": 404,
@@ -914,7 +961,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Adriana Leme",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 405,
@@ -924,7 +972,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Priscila Aparecida",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 406,
@@ -934,7 +983,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Andressa Drielly Lima Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 493,
@@ -944,7 +994,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Michele Souza Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 494,
@@ -954,7 +1005,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Vaga fechada com a amanda Transferencia de osasco",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Brooklin": [
@@ -966,7 +1018,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Brenda Clemente",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 331,
@@ -976,7 +1029,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Emilly Silva Dias",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 367,
@@ -986,7 +1040,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Ana Meira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 384,
@@ -996,7 +1051,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Luana Ferreira Cruz",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 389,
@@ -1006,7 +1062,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Loren Rodrigues Dos Santos",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 420,
@@ -1016,7 +1073,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Elaine Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 421,
@@ -1026,7 +1084,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Mariane Fernandes",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 483,
@@ -1036,7 +1095,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Camila Rodrigues Ferreira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 606,
@@ -1047,7 +1107,8 @@
         "mes": 8,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       }
     ],
     "Campinas": [
@@ -1059,7 +1120,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Daniela Almeida",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 71,
@@ -1069,7 +1131,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Fechada com indicação da unidade",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       }
     ],
     "Campo Belo": [
@@ -1081,7 +1144,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Joyce De Jesus Assis",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 57,
@@ -1091,7 +1155,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Luciana Maria Medeiros Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 76,
@@ -1101,7 +1166,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Michelle Mesquita Soares",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 77,
@@ -1111,7 +1177,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Thauany Elisa Almeida Dos Santos",
-        "vivencias": 10
+        "vivencias": 10,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 86,
@@ -1121,7 +1188,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "GIOVANNA ROSA DA SILVA",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 87,
@@ -1131,7 +1199,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Jéssica Santos",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 127,
@@ -1141,7 +1210,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Pamela Andrade",
-        "vivencias": 10
+        "vivencias": 10,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 181,
@@ -1151,7 +1221,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Giovanna Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 183,
@@ -1161,7 +1232,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Izabelly Christina Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 217,
@@ -1171,7 +1243,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Cristiane Souza",
-        "vivencias": 6
+        "vivencias": 6,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 290,
@@ -1181,7 +1254,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Maria Da Silva Souza",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 299,
@@ -1191,7 +1265,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Wania Stefani Nascimento Do Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 317,
@@ -1201,7 +1276,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Elisangela Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 383,
@@ -1211,7 +1287,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Luana Lima",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 409,
@@ -1221,7 +1298,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Marynara Sousa",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 443,
@@ -1231,7 +1309,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Brenda Washi",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 448,
@@ -1241,7 +1320,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Kenia Judyt Torres Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 228,
@@ -1252,7 +1332,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Chacara Klabin": [
@@ -1264,7 +1345,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Gisele Baptista da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 38,
@@ -1274,7 +1356,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Natalia Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 39,
@@ -1284,7 +1367,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Islaine Rosa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 112,
@@ -1294,7 +1378,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Silvana Da Silva Paulino",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 133,
@@ -1304,7 +1389,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Giovanna Santos Antonio",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 134,
@@ -1314,7 +1400,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Julia Pinheiro",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 200,
@@ -1324,7 +1411,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Geórgia Ricardo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 218,
@@ -1334,7 +1422,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Josefa Maria Dos Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 242,
@@ -1344,7 +1433,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Lethicia Dias De Carvalho",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 244,
@@ -1354,7 +1444,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Alexandra Melo Pery",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 246,
@@ -1364,7 +1455,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Vanderleia Marcelino",
-        "vivencias": 12
+        "vivencias": 12,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 268,
@@ -1374,7 +1466,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Camila Santana Portero",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 281,
@@ -1384,7 +1477,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Flávia Gabriele Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 282,
@@ -1394,7 +1488,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Beatriz Conceição",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 312,
@@ -1404,7 +1499,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Rosana Ramos Pereira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 315,
@@ -1414,7 +1510,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Tamiles Rodrigues",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 329,
@@ -1424,7 +1521,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Nicolly Gomes Vilanova",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 337,
@@ -1434,7 +1532,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Gabriela Figueiredo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 350,
@@ -1444,7 +1543,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Bianca Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 471,
@@ -1454,7 +1554,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Gabrielly Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 633,
@@ -1465,7 +1566,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       }
     ],
     "Granja Viana": [
@@ -1477,7 +1579,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Macela Da Silva Cordeiro",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 46,
@@ -1487,7 +1590,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "José Natanael Barbosa Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 47,
@@ -1497,7 +1601,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Alline Nascimento Rocha",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 79,
@@ -1507,7 +1612,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Rayssa Ferreira D A Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 170,
@@ -1517,7 +1623,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Aline - vaga fechada pela propria unidade",
-        "vivencias": 9
+        "vivencias": 9,
+        "tipoVaga": "Nova"
       },
       {
         "id": 197,
@@ -1527,7 +1634,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Jayana Faias",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 266,
@@ -1537,7 +1645,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Mariana Camara",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 399,
@@ -1547,7 +1656,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Silvana Da Conceição L Carvalho",
-        "vivencias": 6
+        "vivencias": 6,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 400,
@@ -1557,7 +1667,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Mayara Faria Gonsalves",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 418,
@@ -1567,7 +1678,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Isabela Santana",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 440,
@@ -1577,7 +1689,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Fernanda Rodrigues",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 499,
@@ -1587,7 +1700,8 @@
         "mes": 9,
         "status": "Aprovado",
         "colaborador": "Camila Eduarda",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 615,
@@ -1598,7 +1712,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Guarulhos": [
@@ -1610,7 +1725,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Kleiton Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       }
     ],
     "Higienópolis": [
@@ -1622,7 +1738,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Mariza Salvador",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 2,
@@ -1632,7 +1749,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Natizieli Aparecida Ferreira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 3,
@@ -1642,7 +1760,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Paloma Damaceno Bettoni",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 148,
@@ -1652,7 +1771,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Joao Victor Oliveira Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 154,
@@ -1662,7 +1782,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Tamires Matos Jardim",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 196,
@@ -1672,7 +1793,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Gisele Alves",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 212,
@@ -1682,7 +1804,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Gabriela da silva coneceição",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 227,
@@ -1692,7 +1815,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Marcela Monares",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 236,
@@ -1702,7 +1826,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Anderson De Araujo Nunes",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 318,
@@ -1712,7 +1837,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Márcia Bárbara Marques Moreira",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 358,
@@ -1722,7 +1848,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Janaina Dos Santos Ramos",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 360,
@@ -1732,7 +1859,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Fabiana Silva De Lima",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Nova"
       },
       {
         "id": 376,
@@ -1742,7 +1870,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Alda Jesus Damascena",
-        "vivencias": 7
+        "vivencias": 7,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 381,
@@ -1752,7 +1881,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Ketlyn Beatriz da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 382,
@@ -1762,7 +1892,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Rita Vieira De Oliveira Carvalho",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 398,
@@ -1772,7 +1903,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Pollyana Bastos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 403,
@@ -1782,7 +1914,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Leticia Sales Germano Jorge",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 412,
@@ -1792,7 +1925,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Ana Paula Almeida Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 463,
@@ -1802,7 +1936,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Gisele Correa Da Costa",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 464,
@@ -1812,7 +1947,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Eduarda Damasceno Lima",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       }
     ],
     "Indianópolis": [
@@ -1824,7 +1960,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Victória Menezes De Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 165,
@@ -1834,7 +1971,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Gabriella Elizabeth",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 276,
@@ -1844,7 +1982,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Jessica Da Silva Lima",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 324,
@@ -1854,7 +1993,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Jaiane Moura E Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 340,
@@ -1864,7 +2004,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Cristiane Torquato De Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 341,
@@ -1874,7 +2015,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Amanda Alexandrina Rafael Ferreira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 379,
@@ -1884,7 +2026,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Guilherme Basile",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 446,
@@ -1894,7 +2037,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Isabela Araujo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 480,
@@ -1904,7 +2048,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Fabiana Figueiredo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 484,
@@ -1914,7 +2059,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Maria de Carvalho",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       }
     ],
     "Ipiranga": [
@@ -1926,7 +2072,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Lidiane de Melo",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 24,
@@ -1936,7 +2083,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Sabrina França Moreira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 56,
@@ -1946,7 +2094,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Silvana Alves Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 58,
@@ -1956,7 +2105,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Caroline Soares",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 61,
@@ -1966,7 +2116,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Hellen Vitoria",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 75,
@@ -1976,7 +2127,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Anna Carolina Da Silva Custodio Abreu",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 111,
@@ -1986,7 +2138,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Flávia Marques",
-        "vivencias": 7
+        "vivencias": 7,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 129,
@@ -1996,7 +2149,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Daniele Aso",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 146,
@@ -2006,7 +2160,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Hieda Vitoria Formigone",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 167,
@@ -2016,7 +2171,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Juliana Lopes Ferreira",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       },
       {
         "id": 224,
@@ -2026,7 +2182,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Débora Aro Pereira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 252,
@@ -2036,7 +2193,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Gabriella Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 253,
@@ -2046,7 +2204,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Flavia Marques",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 294,
@@ -2056,7 +2215,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Isabelle Rodrigues",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 295,
@@ -2066,7 +2226,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Vanessa Pinheiro",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 297,
@@ -2076,7 +2237,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Vanessa De Souza Pereira",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 306,
@@ -2086,7 +2248,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Emilly Moreira da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 338,
@@ -2096,7 +2259,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Kailly França",
-        "vivencias": 8
+        "vivencias": 8,
+        "tipoVaga": "Nova"
       },
       {
         "id": 361,
@@ -2106,7 +2270,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Camila Melo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 362,
@@ -2116,7 +2281,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Alessandra Soto Gomes",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 363,
@@ -2126,7 +2292,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Adriana Jesus da Silva Santos",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 380,
@@ -2136,7 +2303,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Elaine Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 419,
@@ -2146,7 +2314,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Karina Mesquita Menezes",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 435,
@@ -2156,7 +2325,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Janaína Quintela",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 438,
@@ -2166,7 +2336,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Isabelly Rodrigues",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 439,
@@ -2176,7 +2347,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Cibelle Ferreira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 459,
@@ -2186,7 +2358,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Gabriela Araújo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 468,
@@ -2196,7 +2369,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Andressa Gaidamavicius -´Essa candidata foi barrada pelo RH porém o mantenedor decidiu continuar até o fim do ano.",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 502,
@@ -2206,7 +2380,8 @@
         "mes": 9,
         "status": "Aprovado",
         "colaborador": "Jamilly de Oliveira Sousa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 619,
@@ -2217,7 +2392,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       }
     ],
     "Jardins": [],
@@ -2230,7 +2406,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Yasmin Veloso Alves",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 149,
@@ -2240,7 +2417,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Hellen Moura De Oliveira Francisco",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 150,
@@ -2250,7 +2428,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Bianca De Lima",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 151,
@@ -2260,7 +2439,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Ana Beatriz Santos Reis",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 152,
@@ -2270,7 +2450,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Carla Tosi De Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 163,
@@ -2280,7 +2461,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Erika Tais Gonzaga Machado",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 213,
@@ -2290,7 +2472,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Thayná Renault",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 298,
@@ -2300,7 +2483,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Gislayne Lima Muniz",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 303,
@@ -2310,7 +2494,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Elenice Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 304,
@@ -2320,7 +2505,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Graciele Matos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 314,
@@ -2330,7 +2516,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Amanda Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 346,
@@ -2340,7 +2527,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Janaina Nicolau",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 377,
@@ -2350,7 +2538,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Keliane Araujo Moraes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 410,
@@ -2360,7 +2549,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Giovanna De Oliveira Tavares",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 411,
@@ -2370,7 +2560,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Hoselainy Vieira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 447,
@@ -2380,7 +2571,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Poliana Izidoro Telles",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 644,
@@ -2391,7 +2583,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Marajoara": [
@@ -2403,7 +2596,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Tainan Tainan Marques E Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 64,
@@ -2413,7 +2607,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Angélica Macedo Silva Tomaiz",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 95,
@@ -2423,7 +2618,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Jessica Carvalho Meneses",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 114,
@@ -2433,7 +2629,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Andressa Gomes",
-        "vivencias": 10
+        "vivencias": 10,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 147,
@@ -2443,7 +2640,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Jaqueline Barbosa Neris",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 216,
@@ -2453,7 +2651,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Joana Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 313,
@@ -2463,7 +2662,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Juliana Faustino",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 356,
@@ -2473,7 +2673,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Aline Gabriela",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 392,
@@ -2483,7 +2684,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Adriana Lopes Alves Dos Santos Lopes Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 441,
@@ -2493,7 +2695,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Nádia Gomes Sarrão",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 442,
@@ -2503,7 +2706,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Kátia Aparecida Ferreira Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 445,
@@ -2513,7 +2717,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Alcineia Resende",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 452,
@@ -2523,7 +2728,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Nathália Fagundes Jacome",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 475,
@@ -2533,7 +2739,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Elisângela Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       }
     ],
     "Moema": [
@@ -2545,7 +2752,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Cíntia Oliveira - APROVADA",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 10,
@@ -2555,7 +2763,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Stefani Nascimento",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 59,
@@ -2565,7 +2774,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Maria Lucia Cabral De Melo",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 101,
@@ -2575,7 +2785,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Fernanda Moura",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 102,
@@ -2585,7 +2796,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Janaina Lisboa Martins",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 136,
@@ -2595,7 +2807,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Michele Moura",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 206,
@@ -2605,7 +2818,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Thifani Lopes",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 249,
@@ -2615,7 +2829,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Edna Barretto",
-        "vivencias": 7
+        "vivencias": 7,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 273,
@@ -2625,7 +2840,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Karoline Alves",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 274,
@@ -2635,7 +2851,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Isabela Ferreira de Souza - Transferencia da unidade do campo belo",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 330,
@@ -2645,7 +2862,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Joseni Leite Moura",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 335,
@@ -2655,7 +2873,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Sofia Antonio",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 348,
@@ -2665,7 +2884,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Ana Paula Fernandes Silva",
-        "vivencias": 8
+        "vivencias": 8,
+        "tipoVaga": "Nova"
       },
       {
         "id": 373,
@@ -2675,7 +2895,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Priscila Souza Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 388,
@@ -2685,7 +2906,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Jeniffer Andrade",
-        "vivencias": 8
+        "vivencias": 8,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 424,
@@ -2695,7 +2917,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Dalila Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 456,
@@ -2705,7 +2928,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Yasmin Aleixo",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 338,
@@ -2716,7 +2940,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Mooca": [
@@ -2728,7 +2953,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Roberta Pinto",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 52,
@@ -2738,7 +2964,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Júlia Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 66,
@@ -2748,7 +2975,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Isabelle Cuenca",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 91,
@@ -2758,7 +2986,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Priscila Dias",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 125,
@@ -2768,7 +2997,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Amanda",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 132,
@@ -2778,7 +3008,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Fabiana Duarte De Moura",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 164,
@@ -2788,7 +3019,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Emilly Pereira Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 168,
@@ -2798,7 +3030,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Stefani Fernandes De Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 169,
@@ -2808,7 +3041,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Cindy Anselmo",
-        "vivencias": 7
+        "vivencias": 7,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 184,
@@ -2818,7 +3052,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Frishta Naemi",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 189,
@@ -2828,7 +3063,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Rebeca Maranesi da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 190,
@@ -2838,7 +3074,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Sabrina Dos Santos Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 203,
@@ -2848,7 +3085,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Simone Menezes Godoi",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 258,
@@ -2858,7 +3096,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Julia Castilho",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 366,
@@ -2868,7 +3107,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Tamires Rodrigues",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 497,
@@ -2878,7 +3118,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Laís Ferreira Lima",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       }
     ],
     "Osasco": [
@@ -2890,7 +3131,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Jocea Moreno Canos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 69,
@@ -2900,7 +3142,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Patrícia Ferreira Cazassa Cazassa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 78,
@@ -2910,7 +3153,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Eliane Barcelos da Silva Paes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 106,
@@ -2920,7 +3164,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Isabella Ferreira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 107,
@@ -2930,7 +3175,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Cintia Nara Vieira Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 141,
@@ -2940,7 +3186,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Juliana Farias Vicente",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 232,
@@ -2950,7 +3197,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Ana Paula De Lima",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 248,
@@ -2960,7 +3208,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Luiza Ketlen",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 263,
@@ -2970,7 +3219,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Elaine Martins",
-        "vivencias": 12
+        "vivencias": 12,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 278,
@@ -2980,7 +3230,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Débora Urban",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 288,
@@ -2990,7 +3241,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Bianca Amorim",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 319,
@@ -3000,7 +3252,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Vanessa Lopes de Andrade",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 469,
@@ -3010,7 +3263,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Amanda Nascimento",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 470,
@@ -3020,7 +3274,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Vaga fechada com transferencia da Leopoldina",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       }
     ],
     "Panamby": [
@@ -3032,7 +3287,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Giovanna Lyssa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 105,
@@ -3042,7 +3298,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Wanderson De Oliveira",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 124,
@@ -3052,7 +3309,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Priscila Viana Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 208,
@@ -3062,7 +3320,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Matheus Rodrigues",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 223,
@@ -3072,7 +3331,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Nataly Ester Oliveira Dos Santos Luiz",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 226,
@@ -3082,7 +3342,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Mariana Rílary Silvestre Sousa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 245,
@@ -3092,7 +3353,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Isabel Gonçalves Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 311,
@@ -3102,7 +3364,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Karen Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 323,
@@ -3112,7 +3375,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Maria De Lourdes Dos Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 332,
@@ -3122,7 +3386,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Ricardo Antonio Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 368,
@@ -3132,7 +3397,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Joziane Fernandes Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 371,
@@ -3142,7 +3408,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Tatiane Leles",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 416,
@@ -3152,7 +3419,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Rafaela Alonso Hernandes Negrão - iND",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 467,
@@ -3162,7 +3430,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Manuela França Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       }
     ],
     "Paraiso": [
@@ -3174,7 +3443,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Glaucia Regina Maciel",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 93,
@@ -3184,7 +3454,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "D'avila Dayane",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 117,
@@ -3194,7 +3465,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Sabrina Soares Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 123,
@@ -3204,7 +3476,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Bianca Vitória",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 126,
@@ -3214,7 +3487,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Tatiana Carla",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 140,
@@ -3224,7 +3498,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Amanda Emily Neves De Barros Soares",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 145,
@@ -3234,7 +3509,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Luana Casali",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 160,
@@ -3244,7 +3520,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Maria Do Socorro Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 161,
@@ -3254,7 +3531,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Vitória Carolina Nóbrega Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 162,
@@ -3264,7 +3542,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Mariana Eraldo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 187,
@@ -3274,7 +3553,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Ednalva De Alcântara Oliveira Oliveira",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 191,
@@ -3284,7 +3564,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Pamela Gomes",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 201,
@@ -3294,7 +3575,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Camila Lazo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 210,
@@ -3304,7 +3586,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Wilton Vicente",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 211,
@@ -3314,7 +3597,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Maria Do Carmo",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 220,
@@ -3324,7 +3608,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Millenea Cardoso Henrique",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 234,
@@ -3334,7 +3619,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Estefani Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 238,
@@ -3344,7 +3630,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Natalia Lays Da Silva Franca",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 259,
@@ -3354,7 +3641,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Júlia Vasconcelos Vasconcelos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 287,
@@ -3364,7 +3652,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Ana Paula Telles",
-        "vivencias": 11
+        "vivencias": 11,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 296,
@@ -3374,7 +3663,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Marcia da silva costa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 301,
@@ -3384,7 +3674,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Eduardo Pereira De Souza",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 336,
@@ -3394,7 +3685,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Marcos Regnes Da Silva Viégas",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 397,
@@ -3404,7 +3696,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Daniela Roberti",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 425,
@@ -3414,7 +3707,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Thais Michelle de Oliveira",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 457,
@@ -3424,7 +3718,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Laís Saorin",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 458,
@@ -3434,7 +3729,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Keila Dias Mendes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 460,
@@ -3444,7 +3740,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Karyne Cardoso",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 629,
@@ -3455,7 +3752,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Perdizes": [
@@ -3467,7 +3765,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Patricia Sousa",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 353,
@@ -3477,7 +3776,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Luana De Vasconcelos Dantas",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 354,
@@ -3487,7 +3787,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Rebeca Santos",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Nova"
       },
       {
         "id": 355,
@@ -3497,7 +3798,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Izabela Leite",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Nova"
       },
       {
         "id": 396,
@@ -3507,7 +3809,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Rayane Ferreira Barbosa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 444,
@@ -3517,7 +3820,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Com indicação da propria unidade",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       },
       {
         "id": 476,
@@ -3527,7 +3831,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Jamilly Paradela",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 477,
@@ -3537,7 +3842,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Rute Roza Do Nascimento Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 481,
@@ -3547,7 +3853,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Crislaine Roberta Moreira Souza",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 482,
@@ -3557,7 +3864,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Vitoria Medeiros piva Fabri do Carmo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 504,
@@ -3567,7 +3875,8 @@
         "mes": 9,
         "status": "Aprovado",
         "colaborador": "Agatha Andreza Estevam Firmino",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 621,
@@ -3578,7 +3887,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       }
     ],
     "Pinheiros": [
@@ -3590,7 +3900,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Vitoria Aparecida",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 80,
@@ -3600,7 +3911,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Ronivaldo Dos Santos Matos Dos Santos Matos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 84,
@@ -3610,7 +3922,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Ariane Fregotte",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 89,
@@ -3620,7 +3933,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Iracema Gomes Sousa",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 90,
@@ -3630,7 +3944,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Wendevania Tavares Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 119,
@@ -3640,7 +3955,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Renata",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 166,
@@ -3650,7 +3966,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Aline Conegundes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 172,
@@ -3660,7 +3977,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Victoria Andrade",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 192,
@@ -3670,7 +3988,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Priscila Almeida",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 194,
@@ -3680,7 +3999,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Tauane Felix Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 202,
@@ -3690,7 +4010,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Giovanna Queiroz Pereira Da Paixão",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 251,
@@ -3700,7 +4021,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Igor De Jesus Ramos",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 264,
@@ -3710,7 +4032,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Bianca Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 328,
@@ -3720,7 +4043,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Maria Cláudia Santos Pereira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 413,
@@ -3730,7 +4054,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Laura Da Silva Delfino",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 414,
@@ -3740,7 +4065,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Geziane Araújo Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 478,
@@ -3750,7 +4076,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Ketheny Caroliny Theodoro",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 485,
@@ -3760,7 +4087,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Eliane Réges De Lima",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 573,
@@ -3771,7 +4099,8 @@
         "mes": 8,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       }
     ],
     "Piracicaba": [],
@@ -3784,7 +4113,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Larissa Alves Anselmo",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 53,
@@ -3794,7 +4124,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Mayani Barbosa Cardeal",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 54,
@@ -3804,7 +4135,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Biancca Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 74,
@@ -3814,7 +4146,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Willian Rodrigues Dos Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 96,
@@ -3824,7 +4157,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Camilly Giovanna Campos De Souza",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 115,
@@ -3834,7 +4168,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Adriana Barros",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 122,
@@ -3844,7 +4179,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Jamilly Socorro Noia Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 156,
@@ -3854,7 +4190,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Camilla Silva Martins Dos Anjos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 176,
@@ -3864,7 +4201,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Esther Dutra Contiero Nascimento",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 215,
@@ -3874,7 +4212,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Elaine Cristina Mendes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 235,
@@ -3884,7 +4223,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "João Paulo Lobo Pereira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 269,
@@ -3894,7 +4234,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Wellington Souza De Carvalho",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 270,
@@ -3904,7 +4245,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Morgana Marcolino",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 289,
@@ -3914,7 +4256,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "crislaine Lima",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 320,
@@ -3924,7 +4267,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Evellyn De Araújo Teodoro",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 321,
@@ -3934,7 +4278,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Glauciane Ribeiro Assunção Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 407,
@@ -3944,7 +4289,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Mariana Victoria Melo da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 408,
@@ -3954,7 +4300,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Maria Moreira",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 465,
@@ -3964,7 +4311,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Lucival Almeida",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       }
     ],
     "Real Parque": [
@@ -3976,7 +4324,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Maria De Jesus Da Silva Pereira",
-        "vivencias": 12
+        "vivencias": 12,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 209,
@@ -3986,7 +4335,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Bruna Costa Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 231,
@@ -3996,7 +4346,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Jaqueline Sampaio Das Flores",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 241,
@@ -4006,7 +4357,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Bruna Costa Silva",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 250,
@@ -4016,7 +4368,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Júlia Saraiva Ribeiro Lima",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 254,
@@ -4026,7 +4379,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Jaqueline Da Silva E Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 284,
@@ -4036,7 +4390,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Anny Caroline Costa Castro",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 308,
@@ -4046,7 +4401,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Luana Francisca Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 325,
@@ -4056,7 +4412,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Nágela De Paula Reis Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 327,
@@ -4066,7 +4423,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Francine Ferrari",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 364,
@@ -4076,7 +4434,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Tassiana Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 391,
@@ -4086,7 +4445,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Angelica Araujo",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 462,
@@ -4096,7 +4456,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Silvia De Jesus",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 498,
@@ -4106,7 +4467,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Mony Lima",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       }
     ],
     "Santo Andre": [
@@ -4118,7 +4480,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Uanderson Trindade",
-        "vivencias": 6
+        "vivencias": 6,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 32,
@@ -4128,7 +4491,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Katia Oliveira Chaves",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 33,
@@ -4138,7 +4502,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Julia Rodrigues Da Silva",
-        "vivencias": 5
+        "vivencias": 5,
+        "tipoVaga": "Nova"
       },
       {
         "id": 40,
@@ -4148,7 +4513,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Thais Gomes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 121,
@@ -4158,7 +4524,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Maria Josenir Nascimento Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 138,
@@ -4168,7 +4535,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Júlio Cesar Da Silva Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 155,
@@ -4178,7 +4546,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Marcia Gisele De Jesus",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 157,
@@ -4188,7 +4557,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Jaquelina Francisca Da Conceicao Conceição",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 178,
@@ -4198,7 +4568,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Josiane Aparecida Santos Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 193,
@@ -4208,7 +4579,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Juliene Araujo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 334,
@@ -4218,7 +4590,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Tayane Santana Castanho",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 386,
@@ -4228,7 +4601,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Danielle Rodrigues",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 393,
@@ -4238,7 +4612,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Caroline Morais",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 401,
@@ -4248,7 +4623,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Adrielly Tavares",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 430,
@@ -4258,7 +4634,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Kamilly Silva",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 431,
@@ -4268,7 +4645,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Simoni Flamino",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 432,
@@ -4278,7 +4656,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Eduarda Macedo",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 625,
@@ -4289,7 +4668,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Saúde": [
@@ -4301,7 +4681,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Viviane Novaes Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 29,
@@ -4311,7 +4692,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Elaine Pereira de Oliveira",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 72,
@@ -4321,7 +4703,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Valentina Maria De Oliveira Lima",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 100,
@@ -4331,7 +4714,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Flaviany Calistro Benites",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 113,
@@ -4341,7 +4725,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Jéssica Waldez Ferreira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 174,
@@ -4351,7 +4736,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Jessica Monteiro",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 240,
@@ -4361,7 +4747,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Fernanda Joaquim",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 261,
@@ -4371,7 +4758,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Anderson Dias Leme",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 277,
@@ -4381,7 +4769,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Thaina Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 280,
@@ -4391,7 +4780,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Gabriella Chaves Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 309,
@@ -4401,7 +4791,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Mariana Romero",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 365,
@@ -4411,7 +4802,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Marcela Nery dos Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 394,
@@ -4421,7 +4813,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Tatiane Marques da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 454,
@@ -4431,7 +4824,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Maria Aparecida Brandão Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 455,
@@ -4441,7 +4835,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Vaga fechada pela propria unidade com ex funcionaria (CRISTIANE)",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 473,
@@ -4451,7 +4846,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Ailma Gomes De Oliveira Gomes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 486,
@@ -4461,7 +4857,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Layla Santos Vasconcelos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 501,
@@ -4471,7 +4868,8 @@
         "mes": 9,
         "status": "Aprovado",
         "colaborador": "Vanessa Torres Avelino",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 639,
@@ -4482,7 +4880,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       },
       {
         "id": 640,
@@ -4493,7 +4892,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "São Caetano": [
@@ -4505,7 +4905,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Debora Souza",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 16,
@@ -4515,7 +4916,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Juliana Aparecida Celis Tizo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 17,
@@ -4525,7 +4927,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Vaga fechada pela unidade com indicação",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       },
       {
         "id": 26,
@@ -4535,7 +4938,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "KATIANA DE SOUZA TOMAZ",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 34,
@@ -4545,7 +4949,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Adriana Aires Jaquetta",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 44,
@@ -4555,7 +4960,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Maria Gabriela Gomes Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 62,
@@ -4565,7 +4971,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Raissa Nunes Da Silva De Oliveira",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 94,
@@ -4575,7 +4982,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Rosangela Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 135,
@@ -4585,7 +4993,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Maythe Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 144,
@@ -4595,7 +5004,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Ana Greco",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 186,
@@ -4605,7 +5015,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Valeria Cristina Zaparoli",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 199,
@@ -4615,7 +5026,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Fernanda Martins",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 214,
@@ -4625,7 +5037,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Giselle De Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 302,
@@ -4635,7 +5048,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Daniela Postigo De Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 307,
@@ -4645,7 +5059,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Cleonice Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 339,
@@ -4655,7 +5070,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Alexandra Gomes Meksa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 427,
@@ -4665,7 +5081,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Beatriz Mezalira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 433,
@@ -4675,7 +5092,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Karla Bini Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 495,
@@ -4685,7 +5103,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Vitória Constantino Veríssimo",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 627,
@@ -4696,7 +5115,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 636,
@@ -4707,7 +5127,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Tatuapé": [
@@ -4719,7 +5140,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Keren Lais Mades",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 230,
@@ -4729,7 +5151,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Marceli Cavalari",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 437,
@@ -4739,7 +5162,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Wellington De Freitas Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 496,
@@ -4749,7 +5173,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Danilo Pinheiro Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       }
     ],
     "Vila Gumercindo": [
@@ -4761,7 +5186,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Rafaela Carmo Lima",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 31,
@@ -4771,7 +5197,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Vitoria Cristina De Arian",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 50,
@@ -4781,7 +5208,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Caroline Napolitano Camargo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 55,
@@ -4791,7 +5219,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "ELLEN GOMES OLIVEIRA DEIRÓZ",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 85,
@@ -4801,7 +5230,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Karina Favaro Oliveira",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 110,
@@ -4811,7 +5241,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Maria Nascimento",
-        "vivencias": 6
+        "vivencias": 6,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 128,
@@ -4821,7 +5252,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Mariana Spetanieri",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 142,
@@ -4831,7 +5263,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Hellen Vitória",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 158,
@@ -4841,7 +5274,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "THAINÁ MOREIRA DE ASSUNÇÃO/ transferida da SAUDE",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 159,
@@ -4851,7 +5285,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Andreia  EX funcionaria BROOKLIN",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 222,
@@ -4861,7 +5296,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Jacqueline Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 260,
@@ -4871,7 +5307,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Claudineide Viana Leite",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 292,
@@ -4881,7 +5318,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Jeniffer Aline Pião Da Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 293,
@@ -4891,7 +5329,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Liliane Santo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 333,
@@ -4901,7 +5340,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Bruna da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 343,
@@ -4911,7 +5351,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Giselle Oliveira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 375,
@@ -4921,7 +5362,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Isabele Vilas",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 415,
@@ -4931,7 +5373,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Camila Rodrigues Ferreira",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 417,
@@ -4941,7 +5384,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Mariana Cristina Spetanieri da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 423,
@@ -4951,7 +5395,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Adina Maria Pinheiro",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 641,
@@ -4962,7 +5407,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       },
       {
         "id": 645,
@@ -4973,7 +5419,8 @@
         "mes": 9,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Vila Leopoldina": [
@@ -4985,7 +5432,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Osmária Gomes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 27,
@@ -4995,7 +5443,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Caroline Correa Nascimento Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 60,
@@ -5005,7 +5454,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Tatiane Dos Santos Hermogenes",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 108,
@@ -5015,7 +5465,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Natalia Dos Santos Sousa Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 109,
@@ -5025,7 +5476,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Natália Cristina",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 120,
@@ -5035,7 +5487,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Daniela Almeida",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 153,
@@ -5045,7 +5498,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Bianca Barbosa Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 173,
@@ -5055,7 +5509,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Maria Gilcileia",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 177,
@@ -5065,7 +5520,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Adriana Souza",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 205,
@@ -5075,7 +5531,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Michele Da Silva Assunção",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 225,
@@ -5085,7 +5542,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Maria Eduarda Fernandes Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 229,
@@ -5095,7 +5553,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Daniel Barreto",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 257,
@@ -5105,7 +5564,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Pamela Silva Santos - Aprovada",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 265,
@@ -5115,7 +5575,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Luana Araújo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 275,
@@ -5125,7 +5586,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Josefa Monteiro Da Silva",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 310,
@@ -5135,7 +5597,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Guilherme Miranda Gomes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 316,
@@ -5145,7 +5608,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Nayara Rocha",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 342,
@@ -5155,7 +5619,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Marcela Dos Santos Silva",
-        "vivencias": 6
+        "vivencias": 6,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 344,
@@ -5165,7 +5630,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Gabrielle Aparecida Custodio Lugue",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 347,
@@ -5175,7 +5641,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Angelica De Paula Barbosa",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 359,
@@ -5185,7 +5652,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Emelen Prado",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 372,
@@ -5195,7 +5663,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Rosana Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 374,
@@ -5205,7 +5674,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Elisangela Rocha Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 387,
@@ -5215,7 +5685,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Ana Claudia Teles",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 451,
@@ -5225,7 +5696,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Catarina Ferreira Novais",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       }
     ],
     "Vila Madalena": [
@@ -5237,7 +5709,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Thaline Barbosa",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 81,
@@ -5247,7 +5720,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Luciana Alves Maciel",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 82,
@@ -5257,7 +5731,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Aline Guizi Rodrigues Macedo",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 83,
@@ -5267,7 +5742,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Tainar Pereira de Assis Paes",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 143,
@@ -5277,7 +5753,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Pietra Silva",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 219,
@@ -5287,7 +5764,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Cibele Borges Tavares",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 243,
@@ -5297,7 +5775,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Rosimar Dos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 267,
@@ -5307,7 +5786,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Aryane Victoria Teixeira Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 291,
@@ -5317,7 +5797,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Elis Borges",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 300,
@@ -5327,7 +5808,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Kauany Gomes Dos Santos",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 390,
@@ -5337,7 +5819,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Livia Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 422,
@@ -5347,7 +5830,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Georgia Potenza Moreira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       }
     ],
     "Vila Mariana": [
@@ -5359,7 +5843,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Antonia Marta Cariri Ferreira",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 12,
@@ -5369,7 +5854,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Alisson Felix dos Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 73,
@@ -5379,7 +5865,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Ana Veridiane De Moura Silva",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 99,
@@ -5389,7 +5876,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Maria Eliane Alves Da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 130,
@@ -5399,7 +5887,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Sarah Damásio",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 139,
@@ -5409,7 +5898,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Victória Menezes De Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 185,
@@ -5419,7 +5909,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Lavínia Schwartzkopf",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 195,
@@ -5429,7 +5920,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Isabella .",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 207,
@@ -5439,7 +5931,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Graciete Fortunato",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 221,
@@ -5449,7 +5942,8 @@
         "mes": 3,
         "status": "Aprovado",
         "colaborador": "Keylian Araujo",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 237,
@@ -5459,7 +5953,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "José João Rodrigues Neto",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 357,
@@ -5469,7 +5964,8 @@
         "mes": 6,
         "status": "Aprovado",
         "colaborador": "Letícia Vitoria Matias Da Silva",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 378,
@@ -5479,7 +5975,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Jaciara Bianca Ferreira De Farias",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 474,
@@ -5489,7 +5986,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Cláudia Gayer Pereira Da Costa",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 603,
@@ -5500,7 +5998,8 @@
         "mes": 8,
         "status": "Triagem",
         "colaborador": "",
-        "vivencias": 0
+        "vivencias": 0,
+        "tipoVaga": "Nova"
       }
     ],
     "Vila Sônia": [
@@ -5512,7 +6011,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Laís França De Jesus Santos",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 30,
@@ -5522,7 +6022,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Kimberly Fernandes",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 43,
@@ -5532,7 +6033,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Rayssa Gabriela",
-        "vivencias": 3
+        "vivencias": 3,
+        "tipoVaga": "Nova"
       },
       {
         "id": 45,
@@ -5542,7 +6044,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Juliana Teodoro Morgado",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 97,
@@ -5552,7 +6055,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Melissa Silva Queiroz",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 98,
@@ -5562,7 +6066,8 @@
         "mes": 1,
         "status": "Aprovado",
         "colaborador": "Daniela Oliveira",
-        "vivencias": 4
+        "vivencias": 4,
+        "tipoVaga": "Nova"
       },
       {
         "id": 116,
@@ -5572,7 +6077,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Thaissa Luellen Delfino Rivera",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 118,
@@ -5582,7 +6088,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Maria Eduarda Alves Borges",
-        "vivencias": 6
+        "vivencias": 6,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 137,
@@ -5592,7 +6099,8 @@
         "mes": 2,
         "status": "Aprovado",
         "colaborador": "Raquel Fernanda De Oliveira Justino",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 228,
@@ -5602,7 +6110,8 @@
         "mes": 4,
         "status": "Aprovado",
         "colaborador": "Yana Cavalcante",
-        "vivencias": 2
+        "vivencias": 2,
+        "tipoVaga": "Nova"
       },
       {
         "id": 283,
@@ -5612,7 +6121,8 @@
         "mes": 5,
         "status": "Aprovado",
         "colaborador": "Amanda Sales da Silva",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 385,
@@ -5622,7 +6132,8 @@
         "mes": 7,
         "status": "Aprovado",
         "colaborador": "Ana Beatriz Alves De Oliveira",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Nova"
       },
       {
         "id": 434,
@@ -5632,7 +6143,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Daniela Aquilino De Meneses",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       },
       {
         "id": 466,
@@ -5642,7 +6154,8 @@
         "mes": 8,
         "status": "Aprovado",
         "colaborador": "Tainá Santos",
-        "vivencias": 1
+        "vivencias": 1,
+        "tipoVaga": "Substituição"
       }
     ]
   }
@@ -5689,8 +6202,36 @@
                 };
             }
             return { unitRecords: {}, unitFunnels: {} };
+        },
+        updateLiveRawData: function(recordsMap, funnelsMap) {
+            if (recordsMap && Object.keys(recordsMap).length > 0) {
+                _PRIVATE_RAW_DATA.unitRecords = recordsMap;
+            }
+            if (funnelsMap && Object.keys(funnelsMap).length > 0) {
+                _PRIVATE_RAW_DATA.unitFunnels = funnelsMap;
+            }
+            try {
+                localStorage.setItem('fadelito_cached_live_data', JSON.stringify({
+                    unitRecords: _PRIVATE_RAW_DATA.unitRecords,
+                    unitFunnels: _PRIVATE_RAW_DATA.unitFunnels
+                }));
+            } catch(e) {}
         }
     };
+
+    // Auto-carregamento instantâneo do último cache sincronizado (0ms de espera ao abrir o site)
+    try {
+        const _cachedRaw = localStorage.getItem('fadelito_cached_live_data');
+        if (_cachedRaw) {
+            const _parsed = JSON.parse(_cachedRaw);
+            if (_parsed && _parsed.unitRecords && Object.keys(_parsed.unitRecords).length > 0) {
+                _PRIVATE_RAW_DATA.unitRecords = _parsed.unitRecords;
+            }
+            if (_parsed && _parsed.unitFunnels && Object.keys(_parsed.unitFunnels).length > 0) {
+                _PRIVATE_RAW_DATA.unitFunnels = _parsed.unitFunnels;
+            }
+        }
+    } catch(e) {}
 
     window.DataManager = DataManager;
 
@@ -5703,9 +6244,9 @@
         set: function(newVal) {
             if (newVal && newVal.unitRecords) {
                 const session = window.AuthService ? window.AuthService.getSession() : null;
-                if (session && session.role === 'MASTER') {
+                if (!session || session.role === 'MASTER') {
                     _PRIVATE_RAW_DATA.unitRecords = newVal.unitRecords;
-                    _PRIVATE_RAW_DATA.unitFunnels = newVal.unitFunnels;
+                    _PRIVATE_RAW_DATA.unitFunnels = newVal.unitFunnels || _PRIVATE_RAW_DATA.unitFunnels;
                 } else if (session && session.role === 'SUPERVISOR' && Array.isArray(session.units)) {
                     session.units.forEach(u => {
                         if (newVal.unitRecords && newVal.unitRecords[u]) {

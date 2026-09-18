@@ -392,9 +392,13 @@
             localStorage.removeItem('fadelito_user_session');
             localStorage.removeItem('fadelito_active_unit');
             localStorage.removeItem('fadelito_bi_records');
-        }
+        },
+
+        normalizeStr: normalizeStr
     };
 
+    window.normalizeStr = normalizeStr;
     window.AuthService = AuthService;
 
 })(window);
+
