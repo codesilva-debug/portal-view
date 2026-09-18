@@ -2831,7 +2831,7 @@
                         <div class="kpi-card-bar" style="background-color: #2563eb;"></div>
                         <div class="kpi-label">Vivências em Escola</div>
                         <div class="kpi-value" style="color: #2563eb;" id="kpi-vivencias">1.092</div>
-                        <div class="kpi-sub" style="color: #1e40af;" id="kpi-vivencias-sub">Candidatos enviados em escola</div>
+                        <div class="kpi-sub" style="color: #1e40af;" id="kpi-vivencias-sub">Candidatos enviados para a escola</div>
                     </div>
                     <div class="kpi-card">
                         <div class="kpi-card-bar" style="background-color: #059669;"></div>
@@ -4097,7 +4097,7 @@
             const kpiViv = document.getElementById('kpi-vivencias');
             if (kpiViv) kpiViv.textContent = totalVivencias.toLocaleString('pt-BR');
             const kpiVivSub = document.getElementById('kpi-vivencias-sub');
-            if (kpiVivSub) kpiVivSub.textContent = 'Candidatos enviados em escola';
+            if (kpiVivSub) kpiVivSub.textContent = 'Candidatos enviados para a escola';
 
             const kpiConv = document.getElementById('kpi-conversao');
             if (kpiConv) kpiConv.textContent = `${globalConv}%`;
