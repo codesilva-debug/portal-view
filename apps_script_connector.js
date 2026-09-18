@@ -40,11 +40,11 @@ function getRankingSheet(ss) {
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].getSheetId() === 1503088086) return sheets[i];
   }
-  return ss.getSheetByName("Ranking") || 
-         ss.getSheetByName("BI - RANKING UNIDADES") || 
-         ss.getSheetByName("FUNIL") || 
-         ss.getSheetByName("UNIDADES") || 
-         null;
+  return ss.getSheetByName("Ranking") ||
+    ss.getSheetByName("BI - RANKING UNIDADES") ||
+    ss.getSheetByName("FUNIL") ||
+    ss.getSheetByName("UNIDADES") ||
+    null;
 }
 
 /**
@@ -53,7 +53,7 @@ function getRankingSheet(ss) {
 function doGet(e) {
   try {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    
+
     // 1. Aba Oficial de Validação de Vagas
     var sheetVagas = getSheetValores(ss, [
       "VALIDAÇÃO VAGAS JUL/DEZ",
@@ -63,28 +63,28 @@ function doGet(e) {
       "VALIDAÇÃO DE VAGAS",
       "VAGAS"
     ]);
-    
+
     // 2. Aba de Ranking / Funil Multi-Unidades
     var sheetRanking = getRankingSheet(ss);
-    
+
     var lastRowVagas = sheetVagas ? Math.min(sheetVagas.getLastRow(), 3000) : 0;
     var lastColVagas = sheetVagas ? Math.min(sheetVagas.getLastColumn(), 80) : 14;
-    
+
     // Leitura das 14 colunas essenciais (A até N) com formatação de texto/data
-    var rawVagas = (sheetVagas && lastRowVagas > 0) 
-      ? sheetVagas.getRange(1, 1, lastRowVagas, Math.min(14, lastColVagas)).getDisplayValues() 
+    var rawVagas = (sheetVagas && lastRowVagas > 0)
+      ? sheetVagas.getRange(1, 1, lastRowVagas, Math.min(14, lastColVagas)).getDisplayValues()
       : [];
-    
+
     // Leitura ultrarrápida em memória das colunas além da 14 (onde ficam V1..V12)
     var rawVivencias = (sheetVagas && lastRowVagas > 0 && lastColVagas > 14)
       ? sheetVagas.getRange(1, 15, lastRowVagas, lastColVagas - 14).getValues()
       : [];
-    
+
     // Identificação dos índices de vivências (colunas V1..V12 da planilha original)
     // Offset em relação à coluna 15 (índice 0 em rawVivencias):
     // Índices padrão: 21, 25, 29, 33, 37, 41, 45, 49, 53, 57, 61, 65 -> Offset: 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51
     var vOffsets = [7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51];
-    
+
     // Se a linha de cabeçalho tiver nomes como V1, V2 ou VIVÊNCIA, calibramos os offsets dinamicamente
     if (rawVivencias.length > 0) {
       var headerViv = rawVivencias[0];
@@ -99,14 +99,14 @@ function doGet(e) {
         vOffsets = detectedOffsets;
       }
     }
-    
+
     // Filtra e processa cada vaga, calculando as vivências reais
     var cleanVagas = [];
     if (rawVagas.length > 0) {
       var headerRow = rawVagas[0].slice();
       headerRow.push("Total Vivências"); // Coluna 14 (índice 14)
       cleanVagas.push(headerRow);
-      
+
       for (var i = 1; i < rawVagas.length; i++) {
         var r = rawVagas[i].slice();
         // Se possui Cargo (B), Data (C), Unidade (D) ou Status (I), é uma vaga válida
@@ -124,26 +124,26 @@ function doGet(e) {
               }
             }
           }
-          
+
           // Se não há contagem explícita nas colunas V1..V12 mas o status é Aprovado,
           // no chão de escola ao menos 1 candidato realizou vivência para ser contratado
           var statusLower = String(r[8] || '').toLowerCase();
           if (vCount === 0 && (statusLower.indexOf('aprovado') !== -1 || statusLower.indexOf('viv') !== -1)) {
             vCount = 1;
           }
-          
+
           r.push(vCount); // Adiciona na 15ª posição
           cleanVagas.push(r);
         }
       }
     }
-    
+
     // Leitura da aba de Ranking e Funil
     var lastRowRanking = sheetRanking ? Math.min(sheetRanking.getLastRow(), 60) : 0;
     var rankingValues = (sheetRanking && lastRowRanking > 0)
       ? sheetRanking.getRange(1, 1, lastRowRanking, 9).getDisplayValues()
       : [];
-    
+
     var output = {
       status: "success",
       service: "BI RH Rede Fadelito — API Oficial Validação Vagas (Alta Performance & Vivências)",
@@ -155,10 +155,10 @@ function doGet(e) {
       looker: cleanVagas,
       ranking: rankingValues
     };
-    
+
     return ContentService.createTextOutput(JSON.stringify(output))
       .setMimeType(ContentService.MimeType.JSON);
-      
+
   } catch (error) {
     return ContentService.createTextOutput(JSON.stringify({
       status: "error",
@@ -180,19 +180,19 @@ function doPost(e) {
       "VALIDACAO VAGAS",
       "VAGAS"
     ]);
-    
+
     if (!sheetVagas) {
       return ContentService.createTextOutput(JSON.stringify({
         status: "error",
         message: "Aba VALIDAÇÃO VAGAS JUL/DEZ não encontrada."
       })).setMimeType(ContentService.MimeType.JSON);
     }
-    
+
     var data = {};
     if (e && e.postData && e.postData.contents) {
-      try { data = JSON.parse(e.postData.contents); } catch (err) {}
+      try { data = JSON.parse(e.postData.contents); } catch (err) { }
     }
-    
+
     var carimbo = Utilities.formatDate(new Date(), "GMT-3", "dd/MM/yyyy HH:mm:ss");
     var cargoStr = data.cargo || "";
     var dataStr = data.data || Utilities.formatDate(new Date(), "GMT-3", "dd/MM/yyyy");
@@ -202,17 +202,17 @@ function doPost(e) {
     var statusStr = data.status || "Triagem";
     var colaboradorStr = data.colaborador || "";
     var tipoVagaStr = data.tipoVaga || "Nova"; // Coluna M
-    
+
     sheetVagas.appendRow([
       carimbo, cargoStr, dataStr, unidadeStr, horarioStr, "", "", mesNum, statusStr, colaboradorStr, "", "", tipoVagaStr
     ]);
-    
+
     return ContentService.createTextOutput(JSON.stringify({
       status: "success",
       message: "Registro gravado na aba oficial de validação!",
       tipoVaga: tipoVagaStr
     })).setMimeType(ContentService.MimeType.JSON);
-    
+
   } catch (error) {
     return ContentService.createTextOutput(JSON.stringify({
       status: "error",
