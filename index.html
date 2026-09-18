@@ -2529,10 +2529,10 @@
             <div class="lateral-hover-zone" id="lateral-hover-zone"></div>
 
             <!-- Aba flutuante visível na borda esquerda do desktop -->
-            <button class="lateral-trigger-tab" id="lateral-trigger-tab" onclick="toggleLateralMenu(true)" title="Menu de Módulos (5 opções)">
+            <button class="lateral-trigger-tab" id="lateral-trigger-tab" onclick="toggleLateralMenu(true)" title="Menu de Módulos (4 opções)">
                 <svg class="app-icon" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
                 <span class="trigger-tab-text">Módulos</span>
-                <span class="trigger-tab-badge">5</span>
+                <span class="trigger-tab-badge">4</span>
             </button>
 
             <!-- Fundo escurecido ao expandir menu -->
@@ -2547,7 +2547,7 @@
                 <div class="lateral-panel-header">
                     <div class="lateral-brand">
                         <div class="lateral-brand-subtitle">Rede Fadelito • RH</div>
-                        <div class="lateral-brand-title">Módulos do Portal (5 Opções)</div>
+                        <div class="lateral-brand-title">Módulos do Portal (4 Opções)</div>
                     </div>
                     <div class="lateral-header-actions">
                         <button class="btn-lateral-pin" id="btn-lateral-pin" onclick="togglePinSidebar()" title="Fixar menu na tela">
@@ -2604,17 +2604,6 @@
                         </div>
                     </button>
 
-                    <!-- Configurar Conexão com Google Sheets -->
-                    <button class="tab-btn lateral-tab-item" onclick="toggleLateralMenu(false); openSheetsConfigModal();" title="Configurar conexão direta com a planilha">
-                        <div class="tab-item-icon-box" style="background: #eff6ff; color: #2563eb;">
-                            <svg class="app-icon" viewBox="0 0 24 24" style="color: #2563eb;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                        </div>
-                        <div class="tab-item-content">
-                            <div class="tab-item-title">Conexão Planilha</div>
-                            <div class="tab-item-desc">API Google Sheets em tempo real</div>
-                        </div>
-                    </button>
-
                     <!-- Botão de Sair / Trocar Gestor no Menu Lateral -->
                     <button class="tab-btn lateral-tab-item" style="margin-top: 14px; border-top: 1px solid rgba(226, 232, 240, 0.7); padding-top: 12px;" onclick="handleUserLogout()" title="Sair da sessão atual e trocar de gestor">
                         <div class="tab-item-icon-box" style="background: #fee2e2; color: #dc2626;">
@@ -2655,10 +2644,10 @@
             </div>
             <div class="nav-actions">
                 <!-- Botão de Acesso Rápido aos Módulos -->
-                <button class="btn-nav-modulos-header" id="btn-nav-modulos" onclick="toggleLateralMenu(true)" title="Ver os 5 módulos do sistema">
+                <button class="btn-nav-modulos-header" id="btn-nav-modulos" onclick="toggleLateralMenu(true)" title="Ver os módulos do sistema">
                     <svg class="app-icon" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
                     <span>Módulos</span>
-                    <span class="nav-badge-pill">5</span>
+                    <span class="nav-badge-pill">4</span>
                 </button>
 
                 <!-- Seletor de Unidades (Travado para perfil UNIT, liberado para MASTER) -->
@@ -2732,9 +2721,9 @@
                     </button>
                 </div>
                 <div class="top-nav-more">
-                    <button class="btn-open-lateral-menu" onclick="toggleLateralMenu(true)" title="Abrir menu com todas as 5 opções do sistema">
+                    <button class="btn-open-lateral-menu" onclick="toggleLateralMenu(true)" title="Abrir menu de módulos do sistema">
                         <svg class="app-icon" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-                        <span>Todos os Módulos (5)</span>
+                        <span>Todos os Módulos (4)</span>
                     </button>
                 </div>
             </div>
