@@ -2787,16 +2787,6 @@
                             <option value="Substituição">Substituição</option>
                         </select>
                     </div>
-                    <div class="filter-group">
-                        <span class="filter-label">Turno / Horário:</span>
-                        <select class="filter-select" id="filter-shift" onchange="applyFilters()">
-                            <option value="ALL">Todos os Turnos</option>
-                            <option value="MANHA">Manhã (ex: 7:00 às 13:00)</option>
-                            <option value="TARDE">Tarde (ex: 13:00 às 19:00)</option>
-                            <option value="INTERMEDIARIO">Intermediário (ex: 10:30/12:00)</option>
-                            <option value="INTEGRAL">Integral / 12h (ex: 9:30 às 19:30)</option>
-                        </select>
-                    </div>
                     <div class="filter-actions">
                         <button class="btn-filter-reset" onclick="resetFilters()"><svg class="app-icon" viewBox="0 0 24 24">
                                 <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
@@ -3029,7 +3019,7 @@
                                     <th>Data</th>
                                     <th>Cargo / Função</th>
                                     <th>Horário da Vaga</th>
-                                    <th>Mês / Lote</th>
+                                    <th>Mês</th>
                                     <th>Status Atual</th>
                                     <th>Tipo de Vaga</th>
                                 </tr>
@@ -3338,14 +3328,12 @@
                 const fm = document.getElementById('filter-month');
                 const fr = document.getElementById('filter-role');
                 const fs = document.getElementById('filter-status');
-                const fsh = document.getElementById('filter-shift');
                 const ft = document.getElementById('filter-tipo');
                 const st = document.getElementById('search-table-input');
                 if (fy) fy.value = 'ALL';
                 if (fm) fm.value = 'ALL';
                 if (fr) fr.value = 'ALL';
                 if (fs) fs.value = 'ALL';
-                if (fsh) fsh.value = 'ALL';
                 if (ft) ft.value = 'ALL';
                 if (st) st.value = '';
             }
@@ -3986,7 +3974,6 @@
             const monthFilter = document.getElementById('filter-month').value;
             const roleFilter = document.getElementById('filter-role').value;
             const statusFilter = document.getElementById('filter-status').value;
-            const shiftFilter = document.getElementById('filter-shift').value;
             const tipoFilter = document.getElementById('filter-tipo') ? document.getElementById('filter-tipo').value : 'ALL';
 
             return records.filter(r => {
@@ -4000,14 +3987,6 @@
                     const rTipo = (r.tipoVaga || 'Nova').toLowerCase();
                     if (tipoFilter === 'Nova' && !rTipo.includes('nova')) return false;
                     if (tipoFilter === 'Substituição' && !(rTipo.includes('substitu') || rTipo.includes('sub'))) return false;
-                }
-
-                if (shiftFilter !== 'ALL') {
-                    const h = (r.horario || '').toUpperCase();
-                    if (shiftFilter === 'MANHA' && !h.includes('7:00')) return false;
-                    if (shiftFilter === 'TARDE' && !h.includes('13:00')) return false;
-                    if (shiftFilter === 'INTERMEDIARIO' && !(h.includes('10:30') || h.includes('11:00') || h.includes('12:00'))) return false;
-                    if (shiftFilter === 'INTEGRAL' && !(h.includes('9:30') || h.includes('9:00') || h.includes('19:30'))) return false;
                 }
 
                 return true;
@@ -4024,7 +4003,6 @@
             document.getElementById('filter-role').value = 'ALL';
             document.getElementById('filter-status').value = 'ALL';
             if (document.getElementById('filter-tipo')) document.getElementById('filter-tipo').value = 'ALL';
-            document.getElementById('filter-shift').value = 'ALL';
             updateAllViews();
             showToast('Filtros restaurados!');
         }
@@ -4615,9 +4593,7 @@
 
             const searched = filtered.filter(r => {
                 if (!searchVal) return true;
-                const isApr = (r.status === 'Aprovado') || (typeof r.status === 'string' && r.status.trim().toLowerCase() === 'aprovado');
-                const matchStatus = (r.status && r.status.toLowerCase().includes(searchVal)) ||
-                                    (isApr && ('enviados'.includes(searchVal) || 'enviado'.includes(searchVal)));
+                const matchStatus = (r.status && r.status.toLowerCase().includes(searchVal));
                 const matchTipo = (r.tipoVaga && r.tipoVaga.toLowerCase().includes(searchVal));
                 return (
                     (r.data && r.data.toLowerCase().includes(searchVal)) ||
@@ -4641,7 +4617,7 @@
 
                 if (isAprovado) {
                     badgeClass = 'badge-approved';
-                    displayStatus = 'ENVIADO';
+                    displayStatus = 'APROVADO';
                 }
                 else if (r.status === 'Vivência') badgeClass = 'badge-vivencia';
                 else if (r.status === 'Reprovado') badgeClass = 'badge-rejected';
@@ -4659,7 +4635,7 @@
                     <td style="font-weight: 700;">${r.data}</td>
                     <td style="font-weight: 700; color: #0f172a;">${r.cargo}</td>
                     <td><span style="font-family: monospace; font-size: 11.5px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">${r.horario}</span></td>
-                    <td style="color: #64748b;">Lote ${r.mes}</td>
+                    <td style="color: #64748b;">Mês ${r.mes}</td>
                     <td><span class="badge ${badgeClass}">${displayStatus}</span></td>
                     <td><span class="badge ${badgeTipoClass}">${displayTipo}</span></td>
                 `;
