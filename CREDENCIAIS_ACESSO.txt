@@ -79,21 +79,25 @@ TABELA COMPLETA DAS UNIDADES:
   - Seletor inteligente: visão "Consolidado Supervisão" + opção individual de suas unidades.
   - Blindagem total de dados contra inspeção (F12) para unidades alheias.
 
-TABELA OFICIAL DOS 10 GESTORES / SUPERVISORES:
+TABELA OFICIAL DE GESTORES / SUPERVISORES:
 --------------------------------------------------------------------------------
-#   | Gestor(a)         | Usuário / Login | Senha           | Unidades Supervisionadas
-----+-------------------+-----------------+-----------------+------------------------------------------
-01  | Luana Silveira    | luana           | 5luanalpm       | Lapa, Panamby, Moema (3)
-02  | Pamela Duarte     | pamela          | 2026pamfadelitos| Vila Gumercindo (1)
-03  | Aurélio Zanin     | aurelio         | sulaurelio2026  | São Caetano, Santo André, Ipiranga, Jardins, Saúde (5)
-04  | Camila Brandão    | camila          | intercamila#26  | Campinas, Piracicaba (2)
-05  | Rodrigo Mendes    | rodrigo         | 7rodrigogob     | Granja Viana, Osasco, Bonfiglioli (3)
-06  | Juliana Prado     | juliana         | 2026julizl#amtg | Analia Franco, Mooca, Tatuapé, Guarulhos (4)
-07  | Fernando Costa    | fernando        | sulfernando*bcam| Alto da Boa Vista, Brooklin, Campo Belo, Marajoara (4)
-08  | Beatriz Nogueira  | beatriz         | 8biafadelito#hppm| Higienópolis, Perdizes, Pinheiros, Vila Madalena (4)
-09  | Marcelo Albuq.    | marcelo         | morumbimarcelo26| Portal do Morumbi, Real Parque, Vila Leopoldina, Vila Sônia (4)
-10  | Tatiane Ramos     | tatiane         | tatiane2026#ackiv| Aclimação, Chacara Klabin, Indianópolis, Paraiso, Vila Mariana (5)
+#   | Gestor(a)         | E-mail / Login Obrigatório     | Senha           | Unidades Supervisionadas
+----+-------------------+--------------------------------+-----------------+------------------------------------------
+01  | Canassa           | fadelito.canassa@gmail.com     | F@delito123     | Portal do Morumbi, Panamby, Paraiso (3)
+02  | Antônio Martins   | antoniomartins@mudras.com.br   | 701029          | Tatuapé (1)
+----+-------------------+--------------------------------+-----------------+------------------------------------------
+03  | Luana Silveira    | luana@fadelito.com.br          | 5luanalpm       | Lapa, Moema (2)
+04  | Pamela Duarte     | pamela@fadelito.com.br         | 2026pamfadelitos| Vila Gumercindo (1)
+05  | Aurélio Zanin     | aurelio@fadelito.com.br        | sulaurelio2026  | São Caetano, Santo André, Ipiranga, Jardins, Saúde (5)
+06  | Camila Brandão    | camila@fadelito.com.br         | intercamila#26  | Campinas, Piracicaba (2)
+07  | Rodrigo Mendes    | rodrigo@fadelito.com.br        | 7rodrigogob     | Granja Viana, Osasco, Bonfiglioli (3)
+08  | Juliana Prado     | juliana@fadelito.com.br        | 2026julizl#amtg | Analia Franco, Mooca, Guarulhos (3)
+09  | Fernando Costa    | fernando@fadelito.com.br       | sulfernando*bcam| Alto da Boa Vista, Brooklin, Campo Belo, Marajoara (4)
+10  | Beatriz Nogueira  | beatriz@fadelito.com.br        | 8biafadelito#hppm| Higienópolis, Perdizes, Pinheiros, Vila Madalena (4)
+11  | Marcelo Albuq.    | marcelo@fadelito.com.br        | morumbimarcelo26| Real Parque, Vila Leopoldina, Vila Sônia (3)
+12  | Tatiane Ramos     | tatiane@fadelito.com.br        | tatiane2026#ackiv| Aclimação, Chacara Klabin, Indianópolis, Vila Mariana (4)
 
-* Nota: Também é possível fazer login digitando o e-mail institucional do gestor 
-  (ex: "luana@fadelito.com.br", "pamela@fadelito.com.br", "aurelio@fadelito.com.br").
+* Nota Importante de Segurança: Os supervisores oficiais ativos (Canassa e Antônio Martins)
+  exigem obrigatoriamente o preenchimento do e-mail completo no login para evitar qualquer
+  chance de adivinhação.
 ================================================================================

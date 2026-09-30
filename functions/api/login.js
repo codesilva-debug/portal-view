@@ -37,12 +37,30 @@ export async function onRequestOptions() {
 
 const SUPERVISORS = [
     {
+        id: 'canassa',
+        name: 'Canassa',
+        username: 'fadelito.canassa@gmail.com',
+        email: 'fadelito.canassa@gmail.com',
+        password: 'F@delito123',
+        strictEmailOnly: true,
+        units: ["Portal do Morumbi", "Panamby", "Paraiso"]
+    },
+    {
+        id: 'antoniomartins',
+        name: 'Antônio Martins',
+        username: 'antoniomartins@mudras.com.br',
+        email: 'antoniomartins@mudras.com.br',
+        password: '701029',
+        strictEmailOnly: true,
+        units: ["Tatuapé"]
+    },
+    {
         id: 'luana',
         name: 'Luana Silveira',
         username: 'luana',
         email: 'luana@fadelito.com.br',
         password: '5luanalpm',
-        units: ["Lapa", "Panamby", "Moema"]
+        units: ["Lapa", "Moema"]
     },
     {
         id: 'pamela',
@@ -82,7 +100,7 @@ const SUPERVISORS = [
         username: 'juliana',
         email: 'juliana@fadelito.com.br',
         password: '2026julizl#amtg',
-        units: ["Analia Franco", "Mooca", "Tatuapé", "Guarulhos"]
+        units: ["Analia Franco", "Mooca", "Guarulhos"]
     },
     {
         id: 'fernando',
@@ -106,7 +124,7 @@ const SUPERVISORS = [
         username: 'marcelo',
         email: 'marcelo@fadelito.com.br',
         password: 'morumbimarcelo26',
-        units: ["Portal do Morumbi", "Real Parque", "Vila Leopoldina", "Vila Sônia"]
+        units: ["Real Parque", "Vila Leopoldina", "Vila Sônia"]
     },
     {
         id: 'tatiane',
@@ -114,7 +132,7 @@ const SUPERVISORS = [
         username: 'tatiane',
         email: 'tatiane@fadelito.com.br',
         password: 'tatiane2026#ackiv',
-        units: ["Aclimação", "Chacara Klabin", "Indianópolis", "Paraiso", "Vila Mariana"]
+        units: ["Aclimação", "Chacara Klabin", "Indianópolis", "Vila Mariana"]
     }
 ];
 
@@ -144,6 +162,7 @@ export async function onRequestPost(context) {
             });
         }
 
+        const rawUser = String(username || '').trim().toLowerCase();
         const cleanUser = normalizeStr(username.replace(/@fadelito\.com\.br$/i, ''));
         const userPass = String(password).trim();
         
@@ -180,11 +199,15 @@ export async function onRequestPost(context) {
             }
         }
 
-        // 2. Validação Supervisão / Gestores Fictícios (10 Supervisores)
+        // 2. Validação Supervisão
         const matchedSupervisor = SUPERVISORS.find(s => {
+            const sEmail = String(s.email || '').trim().toLowerCase();
+            if (s.strictEmailOnly) {
+                return sEmail === rawUser;
+            }
             const sUser = normalizeStr(s.username);
             const sName = normalizeStr(s.name);
-            return sUser === cleanUser || sName === cleanUser || cleanUser.includes(sUser);
+            return sEmail === rawUser || sUser === cleanUser || sName === cleanUser || cleanUser.includes(sUser);
         });
 
         if (matchedSupervisor) {
@@ -257,7 +280,7 @@ export async function onRequestPost(context) {
             }
         }
 
-        return new Response(JSON.stringify({ success: false, error: 'Usuário não encontrado. Digite seu usuário de supervisão, unidade ou diretoria@fadelito.com.br.' }), {
+        return new Response(JSON.stringify({ success: false, error: 'Usuário não encontrado. Verifique se o e-mail ou a senha estão corretos.' }), {
             status: 404,
             headers: { 
                 'Content-Type': 'application/json',

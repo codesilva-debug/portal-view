@@ -30,16 +30,36 @@
 
     const SESSION_STORAGE_KEY = 'fadelito_auth_session';
 
-    // Lista oficial dos 10 Gestores / Supervisores com unidades atribuídas
+    // Lista oficial dos Gestores e Supervisores Regionais
     const SUPERVISORS = [
+        {
+            id: 'canassa',
+            name: 'Canassa',
+            username: 'fadelito.canassa@gmail.com',
+            email: 'fadelito.canassa@gmail.com',
+            password: 'F@delito123',
+            strictEmailOnly: true,
+            mnemonic: 'Canassa (Portal do Morumbi, Panamby, Paraiso)',
+            units: ["Portal do Morumbi", "Panamby", "Paraiso"]
+        },
+        {
+            id: 'antoniomartins',
+            name: 'Antônio Martins',
+            username: 'antoniomartins@mudras.com.br',
+            email: 'antoniomartins@mudras.com.br',
+            password: '701029',
+            strictEmailOnly: true,
+            mnemonic: 'Antônio Martins (Tatuapé)',
+            units: ["Tatuapé"]
+        },
         {
             id: 'luana',
             name: 'Luana Silveira',
             username: 'luana',
             email: 'luana@fadelito.com.br',
             password: '5luanalpm',
-            mnemonic: 'Prefixo 5 + luana + lpm (Lapa, Panamby, Moema)',
-            units: ["Lapa", "Panamby", "Moema"]
+            mnemonic: 'Luana Silveira (Lapa, Moema)',
+            units: ["Lapa", "Moema"]
         },
         {
             id: 'pamela',
@@ -47,7 +67,7 @@
             username: 'pamela',
             email: 'pamela@fadelito.com.br',
             password: '2026pamfadelitos',
-            mnemonic: 'Ano 2026 + pam + fadelitos (Vila Gumercindo)',
+            mnemonic: 'Pamela Duarte (Vila Gumercindo)',
             units: ["Vila Gumercindo"]
         },
         {
@@ -56,7 +76,7 @@
             username: 'aurelio',
             email: 'aurelio@fadelito.com.br',
             password: 'sulaurelio2026',
-            mnemonic: 'sul + aurelio + 2026 (São Caetano, Santo André, Ipiranga, Jardins, Saúde)',
+            mnemonic: 'Aurélio Zanin (São Caetano, Santo André, Ipiranga, Jardins, Saúde)',
             units: ["São Caetano", "Santo Andre", "Ipiranga", "Jardins", "Saúde"]
         },
         {
@@ -65,7 +85,7 @@
             username: 'camila',
             email: 'camila@fadelito.com.br',
             password: 'intercamila#26',
-            mnemonic: 'inter (Interior) + camila + #26 (Campinas, Piracicaba)',
+            mnemonic: 'Camila Brandão (Campinas, Piracicaba)',
             units: ["Campinas", "Piracicaba"]
         },
         {
@@ -74,7 +94,7 @@
             username: 'rodrigo',
             email: 'rodrigo@fadelito.com.br',
             password: '7rodrigogob',
-            mnemonic: '7 + rodrigo + gob (Granja Viana, Osasco, Bonfiglioli)',
+            mnemonic: 'Rodrigo Mendes (Granja Viana, Osasco, Bonfiglioli)',
             units: ["Granja Viana", "Osasco", "Bonfiglioli"]
         },
         {
@@ -83,8 +103,8 @@
             username: 'juliana',
             email: 'juliana@fadelito.com.br',
             password: '2026julizl#amtg',
-            mnemonic: '2026 + juli + zl (Zona Leste) + amtg (Analia, Mooca, Tatuapé, Guarulhos)',
-            units: ["Analia Franco", "Mooca", "Tatuapé", "Guarulhos"]
+            mnemonic: 'Juliana Prado (Analia Franco, Mooca, Guarulhos)',
+            units: ["Analia Franco", "Mooca", "Guarulhos"]
         },
         {
             id: 'fernando',
@@ -92,7 +112,7 @@
             username: 'fernando',
             email: 'fernando@fadelito.com.br',
             password: 'sulfernando*bcam',
-            mnemonic: 'sul + fernando + * + bcam (Brooklin, Campo Belo, Alto da Boa Vista, Marajoara)',
+            mnemonic: 'Fernando Costa (Alto da Boa Vista, Brooklin, Campo Belo, Marajoara)',
             units: ["Alto da Boa Vista", "Brooklin", "Campo Belo", "Marajoara"]
         },
         {
@@ -101,7 +121,7 @@
             username: 'beatriz',
             email: 'beatriz@fadelito.com.br',
             password: '8biafadelito#hppm',
-            mnemonic: '8 + bia + fadelito + # + hppm (Higienópolis, Perdizes, Pinheiros, Vila Madalena)',
+            mnemonic: 'Beatriz Nogueira (Higienópolis, Perdizes, Pinheiros, Vila Madalena)',
             units: ["Higienópolis", "Perdizes", "Pinheiros", "Vila Madalena"]
         },
         {
@@ -110,8 +130,8 @@
             username: 'marcelo',
             email: 'marcelo@fadelito.com.br',
             password: 'morumbimarcelo26',
-            mnemonic: 'morumbi + marcelo + 26 (Morumbi, Real Parque, Leopoldina, Sônia)',
-            units: ["Portal do Morumbi", "Real Parque", "Vila Leopoldina", "Vila Sônia"]
+            mnemonic: 'Marcelo Albuquerque (Real Parque, Vila Leopoldina, Vila Sônia)',
+            units: ["Real Parque", "Vila Leopoldina", "Vila Sônia"]
         },
         {
             id: 'tatiane',
@@ -119,8 +139,8 @@
             username: 'tatiane',
             email: 'tatiane@fadelito.com.br',
             password: 'tatiane2026#ackiv',
-            mnemonic: 'tatiane + 2026 + # + ackiv (Aclimação, Chacara Klabin, Indianópolis, Paraíso, Vila Mariana)',
-            units: ["Aclimação", "Chacara Klabin", "Indianópolis", "Paraiso", "Vila Mariana"]
+            mnemonic: 'Tatiane Ramos (Aclimação, Chacara Klabin, Indianópolis, Vila Mariana)',
+            units: ["Aclimação", "Chacara Klabin", "Indianópolis", "Vila Mariana"]
         }
     ];
 
@@ -140,11 +160,16 @@
          */
         findSupervisor(input) {
             if (!input) return null;
+            const raw = String(input).trim().toLowerCase();
             const clean = normalizeStr(input.replace(/@fadelito\.com\.br$/i, ''));
             return SUPERVISORS.find(s => {
+                const sEmail = String(s.email || '').trim().toLowerCase();
+                if (s.strictEmailOnly) {
+                    return sEmail === raw;
+                }
                 const sUser = normalizeStr(s.username);
                 const sName = normalizeStr(s.name);
-                return sUser === clean || sName === clean || clean.includes(sUser);
+                return sEmail === raw || sUser === clean || sName === clean || clean.includes(sUser);
             }) || null;
         },
 
@@ -302,7 +327,7 @@
 
             return { 
                 success: false, 
-                error: 'Usuário não encontrado. Digite seu usuário de supervisão, nome da unidade ou diretoria@fadelito.com.br.' 
+                error: 'Usuário não encontrado. Verifique se o e-mail ou a senha estão corretos.' 
             };
         },
 
