@@ -1643,52 +1643,123 @@
 
         /* ==================== SELETOR DE UNIDADES & SESSÃO ==================== */
         .unit-selector-badge {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #0f172a;
+            background: #ffffff;
             padding: 5px 12px;
-            border-radius: 8px;
-            border: 1px solid #334155;
+            border-radius: 9px;
+            border: 2px solid #2563eb;
+            box-shadow: 0 1px 4px rgba(37, 99, 235, 0.16);
             transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .unit-selector-badge:hover {
+            border-color: #1d4ed8;
+            box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
         }
 
         .unit-selector-label {
             font-size: 11px;
             font-weight: 800;
-            color: #f59e0b;
+            color: #1e40af;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
         }
 
         .unit-selector-select {
-            background: transparent;
-            color: #ffffff;
-            border: none;
+            background: #f8fafc;
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+            padding: 4px 24px 4px 8px;
+            border-radius: 6px;
             font-size: 13px;
             font-weight: 700;
             outline: none;
             cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 7px center;
+            transition: all 0.2s;
+        }
+
+        .unit-selector-select:hover,
+        .unit-selector-select:focus {
+            border-color: #2563eb;
+            background-color: #ffffff;
         }
 
         .unit-selector-select option {
-            background: #0f172a;
-            color: #ffffff;
+            background: #ffffff;
+            color: #0f172a;
+            font-weight: 600;
         }
 
         .unit-selector-badge.is-locked {
-            background: #1e293b;
-            border-color: #475569;
-            opacity: 0.95;
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            box-shadow: none;
         }
 
         .unit-selector-badge.is-locked .unit-selector-label {
-            color: #94a3b8;
+            color: #64748b;
         }
 
         .unit-selector-badge.is-locked .unit-selector-select {
             cursor: not-allowed;
-            color: #cbd5e1;
+            color: #64748b;
+            background-image: none;
+        }
+
+        /* Seletor de Unidades em Destaque na Barra de Filtros do Dashboard */
+        .filter-group-unit {
+            background: #eff6ff;
+            border: 2px solid #3b82f6;
+            padding: 4px 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(37, 99, 235, 0.12);
+            transition: all 0.2s ease;
+        }
+
+        .filter-group-unit:hover {
+            border-color: #1d4ed8;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+        }
+
+        .filter-label-unit {
+            color: #1d4ed8 !important;
+            font-weight: 800 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select-unit {
+            background: #ffffff !important;
+            border: 1px solid #93c5fd !important;
+            color: #0f172a !important;
+            font-weight: 700 !important;
+            font-size: 12.5px !important;
+            padding: 5px 24px 5px 8px !important;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 7px center !important;
+        }
+
+        .filter-select-unit:focus,
+        .filter-select-unit:hover {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25) !important;
         }
 
         /* Navbar Session Pill */
@@ -2652,7 +2723,7 @@
                 </button>
 
                 <!-- Seletor de Unidades (Travado para perfil UNIT, liberado para MASTER) -->
-                <div class="unit-selector-badge" id="unit-selector-wrap">
+                <div class="unit-selector-badge" id="unit-selector-wrap" title="Clique para alternar entre as 35 unidades ou ver Toda a Rede">
                     <span class="unit-selector-label" id="unit-selector-label"><svg class="app-icon"
                             viewBox="0 0 24 24">
                             <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
@@ -2664,7 +2735,7 @@
                             <path d="M10 18h4" />
                         </svg> Unidade:</span>
                     <select id="select-active-unit" class="unit-selector-select"
-                        onchange="onSelectUnitChanged(this.value)">
+                        onchange="onSelectUnitChanged(this.value)" title="Selecionar Unidade Escolar">
                         <!-- Preenchido via JavaScript -->
                     </select>
                 </div>
@@ -2737,6 +2808,22 @@
 
                 <!-- FILTROS GLOBAIS DINÂMICOS -->
                 <div class="filter-bar">
+                    <div class="filter-group filter-group-unit" id="dashboard-unit-group">
+                        <span class="filter-label filter-label-unit">
+                            <svg class="app-icon" viewBox="0 0 24 24" style="width: 14px; height: 14px; stroke: #2563eb;">
+                                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+                                <path d="M10 6h4" />
+                                <path d="M10 10h4" />
+                                <path d="M10 14h4" />
+                                <path d="M10 18h4" />
+                            </svg> Unidade:
+                        </span>
+                        <select class="filter-select filter-select-unit" id="filter-unit-dashboard" onchange="onSelectUnitChanged(this.value)" title="Filtrar dados por Unidade Escolar ou Toda a Rede">
+                            <!-- Preenchido via JavaScript -->
+                        </select>
+                    </div>
                     <div class="filter-group">
                         <span class="filter-label">Ano:</span>
                         <select class="filter-select" id="filter-year" onchange="applyFilters()">
@@ -2804,7 +2891,7 @@
                         <div class="kpi-card-bar" style="background-color: #0f172a;"></div>
                         <div class="kpi-label">Quadro de Vagas</div>
                         <div class="kpi-value" id="kpi-total-vagas">513</div>
-                        <div class="kpi-sub" style="color: #0f172a;" id="kpi-total-vagas-sub">Quadro Previsto da Rede</div>
+                        <div class="kpi-sub" style="color: #0f172a;" id="kpi-total-vagas-sub">Vagas abertas por unidade</div>
                     </div>
                     <div class="kpi-card">
                         <div class="kpi-card-bar" style="background-color: #16a34a;"></div>
@@ -3357,9 +3444,11 @@
                 if (latUnit) latUnit.textContent = displayName;
             }
 
-            // Atualiza valor no dropdown
+            // Atualiza valor no dropdown da Navbar e do Dashboard
             const dropdown = document.getElementById('select-active-unit');
             if (dropdown && dropdown.value !== unitName) dropdown.value = unitName;
+            const dashDropdown = document.getElementById('filter-unit-dashboard');
+            if (dashDropdown && dashDropdown.value !== unitName) dashDropdown.value = unitName;
 
             // Carrega Registros da Base Oficial com CÓPIA PROFUNDA ISOLADA
             if (window.ALL_UNITS_DATA && window.ALL_UNITS_DATA.unitRecords) {
@@ -3440,23 +3529,29 @@
 
         // ==================== POVOAR SELETOR DE UNIDADES ====================
         function populateUnitDropdown() {
-            const select = document.getElementById('select-active-unit');
-            if (!select) return;
+            const selects = [
+                document.getElementById('select-active-unit'),
+                document.getElementById('filter-unit-dashboard')
+            ].filter(Boolean);
 
-            select.innerHTML = '';
+            if (selects.length === 0) return;
 
-            // Opção Rede Geral
-            const optAll = document.createElement('option');
-            optAll.value = 'ALL';
-            optAll.textContent = 'Toda a Rede (35 Unidades)';
-            select.appendChild(optAll);
+            selects.forEach(select => {
+                select.innerHTML = '';
 
-            // 35 Unidades
-            UNITS_LIST.forEach(u => {
-                const opt = document.createElement('option');
-                opt.value = u;
-                opt.textContent = u;
-                select.appendChild(opt);
+                // Opção Rede Geral
+                const optAll = document.createElement('option');
+                optAll.value = 'ALL';
+                optAll.textContent = '🏢 Toda a Rede (35 Unidades)';
+                select.appendChild(optAll);
+
+                // 35 Unidades
+                UNITS_LIST.forEach(u => {
+                    const opt = document.createElement('option');
+                    opt.value = u;
+                    opt.textContent = '📍 ' + u;
+                    select.appendChild(opt);
+                });
             });
         }
 
@@ -3511,6 +3606,8 @@
                 if (nameText) nameText.textContent = 'Diretoria Geral';
                 if (unitWrap) unitWrap.classList.remove('is-locked');
                 if (select) select.disabled = false;
+                const dashSelect = document.getElementById('filter-unit-dashboard');
+                if (dashSelect) dashSelect.disabled = false;
 
                 populateUnitDropdown();
 
@@ -3526,22 +3623,27 @@
                 if (nameText) nameText.textContent = session.name || session.username;
 
                 const supUnits = Array.isArray(session.units) ? session.units : [];
-                if (select) {
-                    select.innerHTML = '';
+                const selects = [
+                    document.getElementById('select-active-unit'),
+                    document.getElementById('filter-unit-dashboard')
+                ].filter(Boolean);
+
+                selects.forEach(sel => {
+                    sel.innerHTML = '';
                     if (supUnits.length > 1) {
                         const optConsolidated = document.createElement('option');
                         optConsolidated.value = 'SUPERVISOR_ALL';
-                        optConsolidated.textContent = `Consolidado Supervisão (${supUnits.length} Unidades)`;
-                        select.appendChild(optConsolidated);
+                        optConsolidated.textContent = `🏢 Consolidado Supervisão (${supUnits.length} Unidades)`;
+                        sel.appendChild(optConsolidated);
                     }
                     supUnits.forEach(u => {
                         const opt = document.createElement('option');
                         opt.value = u;
-                        opt.textContent = (supUnits.length === 1) ? `${u} (Sua Unidade)` : u;
-                        select.appendChild(opt);
+                        opt.textContent = (supUnits.length === 1) ? `📍 ${u} (Sua Unidade)` : `📍 ${u}`;
+                        sel.appendChild(opt);
                     });
-                    select.disabled = (supUnits.length <= 1);
-                }
+                    sel.disabled = (supUnits.length <= 1);
+                });
 
                 if (unitWrap) {
                     if (supUnits.length <= 1) {
@@ -3566,10 +3668,15 @@
                 if (nameText) nameText.textContent = session.unit;
                 if (unitWrap) unitWrap.classList.add('is-locked');
 
-                if (select) {
-                    select.innerHTML = `<option value="${session.unit}">${session.unit} (Sua Unidade)</option>`;
-                    select.disabled = true;
-                }
+                const selects = [
+                    document.getElementById('select-active-unit'),
+                    document.getElementById('filter-unit-dashboard')
+                ].filter(Boolean);
+
+                selects.forEach(sel => {
+                    sel.innerHTML = `<option value="${session.unit}">📍 ${session.unit} (Sua Unidade)</option>`;
+                    sel.disabled = true;
+                });
 
                 // Força estritamente os dados da própria unidade
                 loadUnitData(session.unit);
@@ -4053,7 +4160,7 @@
             if (elTotalVagas) elTotalVagas.textContent = totalVagas;
             const isNetwork = (currentActiveUnit === 'ALL' || currentActiveUnit === 'REDE');
             const totalSub = document.getElementById('kpi-total-vagas-sub');
-            if (totalSub) totalSub.textContent = isNetwork ? 'Quadro Previsto da Rede' : 'Quadro Previsto da Unidade';
+            if (totalSub) totalSub.textContent = isNetwork ? 'Vagas abertas da Rede' : 'Vagas abertas por unidade';
 
             const elAprovados = document.getElementById('kpi-aprovados');
             if (elAprovados) elAprovados.textContent = aprovados;
